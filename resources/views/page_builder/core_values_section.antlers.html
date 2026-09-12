@@ -1,0 +1,40 @@
+ <section class="relative bg-white 2xl:mb-[100px] 1xl:mb-20 xl:mb-17 lg:mb-14 md:mb-12 sm:mb-11 mb-10">
+            <div class="container">
+                <div class="2xl:mb-13 xl:mb-10 lt:mb-8 mb-6" data-aos="fade-right">
+                    {{ if small_heading }}
+                    <h3 class="text-thunder-100 font-primary italic font-medium 2xl:mb-7.5 1xl:mb-6 lg:mb-4 mb-2.5">
+                       {{ small_heading }}
+                    </h3>
+                    {{ /if }}
+                    {{ if main_heading }}
+                    <h3 class="text-primary font-normal uppercase">
+                        {{ main_heading }}
+                    </h3>
+                    {{ /if }}
+                </div>
+                <div class="grid lt:grid-cols-3 grid-cols-1 1xl:gap-6 lt:gap-5 md:gap-4 gap-5">
+                    <!-- 1st card -->
+                    {{ core_value_cards }}
+                    <div class="group border border-primary/15 2xl:p-7.5 1xl:p-6 xl:p-4 md:p-3.5 p-4 bg-whitesmoke-100 transition-all duration-300"
+                        data-aos="fade-up">
+                        <div class="flex 1xl:gap-6 xl:gap-4 lt:gap-3.5 md:gap-2 gap-3.5">
+                            <div
+                                class="2xl:w-16 2xl:h-16 1xl:w-14 1xl:h-14 lg:w-12 lg:h-12 sm:w-10 sm:h-10 w-9 h-9 shrink-0">
+                               {{ icon }} <img decoding="async" src="{{ url }}" alt="Personalized Classes"
+                                    class="w-full h-full object-cover" />{{ /icon }}
+                            </div>
+                            <div>
+                                <h5
+                                    class="uppercase text-primary transition-all duration-300 1xl:mb-7 xl:mb-5 lg:mb-4 md:mb-3 mb-4">
+                                   {{ title }}
+                                </h5>
+                                <p>
+                                   {{ description }}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    {{ /core_value_cards }}
+                </div>
+            </div>
+        </section>

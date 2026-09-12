@@ -1,0 +1,118 @@
+<section
+            class="relative 2xl:mb-[100px] 1xl:mb-20 xl:mb-17 lg:mb-14 md:mb-12 sm:mb-11 mb-10 lt:h-screen md:h-[80vh] sm:h-[70vh] h-[90vh] overflow-hidden text-white hero-wrapper">
+            <div class="absolute inset-0 bg-linear-to-b from-black/90 to-black/40 z-2"></div>
+
+            <!-- SLIDES -->
+            <div id="heroSlider" class="relative h-full">
+                <!-- Slide -->
+                {{ hero_slides }}
+                <div class="hero-slide absolute inset-0 active" data-title="Find Balance in Motion"
+                    data-desc="At Pranavya, we guide you through a journey of mindful movement, deep breathwork, and inner balance.">
+                    {{ slide_image }}<img src="{{ url }}" alt="hero" class="w-full h-full object-cover" loading="eager"
+                        fetchpriority="high" decoding="async" />{{ /slide_image }}
+                </div>
+                {{ /hero_slides }}
+            </div>
+
+            <!-- LEFT CONTENT -->
+            <div
+                class="absolute sm:left-16 sm:p-0 px-4 sm:top-[41%] top-[20%] sm:-translate-y-1/2 2xl:max-w-[800px] 1xl:max-w-[705px] xl:max-w-[600px] lt:max-w-[580px] max-w-[480px] w-full z-10">
+                {{ hero_slides limit="1" }}
+                <h1 id="slideTitle" class="mb-6 uppercase text-white">{{ slide_title }}</h1>
+                <p id="slideDesc" class="mb-8 text-white">{{ slide_description }}</p>
+                {{ /hero_slides }}
+                {{ if button_text }}
+                <a href="{{ button_url }}" class="btn btn-secondary flex items-center gap-3 bg-white">{{ button_text }}
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="31" viewBox="0 0 20 31" fill="none">
+                        <g clip-path="url(#clip0_3632_4477)">
+                            <path d="M2.86768 20.6162C2.86768 20.6162 10.8445 12.6393 14.1669 9.31672M14.1669 9.31672L14.4916 17.8243M14.1669 9.31672L5.6588 8.9926"stroke="#5C1A2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </g>
+                    </svg>
+                </a>
+                {{ /if }}
+            </div>
+
+            <!-- STICKY LEFT BOTTOM BOX -->
+            <div
+                class="xl:block hidden absolute left-16 bottom-8 z-10 bg-[#FFF6F230] backdrop-blur-md 1xl:p-5 p-4 rounded-[6px] 2xl:max-w-[340px] 1xl:max-w-[300px] max-w-[285px] w-full">
+                <div class="flex items-center justify-between gap-3 mb-[10px]">
+                    <h3 class="font-primary font-normal 2xl:text-43 1xl:text-38 text-35 text-white">
+                        {{ members_count }}
+                    </h3>
+                    <a href="/teams"
+                        class="2xl:w-11 2xl:h-11 1xl:w-10.5 1xl:h-10.5 w-10 h-10 rounded-full border border-white flex items-center justify-center p-[2px] text-white bg-transparent hover:text-primary hover:bg-white">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" fill="none">
+                            <path
+                                d="M0.94082 14.0043C0.94082 14.0043 9.9223 5.04958 13.6632 1.31976M13.6632 1.31976L14.014 10.8851M13.6632 1.31976L4.09834 0.94105"
+                                stroke="currentColor" stroke-width="1.88143" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </a>
+                </div>
+                <p class="p2 mb-5 capitalize 1xl:pr-18 pr-7 font-light tracking-[0.5px] text-white">
+                    {{ members_description }}
+                </p>
+
+                <div class="flex items-center justify-start gap-[10px]">
+                    <div class="flex items-center">
+                        {{ member_images }}
+                        <div class="w-10 h-10 rounded-full border border-white overflow-hidden {{ if not first }}  -ml-[14px] {{ /if }}">
+                            <img src="{{ url }}" alt="member-{{ index }}" class="w-full h-full object-cover" />
+                        </div>
+                        {{ /member_images }}
+                    </div>
+                    <p class="text-white">{{ member_info }}</p>
+                </div>
+            </div>
+
+            <!-- CENTER BOTTOM NAV -->
+            <div
+                class="absolute 1xl:bottom-28 md:bottom-24 sm:bottom-16 bottom-8 2xl:left-[34%] 1xl:left-[36%] xl:left-[41%] sm:left-16 left-0 sm:p-0 px-4 xl:-translate-x-1/2 flex items-center 1xl:gap-4 gap-3 z-10">
+                <button id="prevSlide"
+                    class="lg:w-11 lg:h-11 w-10 h-10 border border-white text-white hover:text-primary hover:bg-white bg-transparent rounded-full flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="16" viewBox="0 0 20 16" fill="none">
+                        <path
+                            d="M18.9178 7.98361C18.9178 7.98361 6.22668 7.96471 0.94064 7.95686M0.94064 7.95686L7.46057 0.940592M0.94064 7.95686L7.44047 14.9926"
+                            stroke="currentColor" stroke-width="1.88143" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </button>
+
+                <h6 id="currentIndex" class="font-primary text-white">01</h6>
+
+                <!-- PROGRESS LINE -->
+                <div class="sm:w-40 w-20 h-[2px] bg-white relative overflow-hidden">
+                    <div id="progressFill" class="absolute left-0 top-0 h-full bg-primary w-0"></div>
+                </div>
+
+                <h6 id="totalIndex" class="font-primary text-white">{{ member_images | count | format_number:2 }}</h6>
+
+                <button id="nextSlide"
+                    class="lg:w-11 lg:h-11 w-10 h-10 border border-white text-white hover:text-primary hover:bg-white bg-transparent rounded-full flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="16" viewBox="0 0 20 16" fill="none">
+                        <path
+                            d="M0.940633 7.98361C0.940633 7.98361 13.6317 7.96471 18.9178 7.95686M18.9178 7.95686L12.3978 0.940592M18.9178 7.95686L12.4179 14.9926"
+                            stroke="currentColor" stroke-width="1.88143" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </button>
+            </div>
+
+            <!-- THUMBNAILS -->
+            <!-- THUMBNAIL WRAPPER -->
+            <div class="absolute right-0 bottom-8 z-10 md:block hidden">
+                <!-- viewport -->
+                <div id="thumbViewport" class="overflow-hidden" style="width: var(--thumb-viewport-width)">
+                    <!-- track -->
+                    <div id="thumbTrack" class="flex gap-4">
+                        {{ hero_slides }}
+                        <div class="thumb">
+                            {{ slide_image }}
+                            <img src="{{ url }}" alt="yoga's" class="w-full h-full object-cover shrink-0" />
+                            {{ /slide_image }}
+                        </div>
+                        {{ /hero_slides }}
+                    </div>
+                </div>
+            </div>
+        </section>

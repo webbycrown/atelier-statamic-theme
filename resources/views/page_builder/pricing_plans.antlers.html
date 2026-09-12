@@ -1,0 +1,99 @@
+  <section class="relative 2xl:mb-[100px] 1xl:mb-20 xl:mb-17 lg:mb-14 md:mb-12 sm:mb-11 mb-10 w-full"
+            data-aos="fade-up">
+            <div class="container">
+                <!-- Toggle -->
+                <div
+                    class="flex bg-primary rounded-full border border-primary/50 w-fit mx-auto 1xl:mb-[50px] xl:mb-10 mb-8">
+                    <button id="monthlyBtn"
+                        class="toggle-btn 1xl:px-12 xl:px-10 px-8 1xl:py-4 xl:py-3 py-2.5 font-medium rounded-full bg-white text-primary transition p">
+                        MONTHLY
+                    </button>
+
+                    <button id="yearlyBtn"
+                        class="toggle-btn 1xl:px-12 xl:px-10 px-8 1xl:py-4 xl:py-3 py-2.5 font-medium rounded-full bg-primary text-white transition p">
+                        ANNUALLY
+                    </button>
+                </div>
+
+                <!-- ================= MONTHLY PLANS ================= -->
+                <!-- MONTHLY -->
+                <div class="monthly-plans grid lg:grid-cols-3 xl:gap-6 lg:gap-4.5 lt:gap-4 gap-5">
+
+                    <!-- 1st price -->
+                    {{ monthly_plans }}
+                    <div
+                        class="border border-primary/30 bg-whitesmoke-100 2xl:p-7.5 1xl:p-6 lg:p-5 p-4 flex flex-col justify-between">
+                        <div>
+                            <h3 class="uppercase 1xl:mb-3.5 mb-2.5">{{ title }}</h3>
+                            <p class="1xl:mb-6 sm:mb-5 mb-2.5">
+                                {{ description }}
+                            </p>
+                            <div class="border-t border-primary/50 1xl:pt-3 pt-2">
+                                <h3 class="font-primary capitalize font-medium italic 1xl:mb-2 mb-1"><span
+                                        class="h2">{{ price }}</span>
+                                    / {{ duration }}</h3>
+                                <p class="1xl:mb-5 mb-3.5 font-medium">{{ included_label }}</p>
+                                <ul
+                                    class="list-disc p text-primary font-medium 1xl:space-y-3 xl:space-y-2 space-y-1.5 pl-5 1xl:mb-5 lt:mb-4 mb-3">
+                                    {{ features }}
+                                    <li>
+                                        {{ value }}
+                                    </li>
+                                    {{ /features }}
+                                </ul>
+                                {{ if trial_text }}
+                                <p class="flex items-center gap-3 font-medium">
+                                    <span class="shrink-0 whitespace-nowrap lg:size-6 sm:size-5 size-4">
+                                        <img src="{{ theme:asset }}assets/image/bullets-point.svg" alt="point" />
+                                    </span>
+                                    {{ trial_text }}
+                                </p>
+                                {{ /if }}
+                            </div>
+                        </div>
+                        {{ if button_text }}<a href="{{ button_link }}" class="btn btn-secondary 1xl:mt-11 lg:mt-9 sm:mt-7 mt-6">{{ button_text }}</a>{{ /if }}
+                    </div>
+                    {{ /monthly_plans }}
+
+                </div>
+
+                <!-- ================= YEARLY PLANS ================= -->
+                <div class="yearly-plans grid lg:grid-cols-3 xl:gap-6 lg:gap-4.5 lt:gap-4 gap-5">
+
+                   {{ yearly_plans }}
+                    <div
+                        class="border border-primary/30 bg-whitesmoke-100 2xl:p-7.5 1xl:p-6 lg:p-5 p-4 flex flex-col justify-between">
+                        <div>
+                            <h3 class="uppercase 1xl:mb-3.5 mb-2.5">{{ title }}</h3>
+                            <p class="1xl:mb-6 sm:mb-5 mb-2.5">
+                                {{ description }}
+                            </p>
+                            <div class="border-t border-primary/50 1xl:pt-3 pt-2">
+                                <h3 class="font-primary capitalize font-medium italic 1xl:mb-2 mb-1"><span
+                                        class="h2">{{ price }}</span>
+                                    / {{ duration }}</h3>
+                                <p class="1xl:mb-5 mb-3.5 font-medium">{{ included_label }}</p>
+                                <ul
+                                    class="list-disc p text-primary font-medium 1xl:space-y-3 xl:space-y-2 space-y-1.5 pl-5 1xl:mb-5 lt:mb-4 mb-3">
+                                    {{ features }}
+                                    <li>
+                                        {{ value }}
+                                    </li>
+                                    {{ /features }}
+                                </ul>
+                                {{ if trial_text }}
+                                <p class="flex items-center gap-3 font-medium">
+                                    <span class="shrink-0 whitespace-nowrap lg:size-6 sm:size-5 size-4">
+                                        <img src="{{ theme:asset }}assets/image/bullets-point.svg" alt="point" />
+                                    </span>
+                                    {{ trial_text }}
+                                </p>{{ /if }}
+                            </div>
+                        </div>
+                        {{ if button_text }}<a href="{{ button_link }}" class="btn btn-secondary 1xl:mt-11 lg:mt-9 sm:mt-7 mt-6">{{ button_text }}</a>{{ /if }}
+                    </div>
+                    {{ /yearly_plans }}
+                  
+                </div>
+            </div>
+        </section>

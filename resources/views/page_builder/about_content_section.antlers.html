@@ -1,0 +1,55 @@
+  <section class="relative bg-white 2xl:mb-[100px] 1xl:mb-20 xl:mb-17 lg:mb-14 md:mb-12 sm:mb-11 mb-10"
+            data-aos="fade-up">
+            <div class="container">
+                <div
+                    class="flex justify-between lt:flex-row flex-col 2xl:gap-15 1xl:gap-13 lg:gap-10 md:gap-8 sm:gap-7.5 gap-5 md:items-stretch items-start">
+                    <!-- Right: Content -->
+                    <div class="w-full lt:max-w-[53.5%] xl:pb-10 lt:pb-7">
+                        <h3
+                            class="text-thunder-100 font-primary italic font-medium 2xl:mb-7.5 1xl:mb-6 xl:mb-4 sm:mb-3 mb-2.5">
+                            {{ small_heading }}
+                        </h3>
+                        <h2 class="text-primary font-normal uppercase 1xl:mb-5 mb-3">
+                            {{ main_heading }}
+                        </h2>
+                        
+                        {{ description }}
+                    </div>
+
+                    <!-- Left: Image -->
+                    <div class="lt:sticky relative lt:top-20 top-0 w-full lt:max-w-[46.5%] rounded-sm overflow-hidden">
+                        <div
+                            class="overflow-hidden relative before:block before:content-[''] lt:before:pt-[98%] before:pt-[85%] h-full">
+                            {{ section_image }}<img decoding="async" src="{{ url }}" alt="Pilates"
+                                class="w-full h-full object-cover object-center absolute top-0 left-0" loading="eager"
+                                fetchpriority="high" decoding="async" />{{ /section_image }}
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="1xl:mt-12.5 lg:mt-10.5 md:mt-8 sm:mt-6.5 mt-5 flex justify-between md:flex-row flex-col 2xl:gap-13 1xl:gap-11.5 xl:gap-10 lt:gap-8 md:gap-7 sm:gap-6 gap-5 md:items-center items-start">
+                    <!-- Left: Image -->
+                    <div class="md:sticky relative md:top-20 top-0 w-full md:max-w-[48.3%]">
+                        <div
+                            class="overflow-hidden rounded-sm relative before:block before:content-[''] 1xl:before:pt-[65%] xl:before:pt-[70%] lg:before:pt-[80%] lt:before:pt-[90%] md:before:pt-[100%] before:pt-[60%] h-full">
+                           {{ mission_image }} <img decoding="async" src="{{ url }}" alt="Pilates"
+                                class="w-full h-full object-cover object-center absolute top-0 left-0" loading="lazy"
+                                decoding="async" />{{ /mission_image }}
+                            <div class="absolute top-0 left-0 w-full h-full bg-[#AD8F6126]"></div>
+                        </div>
+                    </div>
+
+                    <!-- Right: Content -->
+                    <div class="w-full md:max-w-[51.7%] mission_description">
+                        <h3
+                            class="text-thunder-100 font-primary italic font-medium 2xl:mb-7.5 1xl:mb-6 md:mb-4 sm:mb-3 mb-2.5">
+                            {{ mission_small_heading }}
+                        </h3>
+                        <h3 class="text-primary font-normal uppercase 1xl:mb-5 mb-3">
+                           {{ mission_heading }}
+                        </h3>
+                        {{ mission_description }}
+                    </div>
+                </div>
+            </div>
+        </section>

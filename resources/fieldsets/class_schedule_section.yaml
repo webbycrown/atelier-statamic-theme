@@ -1,0 +1,171 @@
+title: 'Class Schedule Section'
+fields:
+  -
+    handle: show_type
+    field:
+      options:
+        -
+          key: schedule-page
+          value: 'Schedule Page'
+        -
+          key: home-one
+          value: 'Home One Page'
+        -
+          key: home-two
+          value: 'Home Two Page'
+        -
+          key: home-three
+          value: 'Home Three Page'
+      default: schedule-page
+      type: select
+      display: 'Show Type'
+      validate:
+        - required
+  -
+    handle: section_title
+    field:
+      type: text
+      display: 'Section Title'
+  -
+    handle: section_subtitle
+    field:
+      type: text
+      display: 'Section Subtitle'
+  -
+    handle: description
+    field:
+      type: textarea
+      display: Description
+  -
+    handle: book_class_link
+    field:
+      type: text
+      display: 'Book Class Link'
+      width: 50
+      default: /book-class
+  -
+    handle: button_title
+    field:
+      type: text
+      display: 'Book Class Button Title'
+      width: 50
+  -
+    handle: weekly_schedule
+    field:
+      type: replicator
+      display: 'Weekly Schedule'
+      listable: true
+      replicator_preview: false
+      sets:
+        new_set_group:
+          display: 'New Set Group'
+          sets:
+            new_set:
+              display: 'New Set'
+              fields:
+                -
+                  handle: day
+                  field:
+                    options:
+                      -
+                        key: sun
+                        value: Sunday
+                      -
+                        key: mon
+                        value: Monday
+                      -
+                        key: tue
+                        value: Tuesday
+                      -
+                        key: wed
+                        value: Wednesday
+                      -
+                        key: thu
+                        value: Thursday
+                      -
+                        key: fri
+                        value: Friday
+                      -
+                        key: sat
+                        value: Saturday
+                    type: select
+                    display: Day
+                -
+                  handle: classes
+                  field:
+                    type: replicator
+                    display: Classes
+                    listable: true
+                    sets:
+                      new_set_group:
+                        display: 'New Set Group'
+                        sets:
+                          new_set:
+                            display: 'New Set'
+                            fields:
+                              -
+                                handle: time
+                                field:
+                                  type: text
+                                  display: Time
+                                  instructions: '6:00 AM to 7:00 AM'
+                                  width: 50
+                              -
+                                handle: time_label
+                                field:
+                                  type: text
+                                  display: 'Time Label'
+                                  instructions: 'Example (Morning / Evening)'
+                                  width: 50
+                              -
+                                handle: class_name
+                                field:
+                                  type: text
+                                  display: 'Class Name'
+                                  width: 50
+                              -
+                                handle: level
+                                field:
+                                  options:
+                                    -
+                                      key: beginner
+                                      value: Beginner
+                                    -
+                                      key: intermediate
+                                      value: Intermediate
+                                    -
+                                      key: advanced
+                                      value: Advanced
+                                    -
+                                      key: all
+                                      value: 'All Levels'
+                                  type: select
+                                  display: Level
+                                  width: 50
+                              -
+                                handle: trainer_name
+                                field:
+                                  type: text
+                                  display: 'Trainer Name'
+                                  width: 50
+                              -
+                                handle: trainer_image
+                                field:
+                                  container: assets
+                                  max_files: 1
+                                  type: assets
+                                  display: 'Trainer Image'
+                                  width: 50
+                              -
+                                handle: booking_link
+                                field:
+                                  type: text
+                                  display: 'Booking Link'
+                                  width: 50
+                                  default: /book-class
+                              -
+                                handle: booking_title
+                                field:
+                                  type: text
+                                  display: 'Booking Title'
+                                  width: 50

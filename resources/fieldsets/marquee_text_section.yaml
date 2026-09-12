@@ -1,0 +1,28 @@
+title: 'Marquee Text Section'
+fields:
+  -
+    handle: marquee_items
+    field:
+      type: replicator
+      display: 'Marquee Items'
+      sets:
+        new_set_group:
+          display: 'New Set Group'
+          sets:
+            marquee_text:
+              display: 'Marquee Text'
+              fields:
+                -
+                  handle: text_field
+                  field:
+                    type: text
+                    display: 'Text Field'
+                    instructions: 'Example - Awaken the Power Within'
+                    instructions_position: below
+  -
+    handle: separator
+    field:
+      default: '*'
+      type: text
+      display: 'Separator Symbol'
+      instructions: 'Symbol between texts'

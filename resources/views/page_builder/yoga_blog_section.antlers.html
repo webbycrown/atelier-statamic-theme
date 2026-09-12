@@ -1,0 +1,387 @@
+{{ if show_type == "home-one" }}
+<section class="relative 2xl:mb-[100px] 1xl:mb-20 xl:mb-17 lg:mb-14 md:mb-12 sm:mb-11 mb-10 bg-white">
+    <div class="container">
+        <div
+            class="grid items-center lt:grid-cols-2 grid-cols-1 2xl:gap-10 1xl:gap-9 xl:gap-8 lg:gap-7 lt:gap-6 gap-4 2xl:mb-12.5 1xl:mb-12 xl:mb-11 lg:mb-10 md:mb-9 sm:mb-8 mb-7.5">
+            <div class="max-w-[780px]">
+                <h3 class="text-thunder-100 font-primary italic font-medium 1xl:mb-6 sm:mb-4 mb-2.5">
+                    {{ sub_title }}
+                </h3>
+                <h2 class="text-primary font-normal uppercase">
+                    {{ section_title }}
+                </h2>
+            </div>
+            <div class="max-w-[842px]">
+                <p class="text-thunder-100 max-w-[890px] 2xl:mb-10 1xl:mb-9 xl:mb-8 lg:mb-7.5 md:mb-7 sm:mb-6.5 mb-6">
+                    {{ description }}
+                </p>
+                {{ if button_text }}
+                <a href="{{ button_url }}" class="btn btn-secondary">{{ button_text }}</a>
+                {{ /if }}
+            </div>
+        </div>
+
+        <!-- Featured Post Row -->
+        <div
+            class="grid lt:grid-cols-1 sm:grid-cols-2 grid-cols-1 items-stretch 2xl:gap-12.5 1xl:gap-10 xl:gap-9 lt:gap-8 md:gap-6 gap-5">
+            <!-- 1ST BLOG -->
+            {{ blogs limit="2" }}
+            <div class="flex lt:flex-row flex-col-reverse h-full lt:justify-normal justify-end border border-primary/40 bg-white rounded group/blog"
+                data-aos="fade-up">
+                <!-- Left: Content -->
+                <div
+                    class="w-full lt:max-w-[68.5%] flex flex-col h-full 2xl:px-13.5 1xl:px-11 xl:px-9 lg:px-7 md:px-5 sm:px-4 px-3.5 2xl:py-12.5 1xl:py-10 xl:py-9 lg:py-8 md:py-7 sm:py-6 py-5">
+                    <div class="max-w-[886px] flex flex-col justify-between h-full">
+                        <div
+                            class="flex flex-wrap 2xl:gap-7.5 1xl:gap-7 xl:gap-6 lg:gap-5 md:gap-4.5 gap-2.5 2xl:mb-10.5 1xl:mb-9 xl:mb-8 lg:mb-7 md:mb-6 sm:mb-5 mb-4">
+                            {{ tag }}
+                            <p
+                                class="md:px-4.5 px-2.5 md:py-1 py-0.5 inline-block border border-primary/30 rounded-4xl text-primary">
+                                {{ title }}
+                            </p>{{ /tag }}
+                        </div>
+
+                        <h3
+                            class="text-primary hover:text-thunder-100 uppercase lt:max-w-[80%] 2xl:mb-12.5 1xl:mb-10 xl:mb-8 lg:mb-6 md:mb-5 sm:mb-4 mb-3.5">
+                            <a href="/blog/{{ slug }}" class="text-current">
+                                {{ title }}
+                            </a>
+                        </h3>
+
+                        <p
+                            class="text-thunder-100 max-w-[98%] 2xl:mb-12 1xl:mb-11 xl:mb-10 lg:mb-9 md:mb-8 sm:mb-7 mb-6">
+                            {{ short_description }}
+                        </p>
+
+                        {{ if button:label }}
+                        <a href="{{  button:url }}{{ slug }}"
+                            class="text-primary hover:text-thunder-100 hover:underline decoration-1 flex items-center gap-1 uppercase">{{
+                            button:label }}
+                            <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" viewBox="0 0 27 27"
+                                fill="none">
+                                <g clip-path="url(#clip0_3130_6904)">
+                                    <path
+                                        d="M8.37896 18.7836L19.207 7.95556M19.207 7.95556C19.4636 8.21217 19.62 8.56903 19.616 8.96328L19.5384 16.6458M19.207 7.95556C18.9504 7.69895 18.5935 7.54257 18.1993 7.54655L10.5168 7.62418"
+                                        stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </g>
+                            </svg>
+                        </a>
+                        {{ /if }}
+                    </div>
+                </div>
+
+                <!-- Right: Image -->
+                <div
+                    class="overflow-hidden block lt:max-w-[41.5%] relative shrink-0 before:content-[''] md:before:pt-[68%] before:pt-[100%] before:block w-full h-auto group">
+                    {{ image }}<img loading="lazy" decoding="async" src="{{ url }}" alt="{{ title }}"
+                        class="w-full transition-all duration-1000 h-full object-cover absolute top-0 left-0 bottom-0 right-0" />
+                    {{ /image }}
+                </div>
+            </div>
+            {{ /blogs }}
+        </div>
+    </div>
+</section>
+{{ /if }}
+
+{{ if show_type == "home-two" }}
+
+<section
+    class="relative 2xl:mb-[100px] 1xl:mb-20 xl:mb-17 lg:mb-14 md:mb-12 sm:mb-11 mb-10 bg-whitesmoke-100 2xl:py-20 1xl:py-17 lg:py-14 md:py-12 sm:py-11 py-10">
+    <div class="container">
+        <div
+            class="grid items-center md:grid-cols-2 grid-cols-1 2xl:gap-10 1xl:gap-9 xl:gap-8 lg:gap-7 md:gap-6 sm:gap-5 gap-4 2xl:mb-12.5 1xl:mb-12 xl:mb-11 lg:mb-10 md:mb-9 sm:mb-8 mb-7.5">
+            <div>
+                <h3 class="text-thunder-100 font-primary italic font-medium 1xl:mb-6 sm:mb-4 mb-2.5">
+                    {{ sub_title }}
+                </h3>
+                <h2 class="text-primary font-normal uppercase">
+                    {{ section_title }}
+                </h2>
+            </div>
+            <div class="max-w-[842px]">
+                <p class="text-thunder-100 max-w-[890px] 2xl:mb-10 1xl:mb-9 xl:mb-8 lg:mb-7.5 md:mb-7 sm:mb-6.5 mb-6">
+                    {{ description }}
+                </p>
+                {{ if button_text }}
+                <a href="{{ button_url }}" class="btn btn-secondary">{{ button_text }}</a>
+                {{ /if }}
+            </div>
+        </div>
+
+        <!-- Featured Post Row -->
+        <div class="flex lt:flex-row flex-col 1xl:gap-[50px] xl:gap-10 sm:gap-6 gap-4">
+            <!-- 1st card -->
+            {{ blogs limit="2" }}
+            <div class="rounded-sm bg-white border border-[#5C1A2E80] overflow-hidden lt:w-1/2 w-full"
+                data-aos="fade-up">
+                <div
+                    class="flex sm:flex-row flex-col justify-between 1xl:gap-[30px] xl:gap-6 sm:gap-4 gap-5 1xl:p-[30px] xl:p-5 lt:p-4 md:p-6 p-4 items-stretch h-full">
+                    <!-- Left Content -->
+                    <div class="sm:w-[55%] w-full my-auto flex flex-col items-start">
+                        <!-- Date -->
+                        <div class="flex items-center xl:gap-[10px] gap-2 1xl:mb-6 mb-4">
+                            <div
+                                class="1xl:w-[30px] 1xl:h-[30px] xl:w-[28px] xl:h-[28px] w-[26px] h-[26px] p-1 rounded-sm  flex items-center justify-center">
+                                <img src="{{ theme:asset }}assets/image/calendor.svg">
+                            </div>
+                            <span class="uppercase p2 text-black">{{ date }}</span>
+                        </div>
+
+                        <!-- Title -->
+                        <a href="/blog/{{ slug }}">
+                            <h3 class="uppercase text-primary 1xl:mb-5 xl:mb-4 mb-3 hover:text-thunder-100">
+                                {{ title }}
+                            </h3>
+                        </a>
+
+                        <!-- Description -->
+                        <p class="1xl:mb-11 xl:mb-8 mb-6">
+                            {{ short_description }}
+                        </p>
+
+                        <!-- Read More -->
+                        {{ if button:label }}
+                        <a href="{{  button:url }}{{ slug }}"
+                            class="p2 font-normal btn-link uppercase hover:text-primary text-black leading-[100%]">
+                            {{ button:label }}
+                            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13"
+                                class="sm:w-[13px] sm:h-[13px] w-[11px] h-[11px]" fill="none">
+                                <path
+                                    d="M0.750055 11.9871L11.5781 1.15908M11.5781 1.15908C11.8347 1.4157 11.9911 1.77255 11.9871 2.1668L11.9095 9.8493M11.5781 1.15908C11.3215 0.902467 10.9646 0.746093 10.5704 0.750076L2.88787 0.827704"
+                                    stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </a>{{ /if }}
+                    </div>
+
+                    <!-- Right Image -->
+                    <div class="relative lt:w-[45%] sm:w-[38%] block overflow-hidden rounded-sm">
+                        <div
+                            class="relative shrink-0 before:content-[''] before:pt-[100%] before:block h-full overflow-hidden">
+                            {{ image }}
+                            <img loading="lazy" decoding="async" src="{{ url }}" alt="{{ title }}"
+                                class="w-full h-full object-cover absolute top-0 left-0" />
+                            {{ /image }}
+                            <!-- Badge -->
+                            {{ tag limit="1" }}
+                            <p
+                                class="absolute xl:top-4 xl:right-4 top-2.5 right-2.5 bg-white text-[#6b3f2b] 1xl:px-[18px] xl:px-[14px] px-3 xl:py-[3px] py-[2px] rounded-full">
+                                {{ title }}
+                            </p>
+                            {{ /tag }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{ /blogs }}
+        </div>
+    </div>
+</section>
+{{ /if }}
+{{ if show_type == "home-three" }}
+
+<section class="relative 2xl:mb-[100px] 1xl:mb-20 xl:mb-17 lg:mb-14 md:mb-12 sm:mb-11 mb-10 bg-white">
+    <div class="container relative z-10">
+        <div class="text-center max-w-full w-full mx-auto mb-10">
+            <h3 class="font-primary italic font-medium 2xl:mb-7 1xl:mb-6 xl:mb-5 sm:mb-3 mb-2.5 text-center">
+                {{ sub_title }}
+            </h3>
+            <h2 class="text-primary uppercase 1xl:mb-5 mb-3 text-center">
+                {{ section_title }}
+            </h2>
+            <p
+                class="text-thunder-100 1xl:max-w-[40%] lg:max-w-[48%] lt:max-w-[60%] md:max-w-[75%] max-w-full w-full text-center mx-auto">
+                {{ description }}
+            </p>
+        </div>
+
+        <div class="flex lt:flex-row flex-col items-stretch xl:gap-6 lg:gap-4.5 gap-4 w-full h-auto">
+            <div class="lt:w-[59%] w-full h-auto">
+                <!-- 1st card -->
+                {{ blogs limit="1" }}
+                <div class="rounded-sm bg-whitesmoke-200 overflow-hidden w-full h-full">
+                    <div
+                        class="flex sm:flex-row flex-col justify-between 2xl:gap-[50px] 1xl:gap-[30px] xl:gap-6 sm:gap-4 gap-5 1xl:p-[30px] xl:p-6 lg:p-5 lt:p-4 md:p-6 p-4 items-stretch h-full">
+                        <!-- Left Content -->
+                        <div
+                            class="lt:w-[53%] sm:w-[56%] w-full flex flex-col items-start justify-between h-auto sm:py-4">
+                            <div class="flex flex-col items-start">
+                                <!-- Title -->
+                                <a href="/blog/{{ slug }}">
+                                    <h3 class="uppercase text-primary 1xl:mb-5 xl:mb-4 mb-3 hover:text-thunder-100">
+                                        {{ title }}
+                                    </h3>
+                                </a>
+
+                                <!-- Description -->
+                                <p class="mb-4">
+                                    {{ short_description }}
+                                </p>
+
+                                <!-- Read More -->
+                                {{ if button:label }}
+                                <a href="{{  button:url }}{{ slug }}"
+                                    class="1xl:mt-8 xl:mt-6 lt:mt-4 sm:mt-2 mt-1 p2 font-normal btn-link uppercase hover:text-primary text-black leading-[100%]">
+                                    {{ button:label }}
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13"
+                                        class="sm:w-[13px] sm:h-[13px] w-[11px] h-[11px]" fill="none">
+                                        <path
+                                            d="M0.750055 11.9871L11.5781 1.15908M11.5781 1.15908C11.8347 1.4157 11.9911 1.77255 11.9871 2.1668L11.9095 9.8493M11.5781 1.15908C11.3215 0.902467 10.9646 0.746093 10.5704 0.750076L2.88787 0.827704"
+                                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+                                </a>{{ /if }}
+                            </div>
+                            <div class="flex items-center justify-start 2xl:gap-4 md:gap-3 gap-2.5 mt-6">
+                                <div class="">
+                                    <img src="{{ theme:asset }}assets/image/calendor.svg"
+                                        class="2xl:size-7 lg:size-6 md:size-5.5 sm:size-5 size-4.5" loading="lazy"
+                                        decoding="async">
+                                </div>
+                                <p class="uppercase p2">{{ date }} </p>
+                            </div>
+                        </div>
+
+                        <!-- Right Image -->
+                        <div class="relative lt:w-[47%] sm:w-[44%] w-full h-auto rounded-sm overflow-hidden">
+                            {{ image }} <img src="{{ url }}" alt="Pilates" class="w-full h-full object-cover"
+                                loading="lazy" decoding="async" />{{ /image }}
+                        </div>
+                    </div>
+                </div>
+                {{ /blogs }}
+            </div>
+            <div class="flex lt:flex-col sm:flex-row flex-col lt:w-[41%] w-full gap-4 items-stretch h-auto">
+                <!-- 2nd card -->
+                {{ blogs offset="1" limit="3" }}
+
+                <div class="rounded-sm bg-whitesmoke-200 overflow-hidden w-full h-full">
+                    <div
+                        class="flex lt:flex-row flex-col justify-between lg:gap-4 lt:gap-3 gap-5 1xl:p-[22px] xl:p-4 lt:p-3.5 md:p-5 p-4 items-stretch h-full">
+                        <!-- Left Content -->
+                        <div
+                            class="lt:w-[70%] w-full flex flex-col items-start justify-between h-auto lt:py-[13px] lg:space-y-5 lt:space-y-4 md:space-y-6 space-y-5">
+                            <!-- Title -->
+                            <a href="/blog/{{ slug }}">
+                                <h5 class="uppercase text-primary hover:text-thunder-100">
+                                    {{ title }}
+                                </h5>
+                            </a>
+
+                            <!-- Read More -->
+                            {{ if button:label }}
+                            <a href="{{  button:url }}{{ slug }}"
+                                class="p2 font-normal btn-link uppercase hover:text-primary text-black leading-[100%]">
+                                {{ button:label }}
+                                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13"
+                                    class="sm:w-[13px] sm:h-[13px] w-[11px] h-[11px]" fill="none">
+                                    <path
+                                        d="M0.750055 11.9871L11.5781 1.15908M11.5781 1.15908C11.8347 1.4157 11.9911 1.77255 11.9871 2.1668L11.9095 9.8493M11.5781 1.15908C11.3215 0.902467 10.9646 0.746093 10.5704 0.750076L2.88787 0.827704"
+                                        stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                            </a>
+                            {{ /if }}
+                            {{ if date }}
+                            <div class="flex items-center justify-start xl:gap-3 gap-2.5">
+                                <div class="">
+                                    <img src="{{ theme:asset }}assets/image/calendor.svg"
+                                        class="1xl:size-6 lg:size-5 size-4.5" loading="lazy" decoding="async">
+                                </div>
+                                <p class="uppercase p2"> {{ date }}</p>
+                            </div>
+                            {{ /if }}
+                        </div>
+
+                        <!-- Right Image -->
+                        <div
+                            class="relative lt:w-[30%] 1xl:aspect-4/4 lt:aspect-3/4 sm:aspect-3/3 rounded-sm overflow-hidden">
+                            {{ image }}<img src="{{ url }}" alt="Pilates" class="w-full h-full object-cover" loading="lazy"
+                                decoding="async" />{{ /image }}
+                        </div>
+                    </div>
+                </div>
+
+                {{ /blogs }}
+
+
+            </div>
+        </div>
+        {{ if button_text }}
+        <a href="{{ button_url }}" class="btn btn-secondary 1xl:mt-[50px] lg:mt-[38px] md:mt-8 sm:mt-7 mt-6 mx-auto">{{
+            button_text }}</a>
+        {{ /if }}
+    </div>
+</section>
+{{ /if }}
+
+{{ if show_type == "home-four" }}
+
+<section
+    class="relative bg-whitesmoke-100 2xl:mb-[100px] 1xl:mb-20 xl:mb-17 lg:mb-14 md:mb-12 sm:mb-11 mb-10 2xl:py-20 1xl:py-17 lg:py-14 md:py-12 sm:py-11 py-9 overflow-hidden">
+    <div class="container">
+        <div
+            class="text-center 2xl:max-w-[63%] xl:max-w-[70%] lt:max-w-[80%] max-w-full w-full mx-auto 1xl:mb-10 lt:mb-8 md:mb-7 mb-6.5">
+            <h3 class="font-primary italic font-medium 2xl:mb-7 1xl:mb-6 xl:mb-5 sm:mb-3 mb-2.5 text-center">
+                {{ sub_title }}
+            </h3>
+            <h2 class="text-primary uppercase 1xl:mb-5 mb-3 text-center">
+                {{ section_title }}
+            </h2>
+            <p>
+                {{ description }}
+            </p>
+        </div>
+
+        <div class="grid lt:grid-cols-3 sm:grid-cols-2 grid-cols-1 1xl:gap-6 xl:gap-5 lt:gap-4 md:gap-6 gap-5">
+            <!-- 1st card -->
+            {{ blogs limit="3" }}
+            <div class="bg-white rounded-sm overflow-hidden h-full flex flex-col" data-aos="fade-up">
+                <!-- Image Wrapper -->
+                <div
+                    class="overflow-hidden block relative shrink-0 before:content-[''] md:before:pt-[57%] sm:before:pt-[65%] before:pt-[100%] before:block w-full h-auto group">
+                    {{ image }} <img src="{{ image }}" alt="Personalized Classes" class="w-full h-full object-cover absolute top-0 left-0"
+                        loading="lazy" decoding="async" />{{ /image }}
+                </div>
+
+                <!-- Content -->
+                <div class="1xl:py-[30px] xl:py-5 sm:py-4 sm:px-5 p-4 text-left flex flex-col h-full">
+                    <div>
+                        <!-- Title -->
+                        <a href="/blog/{{ slug }}">
+                            <h5
+                                class="uppercase text-primary hover:text-black 1xl:mb-3.5 mb-2.5 xl:max-w-[87%] lt:max-w-full md:max-w-[97%] w-full">
+                                {{ title }}
+                            </h5>
+                        </a>
+                        <!-- Description -->
+                        <p class="1xl:mb-6 xl:mb-5 mb-4 xl:max-w-[95%] w-full">
+                            {{ short_description }}
+                        </p>
+                    </div>
+                    <div class="flex items-center justify-between w-full flex-wrap gap-3 mt-auto">
+                        <div class="flex items-center lg:gap-3 gap-2">
+                            <img src="{{ theme:asset }}assets/image/calendor.svg"
+                                class="2xl:size-7.5 1xl:size-6.5 lt:size-5.5 size-5">
+                            <p class="uppercase p2">{{ date }}</p>
+                        </div>
+                        {{ if button:label }}
+                        <a href="{{  button:url }}{{ slug }}"
+                            class="btn btn-secondary md:text-13 text-[10px] xl:py-2 xl:px-5 py-1.5 md:px-4.5 px-4">{{
+                            button:label }}</a>
+                        {{ /if }}
+                    </div>
+                </div>
+            </div>
+            {{ /blogs }}
+
+        </div>
+        {{ if button_text }}
+        <a href="{{ button_url }}" class="btn btn-secondary 2xl:mt-[50px] 1xl:mt-11 md:mt-9 mt-7 mx-auto">
+            {{ button_text }}
+        </a>{{ /if }}
+    </div>
+</section>
+{{ /if }}

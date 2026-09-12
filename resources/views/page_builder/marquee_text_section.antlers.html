@@ -1,0 +1,16 @@
+<section
+            class="relative 2xl:mb-[100px] 1xl:mb-20 xl:mb-17 lg:mb-14 md:mb-12 sm:mb-11 mb-10 w-full bg-white border-t border-b border-primary/20 overflow-hidden 2xl:py-6 1xl:py-5 xl:py-4.5 lg:py-4 md:py-3.5 sm:py-3 py-2.5">
+            <div class="marquee-track animate-marquee">
+                <div
+                    class="marquee whitespace-nowrap min-w-max 2xl:gap-10 1xl:gap-9 xl:gap-8 lg:gap-6 sm:gap-4 gap-2.5">
+                    {{ marquee_items }}
+                    <span
+                        class="2xl:text-25 1xl:text-24 xl:text-22 lg:text-20 md:text-18 sm:text-16 text-14 2xl:leading-[75px] 1xl:leading-[70px] xl:leading-[60px] lg:leading-[48px] md:leading-[36px] sm:leading-[28px] leading-[20px] uppercase text-primary italic font-secondary font-normal">
+                        “{{ text_field }}”
+                    </span>
+                    <span
+                        class="2xl:text-55 1xl:text-54 xl:text-52 lg:text-48 md:text-42 sm:text-38 text-34 2xl:leading-[35px] 1xl:leading-[35px] xl:leading-[35px] lg:leading-[34px] md:leading-[32px] sm:leading-[30px] leading-[28px] text-primary uppercase font-secondary font-normal w-4 h-4">{{ separator }}</span>
+                        {{ /marquee_items }}
+                </div>
+            </div>
+        </section>

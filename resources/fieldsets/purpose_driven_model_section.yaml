@@ -1,0 +1,46 @@
+title: 'Purpose Driven Model Section'
+fields:
+  -
+    handle: section_image
+    field:
+      container: assets
+      max_files: 3
+      type: assets
+      display: 'Section Image'
+  -
+    handle: small_heading
+    field:
+      type: text
+      display: 'Small Heading'
+  -
+    handle: main_heading
+    field:
+      type: text
+      display: 'Main Heading'
+  -
+    handle: description_one
+    field:
+      type: textarea
+      display: 'Description One'
+  -
+    handle: description_two
+    field:
+      type: textarea
+      display: 'Description Two'
+  -
+    handle: highlight_icon
+    field:
+      container: assets
+      max_files: 1
+      type: assets
+      display: 'Highlight Icon'
+  -
+    handle: highlight_title
+    field:
+      type: text
+      display: 'Highlight Title'
+  -
+    handle: highlight_description
+    field:
+      type: textarea
+      display: 'Highlight Description'

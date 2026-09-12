@@ -1,0 +1,22 @@
+<section class="relative 1xl:pt-44 xl:pt-40 lg:pt-36 md:pt-32 sm:pt-28 pt-24 2xl:mb-[100px] mb-16">
+    <div class="container grid lg:grid-cols-2 gap-10">
+        <div>
+            <h1 class="uppercase text-primary mb-6">Checkout</h1>
+            <form class="yoga-checkout-form space-y-4" action="/thank-you" method="get">
+                <input class="type-filed w-full" name="full_name" placeholder="Full name" required>
+                <input class="type-filed w-full" type="email" name="email" placeholder="Email" required>
+                <input class="type-filed w-full" name="address" placeholder="Street address" required>
+                <input class="type-filed w-full" name="city" placeholder="City" required>
+                <label class="flex items-center gap-2"><input type="checkbox" id="different-address"> Ship to a different address</label>
+                <div class="shipping-detail hidden space-y-4">
+                    <input class="type-filed w-full" name="ship_address" placeholder="Shipping address">
+                </div>
+                <button type="submit" class="btn btn-secondary">Place order</button>
+            </form>
+        </div>
+        <div>
+            <h3 class="uppercase text-primary mb-4">Order summary</h3>
+            <div id="yoga-checkout-summary"></div>
+        </div>
+    </div>
+</section>

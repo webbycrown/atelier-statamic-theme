@@ -1,0 +1,253 @@
+<section
+    class="relative lg:min-h-screen lt:min-h-[90vh] sm:min-h-[78vh] min-[340px]:min-h-[80vh] min-h-screen flex items-center 2xl:mb-[100px] 1xl:mb-20 xl:mb-17 lg:mb-14 md:mb-12 sm:mb-11 mb-10">
+    <!-- Container -->
+    <div class="container mx-auto z-1 relative w-full px-4">
+        <div
+            class="flex lt:flex-row flex-col lt:items-center items-start justify-between w-full z-1 relative xl:pt-18 lt:pt-14 sm:pt-19 pt-15 sm:pb-7 pb-5 lt:gap-10 gap-7">
+            <!-- Left Content -->
+            <div class="w-full 2xl:max-w-[840px] 1xl:max-w-[750px] max-w-full">
+                <!-- Offer Badge -->
+                {{ if offer_badge_text }}
+                <h3 class="text-white font-primary italic font-medium xl:mb-7.5 lg:mb-6 md:mb-5 sm:mb-4 mb-2.5">
+                    {{ offer_badge_text }}
+                </h3>
+                {{ /if }}
+
+                <!-- Main Heading -->
+                {{ if heading }}
+                <h1 class="text-white font-normal uppercase md:mb-5 mb-3.5">
+                    {{ heading }}
+                </h1>
+                {{ /if }}
+
+                <!-- Description -->
+                {{ if description }}
+                <p
+                    class="font-primary font-normal text-white 1xl:max-w-[65%] lg:max-w-[80%] sm:max-w-[90%] max-w-[380px] w-full 2xl:mb-12 1xl:mb-10 xl:mb-8 lg:mb-7 mb-6">
+                    {{ description }}
+                </p>
+                {{ /if }}
+
+                <!-- CTA Button -->
+                {{ if button_text }}
+                <a href="{{ button_url }}" class="btn btn-secondary">{{ button_text }}</a>
+                {{ /if }}
+            </div>
+
+            <div
+                class="2xl:max-w-[690px] 1xl:max-w-[636px] xl:max-w-[535px] lt:max-w-[518px] w-full ml-auto mr-0 lg:space-y-6 space-y-4">
+                <!-- Card 1: Bring a Friend -->
+                {{ offer_cards limit="1" }}
+                <div
+                    class="bg-white rounded-[10px] shadow-xl 1xl:p-[30px] xl:p-7 lg:p-5.5 p-4 relative overflow-hidden lt:w-full md:w-[70%] sm:w-[81%] w-full">
+                    {{ card_background_image }}<img src="{{ url }}" alt="banner"
+                        class="w-full h-full object-cover opacity-10 absolute top-0 left-0 pointer-events-none"
+                        loading="eager" fetchpriority="high" />{{ /card_background_image }}
+                    <!-- Discount Badge -->
+                    <div
+                        class="absolute 1xl:top-0 1xl:right-0 lg:-top-2 lg:-right-2 lt:-top-3 lt:-right-3 -top-4 -right-4">
+                        <div class="relative">
+                            <img src="{{ theme:asset }}assets/image/percentage-back-1.png" alt="precentage"
+                                class="w-full h-full object-cover" />
+                            <div
+                                class="absolute 1xl:left-5 1xl:bottom-5 lt:left-4 lt:bottom-4 left-2 bottom-2 inset-0 flex flex-col items-center justify-center ">
+                                {{ if discount_text }}
+                                <p class="text-center text-white">{{ discount_text }}
+                                </p>
+                                {{ /if }}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        {{ if card_title }}
+                        <h3
+                            class="uppercase text-primary sm:max-w-[80%] max-w-[75%] 1xl:mb-[17px] sm:mb-3 mb-2 max-[530px]:text-sm ">
+                            {{ card_title }}
+                        </h3>
+                        {{ /if }}
+
+                        {{ if card_description }}
+                        <p
+                            class="1xl:mb-[21px] lg:mb-[18px] max-[530px]:mb-2 mb-[15px] 1xl:max-w-[95%] lt:max-w-full sm:max-w-[90%] max-w-[85%] w-full max-[530px]:text-[11px]">
+                            {{ card_description }}
+                        </p>
+                        {{ /if }}
+
+                        <ul
+                            class="flex flex-wrap max-[530px]:flex-col min-[530px]:items-center w-full min-[530px]:gap-3 gap-0 list-disc 1xl:mb-7 lg:mb-5 max-[530px]:mb-3.5 mb-2">
+                            {{ if valid_for }}
+                            <li class="font-medium text-thunder-100 uppercase ml-4">
+                                <p class="max-[530px]:text-[11px]">
+                                    Valid For:<span class="text-primary normal-case">
+                                        {{ valid_for }}</span>
+                                </p>
+                            </li>
+                            {{ /if }}
+                            {{ if expires }}
+                            <li class="font-medium text-thunder-100 uppercase ml-4">
+                                <p class="max-[530px]:text-[11px]">
+                                    Expires:<span class="text-primary normal-case">
+                                        {{ expires }}</span>
+                                </p>
+                            </li>
+                            {{ /if }}
+                        </ul>
+
+                        <div
+                            class="flex flex-col min-[530px]:flex-row min-[530px]:items-end items-start justify-between min-[530px]:gap-4 gap-2">
+                            {{ if button_text }}
+                            <a href="{{ button_url }}"
+                                class="btn btn-secondary flex items-center justify-between gap-[17px] bg-white">
+                                {{ button_text }}
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14"
+                                    fill="none">
+                                    <path
+                                        d="M1.00003 12.6234C1.00003 12.6234 8.97683 4.64654 12.2993 1.32401M12.2993 1.32401L12.624 9.83157M12.2993 1.32401L3.79115 0.999894"
+                                        stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                            </a>
+                            {{ /if }}
+                            {{ if coupon_code }}
+                            <div class="bg-primary text-white px-4 py-2 rounded-full text-[11px] uppercase">
+                                Coupon Code: {{coupon_code }}
+                            </div>
+                            {{ /if }}
+                        </div>
+                    </div>
+                </div>
+                {{ /offer_cards }}
+                <!-- Card 2: Personal Yoga Trainer -->
+                {{ offer_cards offset="1" limit="2" }}
+                <div
+                    class="bg-white rounded-[10px] 1xl:p-[30px] xl:p-7 lg:p-5.5 p-4 relative overflow-hidden lt:w-full md:w-[70%] sm:w-[81%] w-full">
+                    {{ card_background_image }}<img src="{{ url }}" alt="banner"
+                        class="w-full h-full object-cover opacity-10 absolute top-0 left-0 pointer-events-none" />{{
+                    /card_background_image }}
+
+                    <!-- Discount Badge -->
+                    <div class="absolute top-0 left-auto 1xl:right-0 -right-7 h-full pointer-events-none">
+                        <div class="relative h-full pointer-events-none">
+                            <img src="{{ theme:asset }}assets/image/percentage-back-banner-2.png" alt="percentage"
+                                class="w-full h-full ml-auto mr-0 opacity-10 pointer-events-none" />
+                            <div
+                                class="absolute inset-0 1xl:right-3 right-9 left-auto flex flex-row items-center gap-2 justify-center">
+                                {{ if discount_text }}
+                                <div class="flex flex-col items-end gap-[10px]">
+                                    <h3 class="font-medium italic text-primary font-primary 2xl:text-37">
+                                        {{ discount_text }}
+                                    </h3>
+                                    <h6 class="font-primary vertical-text">Discount</h6>
+                                </div>
+                                {{ /if }}
+                                <p class="p2 2xl:text-16 text-thunder-100 vertical-text pb-20">
+                                    First 100 Student
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="w-full">
+                        {{ if card_title }}
+                        <h3 class="text-primary uppercase 1xl:mb-5 lg:mb-4 min-[530px]:mb-2 mb-1 max-[530px]:text-sm">
+                            {{ card_title }}
+                        </h3>
+                        {{ /if }}
+
+                        {{ if trainer_name }}
+                        <div
+                            class="flex max-[530px]:items-center items-start justify-start gap-2 min-[530px]:mb-2.5 mb-1.5">
+                            <img src="{{ theme:asset }}assets/image/bag.png" alt="bag"
+                                class="1xl:w-auto lg:w-5.5 max-[530px]:w-4 w-5 h-auto 1xl:mt-[2px]" />
+                            <h5 class="text-primary uppercase max-[530px]:text-sm">
+                                TRAINER NAME:
+                                <span class="text-thunder-100">
+                                    {{ trainer_name }}</span>
+                            </h5>
+                        </div>
+                        {{ /if }}
+
+                        <div>
+                            {{ if card_description }}
+                            <div
+                                class="flex items-start 1xl:mb-5 lg:mb-3 min-[530px]:mb-2 mb-1 gap-2.5 lg:w-full lt:w-1/2 w-full max-[530px]:w-[58%]">
+                                <div
+                                    class="size-[5px] 2xl:mt-4 1xl:mt-3.5 lt:mt-3 mt-2.5 bg-primary rounded-full shrink-0">
+                                </div>
+                                <p class="text-primary font-medium max-[530px]:text-[11px]">
+                                    {{ card_description }}
+                                </p>
+                            </div>
+                            {{ /if }}
+                            <ul
+                                class="min-[530px]:flex flex-wrap items-center w-full lg:gap-12 min-[530px]:gap-6 gap-0 list-disc min-[530px]:mb-2 max-[530px]:w-[80%]">
+                                {{ if valid_for }}
+                                <li class="font-medium text-thunder-100 uppercase ml-4">
+                                    <p class="max-[530px]:text-[11px]">
+                                        Valid For:
+                                        <span class="text-primary normal-case">{{ valid_for }}</span>
+                                    </p>
+                                </li>
+                                {{ /if }}
+                                {{ if expires }}
+                                <li class="font-medium text-thunder-100 uppercase ml-4">
+                                    <p class="max-[530px]:text-[11px]">
+                                        Expires:<span class="text-primary normal-case">
+                                            {{ expires }}</span>
+                                    </p>
+                                </li>
+                                {{ /if }}
+                            </ul>
+                            {{ if terms }}
+                            <ul class="w-full list-disc min-[530px]:mb-[18px] mb-4">
+                                <li class="font-medium text-thunder-100 uppercase ml-4">
+                                    <p class="max-[530px]:text-[11px]">
+                                        Terms:<span class="text-primary normal-case">
+                                            {{ terms }}</span>
+                                    </p>
+                                </li>
+                            </ul>
+                            {{ /if }}
+                        </div>
+
+                        <div
+                            class="flex flex-col min-[530px]:flex-row min-[530px]:items-end items-start justify-between min-[530px]:gap-4 gap-2">
+                            {{ if button_text }}
+                            <a href="{{ button_url }}"
+                                class="btn btn-secondary flex items-center justify-between gap-[17px] bg-white">
+                                {{ button_text }}
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14"
+                                    fill="none">
+                                    <path
+                                        d="M1.00003 12.6234C1.00003 12.6234 8.97683 4.64654 12.2993 1.32401M12.2993 1.32401L12.624 9.83157M12.2993 1.32401L3.79115 0.999894"
+                                        stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                            </a>
+                            {{ /if }}
+                            {{ if coupon_code }}
+                            <div class="bg-primary text-white px-4 py-2 rounded-full text-[11px] uppercase">
+                                Coupon Code: {{ coupon_code }}
+                            </div>
+                            {{ /if }}
+                        </div>
+                    </div>
+                </div>
+                {{ /offer_cards }}
+            </div>
+        </div>
+    </div>
+
+    <!-- center Image -->
+    <div class="absolute right-0 top-0 w-full h-full flex flex-col">
+        <!-- Image -->
+        {{ background_image }} <img src="{{ url }}" alt="Hero Images"
+            class="absolute inset-0 w-full h-full object-cover" />{{ /background_image }}
+
+        <!-- Gradient Overlay -->
+        <div
+            class="absolute inset-0 bg-linear-to-br from-[#532D1C] to-black/0 backdrop-blur-[19px] pointer-events-none">
+        </div>
+    </div>
+</section>

@@ -1,0 +1,247 @@
+title: 'All Page Builder'
+fields:
+  -
+    handle: page_builder
+    field:
+      collapse: true
+      type: replicator
+      display: 'Page Builder'
+      sets:
+        new_set_group:
+          display: 'New Set Group'
+          sets:
+            social_section:
+              display: 'Social Section'
+              fields:
+                -
+                  import: social_section
+            section_header:
+              display: 'Section Header'
+              fields:
+                -
+                  import: section_header
+            faq_section:
+              display: 'Faq Section'
+              fields:
+                -
+                  import: faq_section
+            privacy_policy_section:
+              display: 'Privacy Policy Section'
+              fields:
+                -
+                  import: privacy_policy_section
+            terms_conditions_section:
+              display: 'Terms & Conditions Section'
+              fields:
+                -
+                  import: terms_conditions_section
+            class_schedule_section:
+              display: 'Class Schedule Section'
+              fields:
+                -
+                  import: class_schedule_section
+            key_highlights_section:
+              display: 'Key Highlights Section'
+              fields:
+                -
+                  import: key_highlights_section
+            class_schedule_faqs:
+              display: 'Class Schedule FAQs'
+              fields:
+                -
+                  import: class_schedule_faqs
+            book_class_section:
+              display: 'Book Class Section'
+              fields:
+                -
+                  import: book_class_section
+            contact_details_section:
+              display: 'Contact Details Section'
+              fields:
+                -
+                  import: contact_details_section
+            testimonials_section:
+              display: 'Testimonials Section'
+              fields:
+                -
+                  import: testimonials_section
+            team_section:
+              display: 'Team Section'
+              fields:
+                -
+                  import: team_section
+            retreats_section:
+              display: 'Retreats Section'
+              fields:
+                -
+                  import: retreats_section
+            events_section:
+              display: 'Events Section'
+              fields:
+                -
+                  import: events_section
+            classes_section:
+              display: 'Classes Section'
+              fields:
+                -
+                  import: classes_section
+            class_testimonials:
+              display: 'Class Testimonials'
+              fields:
+                -
+                  import: class_testimonials
+            blog_section:
+              display: 'Blog Section'
+              fields:
+                -
+                  import: blog_section
+            podcast_introduction:
+              display: 'Podcast Introduction'
+              fields:
+                -
+                  import: podcast_introduction
+            podcast_listen_section:
+              display: 'Podcast Listen Section'
+              fields:
+                -
+                  import: podcast_listen_section
+            podcast_past_section:
+              display: 'Podcast Past Section'
+              fields:
+                -
+                  import: podcast_past_section
+            instagram_section:
+              display: 'Instagram Section'
+              fields:
+                -
+                  import: instagram_section
+            journey_section:
+              display: 'Journey Section'
+              fields:
+                -
+                  import: journey_section
+            purpose_driven_model_section:
+              display: 'Purpose Driven Model Section'
+              fields:
+                -
+                  import: purpose_driven_model_section
+            core_values_section:
+              display: 'Core Values Section'
+              fields:
+                -
+                  import: core_values_section
+            about_content_section:
+              display: 'About Content Section'
+              fields:
+                -
+                  import: about_content_section
+            meet_the_instructors:
+              display: 'Meet the Instructors'
+              fields:
+                -
+                  import: meet_the_instructors
+            hero_section:
+              display: 'Hero Section'
+              fields:
+                -
+                  import: hero_section
+            hero_slider_section:
+              display: 'Hero Slider Section'
+              fields:
+                -
+                  import: hero_slider_section
+            hero_offer_section:
+              display: 'Hero Offer Section'
+              fields:
+                -
+                  import: hero_offer_section
+            hero_class_slider:
+              display: 'Hero Class Slider'
+              fields:
+                -
+                  import: hero_class_slider
+            marquee_text_section:
+              display: 'Marquee Text Section'
+              fields:
+                -
+                  import: marquee_text_section
+            about_pranavya_yoga:
+              display: 'About Pranavya Yoga'
+              fields:
+                -
+                  import: about_pranavya_yoga
+            our_philosophy:
+              display: 'Our Philosophy'
+              fields:
+                -
+                  import: our_philosophy
+            about_studio_section:
+              display: 'About Studio Section'
+              fields:
+                -
+                  import: about_studio_section
+            about_yoga_section:
+              display: 'About Yoga Section'
+              fields:
+                -
+                  import: about_yoga_section
+            featured_classes:
+              display: 'Featured Classes'
+              fields:
+                -
+                  import: featured_classes
+            highlights_strip:
+              display: 'Highlights Strip'
+              fields:
+                -
+                  import: highlights_strip
+            why_choose_us_section:
+              display: 'Why Choose Us Section'
+              fields:
+                -
+                  import: why_choose_us_section
+            yoga_highlight_section:
+              display: 'Yoga Highlight Section'
+              fields:
+                -
+                  import: yoga_highlight_section
+            weekly_schedule_section:
+              display: 'Weekly Schedule Section'
+              fields:
+                -
+                  import: weekly_schedule_section
+            client_testimonials:
+              display: 'Client Testimonials'
+              fields:
+                -
+                  import: client_testimonials
+            yoga_blog_section:
+              display: 'Yoga Blog Section'
+              fields:
+                -
+                  import: yoga_blog_section
+            newsletter_section:
+              display: 'Newsletter Section'
+              fields:
+                -
+                  import: newsletter_section
+            contact_section:
+              display: 'Contact Section'
+              fields:
+                -
+                  import: contact_section
+            pricing_plans:
+              display: 'Pricing Plans'
+              fields:
+                -
+                  import: pricing_plans
+            membership_benefits:
+              display: 'Membership Benefits'
+              fields:
+                -
+                  import: membership_benefits
+            membership_faqs:
+              display: 'Membership FAQs'
+              fields:
+                -
+                  import: membership_faqs

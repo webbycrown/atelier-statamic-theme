@@ -1,0 +1,13 @@
+{
+  "name": "webbycrown/atelier-statamic-theme",
+  "type": "statamic-starter-kit",
+  "description": "A Statamic starter kit for fashion studios, featuring editorial looks, named directors, and a bookable call sheet.",
+  "require": {
+    "statamic/cms": "*"
+  },
+  "extra": {
+    "statamic": {
+      "starter-kit": true
+    }
+  }
+}

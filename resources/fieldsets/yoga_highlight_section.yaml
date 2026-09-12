@@ -1,0 +1,63 @@
+title: 'Yoga Highlight Section'
+fields:
+  -
+    handle: show_type
+    field:
+      options:
+        -
+          key: home-one
+          value: 'Home One Page'
+        -
+          key: home-two
+          value: 'Home Two Page'
+        -
+          key: home-three
+          value: 'Home Three Page'
+        -
+          key: home-four
+          value: 'Home Four Page'
+      type: select
+      display: 'Show Type'
+      validate:
+        - required
+  -
+    handle: background_image
+    field:
+      container: assets
+      max_files: 1
+      type: assets
+      display: 'Background Image'
+  -
+    handle: video_url
+    field:
+      container: assets
+      max_files: 1
+      type: assets
+      display: 'Video URL'
+  -
+    handle: sub_title
+    field:
+      type: text
+      display: 'Sub Title'
+  -
+    handle: section_title
+    field:
+      type: text
+      display: 'Section Title'
+  -
+    handle: description
+    field:
+      type: textarea
+      display: Description
+  -
+    handle: button_text
+    field:
+      type: text
+      display: 'Button Text'
+      width: 50
+  -
+    handle: button_url
+    field:
+      type: text
+      display: 'Button URL'
+      width: 50

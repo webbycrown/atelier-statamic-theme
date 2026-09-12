@@ -1,0 +1,57 @@
+title: Comment
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              display: Title
+              validate:
+                - required
+          -
+            handle: first_name
+            field:
+              type: text
+              display: 'First Name'
+          -
+            handle: last_name
+            field:
+              type: text
+              display: 'Last Name'
+          -
+            handle: email
+            field:
+              type: text
+              display: Email
+          -
+            handle: comment
+            field:
+              type: textarea
+              display: Comment
+          -
+            handle: image
+            field:
+              container: assets
+              max_files: 1
+              type: assets
+              display: Image
+          -
+            handle: post_id
+            field:
+              type: entries
+              collections:
+                - blogs
+              max_items: 1
+              display: 'Post ID'
+          -
+            handle: parent_id
+            field:
+              type: entries
+              collections:
+                - comments
+              max_items: 1
+              display: 'Parent ID'

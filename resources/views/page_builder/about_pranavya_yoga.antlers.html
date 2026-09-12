@@ -1,0 +1,56 @@
+ <section class="relative bg-white 2xl:mb-[100px] 1xl:mb-20 xl:mb-17 lg:mb-14 md:mb-12 sm:mb-11 mb-10">
+            <!-- Decorative Flower -->
+            <div
+                class="pointer-events-none absolute top-0 left-auto right-[85px] max-[2600px]:w-[clamp(12.5%,11.2vw,25%)] opacity-20 hidden md:block">
+                <img src="{{ theme:asset }}assets/image/flower-shape.svg" alt="decor" class="w-full h-full object-contain" />
+            </div>
+
+            <div class="container">
+                <div
+                    class="flex lg:items-center items-start md:flex-row flex-col 2xl:gap-16 1xl:gap-14 xl:gap-12 lg:gap-11 md:gap-9 sm:gap-7 gap-5">
+                    <!-- Left: Image -->
+                    <div class="w-full 1xl:max-w-[748px] max-w-[560px] md:sticky md:top-24">
+                        <div
+                            class="rounded overflow-hidden relative before:content-[''] before:block 1xl:before:pt-[98%] xl:before:pt-[106%] md:before:pt-[122%] before:pt-[100%] w-full">
+                            {{ about_image }}<img loading="lazy" decoding="async" src="{{ url }}" alt="About Image"
+                                class="absolute top-0 left-0 w-full h-full object-cover" />{{ /about_image }}
+                        </div>
+                    </div>
+
+                    <!-- Right: Content -->
+                    <div class="w-full">
+                        <h3
+                            class="text-thunder-100 font-primary italic font-medium 1xl:mb-7 lg:mb-6 md:mb-5 sm:mb-4 mb-2.5">
+                           {{ small_title }}
+                        </h3>
+                        <h2 class="text-primary font-normal uppercase 1xl:mb-5 mb-3">
+                           {{ main_title }}
+                        </h2>
+                        <p class="text-thunder-100 max-w-[890px]">
+                            {{ description }}
+                        </p>
+
+                        <!-- Bullets -->
+                        <ul
+                            class="2xl:mt-9 1xl:mt-8.5 xl:mt-8 lg:mt-7 md:mt-6 sm:mt-5 mt-4 2xl:gap-7.5 1xl:gap-4 sm:gap-3 gap-3 grid xl:grid-cols-2 grid-cols-1">
+                            {{ bullet_points }}
+                            <ul class="flex items-center md:gap-2.5 gap-2">
+                                <span class="shrink-0 whitespace-nowrap 1xl:w-7.5 xl:w-7 lg:w-6 md:w-5 w-4 h-full">
+                                    <img src="{{ theme:asset }}assets/image/bullets-point.svg" alt="Bullets Point" />
+                                </span>
+                                <p class="text-primary font-medium p2">
+                                   {{ text }}
+                                </p>
+                            </ul>
+                            {{ /bullet_points }}
+                        </ul>
+
+                        {{ if button_text }}
+                        <div class="2xl:mt-11.5 1xl:mt-11 xl:mt-10 lg:mt-9 md:mt-8 sm:mt-7 mt-6">
+                            <a href="{{ button_url }}" class="btn btn-secondary">{{ button_text }}</a>
+                        </div>
+                        {{ /if }}
+                    </div>
+                </div>
+            </div>
+        </section>

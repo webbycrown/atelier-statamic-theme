@@ -1,0 +1,53 @@
+title: 'Featured Classes'
+fields:
+  -
+    handle: show_type
+    field:
+      options:
+        -
+          key: home-one
+          value: 'Home One Page'
+        -
+          key: home-two
+          value: 'Home Two Page'
+        -
+          key: home-three
+          value: 'Home Three Page'
+        -
+          key: home-four
+          value: 'Home Four Page'
+      type: select
+      display: 'Show Type'
+  -
+    handle: section_heading
+    field:
+      type: text
+      display: 'Section Heading'
+  -
+    handle: section_title
+    field:
+      type: text
+      display: 'Section Title'
+  -
+    handle: section_description
+    field:
+      type: textarea
+      display: 'Section Description'
+  -
+    handle: button_text
+    field:
+      type: text
+      display: 'Button Text'
+  -
+    handle: button_url
+    field:
+      type: text
+      display: 'Button URL'
+  -
+    handle: classes
+    field:
+      collections:
+        - classes
+      mode: select
+      type: entries
+      display: Classes

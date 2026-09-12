@@ -1,0 +1,36 @@
+title: Product
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              display: Title
+              validate:
+                - required
+          -
+            handle: price
+            field:
+              type: text
+              display: Price
+          -
+            handle: stock
+            field:
+              type: text
+              display: Stock
+          -
+            handle: image
+            field:
+              type: assets
+              container: assets
+              max_files: 1
+              display: Image
+          -
+            handle: description
+            field:
+              type: textarea
+              display: Description

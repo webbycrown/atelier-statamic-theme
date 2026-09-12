@@ -1,0 +1,21 @@
+<!-- ====== Start Page Heading ====== -->
+<section
+    class="relative 1xl:pt-20 xl:pt-17 lg:pt-14 md:pt-12 sm:pt-11 pt-10 xl:mb-20 lg:mb-16 md:mb-12 sm:mb-11 mb-10 bg-whitesmoke-100">
+    <div class="container relative">
+        <div class="flex flex-col items-center justify-center lt:max-w-[73%] md:max-w-[90%] max-w-full w-full text-center mx-auto space-y-2.5 1xl:pt-20 xl:pt-17 lg:pt-14 md:pt-12 sm:pt-8 pt-3 pb-10
+        {{ setting }}{{ if header_select == 'header-two' }} pt-0 {{ else }} mt-10 {{ /if }}{{ /setting }}">
+            <h1 class="uppercase text-primary text-center" data-aos="fade-up">{{ section_title }}</h1>
+            <p data-aos="fade-up" class="lg:max-w-[85%] w-full">
+                {{ description }}
+            </p>
+        </div>
+
+        <!-- Decorative Flower -->
+        <div
+            class="pointer-events-none absolute top-0 left-auto right-0 lg:w-[14.2%] w-[18%] hidden md:block opacity-30">
+            <img decoding="async" src="{{ theme:asset }}assets/image/flower-shape.svg" alt="decor"
+                class="w-full h-full object-contain" />
+        </div>
+    </div>
+</section>
+<!-- ====== End Page Heading ====== -->

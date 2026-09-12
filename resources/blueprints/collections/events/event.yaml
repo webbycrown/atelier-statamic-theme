@@ -1,0 +1,306 @@
+title: Event
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              validate:
+                - required
+              display: Title
+          -
+            handle: shot_description
+            field:
+              type: textarea
+              display: 'Shot Description'
+          -
+            handle: featured_image
+            field:
+              container: assets
+              max_files: 1
+              type: assets
+              display: 'Featured Image'
+          -
+            handle: event_video
+            field:
+              container: assets
+              max_files: 1
+              type: assets
+              display: 'Event Video'
+          -
+            handle: video_poster_image
+            field:
+              container: assets
+              max_files: 1
+              type: assets
+              display: 'Video Poster Image'
+          -
+            handle: event_time
+            field:
+              type: text
+              display: 'Event Time'
+          -
+            handle: event_date
+            field:
+              type: text
+              display: 'Event Date'
+          -
+            handle: event_location
+            field:
+              type: text
+              display: 'Event Location'
+          -
+            handle: event_price
+            field:
+              type: text
+              display: 'Event Price'
+              instructions: $234
+          -
+            handle: about_event
+            field:
+              type: group
+              display: 'About Event'
+              fields:
+                -
+                  handle: about_section_heading
+                  field:
+                    type: text
+                    display: 'About Section Heading'
+                -
+                  handle: about_description
+                  field:
+                    type: textarea
+                    display: 'About Description'
+          -
+            handle: number_of_participants
+            field:
+              type: text
+              display: 'Number of Participants'
+          -
+            handle: program_highlights
+            field:
+              type: group
+              display: 'Program Highlights'
+              fields:
+                -
+                  handle: section_title
+                  field:
+                    default: 'Program Highlights'
+                    type: text
+                    display: 'Section Title'
+                -
+                  handle: highlights
+                  field:
+                    type: replicator
+                    display: Highlights
+                    sets:
+                      new_set_group:
+                        display: 'New Set Group'
+                        sets:
+                          highlight_item:
+                            display: 'Highlight Item'
+                            fields:
+                              -
+                                handle: title
+                                field:
+                                  type: text
+                                  display: 'Highlight Title'
+                              -
+                                handle: description
+                                field:
+                                  type: textarea
+                                  display: 'Highlight Description'
+                -
+                  handle: highlight_side_image
+                  field:
+                    container: assets
+                    max_files: 1
+                    type: assets
+                    display: 'Highlight Side Image'
+          -
+            handle: participant_feedback
+            field:
+              type: group
+              display: 'Participant Feedback'
+              fields:
+                -
+                  handle: feedback_entries
+                  field:
+                    type: replicator
+                    display: 'Feedback Entries'
+                    sets:
+                      new_set_group:
+                        display: 'New Set Group'
+                        sets:
+                          feedback_item:
+                            display: 'Feedback Item'
+                            fields:
+                              -
+                                handle: quote
+                                field:
+                                  type: textarea
+                                  display: Quote
+                              -
+                                handle: author_name
+                                field:
+                                  type: text
+                                  display: 'Author Name'
+                              -
+                                handle: author_designation
+                                field:
+                                  type: textarea
+                                  display: 'Author Designation'
+                -
+                  handle: feedback_label
+                  field:
+                    default: 'Participant Feedback'
+                    type: text
+                    display: 'Participant Feedback Label'
+          -
+            handle: event_organization
+            field:
+              type: group
+              display: 'Event Organization'
+              fields:
+                -
+                  handle: event_title
+                  field:
+                    default: 'Event Anchoring & Organization'
+                    type: text
+                    display: 'Event Title'
+                -
+                  handle: events
+                  field:
+                    type: replicator
+                    display: Events
+                    sets:
+                      new_set_group:
+                        display: 'New Set Group'
+                        sets:
+                          new_set:
+                            display: 'New Set'
+                            fields:
+                              -
+                                handle: sub_title
+                                field:
+                                  type: text
+                                  display: 'Sub Title'
+                              -
+                                handle: host_name
+                                field:
+                                  type: text
+                                  display: 'Host Name'
+                              -
+                                handle: host_title
+                                field:
+                                  type: text
+                                  display: 'Host Title'
+                              -
+                                handle: host_description
+                                field:
+                                  type: textarea
+                                  display: 'Host Description'
+          -
+            handle: support_team_label
+            field:
+              default: 'Support Team'
+              type: text
+              display: 'Support Team Label'
+          -
+            handle: support_team
+            field:
+              type: group
+              display: 'Support Team'
+              fields:
+                -
+                  handle: support_members
+                  field:
+                    type: replicator
+                    display: 'Support Members'
+                    sets:
+                      new_set_group:
+                        display: 'New Set Group'
+                        sets:
+                          member:
+                            display: Member
+                            fields:
+                              -
+                                handle: name
+                                field:
+                                  type: text
+                                  display: Name
+                              -
+                                handle: role
+                                field:
+                                  type: text
+                                  display: Role
+          -
+            handle: participant_experience_label
+            field:
+              default: 'Participant Experience'
+              type: text
+              display: 'Participant Experience Label'
+          -
+            handle: participant_experience
+            field:
+              type: textarea
+              display: 'Participant Experience'
+          -
+            handle: takeaways_label
+            field:
+              default: 'Key Takeaways'
+              type: text
+              display: 'Takeaways  Label'
+          -
+            handle: takeaways_list
+            field:
+              type: list
+              display: 'Takeaways List'
+          -
+            handle: closing_note
+            field:
+              type: textarea
+              display: 'Closing Note'
+          -
+            handle: buttons
+            field:
+              type: group
+              display: Buttons
+              fields:
+                -
+                  handle: label
+                  field:
+                    default: 'Book Now'
+                    type: text
+                    display: Label
+                -
+                  handle: url
+                  field:
+                    default: /contact-us
+                    type: text
+                    display: url
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'
+          -
+            handle: category
+            field:
+              taxonomies:
+                - event_category
+              mode: select
+              max_items: 1
+              type: terms
+              display: Category

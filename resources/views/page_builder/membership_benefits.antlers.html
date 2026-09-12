@@ -1,0 +1,64 @@
+<section
+            class="relative 2xl:mb-[100px] 1xl:mb-20 xl:mb-17 lg:mb-14 md:mb-12 sm:mb-11 mb-10 w-full 2xl:py-20 1xl:py-17 lg:py-14 md:py-12 sm:py-11 py-10 bg-whitesmoke-100">
+            <div class="container">
+                <div
+                    class="text-center 2xl:max-w-[75%] lg:max-w-[80%] lt:max-w-[90% ] max-w-full w-full mx-auto 1xl:mb-10 lt:mb-8 md:mb-7 mb-6.5">
+                    <h3 class="font-primary italic font-medium 2xl:mb-7 1xl:mb-6 xl:mb-5 sm:mb-3 mb-2.5 text-center">
+                        {{ section_title }}
+                    </h3>
+                    <h2 class="text-primary uppercase 1xl:mb-5 mb-3 text-center">
+                        {{ sub_title }}
+                    </h2>
+                    <p>
+                        {{ description }}
+                    </p>
+                </div>
+
+                <div class="relative 2xl:mt-[50px] 1xl:mt-11 xl:mt-9 mt-7.5 join-membership">
+                    <div class="1xl:px-6 sm:px-5 sm:m-0 mb-6">
+                        <div class="swiper membership-step">
+                            <div class="swiper-wrapper">
+                                <!-- 1st slide -->
+                                {{ membership_benefits }}
+                                <div class="swiper-slide h-auto! bg-white">
+                                    <div class="2xl:p-[33px] 1xl:p-[30px] sm:p-6 p-4 rounded-sm h-full">
+                                        <div
+                                            class="bg-whitesmoke-100 border border-primary/15 overflow-hidden rounded-[10px] 2xl:w-[84px] 2xl:h-[84px] 1xl:w-[80px] 1xl:h-[80px] md:w-[70px] md:h-[70px] sm:h-[65px] sm:w-[65px] w-[60px] h-[60px] 1xl:mb-10 md:mb-8 sm:mb-6 mb-4 1xl:p-4 p-3.5">
+                                           {{ if icon }} <img src="{{ icon:url }}" alt="group pilates" class="w-hull h-full" />{{ /if }}
+                                        </div>
+                                        <h5 class="uppercase text-primary 1xl:mb-5 mb-3">
+                                            {{ title }}
+                                        </h5>
+                                        <p>
+                                           {{ description }}
+                                        </p>
+                                    </div>
+                                </div>
+                                {{ /membership_benefits }}
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="relative sm:absolute sm:top-1/2 top-0 sm:-translate-y-1/2 sm:w-full w-[84px] flex items-center justify-between mx-auto z-1">
+                        <div class="slider-custom-arrow swiper-button-prev">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="18" viewBox="0 0 22 18"
+                                fill="none" class="swiper-navigation-icon">
+                                <path
+                                    d="M20.9741 8.80684C20.9741 8.80684 6.87288 8.80675 0.999486 8.80669M0.999486 8.80669L8.23218 16.6134M0.999486 8.80669L8.23321 1"
+                                    fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <div class="slider-custom-arrow swiper-button-next">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="18" viewBox="0 0 22 18"
+                                fill="none" class="swiper-navigation-icon">
+                                <path
+                                    d="M20.9741 8.80684C20.9741 8.80684 6.87288 8.80675 0.999486 8.80669M0.999486 8.80669L8.23218 16.6134M0.999486 8.80669L8.23321 1"
+                                    fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>

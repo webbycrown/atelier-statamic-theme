@@ -1,0 +1,50 @@
+title: 'About Content Section'
+fields:
+  -
+    handle: small_heading
+    field:
+      type: text
+      display: 'Small Heading'
+  -
+    handle: main_heading
+    field:
+      type: text
+      display: 'Main Heading'
+  -
+    handle: description
+    field:
+      container: assets
+      remove_empty_nodes: false
+      type: bard
+      display: Description
+  -
+    handle: section_image
+    field:
+      container: assets
+      max_files: 1
+      type: assets
+      display: 'Section Image'
+  -
+    handle: mission_small_heading
+    field:
+      type: text
+      display: 'Mission Small Heading'
+  -
+    handle: mission_heading
+    field:
+      type: text
+      display: 'Mission Heading'
+  -
+    handle: mission_description
+    field:
+      container: assets
+      remove_empty_nodes: false
+      type: bard
+      display: 'Mission Description'
+  -
+    handle: mission_image
+    field:
+      container: assets
+      max_files: 1
+      type: assets
+      display: 'Mission Image'

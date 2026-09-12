@@ -1,0 +1,19 @@
+title: 'Highlights Strip'
+fields:
+  -
+    handle: highlights
+    field:
+      type: replicator
+      display: Highlights
+      sets:
+        new_set_group:
+          display: 'New Set Group'
+          sets:
+            new_set:
+              display: 'New Set'
+              fields:
+                -
+                  handle: highlight_text
+                  field:
+                    type: text
+                    display: 'Highlight Text'

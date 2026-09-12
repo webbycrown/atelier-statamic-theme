@@ -1,0 +1,30 @@
+title: 'Podcast Introduction'
+fields:
+  -
+    handle: label
+    field:
+      type: text
+      display: Label
+      instructions: 'e.g. Our Podcast'
+  -
+    handle: main_heading
+    field:
+      type: text
+      display: 'Main heading'
+  -
+    handle: description_one
+    field:
+      type: textarea
+      display: 'Description Paragraph 1'
+  -
+    handle: description_two
+    field:
+      type: textarea
+      display: 'Description Paragraph 2'
+  -
+    handle: podcast_image
+    field:
+      container: assets
+      max_files: 1
+      type: assets
+      display: 'Podcast Image'

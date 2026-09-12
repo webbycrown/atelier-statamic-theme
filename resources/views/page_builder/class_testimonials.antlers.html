@@ -1,0 +1,96 @@
+ <section
+            class="relative 2xl:mb-[100px] 1xl:mb-20 xl:mb-17 lg:mb-14 md:mb-12 sm:mb-11 mb-10 2xl:py-20 1xl:py-17 lg:py-14 md:py-12 sm:py-11 py-10 bg-whitesmoke-100">
+            <div class="container">
+                <div
+                    class="items-center 2xl:flex grid lt:grid-cols-2 grid-cols-1 2xl:gap-17 1xl:gap-15 xl:gap-13 lg:gap-11 md:gap-9 sm:gap-7 gap-5">
+                    <!-- Image Slider -->
+                    <div class="w-full max-w-[712px]">
+                        <div class="testimonials-image-swiper swiper">
+                            <div class="swiper-wrapper">
+                                {{ testimonials }}
+                                <div class="swiper-slide">
+                                    <div
+                                        class="rounded overflow-hidden relative before:content-[''] before:block 2xl:before:pt-[88%] lg:before:pt-[95%] lt:before:pt-[100%] md:before:pt-[80%] sm:before:pt-[70%] before:pt-[88%]">
+                                         {{ author_image }}<img decoding="async" src="{{ url }}" alt="client"
+                                            class="absolute left-0 top-0 w-full h-full object-cover" />{{ /author_image }}
+                                    </div>
+                                </div>
+                                {{ /testimonials }}
+                               
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Content Slider -->
+                    <div class="w-full max-w-[970px]">
+                        <div class="testimonials-content-swiper swiper">
+                            <div class="swiper-wrapper">
+                                <!-- Slide 1 -->
+                                 {{ testimonials }}
+                                <div class="swiper-slide">
+                                    <div>
+                                        <div class="1xl:mb-[30px] xl:mb-5 sm:mb-4 mb-[10px]">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="75" height="60"
+                                                viewBox="0 0 75 60" fill="none"
+                                                class="1xl:w-[75px] 1xl:h-[60px] xl:w-[70px] xl:h-[55px] sm:w-[60px] sm:h-[45px] w-[36px] h-[30px]">
+                                                <path
+                                                    d="M37.8328 60L54.7614 33.2459C50.0023 32.9836 46.1271 31.2131 43.1357 27.9344C40.1443 24.7869 38.6486 20.9836 38.6486 16.5246C38.6486 11.8033 40.3483 7.86886 43.7476 4.72132C47.0109 1.57378 51.2261 9.39302e-06 56.3931 9.84749e-06C61.424 1.029e-05 65.7072 1.57378 69.2425 4.72132C72.7778 7.86886 74.5454 12.1312 74.5454 17.5082C74.5454 20.3934 73.7976 23.6066 72.3019 27.1475C70.8062 30.6885 68.4266 34.8853 65.1633 39.7377C61.764 44.7213 57.4128 50.7541 52.1099 57.8361L50.4782 60L37.8328 60ZM-4.57764e-05 60L16.7246 33.2459C12.1015 32.9836 8.29429 31.2131 5.30289 27.9344C2.17551 24.7869 0.611835 20.9836 0.611835 16.5246C0.611836 11.8033 2.31149 7.86886 5.71081 4.72132C9.11013 1.57378 13.3253 6.05942e-06 18.3563 6.50193e-06C23.5232 6.95639e-06 27.8744 1.57378 31.4097 4.72132C34.809 7.86886 36.5086 12.1311 36.5086 17.5082C36.5086 20.3934 35.7608 23.6066 34.2651 27.1475C32.7694 30.6885 30.3899 34.8853 27.1265 39.7377C23.8632 44.7213 19.512 50.7541 14.0731 57.8361L12.6454 60L-4.57764e-05 60Z"
+                                                    fill="#5C1A2E" fill-opacity="0.1" />
+                                            </svg>
+                                        </div>
+                                        <h3 class="font-primary italic font-medium 1xl:mb-7.5 xl:mb-5 sm:mb-4 mb-2.5">
+                                            {{ title }}
+                                        </h3>
+                                        <h2 class="text-primary font-normal uppercase mb-4">
+                                          {{ sub_title }}
+                                        </h2>
+
+                                        <p
+                                            class="font-primary font-medium text-thunder-100 max-w-[872px] 2xl:mb-[30px] xl:mb-6 mb-4">
+                                            " {{ content }}"
+                                        </p>
+                                        <div
+                                            class="flex items-start justify-between 2xl:mb-11 1xl:mb-10 xl:mb-[30px] md:mb-6 mb-5">
+                                            <div
+                                                class="flex items-center gap-1 text-yellow-100 2xl:text-27 1xl:text-25 xl:text-24 lg:text-23 md:text-22 sm:text-21 mb-text-20">
+                                                {{ loop from="0" to="5" }}
+                                                <i class="{{ if index <= (rating) }}fa-solid{{ else }}fa-regular{{ /if }} fa-star xl:w-[30px] xl:h-[27px] lg:w-7 lg:h-[25px] w-6 h-[22px]"></i>
+                                                    {{ /loop }}
+                                                
+                                            </div>
+                                        </div>
+
+                                        <div class="1xl:pt-7.5 lg:pt-6 pt-5 border-t border-primary/15">
+                                            <h3 class="text-primary uppercase">{{ author_name }}</h3>
+                                            <p>– {{ author_role }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                {{ /testimonials }}
+                            </div>
+
+                            <!-- Navigation -->
+                            <div
+                                class="lt:absolute lt:bottom-3 lt:right-0 lt:mt-0 min-[1221px]:mt-0 sm:mt-6 mt-5 flex items-center w-fit 2xl:gap-6 lg::gap-5 sm:gap-4 gap-3">
+                                <button class="swiper-button-prev testimonials-prev testimonial-custom-arrow">
+                                    <svg width="23" height="19" viewBox="0 0 23 19" fill="none">
+                                        <path
+                                            d="M21.7964 9.50655C21.7964 9.50655 7.69514 9.50646 1.82175 9.50639M1.82175 9.50639L9.05445 17.3131M1.82175 9.50639L9.05547 1.69971"
+                                            stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+                                </button>
+                                <button class="swiper-button-next testimonials-next testimonial-custom-arrow">
+                                    <svg width="23" height="19" viewBox="0 0 23 19" fill="none">
+                                        <path
+                                            d="M1.35647 9.50655C1.35647 9.50655 15.4577 9.50646 21.3311 9.50639M21.3311 9.50639L14.0984 17.3131M21.3311 9.50639L14.0974 1.69971"
+                                            stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>

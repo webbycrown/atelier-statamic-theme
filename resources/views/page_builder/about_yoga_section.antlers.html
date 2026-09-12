@@ -1,0 +1,58 @@
+ <section class="relative bg-white 2xl:mb-[100px] 1xl:mb-20 xl:mb-17 lg:mb-14 md:mb-12 sm:mb-11 mb-10">
+            <div class="container">
+                <div
+                    class="grid lt:grid-cols-2 grid-cols-1 items-center 2xl:gap-[135px] 1xl:gap-[80px] lg:gap-[50px] gap-[30px]">
+                    <!-- Right: Content -->
+                    <div class="w-full">
+                        <h3
+                            class="text-thunder-100 font-primary italic font-medium 1xl:mb-[30px] xl:mb-6 md:mb-[18px] sm:mb-4 mb-2.5">
+                           {{ sub_title }}
+                        </h3>
+                        <h2 class="text-primary font-normal uppercase 1xl:mb-[25px] mb-3">
+                            {{ main_title }}
+                        </h2>
+                        {{ if description_one }}
+                        <p class="text-thunder-100 xl:mb-5 mb-4">
+                            {{ description_one }}
+                        </p>
+                        {{ /if }}
+                        {{ if description_two }}
+                        <p class="font-medium">
+                            {{ description_two }}
+                        </p>
+                        {{ /if }}
+
+                        <!-- Bullets -->
+                        <ul
+                            class="1xl:mt-7 sm:mt-5 mt-4 flex flex-col items-start justify-center 2xl:gap-5 1xl:gap-4 gap-3">
+                            {{ bullet_points }}
+                            <li class="flex items-center md:gap-[11px] gap-2">
+                                <span class="shrink-0 whitespace-nowrap 1xl:w-7.5 xl:w-7 lg:w-6 md:w-5 w-4 h-full">
+                                    <img src="{{ theme:asset }}assets/image/bullets-point.svg" alt="Bullets Point" />
+                                </span>
+                                <p class="text-primary font-medium p2">
+                                    {{ value }}
+                                </p>
+                            </li>
+                            {{ /bullet_points }}
+                        </ul>
+
+                        {{ if button_text }}
+                        <div class="2xl:mt-11 1xl:mt-10 md:mt-8 sm:mt-7 mt-5">
+                            <a href="{{ button_url }}" class="btn btn-secondary">{{ button_text }}</a>
+                        </div>
+                        {{ /if }}
+                    </div>
+
+                    <!-- Left: Image -->
+                    <div class="w-full">
+                        <div
+                            class="overflow-hidden relative before:content-[''] before:block 2xl:before:pt-[96%] xl:before:pt-[100%] lg:before:pt-[116%] lt:before:pt-[125%] sm:before:pt-[65%] before:pt-[89%] w-full">
+                            {{ image }}<img src="{{ url }}" alt="About Image"
+                                class="absolute top-0 left-0 w-full h-full object-cover" loading="lazy" decoding="async"
+                                loading="lazy" decoding="async" />{{ /image }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>

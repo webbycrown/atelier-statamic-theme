@@ -1,0 +1,186 @@
+<section class="relative 2xl:py-25 1xl:py-20 xl:py-17 lg:py-14 md:py-12 sm:py-6 pt-6 pb-4{{ setting }}{{ if header_select == 'header-two' }} pt-0 {{ else }} md:mt-16 sm:mt-18 mt-13 {{ /if }}{{ /setting }}">
+    <div class="container relative">
+        <h1 class="uppercase text-primary text-center">{{ page_title }}</h1>
+    </div>
+</section>
+<!-- ====== End Page Heading ====== -->
+
+<section class="relative 2xl:mb-[100px] 1xl:mb-20 xl:mb-17 lg:mb-14 md:mb-12 sm:mb-11 mb-10">
+    <div class="container">
+        <div
+            class="flex items-center flex-col lt:flex-row gap-10 lg:gap-16 bg-whitesmoke-100 2xl:p-20 xl:p-15 lg:p-12 md:p-8 sm:p-7 p-4.5 rounded-lg w-full">
+            <!-- Left Column -->
+            <div class="w-full lg:w-2/5">
+                <h3 class="text-primary uppercase lg:mb-4 mb-2">{{ section_title }}</h3>
+                <p class="md:mb-9 mb-6">
+                    {{ description }}
+                </p>
+                <div class="xl:space-y-6 space-y-4.5">
+                    <!-- Address -->
+                    <div class="flex items-start gap-2.5 xl:pb-6 pb-4.5 border-b border-primary/20">
+                        <div class="mt-0.5">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 50 50"
+                                fill="none" class="2xl:size-9 xl:size-8 lt:size-7.5 md:size-7 size-6.5">
+                                <path
+                                    d="M21.0729 45.4402C22.3354 46.4819 23.6521 47.434 25 48.3632C26.3508 47.4463 27.6611 46.4711 28.9271 45.4402C31.0375 43.7074 33.0236 41.8284 34.8708 39.8173C39.1292 35.1611 43.75 28.4111 43.75 20.834C43.75 18.3717 43.265 15.9335 42.3227 13.6587C41.3805 11.3838 39.9993 9.31683 38.2583 7.57573C36.5172 5.83463 34.4502 4.45352 32.1753 3.51124C29.9005 2.56897 27.4623 2.08398 25 2.08398C22.5377 2.08398 20.0995 2.56897 17.8247 3.51124C15.5498 4.45352 13.4828 5.83463 11.7417 7.57573C10.0006 9.31683 8.61953 11.3838 7.67726 13.6587C6.73498 15.9335 6.25 18.3717 6.25 20.834C6.25 28.4111 10.8708 35.159 15.1292 39.8173C16.9763 41.8292 18.9624 43.7067 21.0729 45.4402ZM25 27.6048C23.2043 27.6048 21.4821 26.8915 20.2123 25.6217C18.9425 24.3519 18.2292 22.6297 18.2292 20.834C18.2292 19.0382 18.9425 17.3161 20.2123 16.0463C21.4821 14.7765 23.2043 14.0632 25 14.0632C26.7957 14.0632 28.5179 14.7765 29.7877 16.0463C31.0575 17.3161 31.7708 19.0382 31.7708 20.834C31.7708 22.6297 31.0575 24.3519 29.7877 25.6217C28.5179 26.8915 26.7957 27.6048 25 27.6048Z"
+                                    fill="#5C1A2E" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h5 class="uppercase text-primary mb-1">{{ address_title }}</h5>
+                            <p class="font-medium">{{ address }}</p>
+                        </div>
+                    </div>
+
+                    <!-- Phone -->
+                    <div class="flex items-start gap-2.5 xl:pb-6 pb-4.5 border-b border-primary/20">
+                        <div class="mt-0.5">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="35" height="33" viewBox="0 0 35 33"
+                                fill="none" class="2xl:size-9 xl:size-8 lt:size-7.5 md:size-7 size-6.5">
+                                <path
+                                    d="M31.2015 22.4924L25.0764 19.7736C24.8147 19.6581 24.5239 19.6338 24.2477 19.7043C23.9716 19.7748 23.725 19.9363 23.5451 20.1645L20.8326 23.5969C16.5755 21.5181 13.1495 17.9697 11.1423 13.5606L14.4564 10.7512C14.6772 10.5652 14.8335 10.3098 14.9015 10.0237C14.9696 9.73748 14.9458 9.43613 14.8338 9.16522L12.2087 2.82136C12.0857 2.52932 11.8682 2.29088 11.5937 2.14715C11.3191 2.00342 11.0048 1.96342 10.7048 2.03404L5.01721 3.39344C4.728 3.46261 4.46996 3.63126 4.28522 3.87188C4.10048 4.1125 3.99993 4.41086 4 4.71828C4 19.2469 15.3697 31 29.3754 31C29.6724 31.0002 29.9606 30.8961 30.193 30.7048C30.4254 30.5134 30.5883 30.2461 30.6551 29.9465L31.9677 24.0557C32.0354 23.7435 31.996 23.4166 31.8561 23.1313C31.7163 22.846 31.4848 22.6201 31.2015 22.4924Z"
+                                    fill="#5C1A2E" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h5 class="uppercase text-primary mb-1">{{ phone_title }}</h5>
+                            <p class="font-medium">{{ phone_number }}</p>
+                        </div>
+                    </div>
+
+                    <!-- Email -->
+                    <div class="flex items-start gap-2.5 xl:pb-6 pb-4.5 border-b border-primary/20">
+                        <div class="mt-0.5">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 35 35"
+                                fill="none" class="2xl:size-9 xl:size-8 lt:size-7.5 md:size-7 size-6.5">
+                                <path
+                                    d="M29.0469 11.4327L17.3802 18.7244L5.71354 11.4327V8.51603L17.3802 15.8077L29.0469 8.51603M29.0469 5.59937H5.71354C4.09479 5.59937 2.79688 6.89728 2.79688 8.51603V26.016C2.79688 26.7896 3.10417 27.5314 3.65115 28.0784C4.19813 28.6254 4.93999 28.9327 5.71354 28.9327H29.0469C29.8204 28.9327 30.5623 28.6254 31.1093 28.0784C31.6563 27.5314 31.9635 26.7896 31.9635 26.016V8.51603C31.9635 7.74248 31.6563 7.00062 31.1093 6.45364C30.5623 5.90666 29.8204 5.59937 29.0469 5.59937Z"
+                                    fill="#5C1A2E" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h5 class="uppercase text-primary mb-1">
+                                {{ email_title }}</h5>
+                            <p class="font-medium">{{ email_address }}</p>
+                        </div>
+                    </div>
+
+                    <!-- Studio Hours -->
+                    <div class="flex items-start gap-2.5 xl:pb-6 pb-4.5 border-b border-primary/20">
+                        <div class="mt-0.5">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 35 35"
+                                fill="none" class="2xl:size-9 xl:size-8 lt:size-7.5 md:size-7 size-6.5">
+                                <g clip-path="url(#clip0_7937_11024)">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M34.4525 17.4996C34.4525 22.0276 32.6891 26.2847 29.4871 29.4867C26.2845 32.6894 22.0274 34.4531 17.5 34.4531C16.9337 34.4531 16.4746 33.994 16.4746 33.4277C16.4746 32.8614 16.9337 32.4023 17.5 32.4023C21.4796 32.4023 25.2217 30.8519 28.037 28.0366C33.847 22.2265 33.847 12.7728 28.037 6.96265C22.2263 1.15203 12.7717 1.1521 6.9611 6.96265C6.91653 7.00722 6.87271 7.05247 6.82869 7.09766H8.12335C8.68964 7.09766 9.14874 7.55676 9.14874 8.12305C9.14874 8.68934 8.68964 9.14844 8.12335 9.14844H4.3506C3.78431 9.14844 3.3252 8.68934 3.3252 8.12305V4.35029C3.3252 3.784 3.78431 3.3249 4.3506 3.3249C4.91688 3.3249 5.37599 3.784 5.37599 4.35029V5.65015C5.4209 5.60421 5.46554 5.55793 5.51093 5.51254C8.71302 2.31059 12.9704 0.547119 17.4991 0.547119C22.0278 0.547119 26.2851 2.31052 29.4872 5.51254C32.6892 8.71456 34.4526 12.9716 34.4526 17.4996H34.4525ZM6.83833 17.4996C6.83833 11.6207 11.6212 6.83796 17.5 6.83796C23.3788 6.83796 28.1617 11.6207 28.1617 17.4996C28.1617 23.3785 23.3789 28.1613 17.5 28.1613C11.6211 28.1613 6.83833 23.3785 6.83833 17.4996ZM16.4746 17.4996C16.4746 17.8659 16.67 18.2044 16.9872 18.3875L20.4595 20.3931C20.6151 20.4832 20.7917 20.5307 20.9714 20.5307C21.3257 20.5307 21.6704 20.3468 21.8603 20.018C22.1435 19.5276 21.9756 18.9004 21.4852 18.6172L18.5254 16.9078V12.0895C18.5254 11.5232 18.0663 11.0641 17.5 11.0641C16.9337 11.0641 16.4746 11.5232 16.4746 12.0895V17.4997V17.4996ZM2.59697 17.4996C2.59697 16.9357 2.13773 16.4746 1.57192 16.4746C1.00611 16.4746 0.546875 16.9357 0.546875 17.4996C0.546875 18.0635 1.00803 18.5247 1.57192 18.5247C2.13582 18.5247 2.59697 18.0635 2.59697 17.4996ZM13.642 31.893C13.0955 31.7477 12.5336 32.0713 12.3864 32.6197C12.241 33.1662 12.5647 33.7281 13.1111 33.8753C13.6594 34.0207 14.2213 33.697 14.3667 33.1487C14.5139 32.6022 14.1904 32.0403 13.642 31.893ZM10.0494 30.4049C9.55725 30.1219 8.93136 30.2906 8.64849 30.7808C8.36555 31.271 8.53221 31.8988 9.02248 32.1817C9.51275 32.4646 10.1406 32.296 10.4234 31.8058C10.7064 31.3155 10.5397 30.6877 10.0494 30.4049ZM5.51134 28.037C5.11219 28.4381 5.11219 29.0872 5.51134 29.4864C5.91247 29.8875 6.56161 29.8875 6.96268 29.4864C7.36183 29.0872 7.36183 28.4381 6.96268 28.037C6.56154 27.6358 5.9124 27.6358 5.51134 28.037ZM3.19382 24.5762C2.70354 24.8591 2.53497 25.485 2.81791 25.9752C3.10078 26.4655 3.72866 26.6341 4.21887 26.3511C4.70914 26.0683 4.87771 25.4404 4.59478 24.9502C4.3119 24.4599 3.68402 24.2913 3.19382 24.5762ZM3.10468 21.3557C2.95935 20.8092 2.39743 20.4857 1.84905 20.631C1.30259 20.7783 0.977061 21.3403 1.12431 21.8867C1.27155 22.435 1.83354 22.7587 2.37993 22.6133C2.9264 22.4661 3.25199 21.9041 3.10468 21.3557ZM1.84905 14.3683C2.39743 14.5136 2.95935 14.19 3.10468 13.6436C3.25192 13.0952 2.9264 12.5333 2.38 12.386C1.83354 12.2407 1.27162 12.5643 1.12437 13.1127C0.977129 13.6591 1.30266 14.221 1.84912 14.3683H1.84905Z"
+                                        fill="#5C1A2E" />
+                                </g>
+                            </svg>
+                        </div>
+                        <div>
+                            <h5 class="uppercase text-primary mb-1">{{ studio_hours_title }}</h5>
+                            <div class="space-y-1">
+                                {{ studio_hours }}
+                                <p class="font-medium">{{ day }} {{ time }}</p>
+                                {{ /studio_hours }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column - Form Card -->
+            <div class="w-full lg:w-3/5 bg-white rounded-lg 1xl:p-10 lg:p-9 sm:p-7.5 p-4.5">
+                <h3 class="text-primary uppercase 2xl:mb-12.5 lg:mb-9 md:mb-5.5 mb-4.5">{{ form_title }}</h3>
+
+
+
+                {{ form:contact_us id="contact-form" class="book-class-form" novalidate }}
+                <!-- full name -->
+                {{ fields }}
+                {{ if handle == "full_name" }}
+                <div>
+                    <label class="block p lg:mb-2.5 mb-2">{{ display }} {{ if validate }}
+                        {{ if validate contains="required" }}*{{ /if }}
+                        {{ /if }}</label>
+                    <input type="text" name="{{ handle }}" value="{{ old }}"
+                        placeholder="{{ placeholder ?? 'Enter Your Name' }}"
+                        class="w-full type-filed p2 placeholder:text-thunder-100/35 bg-white border-primary/20! focus:border-primary">
+                    <div class="error-msg text-red-600 text-sm mt-1 field-error text-danger"
+                        data-error-for="{{ handle }}">{{ error }}</div>
+                </div>
+                {{ /if }}
+                {{ /fields }}
+                <div class="grid grid-cols-1 md:grid-cols-2 1xl:gap-6 xl:gap-4.5 gap-3.5">
+                    <!-- email -->
+                    {{ fields }}
+                    {{ if handle == "email"|| handle == "phone_number" }}
+
+                    <div>
+                        <label class="block p lg:mb-2.5 mb-2">{{ display }} {{ if validate }}
+                            {{ if validate contains="required" }}*{{ /if }}
+                            {{ /if }}</label>
+                        <input type="{{ type }}" name="{{ handle }}" value="{{ old }}"
+                            placeholder="{{ placeholder ?? 'Enter Your Email' }}"
+                            class="w-full type-filed p2 placeholder:text-thunder-100/35 bg-white border-primary/20! focus:border-primary">
+                        <div class="error-msg text-red-600 text-sm mt-1 field-error text-danger"
+                            data-error-for="{{ handle }}">{{ error }}</div>
+                    </div>
+                    {{ /if }}
+                    {{ /fields }}
+                    <!-- Phone Number -->
+                </div>
+                {{ fields }}
+                {{ if handle == "comment" }}
+                <div class="flex flex-col items-start sm:col-span-2 col-span-1">
+                    <label class="p xl:mb-2.5 mb-1.5">{{ display }} {{ if validate }}
+                        {{ if validate contains="required" }}*{{ /if }}
+                        {{ /if }}</label>
+                    <textarea name="{{ handle }}" placeholder="{{ placeholder ?? 'Comment' }}"
+                        class="p2 1xl:h-15 lg:h-12.5 h-10.5 placeholder:text-thunder-100/35 text-thunder-100 w-full rounded-full border border-primary/20 1xl:px-6 px-4 1xl:py-3 lg:py-2.5 py-1.5 outline-none focus:border-primary bg-white">{{ old }}</textarea>
+                    <div class="error-msg text-red-600 text-sm mt-1 field-error text-danger"
+                        data-error-for="{{ handle }}">{{ error }}</div>
+                </div>
+                {{ /if }}
+                {{ /fields }}
+
+                <!-- Consent & Terms -->
+                <div>
+                    <h3
+                        class="uppercase text-primary xl:pb-5 lg:pb-4.5 pb-3.5 1xl:mb-7.5 lg:mb-5 md:mb-4 mb-3 border-b border-whitesmoke-100">
+                        {{ consent_section_title }}</h3>
+                    {{ fields }}
+                    <div class="xl:space-y-4 space-y-3">
+                        {{ if handle == "information" or handle == "condition" }}
+                        {{ if type == "checkboxes" }}
+                        <div class="flex flex-col gap-1">
+                            <div class="flex items-center gap-2.5">
+                                <input type="checkbox" id="{{ handle }}" name="{{ handle }}"
+                                    class="accent-primary cursor-pointer 1xl:size-7 xl:size-6 lg:size-6 sm:size-5 size-4.5 shrink-0" />
+                                <label for="{{ handle }}" class="p2 cursor-pointer">
+                                    {{ display }}
+                                </label>
+                            </div>
+                            <div class="error-msg text-red-600 text-sm mt-1 field-error text-danger"
+                                data-error-for="{{ handle }}">{{ error }}</div>
+                        </div>
+
+                        {{ /if }}
+                        {{ /if }}
+                    </div>
+                    {{ /fields }}
+                </div>
+
+
+                <!-- Footer Row -->
+                {{ if submit_button_text }}
+                <div class="1xl:mt-15.5 lg:mt-13.5 md:mt-11 mt-8">
+                    <button type="submit" class="btn btn-primary">{{ submit_button_text }}</button>
+                </div>
+                <div id="form-response" class="mt-2"></div>
+                {{ /if }}
+                {{ /form:contact_us }}
+            </div>
+        </div>
+    </div>
+</section>

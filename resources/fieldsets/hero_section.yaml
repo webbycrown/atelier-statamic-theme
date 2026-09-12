@@ -1,0 +1,34 @@
+title: 'Hero Section'
+fields:
+  -
+    handle: hero_image
+    field:
+      container: assets
+      max_files: 1
+      type: assets
+      display: 'Hero Image'
+  -
+    handle: offer_badge_text
+    field:
+      type: text
+      display: 'Offer Badge Text'
+  -
+    handle: main_heading
+    field:
+      type: text
+      display: 'Main Heading'
+  -
+    handle: description
+    field:
+      type: textarea
+      display: Description
+  -
+    handle: button_text
+    field:
+      type: text
+      display: 'Button Text'
+  -
+    handle: button_url
+    field:
+      type: text
+      display: 'Button URL'

@@ -1,0 +1,10 @@
+title: 'Class Testimonials'
+fields:
+  -
+    handle: testimonials
+    field:
+      collections:
+        - testimonials
+      mode: select
+      type: entries
+      display: Testimonials

@@ -1,0 +1,35 @@
+title: 'Podcast Past Section'
+fields:
+  -
+    handle: section_title
+    field:
+      type: text
+      display: 'Section Title'
+  -
+    handle: sub_title
+    field:
+      type: text
+      display: 'Sub Title'
+  -
+    handle: description
+    field:
+      type: textarea
+      display: Description
+  -
+    handle: collections
+    field:
+      mode: select
+      max_items: 1
+      type: collections
+      display: Collections
+  -
+    handle: limit
+    field:
+      type: integer
+      display: Limit
+  -
+    handle: pagination
+    field:
+      default: 'false'
+      type: text
+      display: Pagination

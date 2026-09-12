@@ -1,0 +1,478 @@
+<section class="relative bg-white 2xl:mb-[100px] 1xl:mb-20 xl:mb-17 lg:mb-14 md:mb-12 sm:mb-11 mb-10">
+    <div class="container">
+        <div
+            class="flex justify-between md:flex-row flex-col 2xl:gap-16 1xl:gap-14 lg:gap-10 md:gap-8 sm:gap-7.5 gap-5 items-start">
+            <!-- Right: Content -->
+            <div
+                class="md:sticky relative lg:top-24 md:top-20 top-0 w-full lt:max-w-[46.5%] rounded-sm overflow-hidden 2xl:max-h-[824px] 1xl:max-h-[630px] lg:max-h-[680px] md:max-h-[600px]">
+                {{ image }}<img src="{{ url }}" alt="book-class" class="w-full h-full object-cover" />{{ /image }}
+                <div
+                    class="absolute top-0 left-0 bg-linear-to-t from-primary to-transparent w-full h-full flex items-start justify-end flex-col 2xl:px-20 1xl:px-13 xl:px-9 lt:px-8 px-5 2xl:pb-31 1xl:pb-28 xl:pb-22 lt:pb-17 pb-10 1xl:gap-5 sm:gap-4 gap-2.5">
+                    <h2 class="text-white uppercase">{{ image_heading }}</h2>
+                    <p class="text-white">
+                        {{ image_description }}
+                    </p>
+                </div>
+            </div>
+
+            <!-- Left: Image -->
+            <div class="w-full lt:max-w-[53.5%] xl:pb-10 lt:pb-7">
+
+                {{ form:book_class id="book-class-form" ajax="true" class="book-class-form 1xl:space-y-12.5 sm:space-y-9
+                space-y-8"
+                data-popup="booking-success-popup" novalidate ajax="true" enctype="multipart/form-data"}}
+
+                <!-- Personal Information -->
+                <div>
+                    <h3 class="uppercase text-primary mb-5 1xl:pb-7.5 pb-5.5 border-b border-whitesmoke-100">
+                        {{ form_title }}</h3>
+
+                    <div class="1xl:space-y-10.5 lt:space-y-7 sm:space-y-5 space-y-6">
+
+                        {{ fields }}
+
+                        {{# FULL NAME (single column) #}}
+                        {{ if handle == "full_name" }}
+                        <div>
+                            <label class="block p lg:mb-2.5 mb-2">{{ display }} {{ if validate }}
+                                {{ if validate contains="required" }}*{{ /if }}
+                                {{ /if }}</label>
+                            <input type="text" name="{{ handle }}" value="{{ old }}" placeholder="{{ placeholder }}"
+                                class="w-full type-filed p2 placeholder:text-thunder-100/35 bg-white border-primary/20! focus:border-primary">
+                            <div class="error-msg text-red-600 text-sm mt-1 field-error text-danger"
+                                data-error-for="{{ handle }}">{{ error }}</div>
+                        </div>
+                        {{ /if }}
+
+                        {{# EMAIL + PHONE (2 column grid) #}}
+                        {{ if handle == "email" }}
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                            {{ /if }}
+
+                            {{ if handle == "email" or handle == "phone_number" }}
+                            <div>
+                                <label class="block p lg:mb-2.5 mb-2">{{ display }} {{ if validate }} {{ if validate
+                                    contains="required" }}*{{ /if }} {{ /if }}</label>
+                                <input type="{{ type }}" name="{{ handle }}" value="{{ old }}"
+                                    placeholder="{{ placeholder }}"
+                                    class="w-full type-filed p2 placeholder:text-thunder-100/35 bg-white border-primary/20! focus:border-primary">
+                                <div class=" error-msg text-red-600 text-sm mt-1field-error text-danger"
+                                    data-error-for="{{ handle }}">{{ error }}</div>
+                            </div>
+                            {{ /if }}
+
+                            {{ if handle == "phone_number" }}
+                        </div>
+                        {{ /if }}
+
+                        {{# GENDER + DOB (2 column grid) #}}
+                        {{ if handle == "gender" }}
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                            {{ /if }}
+
+                            {{ if handle == "gender" or handle == "date_of_birth" }}
+                            <div>
+                                <label class="block p lg:mb-2.5 mb-2">{{ display }} {{ if validate }}
+                                    {{ if validate contains="required" }}*{{ /if }}
+                                    {{ /if }}</label>
+
+                                {{ if type == "select" }}
+                                <div class="2xl:pr-6 sm:pr-4 pr-2.5 w-full type-filed py-0!">
+                                    <select name="{{ handle }}"
+                                        class="p2 1xl:py-[15px] lg:py-3.5 md:py-[11px] py-3 w-full outline-none">
+                                        {{ foreach:options as="option|label" }}
+                                        <option value="{{ option }}">{{ label ?? option }}</option>
+                                        {{ /foreach:options }}
+                                    </select>
+                                </div>
+                                <div class="error-msg text-red-600 text-sm mt-1 field-error text-danger"
+                                    data-error-for="{{ handle }}">{{ error }}</div>
+                                {{ else }}
+                                <input type="{{ if handle == 'date_of_birth' or handle == 'class_date' }}date{{ else }}{{ type }}{{ /if }}" name="{{ handle }}" value="{{ old }}"
+                                    class="w-full type-filed p2 bg-white border-primary/20! focus:border-primary">
+                                <div class="error-msg text-red-600 text-sm mt-1 field-error text-danger"
+                                    data-error-for="{{ handle }}">{{ error }}</div>
+                                {{ /if }}
+                            </div>
+                            {{ /if }}
+
+                            {{ if handle == "date_of_birth" }}
+                        </div>
+                        {{ /if }}
+
+                        {{# STREET ADDRESS (single column) #}}
+                        {{ if handle == "street_address" }}
+                        <div>
+                            <label class="block p lg:mb-2.5 mb-2">{{ display }} {{ if validate }}
+                                {{ if validate contains="required" }}*{{ /if }}
+                                {{ /if }}</label>
+                            <input type="text" name="{{ handle }}" value="{{ old }}" placeholder="{{ placeholder }}"
+                                class="w-full type-filed p2 placeholder:text-thunder-100/35 bg-white border-primary/20! focus:border-primary">
+                            <div class="error-msg text-red-600 text-sm mt-1 field-error text-danger"
+                                data-error-for="{{ handle }}">{{ error }}</div>
+                        </div>
+                        {{ /if }}
+
+                        {{# country + state (2 column grid) #}}
+                        {{ if handle == "country" }}
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                            {{ /if }}
+
+                            {{ if handle == "country" or handle == "state" }}
+                            <div>
+                                <label class="block p lg:mb-2.5 mb-2">{{ display }} {{ if validate }}
+                                    {{ if validate contains="required" }}*{{ /if }}
+                                    {{ /if }}</label>
+
+                                {{ if type == "select" }}
+                                <div class="2xl:pr-6 sm:pr-4 pr-2.5 w-full type-filed py-0!">
+                                    <select name="{{ handle }}"
+                                        class="p2 1xl:py-[15px] lg:py-3.5 md:py-[11px] py-3 w-full outline-none">
+                                        {{ foreach:options as="option|label" }}
+                                        <option value="{{ option }}">{{ label ?? option }}</option>
+                                        {{ /foreach:options }}
+                                    </select>
+                                </div>
+                                <div class="error-msg text-red-600 text-sm mt-1 field-error text-danger"
+                                    data-error-for="{{ handle }}">{{ error }}</div>
+                                {{ else }}
+                                <input type="{{ type }}" name="{{ handle }}" value="{{ old }}"
+                                    class="w-full type-filed p2 bg-white border-primary/20! focus:border-primary">
+                                <div class="error-msg text-red-600 text-sm mt-1 field-error text-danger"
+                                    data-error-for="{{ handle }}">{{ error }}</div>
+                                {{ /if }}
+                            </div>
+                            {{ /if }}
+
+                            {{ if handle == "state" }}
+                        </div>
+                        {{ /if }}
+
+                        {{# city + pin_code (2 column grid) #}}
+                        {{ if handle == "city" }}
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                            {{ /if }}
+
+                            {{ if handle == "city" or handle == "pin_code" }}
+                            <div>
+                                <label class="block p lg:mb-2.5 mb-2">{{ display }} {{ if validate }}
+                                    {{ if validate contains="required" }}*{{ /if }}
+                                    {{ /if }}</label>
+
+                                {{ if type == "select" }}
+                                <div class="2xl:pr-6 sm:pr-4 pr-2.5 w-full type-filed py-0!">
+                                    <select name="{{ handle }}"
+                                        class="p2 1xl:py-[15px] lg:py-3.5 md:py-[11px] py-3 w-full outline-none">
+                                        {{ foreach:options as="option|label" }}
+                                        <option value="{{ option }}">{{ label ?? option }}</option>
+                                        {{ /foreach:options }}
+                                    </select>
+                                </div>
+                                <div class="error-msg text-red-600 text-sm mt-1 field-error text-danger"
+                                    data-error-for="{{ handle }}">{{ error }}</div>
+                                {{ else }}
+                                <input type="{{ type }}" name="{{ handle }}" value="{{ old }}"
+                                    class="w-full type-filed p2 bg-white border-primary/20! focus:border-primary">
+                                <div class="error-msg text-red-600 text-sm mt-1 field-error text-danger"
+                                    data-error-for="{{ handle }}">{{ error }}</div>
+                                {{ /if }}
+                            </div>
+                            {{ /if }}
+
+                            {{ if handle == "pin_code" }}
+                        </div>
+                        {{ /if }}
+
+                        {{ /fields }}
+
+                    </div>
+                </div>
+
+                <!-- Class Selection -->
+                <div>
+                    <h3 class="uppercase text-primary mb-5 1xl:pb-7.5 lg:pb-5 pb-3 border-b border-whitesmoke-100">
+                        {{ class_selection_title }}</h3>
+
+                    <div class="1xl:space-y-10.5 lt:space-y-7 sm:space-y-5 space-y-6">
+                        <!-- Select Class Type* -->
+
+                        {{ fields }}
+
+                        {{# Class (single column) #}}
+                        {{ if handle == "class_type" }}
+
+                        <div>
+                            <label class="block p lg:mb-2.5 mb-2">{{ display }} {{ if validate }}
+                                {{ if validate contains="required" }}*{{ /if }}
+                                {{ /if }}</label>
+
+
+                            {{ if type == "select" }}
+                            <div class="2xl:pr-6 sm:pr-4 pr-2.5 w-full type-filed py-0!">
+                                <select name="{{ handle }}" class="p2 1xl:py-[15px] lg:py-3.5 md:py-[11px] py-3 w-full outline-none">
+                                    {{ foreach:options as="option|label" }}
+                                    <option value="{{ option }}">{{ label ?? option }}</option>
+                                    {{ /foreach:options }}
+                                </select>
+                            </div>
+                            <div class="error-msg text-red-600 text-sm mt-1 field-error text-danger"
+                                data-error-for="{{ handle }}">{{ error }}</div>
+                            {{ else }}
+                            <input type="{{ type }}" name="{{ handle }}" value="{{ old }}"
+                                class="w-full type-filed p2 bg-white border-primary/20! focus:border-primary">
+                            <div class="error-msg text-red-600 text-sm mt-1 field-error text-danger"
+                                data-error-for="{{ handle }}">{{ error }}</div>
+                            {{ /if }}
+
+                        </div>
+
+                        {{ /if }}
+
+                        {{# trainer + class_date (2 column grid) #}}
+                        {{ if handle == "trainer" }}
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                            {{ /if }}
+
+                            {{ if handle == "trainer" or handle == "class_date" }}
+                            <div>
+                                <label class="block p lg:mb-2.5 mb-2">{{ display }} {{ if validate }}
+                                    {{ if validate contains="required" }}*{{ /if }}
+                                    {{ /if }}</label>
+
+                                {{ if type == "select" }}
+                                <div class="2xl:pr-6 sm:pr-4 pr-2.5 w-full type-filed py-0!">
+                                    <select name="{{ handle }}"
+                                        class="p2 1xl:py-[15px] lg:py-3.5 md:py-[11px] py-3 w-full outline-none">
+                                        {{ foreach:options as="option|label" }}
+                                        <option value="{{ option }}">{{ label ?? option }}</option>
+                                        {{ /foreach:options }}
+                                    </select>
+                                </div>
+                                <div class="error-msg text-red-600 text-sm mt-1 field-error text-danger"
+                                    data-error-for="{{ handle }}">{{ error }}</div>
+                                {{ else }}
+                                <input type="{{ if handle == 'date_of_birth' or handle == 'class_date' }}date{{ else }}{{ type }}{{ /if }}" name="{{ handle }}" value="{{ old }}"
+                                    class="w-full type-filed p2 bg-white border-primary/20! focus:border-primary">
+                                <div class="error-msg text-red-600 text-sm mt-1 field-error text-danger"
+                                    data-error-for="{{ handle }}">{{ error }}</div>
+                                {{ /if }}
+                            </div>
+                            {{ /if }}
+
+                            {{ if handle == "class_date" }}
+                        </div>
+                        {{ /if }}
+
+                        {{# time_slot + intensity (2 column grid) #}}
+                        {{ if handle == "time_slot" }}
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                            {{ /if }}
+
+                            {{ if handle == "time_slot" or handle == "intensity" }}
+                            <div>
+                                <label class="block p lg:mb-2.5 mb-2">{{ display }} {{ if validate }}
+                                    {{ if validate contains="required" }}*{{ /if }}
+                                    {{ /if }}</label>
+
+                                {{ if type == "select" }}
+                                <div class="2xl:pr-6 sm:pr-4 pr-2.5 w-full type-filed py-0!">
+                                    <select name="{{ handle }}"
+                                        class="p2 1xl:py-[15px] lg:py-3.5 md:py-[11px] py-3 w-full outline-none">
+                                        {{ foreach:options as="option|label" }}
+                                        <option value="{{ option }}">{{ label ?? option }}</option>
+                                        {{ /foreach:options }}
+                                    </select>
+                                </div>
+                                <div class="error-msg text-red-600 text-sm mt-1 field-error text-danger"
+                                    data-error-for="{{ handle }}">{{ error }}</div>
+                                {{ else }}
+                                <input type="{{ type }}" name="{{ handle }}" value="{{ old }}"
+                                    class="w-full type-filed p2 bg-white border-primary/20! focus:border-primary">
+                                <div class="error-msg text-red-600 text-sm mt-1 field-error text-danger"
+                                    data-error-for="{{ handle }}">{{ error }}</div>
+                                {{ /if }}
+                            </div>
+                            {{ /if }}
+
+                            {{ if handle == "intensity" }}
+                        </div>
+                        {{ /if }}
+
+                        {{ /fields }}
+                    </div>
+                </div>
+
+                <!-- Additional Information -->
+                <div>
+                    <h3 class="uppercase text-primary mb-5 1xl:pb-7.5 lg:pb-5 pb-3 border-b border-whitesmoke-100">
+                        {{additional_information_title }}</h3>
+
+                    <div class="1xl:space-y-10.5 lt:space-y-7 sm:space-y-5 space-y-6">
+                        <!-- Experience Level * -->
+                        {{ fields }}
+                        {{ if handle == "experience" or handle == "notes" }}
+                        <div>
+                            <label class="block p lg:mb-2.5 mb-2">{{ display }} {{ if validate }}
+                                {{ if validate contains="required" }}*{{ /if }}
+                                {{ /if }}</label>
+                            {{ if type == "select" }}
+                            <div class="2xl:pr-6 sm:pr-4 pr-2.5 w-full type-filed py-0!">
+                                <select name="{{ handle }}" class="p2 1xl:py-[15px] lg:py-3.5 md:py-[11px] py-3 w-full outline-none">
+                                    {{ foreach:options as="option|label" }}
+                                    <option value="{{ option }}">{{ label ?? option }}</option>
+                                    {{ /foreach:options }}
+                                </select>
+                            </div>
+                            <div class="error-msg text-red-600 text-sm mt-1 field-error text-danger"
+                                data-error-for="{{ handle }}">{{ error }}</div>
+                            {{ else }}
+                            <input type="{{ type }}" name="{{ handle }}" value="{{ old }}"
+                                class="w-full type-filed p2 bg-white border-primary/20! focus:border-primary">
+                            <div class="error-msg text-red-600 text-sm mt-1 field-error text-danger"
+                                data-error-for="{{ handle }}">{{ error }}</div>
+                            {{ /if }}
+                        </div>
+                        {{ /if }}
+                        {{ /fields }}
+
+                    </div>
+                </div>
+
+                <!-- Payment Section -->
+                <div>
+                    <h3 class="uppercase text-primary mb-5 1xl:pb-7.5 lg:pb-5 pb-3 border-b border-whitesmoke-100">
+                        {{ payment_section_title }}</h3>
+
+                    <div class="1xl:space-y-10.5 lt:space-y-7 sm:space-y-5 space-y-6">
+                        {{ fields }}
+
+                        {{# payment + coupon (2 column grid) #}}
+                        {{ if handle == "payment" }}
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                            {{ /if }}
+
+                            {{ if handle == "payment" or handle == "coupon" }}
+                            <div>
+                                <label class="block p lg:mb-2.5 mb-2">{{ display }} {{ if validate }}
+                                    {{ if validate contains="required" }}*{{ /if }}
+                                    {{ /if }}</label>
+
+                                {{ if type == "select" }}
+                                <div class="2xl:pr-6 sm:pr-4 pr-2.5 w-full type-filed py-0!">
+                                    <select name="{{ handle }}"
+                                        class="p2 1xl:py-[15px] lg:py-3.5 md:py-[11px] py-3 w-full outline-none">
+                                        {{ foreach:options as="option|label" }}
+                                        <option value="{{ option }}">{{ label ?? option }}</option>
+                                        {{ /foreach:options }}
+                                    </select>
+                                </div>
+                                <div class="error-msg text-red-600 text-sm mt-1 field-error text-danger"
+                                    data-error-for="{{ handle }}">{{ error }}</div>
+                                {{ else }}
+                                <input type="{{ type }}" name="{{ handle }}" value="{{ old }}"
+                                    class="w-full type-filed p2 bg-white border-primary/20! focus:border-primary">
+                                <div class="error-msg text-red-600 text-sm mt-1 field-error text-danger"
+                                    data-error-for="{{ handle }}">{{ error }}</div>
+                                {{ /if }}
+                            </div>
+                            {{ /if }}
+
+                            {{ if handle == "coupon" }}
+                        </div>
+                        {{ /if }}
+
+                        {{# plan + price (2 column grid) #}}
+                        {{ if handle == "plan" }}
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                            {{ /if }}
+
+                            {{ if handle == "plan" or handle == "price" }}
+                            <div>
+                                <label class="block p lg:mb-2.5 mb-2">{{ display }}</label>
+
+                                {{ if type == "select" }}
+                                <div class="2xl:pr-6 sm:pr-4 pr-2.5 w-full type-filed py-0!">
+                                    <select name="{{ handle }}"
+                                        class="p2 1xl:py-[15px] lg:py-3.5 md:py-[11px] py-3 w-full outline-none">
+                                        {{ foreach:options as="option|label" }}
+                                        <option value="{{ option }}">{{ label ?? option }}</option>
+                                        {{ /foreach:options }}
+                                    </select>
+                                </div>
+                                <div class="error-msg text-red-600 text-sm mt-1 field-error text-danger"
+                                    data-error-for="{{ handle }}">{{ error }}</div>
+                                {{ else }}
+                                <input type="{{ type }}" name="{{ handle }}" value="{{ old }}"
+                                    class="w-full type-filed p2 bg-white border-primary/20! focus:border-primary">
+                                <div class="error-msg text-red-600 text-sm mt-1 field-error text-danger"
+                                    data-error-for="{{ handle }}">{{ error }}</div>
+                                {{ /if }}
+                            </div>
+                            {{ /if }}
+
+                            {{ if handle == "price" }}
+                        </div>
+                        {{ /if }}
+                        <!-- Secure Payment Gateway * -->
+                        {{ if handle == "gateway" }}
+                        <div>
+                            <label class="block p lg:mb-2.5 mb-2">{{ display }} {{ if validate }}
+                                {{ if validate contains="required" }}*{{ /if }}
+                                {{ /if }}</label>
+
+                            {{ if type == "select" }}
+                            <div class="2xl:pr-6 sm:pr-4 pr-2.5 w-full type-filed py-0!">
+                                <select name="{{ handle }}" class="p2 1xl:py-[15px] lg:py-3.5 md:py-[11px] py-3 w-full outline-none">
+                                    {{ foreach:options as="option|label" }}
+                                    <option value="{{ option }}">{{ label ?? option }}</option>
+                                    {{ /foreach:options }}
+                                </select>
+                            </div>
+                            <div class="error-msg text-red-600 text-sm mt-1 field-error text-danger"
+                                data-error-for="{{ handle }}">{{ error }}</div>
+                            {{ else }}
+                            <input type="{{ type }}" name="{{ handle }}" value="{{ old }}"
+                                class="w-full type-filed p2 bg-white border-primary/20! focus:border-primary">
+                            <div class="error-msg text-red-600 text-sm mt-1 field-error text-danger"
+                                data-error-for="{{ handle }}">{{ error }}</div>
+                            {{ /if }}
+                        </div>
+                        {{ /if }}
+
+                        {{ /fields }}
+                    </div>
+                </div>
+
+                <!-- Consent & Terms -->
+                <div>
+                    <h3 class="uppercase text-primary mb-5 1xl:pb-7.5 lg:pb-5 pb-3 border-b border-whitesmoke-100">
+                        {{ consent_terms_title }}</h3>
+
+                    <div class="xl:space-y-4 space-y-3">
+                        {{ fields }}
+                        {{ if handle == "agree_terms" or handle == "information_check" or handle == "updates" }}
+                        {{ if type == "checkboxes" }}
+                        <div class="flex items-center gap-2.5">
+                            <input type="checkbox" id="{{ handle }}" name="{{ handle }}"
+                                class="accent-primary cursor-pointer 1xl:size-7 xl:size-6.5 lg:size-6 size-5 shrink-0" />
+                            <label for="{{ handle }}" class="p2 cursor-pointer">
+                                {{ display }}
+                            </label>
+
+                        </div>
+
+                        {{ /if }}
+                        {{ /if }}
+                        {{ /fields }}
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary">{{ submit_button_text }}</button>
+
+                <div id="form-response" class="mt-2"></div>
+                {{ /form:book_class }}
+
+            </div>
+        </div>
+    </div>
+</section>

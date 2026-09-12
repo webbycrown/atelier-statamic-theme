@@ -1,0 +1,17 @@
+title: Setting
+data:
+  favicon: image/favicon.png
+  logo: image/main-logo-black.svg
+  white_logo: image/main-logo-white.svg
+  header_select: header-two
+  footer_select: footer
+  blog_banner_title: 'Evening Flow for Better Sleep'
+  blog_banner_description: 'Unwind your day with calming sequences that relax the body and quiet the mind. Let each movement ease you into restful sleep—gentle, slow, and intentional.'
+  class_banner_title: 'Explore Looks'
+  class_banner_description: 'Every Atelier look has a name, a coach, a level, and a time. Start with Editorial Story, push with Street Cast, or reset with Lookbook Day.'
+  event_banner_title: 'Balance & Core Workshop'
+  event_banner_description: 'Strengthen your foundation and find your center in this focused workshop. Designed for all levels, the session blends balance-enhancing postures with deep core engagement practices.'
+  retreat_banner_title: 'Retreat Detail'
+  retreat_banner_description: 'From gentle stretches to dynamic flows, our diverse looks are designed to match your needs. Find your pace, your practice, and your peace-on your terms.'
+  class_category_banner_title: 'Balance & Core Workshop'
+  class_category_banner_description: 'Strengthen your foundation and find your center in this focused workshop. Designed for all levels, the session blends balance-enhancing postures with deep core engagement practices.'

@@ -1,0 +1,51 @@
+        <section class="2xl:mb-[100px] 1xl:mb-20 xl:mb-17 lg:mb-14 md:mb-12 sm:mb-11 mb-10 relative">
+            <div class="container relative">
+                <div class="flex md:flex-row flex-col items-stretch justify-between w-full 1xl:gap-[70px] xl:gap-[55px] lg:gap-11 lt:gap-10 md:gap-6 sm:gap-4 gap-2">
+                    <div class="1xl:w-[48.6%] md:w-1/2 w-full h-full">
+                        <div class="w-full">
+                            <h3 class="text-thunder-100 font-primary italic font-medium 2xl:mb-7 1xl:mb-6 sm:mb-3 mb-2.5">
+                                {{ sub_title }}
+                            </h3>
+                            <h2 class="text-primary font-normal uppercase">
+                                {{ main_title }}
+                            </h2>
+                        </div>
+                        <div class="block overflow-hidden rounded-sm relative shrink-0 before:content-[''] 1xl:before:pt-[72%] xl:before:pt-[80%] lg:before:pt-[85%] lt:before:pt-[95%] before:pt-[100%] before:block w-full h-full 1xl:mt-[50px] xl:mt-[42px] lg:mt-9 lt:mt-7 sm:mt-6 mt-4">
+                            {{ main_image }}<img src="{{ url }}" alt="about us" class="w-full h-full object-cover rounded-sm overflow-hidden absolute top-0 left-0" loading="lazy" decoding="async" data-aos="fade-up" />{{ /main_image }}
+                        </div>
+                    </div>
+                    <div class="1xl:w-[51.4%] md:w-1/2 w-full">
+                        <div
+                        class="flex items-center justify-between xl:gap-6 lg:gap-5 sm:gap-4 gap-2 1xl:mb-[60px] xl:mb-[45px] lg:mb-9 lt:mb-7 sm:mb-6 mb-5">
+                        {{ gallery_images }}
+                        <div
+                        class="block overflow-hidden relative before:content-[''] sm:before:pt-[101%] before:pt-[105%] before:block w-full h-full rounded-sm">
+                        <img src="{{ url }}" alt="about us"
+                        class="w-full h-full object-cover rounded-sm overflow-hidden absolute top-0 left-0"
+                        loading="lazy" decoding="async" data-aos="fade-up" />
+                    </div>
+                    {{ /gallery_images }}
+                </div>
+                <div>
+                    {{ if description_one }}
+                    <p class="1xl:mb-5 lg:mb-4 sm:mb-3 mb-[10px]">
+                        {{ description_one }}
+                    </p>
+                    {{ /if }}
+                    {{ if description_two }}
+                    <p class="1xl:mb-11 lg:mb-9 mb-6">
+                        {{ description_two }}
+                    </p>
+                    {{ /if }}
+                    {{ if button_text }}
+                    <a href="{{ button_url }}" class="btn btn-secondary">{{ button_text }}</a>
+                    {{ /if }}
+                </div>
+            </div>
+        </div>
+        <!-- Decorative Flower -->
+        <div class="pointer-events-none absolute top-auto -bottom-[33px] left-auto right-0 lg:w-[12.5%] w-[15%] hidden md:block opacity-30">
+            <img decoding="async" src="{{ theme:asset }}assets/image/flower-shape.svg" alt="decor" class="w-full h-full object-contain" />
+        </div>
+    </div>
+</section>

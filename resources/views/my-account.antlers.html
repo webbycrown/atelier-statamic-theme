@@ -1,0 +1,20 @@
+<section class="relative 1xl:pt-44 xl:pt-40 lg:pt-36 md:pt-32 sm:pt-28 pt-24 2xl:mb-[100px] mb-16">
+    <div class="container">
+        <h1 class="uppercase text-primary mb-8">My Account</h1>
+        <div id="yoga-account-box" class="border border-primary/20 p-6 max-w-[640px]">
+            <p class="yoga-account-guest">You are not signed in. <a href="/login" class="underline">Login</a> or <a href="/register" class="underline">register</a>.</p>
+            <div class="yoga-account-user hidden">
+                <p class="mb-2">Welcome, <span class="yoga-account-name"></span></p>
+                <p class="mb-4"><span class="yoga-account-email"></span></p>
+                <div id="ordersList">
+                    <h3 class="uppercase text-primary mb-3">Orders</h3>
+                    <p>No previous studio shop orders yet.</p>
+                </div>
+                <form method="post" action="/customer/logout" class="mt-6">
+                    {{ csrf_field }}
+                    <button class="btn btn-secondary" type="submit">Log out</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

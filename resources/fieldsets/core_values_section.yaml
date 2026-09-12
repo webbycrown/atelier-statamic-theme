@@ -1,0 +1,35 @@
+title: 'Core Values Section'
+fields:
+  -
+    handle: small_heading
+    field:
+      type: text
+      display: 'Small Heading'
+  -
+    handle: main_heading
+    field:
+      type: text
+      display: 'Main Heading'
+  -
+    handle: core_value_cards
+    field:
+      type: grid
+      display: 'Core Value Cards'
+      fields:
+        -
+          handle: icon
+          field:
+            container: assets
+            max_files: 1
+            type: assets
+            display: Icon
+        -
+          handle: title
+          field:
+            type: text
+            display: Title
+        -
+          handle: description
+          field:
+            type: textarea
+            display: Description

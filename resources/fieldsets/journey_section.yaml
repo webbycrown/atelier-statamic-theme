@@ -1,0 +1,58 @@
+title: 'Journey Section'
+fields:
+  -
+    handle: icon
+    field:
+      container: assets
+      max_files: 1
+      type: assets
+      display: Icon
+  -
+    handle: small_title
+    field:
+      type: text
+      display: 'Small Title'
+  -
+    handle: main_title
+    field:
+      type: text
+      display: 'Main Title'
+  -
+    handle: description
+    field:
+      type: textarea
+      display: Description
+  -
+    handle: buttons
+    field:
+      type: replicator
+      display: Buttons
+      sets:
+        new_set_group:
+          display: 'New Set Group'
+          sets:
+            button:
+              display: Button
+              fields:
+                -
+                  handle: button_text
+                  field:
+                    type: text
+                    display: 'Button Text'
+                -
+                  handle: button_link
+                  field:
+                    type: text
+                    display: 'Button Link'
+                -
+                  handle: button_style
+                  field:
+                    options:
+                      -
+                        key: btn-secondary
+                        value: Secondary
+                      -
+                        key: btn-primary
+                        value: Primary
+                    type: select
+                    display: 'Button Style'

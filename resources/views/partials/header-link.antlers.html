@@ -1,0 +1,30 @@
+<head>
+  <style id="theme-fouc">
+    html { background: #fff; }
+    body { margin: 0; }
+    body:not(.is-ready) { overflow: hidden; }
+    body:not(.is-ready) > *:not(.preloader) { visibility: hidden !important; }
+    body.is-ready { overflow: visible !important; }
+  </style>
+  <noscript><style>body > * { visibility: visible !important; overflow: visible !important; }</style></noscript>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ title ?? site:name }}</title>
+   {{ setting }}{{ favicon }} <link rel="icon" href="{{ url }}" />{{ /favicon }}{{ /setting }}
+   <meta name="app-env" content="{{ config:app.env }}">
+   <meta name="csrf-token" content="{{ csrf_token }}">
+
+    <!-- <link rel="preload" href="{{ theme:asset src='assets/css/magnific-popup.min.css'}}?v={{ now format="YmdHis" }}" as="style"> -->
+    <!-- <link rel="preload" href="{{ theme:asset src='assets/css/swiper-bundle.min.css'}}?v={{ now format="YmdHis" }}" as="style"> -->
+    <!-- <link href="/assets/css/dist/output.css" rel="stylesheet"> -->
+    <link rel="preload" href="/assets/css/dist/output.css" as="style">
+    <link rel="stylesheet" href="/assets/css/dist/output.css">
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="preload" href="/assets/css/swiper-bundle.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="/assets/css/magnific-popup.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+
+    <!-- style.css -->
+</head>

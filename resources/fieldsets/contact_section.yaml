@@ -1,0 +1,91 @@
+title: 'Contact Section'
+fields:
+  -
+    handle: page_title
+    field:
+      type: text
+      display: 'Page Title'
+  -
+    handle: section_title
+    field:
+      type: text
+      display: 'Section Title'
+  -
+    handle: description
+    field:
+      type: textarea
+      display: Description
+  -
+    handle: address_title
+    field:
+      type: text
+      display: 'Address Title'
+      width: 50
+  -
+    handle: address
+    field:
+      type: textarea
+      display: Address
+      width: 50
+  -
+    handle: phone_title
+    field:
+      type: text
+      display: 'Phone Title'
+  -
+    handle: phone_number
+    field:
+      type: text
+      display: 'Phone Number'
+  -
+    handle: email_title
+    field:
+      type: text
+      display: 'Email Title'
+  -
+    handle: email_address
+    field:
+      type: text
+      display: 'Email Address'
+  -
+    handle: studio_hours_title
+    field:
+      type: text
+      display: 'Studio Hours Title'
+  -
+    handle: studio_hours
+    field:
+      type: replicator
+      display: 'Studio Hours'
+      sets:
+        new_set_group:
+          display: 'New Set Group'
+          sets:
+            new_set:
+              display: 'New Set'
+              fields:
+                -
+                  handle: day
+                  field:
+                    type: text
+                    display: Day
+                -
+                  handle: time
+                  field:
+                    type: text
+                    display: Time
+  -
+    handle: form_title
+    field:
+      type: text
+      display: 'Form Title'
+  -
+    handle: consent_section_title
+    field:
+      type: text
+      display: 'Consent Section Title'
+  -
+    handle: submit_button_text
+    field:
+      type: text
+      display: 'Submit Button Text'

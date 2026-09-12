@@ -1,0 +1,492 @@
+    {{ if show_type == "schedule-page" }}
+<section class="relative 2xl:mb-[100px] 1xl:mb-20 xl:mb-17 lg:mb-14 md:mb-12 sm:mb-11 mb-10 bg-white"
+    data-aos="fade-up">
+    <div id="schedule" class="schedule-2">
+        <div class="container relative z-10">
+            <div
+                class="flex lt:items-center items-start lt:flex-row flex-col 2xl:gap-35 1xl:gap-23 xl:gap-15 lg:gap-7 gap-2.5 2xl:mb-12.5 1xl:mb-12 xl:mb-11 lg:mb-10 md:mb-9 sm:mb-8 mb-7.5">
+                <div class="lt:w-[52%]">
+                    <h3 class="text-thunder-100 font-primary italic font-medium 1xl:mb-6 sm:mb-4 mb-2.5">
+                        {{ section_title }}
+                    </h3>
+                    <h2 class="text-primary font-normal uppercase">
+                        {{ section_subtitle }}
+                    </h2>
+                </div>
+                <div class="lt:w-[48%]">
+                    <p
+                        class="text-thunder-100 max-w-[890px] 2xl:mb-10 1xl:mb-9 xl:mb-8 lg:mb-7.5 md:mb-7 sm:mb-6.5 mb-6">
+                        {{ description }}
+                    </p>
+                    {{ if button_title }}
+                    <a href="{{ book_class_link }}" class="btn btn-secondary">{{ button_title }}</a>
+                    {{ /if }}
+                </div>
+            </div>
+
+            <!-- Day Tabs (Mobile Select) -->
+            <div>
+                <div class="md:hidden relative w-full">
+                    <select id="scheduleSelect"
+                        class="w-full sm:px-5 sm:py-3 px-4 py-2 bg-primary text-white font-Work border border-primary focus:outline-none appearance-none select-arrow">
+                        {{ weekly_schedule }}
+                        <option value="#data-{{ day }}">{{ day:label | ucfirst }}</option>
+                        {{ /weekly_schedule }}
+                    </select>
+                </div>
+            </div>
+
+            <!-- Day Tabs (Desktop Buttons) -->
+            <div class="overflow-x-auto md:block hidden schedule-page">
+                <div class="inline-flex min-w-full overflow-hidden 1xl:gap-5 lg:gap-4 lt:gap-3 gap-2">
+                    {{ weekly_schedule }}
+                    <button class="schedule-tab text-primary w-full {{ if first }}is-active{{ /if }}"
+                        data-target="#data-{{ day }}">
+                        {{ day:label | ucfirst }}
+                    </button>
+                    {{ /weekly_schedule }}
+                </div>
+            </div>
+
+            <!-- Tables by Day -->
+            <div class="2xl:mt-8 1xl:mt-7 xl:mt-6 lt:mt-5 mt-4">
+                {{ weekly_schedule }}
+                <div id="data-{{ day }}" class="schedule-panel {{ if first }}{{ else }}hidden{{ /if }}">
+                    <div class="transition-all duration-300">
+                        <table class="w-full border-collapse block md:table md:border border-[#5C1A2E33]">
+                            <thead class="hidden md:table-header-group bg-whitesmoke-100">
+                                <tr>
+                                    <th class="w-1/5">Time</th>
+                                    <th class="w-1/5">Class</th>
+                                    <th class="w-1/5">Level</th>
+                                    <th class="w-1/5">Trainer</th>
+                                    <th class="w-1/5">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody class="block md:table-row-group space-y-5">
+                                {{ classes }}
+                                <tr class="lt:group lt:hover:bg-whitesmoke-100">
+                                    <!-- TIME -->
+                                    <td class="group-hover:text-primary">
+                                        <h5 class="w-1/3 md:hidden text-start font-medium font-primary text-sm">Time
+                                        </h5>
+                                        <p>{{ time }}</p>
+                                    </td>
+                                    <!-- CLASS -->
+                                    <td class="group-hover:text-primary">
+                                        <h5 class="w-1/3 md:hidden text-start font-medium font-primary text-sm">Class
+                                        </h5>
+                                        <p>{{ class_name }}</p>
+                                    </td>
+                                    <!-- LEVEL -->
+                                    <td class="group-hover:text-primary">
+                                        <h5 class="w-1/3 md:hidden text-start font-medium font-primary text-sm">Level
+                                        </h5>
+                                        <p>{{ level }}</p>
+                                    </td>
+                                    <!-- TRAINER -->
+                                    <td class="group-hover:text-primary">
+                                        <h5 class="w-1/3 md:hidden text-start font-medium font-primary text-sm">Trainer
+                                        </h5>
+                                        <p>{{ trainer_name }}</p>
+                                    </td>
+                                    <!-- ACTION -->
+                                    <td class="group-hover:text-primary">
+                                        {{ if booking_title }}
+                                        <h5 class="w-1/3 md:hidden text-start font-medium font-primary text-sm">Action
+                                        </h5>
+                                        <a href="{{ booking_link }}"
+                                            class="p text-thunder-100 hover:text-primary underline decoration-1 underline-offset-2 flex items-center flex-wrap sm:gap-1 gap-0.5 w-full md:justify-center justify-end">
+                                            {{ booking_title }}
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27"
+                                                viewBox="0 0 27 27" fill="none"
+                                                class="2xl:w-[27px] 2xl:h-[27px] sm:w-[25px] sm:h-[25px] w-5 h-5">
+                                                <g clip-path="url(#clip0_3130_6678)">
+                                                    <path
+                                                        d="M8.37896 18.7836L19.207 7.95556M19.207 7.95556C19.4636 8.21217 19.62 8.56903 19.616 8.96328L19.5384 16.6458M19.207 7.95556C18.9504 7.69895 18.5935 7.54257 18.1993 7.54655L10.5168 7.62418"
+                                                        stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                </g>
+                                            </svg>
+                                        </a>
+                                        {{ /if }}
+                                    </td>
+                                </tr>
+                                {{ /classes }}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                {{ /weekly_schedule }}
+            </div>
+        </div>
+    </div>
+</section>
+{{ /if }}
+
+{{ if show_type == "home-one" }}
+<section class="relative 2xl:mb-[100px] 1xl:mb-20 xl:mb-17 lg:mb-14 md:mb-12 sm:mb-11 mb-10 bg-white">
+    <div id="schedule" class="schedule-1">
+        <!-- Decorative Flower -->
+        <div
+            class="pointer-events-none absolute 2xl:-top-[100px] 1xl:-top-20 xl:-top-17 lg:-top-14 md:-top-12 sm:-top-11 -top-10 left-0 max-2xl:w-[clamp(18%,11.2vw,30%)] hidden md:block opacity-20">
+            <img src="{{ theme:asset }}assets/image/flower-shape.svg" alt="decor"
+                class="w-full h-full object-contain" />
+        </div>
+
+        <div class="container relative z-10">
+            <div class="text-center 1xl:max-w-[75%] lt:max-w-4/5 mx-auto lg:mb-10 mb-7">
+                <h3 class="text-thunder-100 font-primary italic font-medium xl:mb-7 lg:mb-6 md:mb-5 sm:mb-4 mb-2.5">
+                    {{ section_title }}
+                </h3>
+                <h2 class="text-primary font-normal uppercase 1xl:mb-5 mb-3">
+                    {{ section_subtitle }}
+                </h2>
+                <p>
+                    {{ description }}
+                </p>
+            </div>
+
+            <!-- Day Tabs (Mobile Select) -->
+            <div>
+                <div class="md:hidden relative w-full">
+                    <select id="scheduleSelect"
+                        class="w-full sm:px-5 sm:py-3 px-4 py-2 bg-primary text-white font-Work border border-primary focus:outline-none appearance-none select-arrow">
+                        {{ weekly_schedule }}
+                        <option value="#sched-{{ day }}">{{ day:label | ucfirst }}</option>
+                        {{ /weekly_schedule }}
+                    </select>
+                </div>
+            </div>
+
+            <!-- Day Tabs (Desktop Buttons) -->
+            <div class="overflow-x-auto md:block hidden">
+                <div class="inline-flex min-w-full border border-primary overflow-hidden">
+                    {{ weekly_schedule }}
+                    <button
+                        class="schedule-tab rounded-none text-primary font-Work border-r w-full border-primary {{ if first }}is-active{{ /if }}"
+                        data-target="#sched-{{ day }}">
+                        {{ day:label | ucfirst }}
+                    </button>
+                    {{ /weekly_schedule }}
+                </div>
+            </div>
+
+            <!-- Tables by Day -->
+            <div class="xl:mt-8 mt-5">
+                {{ weekly_schedule }}
+                <div id="sched-{{ day }}" class="schedule-panel {{ if first }}{{ else }}hidden{{ /if }}">
+                    <div class="overflow-x-auto lt:space-y-0 sm:space-y-6 space-y-4">
+                        {{ classes }}
+                        <div
+                            class="2xl:px-[58px] 1xl:px-11 xl:px-9 lt:px-5 lt:flex grid grid-cols-1 lt:divide-none divide-y divide-primary/20 lt:gap-6 items-stretch lt:border-b lt:border-t-0 lt:border-l-0 lt:border-r-0 border border-primary/20 1xl:py-6 xl:py-5 lt:py-[18px] p-0 bg-white lt:hover:bg-whitesmoke-100">
+                            <!-- TIME -->
+                            <div
+                                class="1xl:w-[22%] lt:w-[20%] w-full flex lt:flex-col flex-row lt:items-start items-center lt:divide-none divide-x divide-primary/20">
+                                <div
+                                    class="flex items-center flex-wrap 1xl:mb-[22px] lt:mb-4 gap-1 lt:w-full w-1/2 lt:p-0 md:p-4 p-3">
+                                    <h5 class="text-primary uppercase">Time</h5>
+                                    {{ if time_label }}<p>{{ time_label }}</p>{{ /if }}
+                                </div>
+                                <p class="lt:w-full w-1/2 lt:p-0 md:p-4 p-3">
+                                    {{ time }}
+                                </p>
+                            </div>
+
+                            <!-- CLASS -->
+                            <div
+                                class="flex lt:flex-col flex-row 1xl:gap-2.5 xl:gap-2 lt:gap-[6px] lg:w-[22%] lt:w-[24%] w-full lt:divide-none divide-x divide-primary/20">
+                                <h5 class="text-primary uppercase lt:w-full w-1/2 lt:p-0 md:p-4 p-3">
+                                    Class
+                                </h5>
+                                <div
+                                    class="flex flex-col 1xl:gap-2.5 xl:gap-2 gap-[6px] lt:w-full w-1/2 lt:p-0 md:p-4 p-3">
+                                    <p>{{ class_name }}</p>
+                                </div>
+                            </div>
+
+                            <!-- LEVEL -->
+                            <div
+                                class="flex lt:flex-col flex-row 1xl:gap-2.5 xl:gap-2 lt:gap-[6px] 1xl:w-[18%] lg:w-[16%] lt:w-[14%] w-full lt:divide-none divide-x divide-primary/20">
+                                <h5 class="text-primary uppercase lt:w-full w-1/2 lt:p-0 md:p-4 p-3">
+                                    Level
+                                </h5>
+                                <div
+                                    class="flex flex-col 1xl:gap-2.5 xl:gap-2 gap-[6px] lt:w-full w-1/2 lt:p-0 md:p-4 p-3">
+                                    {{ level }}
+                                </div>
+                            </div>
+
+                            <!-- TRAINER -->
+                            <div
+                                class="lt:w-[22%] w-full flex lt:flex-col flex-row lt:divide-none divide-x divide-primary/20">
+                                <h5 class="text-primary uppercase 1xl:mb-5 lt:mb-4 lt:w-full w-1/2 lt:p-0 md:p-4 p-3">
+                                    Trainer
+                                </h5>
+                                <div
+                                    class="flex items-center flex-wrap sm:gap-[14px] gap-[10px] lt:p-0 md:p-4 p-3 lt:w-full w-1/2">
+                                    <div
+                                        class="1xl:w-[54px] 1xl:h-[54px] xl:w-[50px] xl:h-[50px] md:w-12 md:h-12 sm:w-9 sm:h-9 w-8 h-8 rounded-full overflow-hidden shrink-0">
+                                        {{ trainer_image }}
+                                        <img src="{{ url }}" alt="{{ trainer_name }}"
+                                            class="w-full h-full rounded-full" />
+                                        {{ /trainer_image }}
+                                    </div>
+                                    {{ trainer_name }}
+                                </div>
+                            </div>
+
+                            <!-- ACTION -->
+                            <div
+                                class="1xl:w-[10%] lt:w-[14%] w-full flex lt:flex-col flex-row lt:items-start items-center lt:divide-none divide-x divide-primary/20">
+                                <h5 class="text-primary uppercase 1xl:mb-5 lt:mb-4 lt:w-full w-1/2 lt:p-0 md:p-4 p-3">
+                                    Action
+                                </h5>
+                                {{ if booking_title }}
+                                <a href="{{ booking_link }}"
+                                    class="text-thunder-100 hover:text-primary hover:underline decoration-1 flex items-center flex-wrap sm:gap-1 gap-0.5 lt:p-1 md:p-4 p-3 lt:w-full w-1/2">
+                                    {{ booking_title }}
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" viewBox="0 0 27 27"
+                                        fill="none" class="2xl:w-[27px] 2xl:h-[27px] sm:w-[25px] sm:h-[25px] w-5 h-5">
+                                        <g clip-path="url(#clip0_3130_6678)">
+                                            <path
+                                                d="M8.37896 18.7836L19.207 7.95556M19.207 7.95556C19.4636 8.21217 19.62 8.56903 19.616 8.96328L19.5384 16.6458M19.207 7.95556C18.9504 7.69895 18.5935 7.54257 18.1993 7.54655L10.5168 7.62418"
+                                                stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                        </g>
+                                    </svg>
+                                </a>
+                                {{ /if }}
+                            </div>
+                        </div>
+                        {{ /classes }}
+                    </div>
+                </div>
+                {{ /weekly_schedule }}
+            </div>
+        </div>
+    </div>
+</section>
+{{ /if }}
+
+{{ if show_type == "home-three" }}
+<section class="relative 2xl:mb-[100px] 1xl:mb-20 xl:mb-17 lg:mb-14 md:mb-12 sm:mb-11 mb-10 bg-white">
+    <div id="schedule" class="schedule-3">
+        <div class="container relative z-10">
+            <div class="text-center lg::max-w-[65%] lt:max-w-[80%] max-w-full w-full mx-auto mb-10">
+                <h3 class="font-primary italic font-medium 2xl:mb-7 1xl:mb-6 xl:mb-5 sm:mb-3 mb-2.5 text-center">
+                    {{ section_title }}
+                </h3>
+                <h2 class="text-primary uppercase 1xl:mb-5 mb-3 text-center">
+                    {{ section_subtitle }}
+                </h2>
+                <p>
+                    {{ description }}
+                </p>
+            </div>
+
+            <!-- Day Tabs (Mobile Select) -->
+            <div>
+                <div class="md:hidden relative w-full">
+                    <select id="scheduleSelect"
+                        class="w-full sm:px-5 sm:py-3 px-4 py-2 bg-primary text-white font-Work border border-primary focus:outline-none appearance-none select-arrow">
+                        {{ weekly_schedule }}
+                        <option value="#three-{{ day }}">{{ day:label | ucfirst }}</option>
+                        {{ /weekly_schedule }}
+                    </select>
+                </div>
+            </div>
+
+            <!-- Day Tabs (Desktop Buttons) -->
+            <div class="overflow-x-auto md:block hidden">
+                <div class="inline-flex min-w-full overflow-hidden 1xl:gap-5 lg:gap-4 lt:gap-3 gap-2">
+                    {{ weekly_schedule }}
+                    <button class="schedule-tab text-white w-full {{ if first }} bg-black is-active{{ /if }}"
+                        data-target="#three-{{ day }}">
+                        {{ day:label | ucfirst }}
+                    </button>
+                    {{ /weekly_schedule }}
+                </div>
+            </div>
+
+            <!-- Tables by Day -->
+            <div class="2xl:mt-8 1xl:mt-7 xl:mt-6 lt:mt-5 mt-4 lt:-mx-3">
+                {{ weekly_schedule }}
+                <div id="three-{{ day }}"
+                    class="schedule-panel custom-scroll-2 {{ if first }} {{ else }}hidden{{ /if }}">
+                    <div class="transition-all duration-300">
+                        <table class="w-full table">
+                            <thead class="table-header-group">
+                                <tr>
+                                    <th class="w-1/5">Time</th>
+                                    <th class="w-1/5">Class</th>
+                                    <th class="w-1/5">Level</th>
+                                    <th class="w-1/5">Trainer</th>
+                                    <th class="w-1/5">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody class="table-row-group space-y-5">
+                                {{ classes }}
+                                <tr class="group hover:bg-whitesmoke-100">
+                                    <!-- TIME -->
+                                    <td class="group-hover:text-primary">
+                                        <p>{{ time }}</p>
+                                    </td>
+                                    <!-- CLASS -->
+                                    <td class="group-hover:text-primary">
+                                        <p>{{ class_name }}</p>
+                                    </td>
+                                    <!-- LEVEL -->
+                                    <td class="group-hover:text-primary">
+                                        <p>{{ level }}</p>
+                                    </td>
+                                    <!-- TRAINER -->
+                                    <td class="group-hover:text-primary">
+                                        <p>{{ trainer_name }}</p>
+                                    </td>
+                                    <!-- ACTION -->
+                                    <td class="group-hover:text-primary">
+                                        {{ if booking_title }}
+                                        <a href="{{ booking_link }}"
+                                            class="p text-thunder-100 hover:text-primary underline decoration-1 underline-offset-2 flex items-center flex-wrap sm:gap-1 gap-0.5 w-full justify-center">
+                                            {{ booking_title }}
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27"
+                                                viewBox="0 0 27 27" fill="none"
+                                                class="2xl:w-[27px] 2xl:h-[27px] sm:w-[25px] sm:h-[25px] w-5 h-5">
+                                                <g clip-path="url(#clip0_3130_6678)">
+                                                    <path
+                                                        d="M8.37896 18.7836L19.207 7.95556M19.207 7.95556C19.4636 8.21217 19.62 8.56903 19.616 8.96328L19.5384 16.6458M19.207 7.95556C18.9504 7.69895 18.5935 7.54257 18.1993 7.54655L10.5168 7.62418"
+                                                        stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                </g>
+                                            </svg>
+                                        </a>
+                                        {{ /if }}
+                                    </td>
+                                </tr>
+                                {{ /classes }}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                {{ /weekly_schedule }}
+            </div>
+        </div>
+    </div>
+</section>
+{{ /if }}
+
+{{ if show_type == "home-two" }}
+
+ <section class="relative 2xl:mb-[100px] 1xl:mb-20 xl:mb-17 lg:mb-14 md:mb-12 sm:mb-11 mb-10 bg-white">
+            <div id="schedule" class="schedule-2">
+                <div class="container relative z-10">
+                    <div
+                        class="text-center 1xl:max-w-[965px] xl:max-w-[810px] md:max-w-[680px] max-w-full w-full mx-auto mb-10">
+                        <h3
+                            class="font-primary italic font-medium 2xl:mb-7 1xl:mb-6 xl:mb-5 sm:mb-3 mb-2.5 text-center">
+                           {{ section_title }}
+                        </h3>
+                        <h2 class="text-primary uppercase 1xl:mb-5 mb-3 text-center">
+                             {{ section_subtitle }}
+                        </h2>
+                        <p>
+                             {{ description }}
+                        </p>
+                    </div>
+
+                    <!-- Day Tabs -->
+                    <div>
+                        <div class="md:hidden relative w-full">
+                            <select id="scheduleSelect"
+                                class="w-full sm:px-5 sm:py-3 px-4 py-2 bg-primary text-white font-Work border border-primary focus:outline-none appearance-none select-arrow">
+                                {{ weekly_schedule }}
+                                <option value="#{{ day }}">{{ day:label | ucfirst }}</option>
+                                {{ /weekly_schedule }}
+                            </select>
+                        </div>
+                    </div>
+                    <div class="overflow-x-auto md:block hidden">
+                        <div class="inline-flex min-w-full overflow-hidden 1xl:gap-5 lg:gap-4 lt:gap-3 gap-2">
+                           
+
+                           {{ weekly_schedule }}
+                           <button class="schedule-tab text-primary w-full {{ if first }}is-active{{ /if }}" data-target="#{{ day }}">
+                             {{ day:label | ucfirst }}
+                         </button>
+                         {{ /weekly_schedule }}
+                           
+                        </div>
+                    </div>
+
+                    <!-- Tables by Day -->
+                    <div class="2xl:mt-8 1xl:mt-7 xl:mt-6 lt:mt-5 mt-4">
+                        <!-- Sunday Table -->
+                         {{ weekly_schedule }}
+                        <div id="{{ day }}" class="schedule-panel {{ if first }}{{ else }}hidden{{ /if }}">
+                            <div class="transition-all duration-300">
+                                <table class="w-full border-collapse block md:table md:border border-[#5C1A2E33]">
+                                    <thead class="hidden md:table-header-group bg-whitesmoke-100">
+                                        <tr>
+                                            <th class="w-1/5">Time</th>
+                                            <th class="w-1/5">Class</th>
+                                            <th class="w-1/5">Level</th>
+                                            <th class="w-1/5">Trainer</th>
+                                            <th class="w-1/5">Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="block md:table-row-group space-y-5">
+                                        <!-- schedule time -->
+                                        {{ classes }}
+                                        <tr class="lt:group lt:hover:bg-whitesmoke-100">
+                                            <!-- TIME -->
+                                            <td class="group-hover:text-primary">
+                                                <h5 class="w-1/3 md:hidden text-start font-medium font-primary text-sm">Time</h5>
+                                                <p>{{ time }}</p>
+                                            </td>
+                                            <!-- CLASS -->
+                                            <td class="group-hover:text-primary">
+                                                <h5 class="w-1/3 md:hidden text-start font-medium font-primary text-sm">Class</h5>
+                                                <p>{{ class_name }}</p>
+                                            </td>
+                                            <!-- LEVEL -->
+                                            <td class="group-hover:text-primary">
+                                                <h5 class="w-1/3 md:hidden text-start font-medium font-primary text-sm">Level</h5>
+                                                <p>{{ level }}</p>
+                                            </td>
+                                            <!-- TRAINER -->
+                                            <td class="group-hover:text-primary">
+                                                <h5 class="w-1/3 md:hidden text-start font-medium font-primary text-sm">Trainer</h5>
+                                                <p>{{ trainer_name }}</p>
+                                            </td>
+                                            <!-- ACTION -->
+                                             {{ if booking_title }}
+                                            <td class="group-hover:text-primary">
+                                                <h5 class="w-1/3 md:hidden text-start font-medium font-primary text-sm">Action</h5>
+                                                <a href="{{ booking_link }}"
+                                                    class="p text-thunder-100 hover:text-primary underline decoration-1 underline-offset-2 flex items-center flex-wrap sm:gap-1 gap-0.5 w-full md:justify-center justify-end">
+                                                    {{ booking_title }}
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27"
+                                                        viewBox="0 0 27 27" fill="none"
+                                                        class="2xl:w-[27px] 2xl:h-[27px] sm:w-[25px] sm:h-[25px] w-5 h-5">
+                                                        <g clip-path="url(#clip0_3130_6678)">
+                                                            <path
+                                                                d="M8.37896 18.7836L19.207 7.95556M19.207 7.95556C19.4636 8.21217 19.62 8.56903 19.616 8.96328L19.5384 16.6458M19.207 7.95556C18.9504 7.69895 18.5935 7.54257 18.1993 7.54655L10.5168 7.62418"
+                                                                stroke="currentColor" stroke-width="1.5"
+                                                                stroke-linecap="round" stroke-linejoin="round" />
+                                                        </g>
+                                                    </svg>
+                                                </a>{{ /if }}
+                                            </td>
+                                        </tr>
+                                         {{ /classes }}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        {{ /weekly_schedule }}
+                    </div>
+                </div>
+            </div>
+        </section>
+{{ /if }}

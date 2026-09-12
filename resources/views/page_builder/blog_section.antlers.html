@@ -1,0 +1,262 @@
+{{ if show_type == "blog-one" }}
+<section class="relative bg-white 2xl:mb-[100px] 1xl:mb-20 xl:mb-17 lg:mb-14 md:mb-12 sm:mb-11 mb-10  wc-blog-section">
+    <div class="container">
+        <!-- Featured Post Row -->
+
+        {{ if collections == "blogs" }}
+
+        {{ collection:blogs as="blogs" paginate="{pagination}" limit="{limit}" }}
+
+        {{ /if }}
+        <div
+            class="grid lt:grid-cols-1 sm:grid-cols-2 grid-cols-1 2xl:gap-12.5 1xl:gap-10 xl:gap-9 lt:gap-8 md:gap-6 gap-5 grid-main-div blog_search">
+            <!-- 1ST BLOG -->
+            {{ blogs }}
+            <div class="flex lt:flex-row flex-col-reverse lt:justify-normal justify-end border border-primary/40 bg-white rounded group/blog grid-item-append"
+                data-aos="fade-up">
+                <!-- Left: Content -->
+                <div
+                    class="w-full lt:max-w-[68.5%] 2xl:px-13.5 1xl:px-11 xl:px-9 lg:px-7 md:px-5 sm:px-4 px-3.5 2xl:py-12.5 1xl:py-10 xl:py-9 lg:py-8 md:py-7 sm:py-6 py-5">
+                    <div class="max-w-[886px] flex flex-col justify-center h-full">
+                        <div
+                            class="flex flex-wrap 2xl:gap-7.5 1xl:gap-7 xl:gap-6 lg:gap-5 md:gap-4.5 gap-2.5 2xl:mb-10.5 1xl:mb-9 xl:mb-8 lg:mb-7 md:mb-6 sm:mb-5 mb-4">
+                            {{ tag }}
+                            <p
+                                class="md:px-4.5 px-2.5 md:py-1 py-0.5 inline-block border border-primary/30 rounded-4xl text-primary">
+                                {{ title }}
+                            </p>
+                            {{ /tag }}
+                        </div>
+
+                        <h3
+                            class="text-primary hover:text-thunder-100 uppercase max-w-[80%] 2xl:mb-12.5 1xl:mb-10 xl:mb-8 lg:mb-6 md:mb-5 sm:mb-4 mb-3.5">
+                            <a href="/blog/{{ slug }}" class="text-current">
+                                {{ title }}
+                            </a>
+                        </h3>
+
+                        <p
+                            class="text-thunder-100 max-w-[98%] 2xl:mb-12 1xl:mb-11 xl:mb-10 lg:mb-9 md:mb-8 sm:mb-7 mb-6">
+                            {{ short_description }}
+                        </p>
+                        {{ if button:label }}
+                        <a href="{{  button:url }}{{ slug }}"
+                            class="text-primary hover:text-thunder-100 hover:underline decoration-1 flex items-center gap-1 uppercase">{{
+                            button:label }}
+                            <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" viewBox="0 0 27 27"
+                                fill="none">
+                                <g clip-path="url(#clip0_3130_6904)">
+                                    <path
+                                        d="M8.37896 18.7836L19.207 7.95556M19.207 7.95556C19.4636 8.21217 19.62 8.56903 19.616 8.96328L19.5384 16.6458M19.207 7.95556C18.9504 7.69895 18.5935 7.54257 18.1993 7.54655L10.5168 7.62418"
+                                        stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </g>
+                            </svg>
+                        </a>
+                        {{ /if }}
+                    </div>
+                </div>
+
+                <!-- Right: Image -->
+                <div
+                    class="overflow-hidden block lt:max-w-[41.5%] relative shrink-0 before:content-[''] md:before:pt-[69%] before:pt-[100%] before:block w-full h-auto group">
+                    {{ image }}<img decoding="async" src="{{ url }}" alt="Blog Images"
+                        class="w-full transition-all duration-1000 h-full object-cover absolute top-0 left-0 bottom-0 right-0" />
+                    {{ /image }}
+                </div>
+            </div>
+            {{ /blogs }}
+        </div>
+
+        {{ paginate }}
+        <input type="hidden" class="lastPage" value="{{ total_pages }}">
+        {{ if next_page }}
+        <div class="load-more-btn load-more-wrap">
+            <a href="{{ next_page }}"
+                class="2xl:mt-12.5 1xl:mt-12 xl:mt-11 lg:mt-10 md:mt-9 sm:mt-8 mt-7.5 btn reveal-more flex items-center justify-center mx-auto gap-4 ajax-load-more-grid">
+                Reveal More
+                <img src="{{ theme:asset src='assets/image/loading.svg'}}" alt="load-more"
+                    class="1xl:size-7.5 xl:size-6.5 size-5.5 animate-spin mx-auto hidden">
+            </a>
+        </div>
+        {{ /if }}
+        {{ /paginate }}
+        {{ if collections == "blogs" }}
+        {{ /collection:blogs }}
+        {{ /if }}
+    </div>
+</section>
+{{ /if }}
+
+{{ if show_type == "blog-two" }}
+
+<section class="relative bg-white 2xl:mb-[100px] 1xl:mb-20 xl:mb-17 lg:mb-14 md:mb-12 sm:mb-11 mb-10">
+    <div class="container">
+        {{ if collections == "blogs" }}
+
+        {{ collection:blogs as="blogs" paginate="{pagination}" limit="{limit}" }}
+
+        {{ /if }}
+        <div class="grid lt:grid-cols-2 grid-cols-1 1xl:gap-12.5 xl:gap-9 sm:gap-6 gap-4 grid-main-div">
+            <!-- 1st card -->
+            {{ blogs }}
+            <div class="rounded-sm bg-white border border-[#5C1A2E80] overflow-hidden w-full grid-item-append"
+                data-aos="fade-up">
+                <div
+                    class="flex sm:flex-row flex-col justify-between 1xl:gap-7 xl:gap-6 sm:gap-4 gap-5 1xl:p-7 xl:p-5 lt:p-4 md:p-6 p-4 items-stretch h-full">
+                    <!-- Left Content -->
+                    <div class="sm:w-[55%] w-full my-auto flex flex-col items-start">
+                        <!-- Date -->
+                        <div class="flex items-center xl:gap-[10px] gap-2 1xl:mb-6 mb-4">
+                            <div
+                                class="1xl:w-[30px] 1xl:h-[30px] xl:w-[28px] xl:h-[28px] w-[26px] h-[26px] p-1 rounded-sm flex items-center justify-center">
+                                <img src="{{ theme:asset }}assets/image/calendor.svg">
+                            </div>
+                            <span class="uppercase p2 text-black">{{ date }}</span>
+                        </div>
+
+                        <!-- Title -->
+                        <a href="/blog/{{ slug }}">
+                            <h3 class="uppercase text-primary 1xl:mb-5 xl:mb-4 mb-3 hover:text-thunder-100">
+                                {{ title }}
+                            </h3>
+                        </a>
+
+                        <!-- Description -->
+                        <p class="1xl:mb-11 xl:mb-8 mb-6">
+                            {{ short_description }}
+                        </p>
+
+                        <!-- Read More -->
+                        {{ if button:label }}
+                        <a href="{{  button:url }}{{ slug }}"
+                            class="p2 font-normal btn-link uppercase hover:text-primary text-black leading-[100%]">
+                            {{ button:label }}
+                            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13"
+                                class="sm:w-[13px] sm:h-[13px] w-[11px] h-[11px]" fill="none">
+                                <path
+                                    d="M0.750055 11.9871L11.5781 1.15908M11.5781 1.15908C11.8347 1.4157 11.9911 1.77255 11.9871 2.1668L11.9095 9.8493M11.5781 1.15908C11.3215 0.902467 10.9646 0.746093 10.5704 0.750076L2.88787 0.827704"
+                                    stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </a>
+                        {{ /if }}
+                    </div>
+
+                    <!-- Right Image -->
+                    <div class="relative lt:w-[45%] sm:w-[38%] block overflow-hidden rounded-sm">
+                        <div
+                            class="relative shrink-0 before:content-[''] before:pt-[100%] before:block h-full overflow-hidden">
+                            {{ image }}<img src="{{ url }}" alt="Pilates"
+                                class="w-full h-full object-cover absolute top-0 left-0" />{{ /image }}
+                            <!-- Badge -->
+                            {{ tag limit="1" }}
+                            <p
+                                class="absolute 1xl:top-4 1xl:right-4 xl:top-3 p2 xl:right-3 top-2.5 right-2.5 bg-white text-[#6b3f2b] 1xl:px-[18px] xl:px-[14px] px-3 xl:py-[3px] py-[2px] rounded-full">
+                                {{ title }}
+                            </p>
+                            {{ /tag }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{ /blogs }}
+
+        </div>
+
+        {{ paginate }}
+        <input type="hidden" class="lastPage" value="{{ total_pages }}">
+        {{ if next_page }}
+        <div class="load-more-btn load-more-wrap">
+            <a href="{{ next_page }}"
+                class="2xl:mt-12.5 1xl:mt-12 xl:mt-11 lg:mt-10 md:mt-9 sm:mt-8 mt-7.5 btn reveal-more flex items-center justify-center mx-auto gap-4 ajax-load-more-grid">
+                Reveal More
+                <img src="{{ theme:asset src='assets/image/loading.svg'}}" alt="load-more"
+                    class="1xl:size-7.5 xl:size-6.5 size-5.5 animate-spin mx-auto hidden">
+            </a>
+        </div>
+        {{ /if }}
+        {{ /paginate }}
+        {{ if collections == "blogs" }}
+        {{ /collection:blogs }}
+        {{ /if }}
+    </div>
+</section>
+
+{{ /if }}
+
+{{ if show_type == "blog-three" }}
+
+<section class="relative bg-white 2xl:mb-[100px] 1xl:mb-20 xl:mb-17 lg:mb-14 md:mb-12 sm:mb-11 mb-10">
+    <div class="container">
+        {{ if collections == "blogs" }}
+
+        {{ collection:blogs as="blogs" paginate="{pagination}" limit="{limit}" }}
+
+        {{ /if }}
+        <div
+            class="grid lt:grid-cols-3 sm:grid-cols-2 grid-cols-1 1xl:gap-6 xl:gap-5 lt:gap-4 md:gap-6 gap-5 grid-main-div">
+            <!-- 1st card -->
+            {{ blogs }}
+            <div class="bg-whitesmoke-100 rounded-sm overflow-hidden h-auto flex flex-col grid-item-append" data-aos="fade-up">
+                <!-- Image Wrapper -->
+                <div
+                    class="relative overflow-hidden shrink-0 before:content-[''] xl:before:pt-[58%] lt:before:pt-[60%] before:pt-[65%] before:block w-full h-auto group">
+                    {{ image }}<img src="{{ url }}" alt="{{ title }}"
+                        class="w-full h-full object-cover absolute top-0 left-0" />{{ /image }}
+                </div>
+
+                <!-- Content -->
+                <div class="1xl:py-[30px] xl:py-5 sm:py-4 lg:px-5 p-4 text-left h-full flex flex-col justify-between">
+                    <div>
+                        <!-- Title -->
+                        <a href="/blog/{{ slug }}">
+                            <h5
+                                class="uppercase text-primary hover:text-black 1xl:mb-3.5 mb-2.5 xl:max-w-[87%] lt:max-w-full md:max-w-[97%] w-full">
+                                {{ title }}
+                            </h5>
+                        </a>
+                        <!-- Description -->
+                        <p class="1xl:mb-6 xl:mb-5 mb-4 xl:max-w-[95%] w-full">
+                            {{ short_description }}
+                        </p>
+                    </div>
+                    <div
+                        class="flex md:items-center items-start justify-between w-full gap-3 md:flex-row flex-col flex-wrap">
+                        <div class="flex items-center xl:gap-3 lg:gap-2.5 gap-2">
+                            <img src="{{ theme:asset }}assets/image/calendor.svg"
+                                class="2xl:size-7.5 1xl:size-6.5 lg:size-6 sm:size-5.5 size-5">
+                            <p class="uppercase p2">{{ date }}</p>
+                        </div>
+                        {{ if button:label }}
+                        <a href="{{  button:url }}{{ slug }}"
+                            class="btn btn-secondary md:text-13 text-[10px] xl:py-2 xl:px-5 py-1.5 md:px-4.5 px-4">{{
+                            button:label }}</a>
+                        {{ /if }}
+                    </div>
+                </div>
+            </div>
+            {{ /blogs }}
+        </div>
+
+
+        {{ paginate }}
+        <input type="hidden" class="lastPage" value="{{ total_pages }}">
+        {{ if next_page }}
+        <div class="load-more-btn load-more-wrap">
+            <a href="{{ next_page }}"
+                class="2xl:mt-12.5 1xl:mt-12 xl:mt-11 lg:mt-10 md:mt-9 sm:mt-8 mt-7.5 btn reveal-more flex items-center justify-center mx-auto gap-4 ajax-load-more-grid">
+                Reveal More
+                <img src="{{ theme:asset src='assets/image/loading.svg'}}" alt="load-more"
+                    class="1xl:size-7.5 xl:size-6.5 size-5.5 animate-spin mx-auto hidden">
+            </a>
+        </div>
+        {{ /if }}
+        {{ /paginate }}
+        {{ if collections == "blogs" }}
+        {{ /collection:blogs }}
+        {{ /if }}
+    </div>
+</section>
+
+{{ /if }}

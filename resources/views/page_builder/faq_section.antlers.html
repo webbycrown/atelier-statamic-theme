@@ -1,0 +1,32 @@
+ <!-- ====== Start faq's ====== -->
+        <section class="relative 2xl:mb-[100px] 1xl:mb-20 xl:mb-17 lg:mb-14 md:mb-12 sm:mb-11 mb-10 w-full">
+            <div class="container">
+                <h2 class="uppercase text-primary 1xl:mb-12.5 xl:mb-10 mb-7.5">{{ section_title }}</h2>
+                 {{ if collections | length }}
+                                            
+                <div class="faqs">
+                    <!-- 1- FAQ ITEM -->
+                    {{ collection:{collections} sort="order_number" }}
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <div class="flex sm:items-center items-start sm:gap-1.5 gap-1">
+                                <h5 class="uppercase">{{ order_number }}. </h5>
+                                <h5 class="uppercase"> {{ title }}</h5>
+                            </div>
+                            <span class="faq-icon">+</span>
+                        </button>
+
+                        <div class="faq-answer hidden">
+                            <p class="text-black">
+                               {{ answer }}
+                            </p>
+                        </div>
+                    </div>
+
+                    {{ /collection:{collections} }}
+                </div>
+              
+                {{ /if }}
+            </div>
+        </section>
+        <!-- ====== End faq's ====== -->

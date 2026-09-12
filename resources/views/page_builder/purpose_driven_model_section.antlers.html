@@ -1,0 +1,56 @@
+  <section class="relative bg-white 2xl:mb-[100px] 1xl:mb-20 xl:mb-17 lg:mb-14 md:mb-12 sm:mb-11 mb-10">
+            <div class="container">
+                <div
+                    class="flex justify-between  md:flex-row flex-col 2xl:gap-13 1xl:gap-11.5 xl:gap-10 lt:gap-8 md:gap-7 sm:gap-6 gap-5 items-stretch">
+                    <!-- Left: Image -->
+                    <div class="relative w-full md:max-w-[48.3%]">
+                        <div
+                            class="overflow-hidden relative before:block before:content-[''] xl:before:pt-[65%] lt:before:pt-[70%] md:before:pt-[100%] before:pt-[60%] h-full">
+                           {{ section_image }} <img decoding="async" src="{{ url }}" alt="Pilates"
+                                class="w-full h-full object-cover object-center absolute top-0 left-0" />
+                                {{ /section_image }}
+                        </div>
+                    </div>
+
+                    <!-- Right: Content -->
+                    <div class="w-full md:max-w-[51.7%] my-auto">
+                        <h3
+                            class="text-thunder-100 font-primary italic font-medium 2xl:mb-7.5 1xl:mb-6 md:mb-4 sm:mb-3 mb-2.5">
+                           {{ small_heading }}
+                        </h3>
+                        <h3 class="text-primary font-normal uppercase 1xl:mb-5 mb-3">
+                            {{ main_heading }}
+                        </h3>
+                        {{ if description_one }}
+                        <p class="1xl:mb-5 xl:mb-4 md:mb-3 mb-2.5">
+                            {{ description_one }}
+                        </p>
+                        {{ /if }}
+                        {{ if description_two }}
+                        <p>
+                            {{ description_two }}
+                        </p>
+                        {{ /if }}
+                    </div>
+                </div>
+
+                <div
+                    class="1xl:mt-12.5 lg:mt-10.5 md:mt-8 sm:mt-6.5 mt-5 bg-whitesmoke-100 1xl:p-7.5 lg:p-6 sm:p-5 p-3.5 sm:border-l-3 border-l-2 border-primary">
+                    <div class="flex items-start justify-center lg:gap-6 sm:gap-4.5 gap-3">
+                        <div
+                            class="2xl:w-20 2xl:h-20 xl:w-16 xl:h-16 lg:w-14 lg:h-14 lt:w-12 lt:h-12 w-11 h-11 shrink-0">
+                            {{ highlight_icon }}<img src="{{ url }}" alt="leaf" class="w-full h-full" loading="lazy"
+                                decoding="async" />{{ /highlight_icon }}
+                        </div>
+                        <div class="flex flex-col items-start 1xl:gap-5 sm:gap-4 gap-3">
+                            <h5 class="text-primary uppercase">{{ highlight_title }}</h5>
+                            {{ if highlight_description }}
+                            <p class="font-medium">
+                               {{ highlight_description }}
+                            </p>
+                            {{ /if }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>

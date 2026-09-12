@@ -1,0 +1,48 @@
+title: 'About Studio Section'
+fields:
+  -
+    handle: sub_title
+    field:
+      type: text
+      display: 'Sub Title'
+  -
+    handle: main_title
+    field:
+      type: text
+      display: 'Main Title'
+  -
+    handle: main_image
+    field:
+      container: assets
+      max_files: 1
+      type: assets
+      display: 'Main Image'
+  -
+    handle: gallery_images
+    field:
+      container: assets
+      max_files: 2
+      type: assets
+      display: 'Gallery Images'
+  -
+    handle: description_one
+    field:
+      type: textarea
+      display: 'Description one'
+  -
+    handle: description_two
+    field:
+      type: textarea
+      display: 'Description Two'
+  -
+    handle: button_text
+    field:
+      type: text
+      display: 'Button Text'
+      width: 50
+  -
+    handle: button_url
+    field:
+      type: text
+      display: 'Button URL'
+      width: 50

@@ -1,0 +1,13 @@
+export_paths:
+  - routes
+  - content
+  - app/Http
+  - resources/blueprints
+  - resources/fieldsets
+  - resources/forms
+  - resources/views
+  - public/assets
+  - storage/forms
+  - package.json
+  - vite.config.js
+  - README.md

@@ -1,0 +1,8 @@
+main_image: image/404.webp
+heading_text: '“Oops... This Page Lost Its Balance ️”'
+description: 'The page you’re looking for might have been moved, deleted, or never existed. Let’s get you back on track.'
+action_buttons:
+  -
+    id: LtCyY_LNQGfdr-Aes674G
+    button_label: Home
+    button_url: /

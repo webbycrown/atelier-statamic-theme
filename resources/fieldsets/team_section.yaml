@@ -1,0 +1,20 @@
+title: 'Team Section'
+fields:
+  -
+    handle: collections
+    field:
+      mode: select
+      max_items: 1
+      type: collections
+      display: Collections
+  -
+    handle: limit
+    field:
+      type: integer
+      display: Limit
+  -
+    handle: pagination
+    field:
+      default: 'false'
+      type: text
+      display: Pagination

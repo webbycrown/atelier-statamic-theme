@@ -1,0 +1,76 @@
+<section class="relative 2xl:mb-[100px] 1xl:mb-20 xl:mb-17 lg:mb-14 md:mb-12 sm:mb-11 mb-10">
+    <div class="container">
+        <div class="rounded border border-primary/50 relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-full h-full bg-whitesmoke-200">
+                <img loading="lazy" decoding="async" src="{{ theme:asset }}assets/image/Newsletter-Bg-Images.webp"
+                    class="w-full h-full object-cover opacity-[0.03]" alt="Newsletter Bg Images" />
+            </div>
+            <div
+                class="flex justify-between md:flex-row flex-col items-center lt:gap-7.5 gap-2.5 relative md:py-0 py-9 lg:px-[55px] lt:px-8 md:px-6.5 px-4">
+                <!-- Left: Copy + Form -->
+                <div class="w-full max-w-[903px] 2xl:py-20 1xl:py-18 xl:py-16 lg:py-14 lg::py-12 md:py-8">
+                    <div class="xl:space-y-4.5 md:space-y-4 space-y-3.5">
+                        <h3 class="text-thunder-100 font-primary italic font-medium">
+                            {{ section_title }}
+                        </h3>
+                        <h2 class="text-primary font-normal uppercase">
+                            {{ sub_title }}
+                        </h2>
+                        <p class="text-thunder-100 max-w-[752px]">
+                            {{ description }}
+                        </p>
+                    </div>
+
+
+
+                    {{ form:subscription data-endpoint novalidate data-ajax="true" class="validate-form
+                    subscription-form subscribed-form 2xl:my-10 1xl:my-9 xl:my-8 lg:my-7.5 md:my-7 sm:my-6.5 my-6 max-w-[560px]" }}
+                    <!-- Name -->
+                    {{ fields }}
+                    <div class="sm:mb-4 mb-3">
+                        <input type="{{ if handle == 'email' }}email{{ else }}{{ type }}{{ /if }}" name="{{ handle }}"
+                            {{ if handle == 'email' }}id="email"{{ /if }}
+                            placeholder="{{ placeholder ?? 'Enter Your Name' }}"
+                            class="type-filed p placeholder:text-thunder-100 bg-white" />
+                        <div class="text-red-500 mt-[3px] opacity-0 transition-all ease-in-out error-message hidden items-center gap-2"
+                            data-error-for="{{ handle }}">
+                            <span class="field-error text-red-600 error-text sm:text-sm text-[13px]" data-error-for="{{ handle }}"></span>
+                        </div>
+                    </div>
+                    {{ /fields }}
+
+                    {{ if subscribe_button_text }}
+                    <button type="submit" class="w-full btn btn-secondary">
+                        {{ subscribe_button_text }}
+                    </button>
+                    {{ /if }}
+                    <p class="form-success-msg form-message hidden" aria-live="polite"></p>
+
+                    {{ /form:subscription }}
+
+
+                    <p class="text-primary font-medium sm:mb-[18px] mb-[14px] font-primary">
+                        "{{ quote_text }}"
+                    </p>
+                    {{ if quote_author }}
+                    <p>– {{ quote_author }}</p>
+                    {{ /if }}
+                </div>
+
+
+                <!-- Right: Image -->
+                <div class="w-full 1xl:max-w-[700px] lt:max-w-[530px] max-w-[330px] md:py-5">
+                    <!-- Decorative Flower -->
+                    <div
+                        class="pointer-events-none absolute top-0 right-0 max-[2600px]:w-[clamp(16.5%,11.2vw,25%)] opacity-13 hidden md:block">
+                        <img src="{{ theme:asset }}assets/image/flower-shape.svg" alt="decor"
+                            class="w-full h-full object-contain" />
+                    </div>
+                    {{ background_image }}<img src="{{ url }}" alt="newsletter pilates" class="w-full h-full object-contain" />{{
+                    /background_image }}
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>

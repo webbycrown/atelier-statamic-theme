@@ -1,0 +1,132 @@
+title: Setting
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: favicon
+            field:
+              container: assets
+              max_files: 1
+              type: assets
+              display: Favicon
+              validate:
+                - required
+          -
+            handle: logo
+            field:
+              container: assets
+              max_files: 1
+              min_files: 1
+              type: assets
+              display: Logo
+              validate:
+                - required
+          -
+            handle: white_logo
+            field:
+              container: assets
+              type: assets
+              display: 'White Logo'
+              max_files: 1
+              validate:
+                - required
+          -
+            handle: header_select
+            field:
+              options:
+                -
+                  key: header
+                  value: 'Header One'
+                -
+                  key: header-two
+                  value: 'Header Two'
+              default: header
+              type: select
+              display: 'Header Select'
+          -
+            handle: footer_select
+            field:
+              options:
+                -
+                  key: footer
+                  value: Footer
+                -
+                  key: footer-two
+                  value: 'Footer Two'
+                -
+                  key: footer-three
+                  value: 'Footer Three'
+                -
+                  key: footer-four
+                  value: 'Footer Four'
+              default: footer
+              type: select
+              display: 'Footer Select'
+  page_headers:
+    display: 'Page Headers'
+    sections:
+      -
+        fields:
+          -
+            handle: blog_banner_title
+            field:
+              type: text
+              display: 'Blog Banner Title'
+              default: 'Evening Flow for Better Sleep'
+          -
+            handle: blog_banner_description
+            field:
+              type: textarea
+              display: 'Blog Banner Description'
+              default: 'Unwind your day with calming sequences that relax the body and quiet the mind. Let each movement ease you into restful sleep—gentle, slow, and intentional.'
+          -
+            handle: class_banner_title
+            field:
+              type: text
+              display: 'Class Banner Title'
+              default: 'Explore Hatha Yoga'
+          -
+            handle: class_banner_description
+            field:
+              type: textarea
+              display: 'Class Banner Description'
+              default: 'Experience yoga that meets you where you are-grounded, mindful, and accessible. Each Hatha class is thoughtfully designed to balance body and breath, calm the mind, and build a strong, steady foundation for your practice.'
+          -
+            handle: event_banner_title
+            field:
+              type: text
+              display: 'Event Banner Title'
+              default: 'Balance & Core Workshop'
+          -
+            handle: event_banner_description
+            field:
+              type: textarea
+              display: 'Event Banner Description'
+              default: 'Strengthen your foundation and find your center in this focused workshop. Designed for all levels, the session blends balance-enhancing postures with deep core engagement practices.'
+          -
+            handle: retreat_banner_title
+            field:
+              type: text
+              display: 'Retreat Banner Title'
+              default: 'Retreat Detail'
+          -
+            handle: retreat_banner_description
+            field:
+              type: textarea
+              display: 'Retreat Banner Description'
+              default: 'From gentle stretches to dynamic flows, our diverse classes are designed to match your needs. Find your pace, your practice, and your peace-on your terms.'
+          -
+            handle: class_category_banner_title
+            field:
+              type: text
+              display: 'Class Category Banner Title'
+              default: 'Balance & Core Workshop'
+          -
+            handle: class_category_banner_description
+            field:
+              type: textarea
+              display: 'Class Category Banner Description'
+              default: 'Strengthen your foundation and find your center in this focused workshop. Designed for all levels, the session blends balance-enhancing postures with deep core engagement practices.'

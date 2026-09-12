@@ -1,0 +1,44 @@
+title: 'About Yoga Section'
+fields:
+  -
+    handle: sub_title
+    field:
+      type: text
+      display: 'Sub Title'
+  -
+    handle: main_title
+    field:
+      type: text
+      display: 'Main Title'
+  -
+    handle: description_one
+    field:
+      type: textarea
+      display: 'Description one'
+  -
+    handle: description_two
+    field:
+      type: textarea
+      display: 'Description Two'
+  -
+    handle: bullet_points
+    field:
+      type: list
+      display: 'Bullet Points'
+  -
+    handle: button_text
+    field:
+      type: text
+      display: 'Button Text'
+  -
+    handle: button_url
+    field:
+      type: text
+      display: 'Button URL'
+  -
+    handle: image
+    field:
+      container: assets
+      max_files: 1
+      type: assets
+      display: 'Section Image'

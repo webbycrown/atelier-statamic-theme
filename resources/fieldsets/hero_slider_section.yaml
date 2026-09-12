@@ -1,0 +1,63 @@
+title: 'Hero Slider Section'
+fields:
+  -
+    handle: hero_slides
+    field:
+      type: replicator
+      display: 'Hero Slides'
+      sets:
+        new_set_group:
+          display: 'New Set Group'
+          sets:
+            slide:
+              display: Slide
+              fields:
+                -
+                  handle: slide_image
+                  field:
+                    container: assets
+                    max_files: 1
+                    type: assets
+                    display: 'Slide Image'
+                -
+                  handle: slide_title
+                  field:
+                    type: text
+                    display: 'Slide Title'
+                -
+                  handle: slide_description
+                  field:
+                    type: textarea
+                    display: 'Slide Description'
+  -
+    handle: button_text
+    field:
+      type: text
+      display: 'Button Text'
+  -
+    handle: button_url
+    field:
+      type: text
+      display: 'Button URL'
+  -
+    handle: members_count
+    field:
+      type: text
+      display: 'Members Count'
+  -
+    handle: members_description
+    field:
+      type: text
+      display: 'Members Description'
+  -
+    handle: member_images
+    field:
+      container: assets
+      max_files: 4
+      type: assets
+      display: 'Member Images'
+  -
+    handle: member_info
+    field:
+      type: text
+      display: 'Member Info'

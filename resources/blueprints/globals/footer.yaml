@@ -1,0 +1,197 @@
+title: Footer
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: description
+            field:
+              type: textarea
+              display: Description
+          -
+            handle: quick_links_title
+            field:
+              default: 'Quick Links'
+              type: text
+              display: 'Quick Links Title'
+          -
+            handle: quick_links
+            field:
+              type: grid
+              display: 'Quick Links Navigation'
+              fields:
+                -
+                  handle: label
+                  field:
+                    type: text
+                    display: Label
+                    width: 50
+                -
+                  handle: url
+                  field:
+                    type: text
+                    display: Url
+                    width: 50
+          -
+            handle: services_title
+            field:
+              default: Services
+              type: text
+              display: 'Services title'
+          -
+            handle: services_list
+            field:
+              type: grid
+              display: 'Services Navigation'
+              fields:
+                -
+                  handle: label
+                  field:
+                    type: text
+                    display: Label
+                    width: 50
+                -
+                  handle: url
+                  field:
+                    type: text
+                    display: Url
+                    width: 50
+          -
+            handle: schedule_label
+            field:
+              default: Schedule
+              type: text
+              display: 'Schedule label'
+          -
+            handle: studio_hours_title
+            field:
+              default: 'Studio Hours'
+              type: text
+              display: 'Studio Hours Title'
+          -
+            handle: studio_hours
+            field:
+              type: grid
+              display: 'Studio Hours'
+              fields:
+                -
+                  handle: label
+                  field:
+                    type: text
+                    display: Label
+                    width: 50
+                -
+                  handle: time
+                  field:
+                    type: text
+                    display: Time
+                    width: 50
+          -
+            handle: legal_links
+            field:
+              type: grid
+              display: 'Legal Links'
+              fields:
+                -
+                  handle: label
+                  field:
+                    type: text
+                    display: Label
+                    width: 50
+                -
+                  handle: url
+                  field:
+                    type: text
+                    display: Url
+                    width: 50
+          -
+            handle: contact_us
+            field:
+              type: group
+              display: 'Contact Us'
+              fields:
+                -
+                  handle: contact_us_title
+                  field:
+                    default: 'Contact Us'
+                    type: text
+                    display: 'Contact Us Title'
+                -
+                  handle: address
+                  field:
+                    type: grid
+                    display: Address
+                    fields:
+                      -
+                        handle: address_line
+                        field:
+                          type: text
+                          display: 'Address Line'
+                      -
+                        handle: address
+                        field:
+                          type: text
+                          display: Address
+                -
+                  handle: phone_number
+                  field:
+                    type: grid
+                    display: 'Phone Number'
+                    fields:
+                      -
+                        handle: number
+                        field:
+                          type: text
+                          display: Number
+                      -
+                        handle: number_url
+                        field:
+                          type: text
+                          display: 'Number url'
+                -
+                  handle: email
+                  field:
+                    type: grid
+                    display: Email
+                    fields:
+                      -
+                        handle: email_address
+                        field:
+                          type: text
+                          display: 'Email Address'
+                      -
+                        handle: email_link
+                        field:
+                          type: text
+                          display: 'Email link'
+          -
+            handle: copyright_text
+            field:
+              default: '© 2026 Pranavya Yoga. All rights reserved.'
+              type: text
+              display: 'Copyright Text'
+          -
+            import: social_section
+          -
+            handle: newsletter_section
+            field:
+              type: group
+              display: 'Newsletter Section'
+              fields:
+                -
+                  handle: title
+                  field:
+                    type: text
+                    display: Title
+                -
+                  handle: description
+                  field:
+                    type: text
+                    display: Description
+                -
+                  handle: button_text
+                  field:
+                    type: text
+                    display: 'Button Text'

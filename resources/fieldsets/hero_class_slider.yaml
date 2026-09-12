@@ -1,0 +1,73 @@
+title: 'Hero Class Slider'
+fields:
+  -
+    handle: background_image
+    field:
+      container: assets
+      max_files: 1
+      type: assets
+      display: 'Background Image'
+  -
+    handle: heading
+    field:
+      type: text
+      display: Heading
+  -
+    handle: description
+    field:
+      type: textarea
+      display: Description
+  -
+    handle: button_text
+    field:
+      type: text
+      display: 'Button Text'
+  -
+    handle: button_url
+    field:
+      type: text
+      display: 'Button URL'
+  -
+    handle: class_slider
+    field:
+      type: replicator
+      display: 'Class Slider'
+      sets:
+        new_set_group:
+          display: 'New Set Group'
+          sets:
+            class_card:
+              display: 'Class Card'
+              fields:
+                -
+                  handle: class_title
+                  field:
+                    type: text
+                    display: 'Class Title'
+                -
+                  handle: class_link
+                  field:
+                    type: text
+                    display: 'Class Link'
+                -
+                  handle: instructor_name
+                  field:
+                    type: text
+                    display: 'Instructor Name'
+                -
+                  handle: instructor_image
+                  field:
+                    container: assets
+                    max_files: 1
+                    type: assets
+                    display: 'Instructor Image'
+                -
+                  handle: class_time
+                  field:
+                    type: text
+                    display: 'Class Time'
+                -
+                  handle: class_date
+                  field:
+                    type: text
+                    display: 'Class Date'

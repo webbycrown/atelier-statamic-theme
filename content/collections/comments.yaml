@@ -1,0 +1,15 @@
+title: Comments
+template: comments/show
+layout: layout
+revisions: false
+route: '/comments/{slug}'
+mount: null
+structure:
+  max_depth: 3
+search_index: null
+full_url_preview: false
+sort_dir: desc
+date_behavior:
+  date_field: date
+  format: 'Y-m-d H:i'
+sort_field: date

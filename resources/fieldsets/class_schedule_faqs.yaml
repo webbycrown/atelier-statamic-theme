@@ -1,0 +1,53 @@
+title: 'Class Schedule FAQs'
+fields:
+  -
+    handle: section_heading
+    field:
+      type: text
+      display: 'Section Heading'
+      instructions: 'Small italic heading (e.g. Class Schedule FAQs)'
+  -
+    handle: section_title
+    field:
+      type: text
+      display: 'Section Title'
+      instructions: 'Main uppercase heading'
+  -
+    handle: description
+    field:
+      type: textarea
+      display: Description
+  -
+    handle: button_title
+    field:
+      type: text
+      display: 'Button Title'
+      instructions: 'CTA button label (e.g. Check Schedule Info)'
+  -
+    handle: button_link
+    field:
+      type: text
+      display: 'Button Link'
+      instructions: 'Link for CTA button'
+  -
+    handle: faqs
+    field:
+      type: replicator
+      display: Faqs
+      sets:
+        new_set_group:
+          display: 'New Set Group'
+          sets:
+            faq_item:
+              display: 'FAQ Item'
+              fields:
+                -
+                  handle: question
+                  field:
+                    type: text
+                    display: Question
+                -
+                  handle: answer
+                  field:
+                    type: textarea
+                    display: Answer

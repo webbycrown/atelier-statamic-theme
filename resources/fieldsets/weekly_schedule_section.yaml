@@ -1,0 +1,102 @@
+title: 'Weekly Schedule Section'
+fields:
+  -
+    handle: sub_title
+    field:
+      type: text
+      display: 'Sub Title'
+  -
+    handle: section_title
+    field:
+      type: text
+      display: 'Section Title'
+  -
+    handle: description
+    field:
+      type: textarea
+      display: Description
+  -
+    handle: button_text
+    field:
+      type: text
+      display: 'Button Text'
+      width: 50
+  -
+    handle: button_url
+    field:
+      type: text
+      display: 'Button URL'
+      width: 50
+  -
+    handle: schedule_rows
+    field:
+      collapse: true
+      type: replicator
+      display: 'Schedule Rows'
+      replicator_preview: false
+      sets:
+        new_set_group:
+          display: 'New Set Group'
+          sets:
+            new_set:
+              display: 'New Set'
+              fields:
+                -
+                  handle: day
+                  field:
+                    options:
+                      -
+                        key: sunday
+                        value: Sunday
+                      -
+                        key: monday
+                        value: Monday
+                      -
+                        key: tuesday
+                        value: Tuesday
+                      -
+                        key: wednesday
+                        value: Wednesday
+                      -
+                        key: thursday
+                        value: Thursday
+                      -
+                        key: friday
+                        value: Friday
+                      -
+                        key: saturday
+                        value: Saturday
+                    type: select
+                    display: Day
+                  
+                -
+                  handle: days
+                  field:
+                    type: grid
+                    display: Days
+                    instructions: 'Add class or rest for each day'
+                    fields:
+                      -
+                        handle: time_slot
+                        field:
+                          type: text
+                          display: 'Time Slot'
+                          instructions: 'Example 6:00 AM to 7:00 AM'
+                          instructions_position: below
+                        
+                      -
+                        handle: class_name
+                        field:
+                          type: text
+                          display: 'Class Name'
+                      -
+                        handle: level
+                        field:
+                          type: text
+                          display: Level
+                      -
+                        handle: is_rest
+                        field:
+                          type: toggle
+                          display: 'Rest Day'
+                          instructions: 'Enable if no class'

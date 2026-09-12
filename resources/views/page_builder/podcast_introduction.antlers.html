@@ -1,0 +1,42 @@
+ <section
+            class="overflow-hidden relative bg-white 2xl:mb-[100px] 1xl:mb-20 xl:mb-17 lg:mb-14 md:mb-12 sm:mb-11 mb-10">
+            <div class="container">
+                <div
+                    class="flex justify-between lt:flex-row flex-col 2xl:gap-15 1xl:gap-13 lg:gap-10 md:gap-8 sm:gap-7.5 gap-5 md:items-stretch items-start">
+                    <!-- Right: Content -->
+                    <div class="w-full lt:max-w-[53.5%] lt:py-4 lt:my-auto" data-aos="fade-right">
+                        <div class="flex items-center gap-2 2xl:mb-7.5 1xl:mb-6 xl:mb-4 sm:mb-3 mb-2.5">
+                            <img src="{{ theme:asset }}assets/image/mic.png" alt="mic" class="w-auto h-auto object-cointain"
+                                fetchpriority="high" />
+                            <h3 class="text-thunder-100 font-primary italic font-medium">
+                                {{ label }}
+                            </h3>
+                        </div>
+                        <h2 class="text-primary font-normal uppercase 1xl:mb-5 mb-3">
+                            {{ main_heading }}
+                        </h2>
+                        <p class="1xl:mb-5 xl:mb-4 md:mb-3 mb-2.5">
+                            {{ description_one }}
+                        </p>
+                        <p>
+                           {{ description_two }}
+                        </p>
+                    </div>
+
+                    <!-- Left: Image -->
+                    <div class="lt:sticky relative lt:top-20 top-0 w-full lt:max-w-[46.5%] rounded-sm overflow-hidden"
+                        data-aos="fade-left">
+                        <div
+                            class="overflow-hidden relative before:block before:content-[''] 2xl:before:pt-[83%] xl:before:pt-[98%] lg:before:pt-[110%] lt:before:pt-[115%] sm:before:pt-[56%] before:pt-[80%] h-full">
+                            {{ if podcast_image:url }}
+                            <img decoding="async" src="{{ podcast_image:url }}?v=20260909f" alt="{{ title }}"
+                                class="w-full h-full object-cover absolute top-0 left-0" style="opacity:1;visibility:visible;" />
+                            {{ else }}
+                            <img decoding="async" src="/assets/image/tune-into-your-practice.webp?v=20260909f" alt="{{ title }}"
+                                class="w-full h-full object-cover absolute top-0 left-0" style="opacity:1;visibility:visible;" />
+                            {{ /if }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>

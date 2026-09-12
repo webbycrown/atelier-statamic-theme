@@ -1,0 +1,23 @@
+title: 'Social Share'
+data:
+  socials:
+    -
+      id: mn46ylnc
+      title: Instagram
+      platform: instagram
+      url: 'https://www.instagram.com/'
+    -
+      id: mn46yvif
+      title: Twitter
+      platform: x-twitter
+      url: 'https://twitter.com/intent/tweet?url='
+    -
+      id: mn46z4hz
+      title: Facebook
+      platform: facebook-f
+      url: 'https://www.facebook.com/sharer/sharer.php?u='
+    -
+      id: mn46zd33
+      title: Youtube
+      platform: youtube
+      url: 'https://www.youtube.com/watch?v='

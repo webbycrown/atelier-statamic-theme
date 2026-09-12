@@ -1,0 +1,52 @@
+title: 'Key Highlights Section'
+fields:
+  -
+    handle: section_heading
+    field:
+      type: text
+      display: 'Section Heading'
+  -
+    handle: section_title
+    field:
+      type: text
+      display: 'Section Title'
+  -
+    handle: description
+    field:
+      type: textarea
+      display: Description
+  -
+    handle: highlights_list
+    field:
+      type: replicator
+      display: 'Highlights List'
+      instructions: 'Add multiple highlight items'
+      sets:
+        highlight_item:
+          display: 'Highlight Item'
+          sets:
+            new_set:
+              display: 'New Set'
+              fields:
+                -
+                  handle: highlight_title
+                  field:
+                    type: text
+                    display: 'Highlight Title'
+                -
+                  handle: subtitle
+                  field:
+                    type: text
+                    display: subtitle
+                -
+                  handle: description
+                  field:
+                    type: textarea
+                    display: Description
+  -
+    handle: side_image
+    field:
+      container: assets
+      max_files: 1
+      type: assets
+      display: 'Side Image'

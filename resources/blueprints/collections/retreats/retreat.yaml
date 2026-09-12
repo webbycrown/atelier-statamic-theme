@@ -1,0 +1,220 @@
+title: Retreat
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              validate:
+                - required
+              display: Title
+          -
+            handle: short_description
+            field:
+              type: textarea
+              display: 'Short Description'
+          -
+            handle: featured_image
+            field:
+              container: assets
+              max_files: 1
+              type: assets
+              display: 'Featured Image'
+          -
+            handle: price
+            field:
+              type: group
+              display: Price
+              width: 50
+              fields:
+                -
+                  handle: label
+                  field:
+                    type: text
+                    display: Label
+                -
+                  handle: amount
+                  field:
+                    type: text
+                    display: Amount
+                    instructions: 'Example: $495'
+          -
+            handle: event
+            field:
+              type: group
+              display: Event
+              width: 50
+              fields:
+                -
+                  handle: label
+                  field:
+                    type: text
+                    display: Label
+                -
+                  handle: event_value
+                  field:
+                    type: text
+                    display: 'Event Value'
+          -
+            handle: date
+            field:
+              type: text
+              display: Date
+              instructions: 'Ex. : AUG 21, 2025 to September 1, 2025'
+          -
+            handle: text_section
+            field:
+              type: group
+              display: 'Text Section'
+              fields:
+                -
+                  handle: heading
+                  field:
+                    type: text
+                    display: Heading
+                -
+                  handle: content
+                  field:
+                    type: textarea
+                    display: Content
+          -
+            handle: list_section
+            field:
+              type: group
+              display: 'List Section'
+              fields:
+                -
+                  handle: heading
+                  field:
+                    type: text
+                    display: Heading
+                -
+                  handle: items
+                  field:
+                    type: list
+                    display: Items
+          -
+            handle: offers_section
+            field:
+              type: group
+              display: 'Offers Section'
+              fields:
+                -
+                  handle: heading
+                  field:
+                    type: text
+                    display: Heading
+                -
+                  handle: intro_paragraph
+                  field:
+                    type: text
+                    display: 'Intro Paragraph'
+                -
+                  handle: items
+                  field:
+                    type: list
+                    display: Items
+          -
+            handle: welcome_section
+            field:
+              type: group
+              display: 'Welcome Section'
+              fields:
+                -
+                  handle: heading
+                  field:
+                    type: text
+                    display: Heading
+                -
+                  handle: content
+                  field:
+                    type: textarea
+                    display: Content
+          -
+            handle: location_section
+            field:
+              type: group
+              display: 'Location Section'
+              fields:
+                -
+                  handle: heading
+                  field:
+                    type: text
+                    display: Heading
+                -
+                  handle: image
+                  field:
+                    container: assets
+                    max_files: 1
+                    type: assets
+                    display: Image
+                -
+                  handle: address
+                  field:
+                    type: group
+                    display: Address
+                    fields:
+                      -
+                        handle: address
+                        field:
+                          type: text
+                          display: Address
+                          width: 50
+                      -
+                        handle: link
+                        field:
+                          type: text
+                          display: Link
+                          width: 50
+                -
+                  handle: phone
+                  field:
+                    type: group
+                    display: Phone
+                    fields:
+                      -
+                        handle: display
+                        field:
+                          type: text
+                          display: Display
+                          width: 50
+                      -
+                        handle: link
+                        field:
+                          type: text
+                          display: Link
+                          width: 50
+                -
+                  handle: booking_button
+                  field:
+                    type: group
+                    display: 'Booking Button'
+                    fields:
+                      -
+                        handle: button_text
+                        field:
+                          type: text
+                          display: 'Button Text'
+                          width: 50
+                      -
+                        handle: url
+                        field:
+                          type: text
+                          display: Url
+                          width: 50
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'

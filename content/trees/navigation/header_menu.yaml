@@ -1,0 +1,201 @@
+tree:
+  -
+    id: 15286ba9-5d2e-4755-b4c0-67fbb83003c1
+    title: Home
+    url: 'javascript:;'
+    data:
+      menu_type: image
+    children:
+      -
+        id: e881bba8-ce2f-4732-b960-e8c08ba8cc92
+        title: 'Home One'
+        url: /home-three
+        data:
+          menu_type: image
+          image: image/home-menu-1.webp
+      -
+        id: 5061fde7-c6dc-4efb-b1d3-3dfe96107912
+        title: 'Home Two'
+        url: /home-two
+        data:
+          menu_type: image
+          image: image/home-menu-2.webp
+      -
+        id: 2c20dff6-0a57-4684-a535-f8130a84402d
+        title: 'Home Three'
+        url: /
+        data:
+          menu_type: image
+          image: image/home-menu-3.webp
+      -
+        id: 33ae1760-3327-4530-bc0c-1d59a9bd53fe
+        title: 'Home Four'
+        url: /home-four
+        data:
+          menu_type: image
+          image: image/home-menu-4.webp
+  -
+    id: 82f8eb48-2005-4071-ad66-f458ef3173b9
+    title: About
+    url: /about-us
+  -
+    id: a805473b-8c47-4f28-b1e8-399029d032fb
+    title: membership
+    url: /membership
+  -
+    id: 52ed2282-640c-4cf1-ab55-a017d3c84b34
+    title: 'our podcast'
+    url: /podcast
+    data:
+      menu_type: list
+      collections: podcast
+      limit: 8
+  -
+    id: 7758f911-5ce3-4bef-8dd8-7236d40fe7ba
+    title: Looks
+    url: /classes
+    data:
+      menu_type: list
+      collections: looks
+      limit: 8
+  -
+    id: be5c11a0-3c6c-4434-ab8e-bcb883932403
+    title: Blog
+    url: /blogs
+    data:
+      menu_type: list
+      button_text: 'See All Blogs'
+      button_link: /blogs
+      collections: blogs
+      limit: 4
+      event_section:
+        -
+          id: zs9AFOv1Au1iEbgltfFq7
+          events: fc1ba87c-7b56-4ddd-b8f5-64af108b984f
+          button_text: 'See More Events'
+          button_link: /events
+          type: new_set
+          enabled: true
+  -
+    id: yoga-shop-nav-001
+    title: Shop
+    url: /shop
+  -
+    id: a8cadaea-3e2f-404f-83c2-14d3684a57c4
+    title: Pages
+    url: 'javascript:;'
+    children:
+      -
+        id: 786d9371-53c3-4420-8710-68a1c6cc8dc7
+        title: Schedule
+        url: /schedule
+      -
+        id: 1e44533d-fb5a-406e-b017-8d3f60ed430d
+        title: Looks
+        url: 'javascript:;'
+        children:
+          -
+            id: be395406-6e61-4000-85d8-7a9edb1d67b2
+            title: 'Look One'
+            url: /classes
+          -
+            id: b2b8b169-94c5-47a1-9131-8e8f334ecef4
+            title: 'Look Two'
+            url: /classes-two
+          -
+            id: befcf530-dda9-4619-bd09-33e84e887705
+            title: 'Look Detail'
+            url: /class/couture-fitting
+      -
+        id: 4e9f0019-bf38-4c6b-8092-638afa166645
+        title: Events
+        url: 'javascript:;'
+        children:
+          -
+            id: b836a8cd-562c-4a25-a6ec-c71f472d8c95
+            title: 'Events One'
+            url: /events
+          -
+            id: 9e24bc34-cb03-4f69-9ce9-5899b8a9beb9
+            title: 'Events Two'
+            url: /events-two
+          -
+            id: 870fe8a5-638a-4562-83ec-981f4695c276
+            title: 'Events Detail'
+            url: /event/balance-core-workshop
+      -
+        id: 0763f932-e1eb-4730-9a61-6b074e0a7f83
+        title: Retreat
+        url: 'javascript:;'
+        children:
+          -
+            id: 999b5906-bbc6-4d8c-97e3-9200ea5f2b31
+            title: 'Retreat One'
+            url: /retreats
+          -
+            id: 6eddb49a-00a1-40df-8a3a-3ef8e8fe68f5
+            title: 'Retreat Detail'
+            url: /retreat/autumn-serenity-yoga-retreat
+      -
+        id: f1fd14f0-9b99-4df9-815a-20ba80c7ac04
+        title: Team
+        url: 'javascript:;'
+        children:
+          -
+            id: e1765d2d-764e-4391-b26f-e9cd543c6610
+            title: 'Team One'
+            url: /teams
+          -
+            id: 4bc6b7be-5745-41fe-8625-4f7d87439d96
+            title: 'Team Detail'
+            url: /team/daniel-brooks
+      -
+        id: 9defb7e3-22c7-4c8d-b4bb-bf19976057ee
+        title: Blogs
+        url: 'javascript:;'
+        children:
+          -
+            id: 644db493-fb84-4c0e-b6af-35c7874de89a
+            title: 'Blog One'
+            url: /blogs
+          -
+            id: 54b00405-33b9-4cfe-8054-99f118458fa6
+            title: 'Blog Two'
+            url: /blogs-two
+          -
+            id: 34d19c3e-27ac-4aa6-8266-6e7243847964
+            title: 'Blog Three'
+            url: /blogs-three
+          -
+            id: 3f1b8ece-2116-40cd-8737-848484135f62
+            title: 'Blog Detail'
+            url: /blog/5-morning-yoga-poses-to-start-fresh
+      -
+        id: 20733b0a-9716-4008-86d1-0232dd386cf2
+        title: Testimonial
+        url: /testimonials
+      -
+        id: c2b550f6-0a25-409e-b799-030d0c0b971a
+        title: Faq
+        url: /faq
+      -
+        id: d1ce279a-0061-49eb-beef-a35c1b514d05
+        title: 'Book A Look'
+        url: /book-class
+      -
+        id: 98cdd4e8-2f99-4a4c-b28e-ae199cb8f167
+        title: 'Privacy Policy'
+        url: /privacy-policy
+      -
+        id: b687a8fc-30e6-4ef7-84b2-1b953e331875
+        title: 'Terms and Condition'
+        url: /terms-condition
+      -
+        id: e8ae194d-2a0e-4621-a6eb-0041a0fc58d2
+        title: 'Empty Pages'
+        url: 'javascript:;'
+        children:
+          -
+            id: 21445c13-4f8a-4940-863a-7556bd021e00
+            title: '404'
+            url: /404

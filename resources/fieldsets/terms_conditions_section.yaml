@@ -1,0 +1,30 @@
+title: 'Terms & Conditions Section'
+fields:
+  -
+    handle: content
+    field:
+      buttons:
+        - h2
+        - h3
+        - bold
+        - italic
+        - unorderedlist
+        - orderedlist
+        - removeformat
+        - quote
+        - anchor
+        - image
+        - table
+        - h1
+        - h4
+        - h5
+        - h6
+        - code
+        - alignleft
+        - aligncenter
+        - alignright
+        - alignjustify
+      container: assets
+      remove_empty_nodes: false
+      type: bard
+      display: 'Terms Content'

@@ -1,0 +1,701 @@
+<!-- ====== Start Page Heading ====== -->
+<section class="relative 1xl:pt-20 xl:pt-17 lg:pt-14 md:pt-12 sm:pt-11 pt-10 1xl:mb-20 lg:mb-7 mb-3">
+    <div class="container relative">
+        <div class="flex flex-col items-center justify-center lt:max-w-[73%] md:max-w-[90%] max-w-full w-full text-center mx-auto space-y-2.5 1xl:pt-20 xl:pt-17 lg:pt-14 md:pt-12 sm:pt-8 pt-5 md:pb-12 sm:pb-8 pb-5
+            {{ setting }}{{ if header_select == 'header-two' }} pt-0 {{ else }} sm:mt-10 mt-5 {{ /if }}{{ /setting }}">
+            <h1 class="uppercase text-primary text-center" data-aos="fade-up">{{ setting:class_banner_title }}</h1>
+            <p class="xl:max-w-[90%] w-full" data-aos="fade-up">
+                {{ setting:class_banner_description }}
+            </p>
+        </div>
+
+        <!-- Decorative Flower -->
+        <div
+            class="pointer-events-none absolute top-0 left-auto lt:right-0 -right-16 lg:w-[14.2%] w-[18%] hidden md:block opacity-30">
+            <img decoding="async" src="{{ theme:asset }}assets/image/flower-shape.svg" alt="decor"
+                class="w-full h-full object-contain" />
+        </div>
+    </div>
+</section>
+<!-- ====== End Page Heading ====== -->
+
+<!-- ====== Main Content Section ====== -->
+<section class="relative bg-white 2xl:mb-[100px] 1xl:mb-20 xl:mb-17 lg:mb-14 md:mb-12 sm:mb-11 mb-10">
+    <div class="container">
+        <div
+            class="flex lt:flex-row flex-col items-start 2xl:gap-19.5 1xl:gap-17 xl:gap-15 lg:gap-13.5 lt:gap-8.5 gap-3.5">
+            <div
+                class="lt:w-[64%] w-full 2xl:space-y-12.5 1xl:space-y-11 xl:space-y-9 lg:space-y-7.5 sm:space-y-6 space-y-4">
+                <div
+                    class="rounded-sm block overflow-hidden relative shrink-0 before:content-[''] 2xl:before:pt-[57%] before:pt-[54%] before:block w-full h-full">
+                    {{ main_image }}<img src="{{ url }}" alt="classs"
+                        class="w-full h-full object-cover absolute top-0 left-0 right-0 bottom-0" />{{ /main_image }}
+                </div>
+                <div class="">
+                    <h3 class="text-thunder-100 font-primary italic font-medium 1xl:mb-[25px] mb-3">
+                        {{ subtitle }}
+                    </h3>
+                    {{ description }}
+                </div>
+
+                <div class="">
+                    <div>
+                        <h3 class="text-primary font-normal uppercase 1xl:mb-6 xl:mb-5 lg:mb-4 mb-3">
+                            {{ class_flow:class_flow_title }}
+                        </h3>
+                        <div>
+                            <!-- 1st list -->
+                            {{ class_flow:class_flows }}
+                            <div class="flex items-start flex-col 2xl:mb-10 1xl:mb-9 lg:mb-7 sm:mb-5.5 mb-4"
+                                data-aos="fade-up">
+                                <div class="flex items-center sm:gap-2.5 gap-2 md:mb-3 mb-2">
+                                    <span class="shrink-0 whitespace-nowrap 1xl:w-7.5 xl:w-7 lg:w-6 sm:w-5 w-4 h-full">
+                                        <img decoding="async" src="{{ theme:asset }}assets/image/bullets-point.svg"
+                                            alt="Bullets Point" />
+                                    </span>
+                                    <h5 class="uppercase">{{ step_title }}</h5>
+                                </div>
+                                <div class="xl:pl-10 lg:pl-9 sm:pl-7.5 pl-6.5">
+                                    <p>
+                                        {{ step_description }}
+                                    </p>
+                                </div>
+                            </div>
+                            {{ /class_flow:class_flows }}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="" data-aos="fade-up">
+                    <h3
+                        class="text-primary font-primary italic font-medium 2xl:mb-12.5 1xl:mb-11 xl:mb-9 lg:mb-7.5 sm:mb-6 mb-4">
+                        {{ video_section:video_title }}
+                    </h3>
+
+                    <div class="relative">
+                        <div
+                            class="2xl:h-[475px] 1xl:h-[460px] xl:h-[390px] lg:h-[365px] md:h-[330px] sm:h-[300px] h-[150px] w-full">
+                            {{ video_section:video_banner }}<img decoding="async" src="{{ url }}" alt="Pilates by nature"
+                                class="w-full h-full object-cover" />{{ /video_section:video_banner }}
+                        </div>
+                        <div class="absolute top-0 h-full w-full pointer-events-auto">
+                            <!-- Left play button -->
+                            <div class="flex items-center justify-center relative m-auto w-full h-full">
+                                {{ video_section:video_file }}<a href="{{ url }}"
+                                    class="video-popup group/video_popup pointer-events-all relative inline-flex items-center justify-center 2xl:w-25 2xl:h-25 1xl:w-24 1xl:h-24 xl:w-22 xl:h-22 lg:w-20 lg:h-20 md:w-18 md:h-18 sm:w-16 sm:h-16 w-13.5 h-13.5 rounded-full bg-white/50 md:p-[7px] p-1">
+                                    <div class="absolute inset-0 animate-ping w-full h-full rounded-full bg-white/50">
+                                    </div>
+                                    <span
+                                        class="relative w-full h-full rounded-full bg-white flex items-center justify-center md:p-[5px] p-[3px]">
+                                        <span
+                                            class="w-full h-full rounded-full bg-white flex items-center justify-center group-hover/video_popup:border-thunder-100 md:border-2 border border-primary transition-all decoration-300">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                viewBox="0 0 24 24"
+                                                class="2xl:size-9 1xl:size-8 xl:size-7.5 lg:size-6.5 sm:size-5.5 size-5 group-hover/video_popup:text-thunder-100 text-primary transition-all decoration-300">
+                                                <path fill="currentColor"
+                                                    d="M21.409 9.353a2.998 2.998 0 0 1 0 5.294L8.597 21.614C6.534 22.737 4 21.277 4 18.968V5.033c0-2.31 2.534-3.769 4.597-2.648z"
+                                                    stroke-width="0.5" stroke="currentColor" />
+                                            </svg>
+                                        </span>
+                                    </span>
+                                </a>
+                                {{ /video_section:video_file }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lt:w-[36%] w-full">
+                <div
+                    class="flex flex-col 2xl:p-9 1xl:p-8.5 xl:p-7 lg:p-5.5 p-4 bg-whitesmoke-100 2xl:mb-12.5 1xl:mb-11 xl:mb-9 lg:mb-7 sm:mb-6 mb-4">
+                    <div>
+                        <h5
+                            class="uppercase text-primary 1xl:pb-5 1xl:mb-5 lg:pb-4 lg:mb-4 sm:pb-3 sm:mb-3 pb-2.5 mb-2.5 border-b border-primary/50">
+                            Intensity Level
+                        </h5>
+                    </div>
+                    <div class="classes-details">
+                        <span class="badge-dot badge-gentle"></span>
+                        <p>Intensity : Gentle</p>
+                    </div>
+                </div>
+
+                <div
+                    class="flex flex-col 2xl:p-9 1xl:p-8.5 xl:p-7 lg:p-5.5 p-4 bg-whitesmoke-100 2xl:mb-12.5 1xl:mb-11 xl:mb-9 lg:mb-7 sm:mb-6 mb-4">
+                    <div>
+                        <h5
+                            class="uppercase text-primary 1xl:pb-5 1xl:mb-5 lg:pb-4 lg:mb-4 sm:pb-3 sm:mb-3 pb-2.5 mb-2.5 border-b border-primary/50">
+                            Category
+                        </h5>
+                    </div>
+                    <div class="classes-details">
+                        <p>Beginner Classes</p>
+                    </div>
+                </div>
+
+                <div
+                    class="flex flex-col 2xl:p-9 1xl:p-8.5 xl:p-7 lg:p-5.5 p-4 bg-whitesmoke-100 2xl:mb-12.5 1xl:mb-11 xl:mb-9 lg:mb-7 sm:mb-6 mb-4">
+                    <div>
+                        <h5
+                            class="uppercase text-primary 1xl:pb-5 1xl:mb-5 lg:pb-4 lg:mb-4 sm:pb-3 sm:mb-3 pb-2.5 mb-2.5 border-b border-primary/50">
+                            {{ class_overview:title }}
+                        </h5>
+                    </div>
+                    <div class="flex flex-items-center 2xl:gap-13.5 1xl:gap-8 xl:gap-7 lg:gap-5.5 gap-4.5">
+                        <ul class="font-medium text-primary lg:space-y-2.5 space-y-2 p">
+                            {{ class_overview }}
+                            <li class="flex items-start">
+                                <div
+                                    class="size-[5px] bg-primary rounded-full overflow-hidden 2xl:mt-4 1xl:mt-[13px] lg:mt-3 lt:mt-[11px] sm:mt-2.5 mt-2 shrink-0 mr-3">
+                                </div>
+                                <span class="block 2xl:w-[150px] 1xl:w-33.5 lg:w-29 sm:w-27 w-23 shrink-0">{{ label
+                                    }}</span>
+                                <span class="text-thunder-100 font-normal">{{ value }}</span>
+                            </li>
+                            {{ /class_overview }}
+                        </ul>
+                    </div>
+                </div>
+
+                <div
+                    class="flex flex-col 2xl:p-9 1xl:p-8.5 xl:p-7 lg:p-5.5 p-4 bg-whitesmoke-100 2xl:mb-12.5 1xl:mb-11 xl:mb-9 lg:mb-7 sm:mb-6 mb-4">
+                    <div>
+                        <h5
+                            class="uppercase text-primary 1xl:pb-5 1xl:mb-5 lg:pb-4 lg:mb-4 sm:pb-3 sm:mb-3 pb-2.5 mb-2.5 border-b border-primary/50">
+                            {{ class_benefits:class_benefit_title }}
+                        </h5>
+                    </div>
+                    <ul class="list-disc pl-4 lg:space-y-2.5 space-y-2">
+                        {{ class_benefits:benefits }}
+                        <li>
+                            <p>{{ value }}</p>
+                        </li>
+                        {{ /class_benefits:benefits }}
+                    </ul>
+                </div>
+
+                <div
+                    class="flex flex-col 2xl:p-9 1xl:p-8.5 xl:p-7 lg:p-5.5 p-4 bg-whitesmoke-100 2xl:mb-12.5 1xl:mb-11 xl:mb-9 lg:mb-7 sm:mb-6 mb-4">
+                    <div>
+                        <h5
+                            class="uppercase text-primary 1xl:pb-5 1xl:mb-5 lg:pb-4 lg:mb-4 sm:pb-3 sm:mb-3 pb-2.5 mb-2.5 border-b border-primary/50">
+                            {{ instructor:instructor_title }}
+                        </h5>
+                    </div>
+                    <div class="flex items-start 2xl:gap-5 sm:gap-3 gap-1.5 mb-2">
+                        <div class="lt:w-[60%] w-[67%]">
+                            <ul class="list-disc text-primary font-medium pl-4 1xl:space-y-2.5 space-y-1.5">
+                                <li>
+                                    {{ instructor:instructor_name | explode:':' | first }} :
+                                    <span class="font-normal text-thunder-100">
+                                        {{ instructor:instructor_name | explode:':' | last }}
+                                    </span>
+                                </li>
+                                <li>
+                                    <p>{{ instructor:instructor_bio | explode:':' | first }} : <span
+                                            class="font-normal text-thunder-100">
+                                            {{ instructor:instructor_bio | explode:':' | last }}
+                                        </span></p>
+                                </li>
+                            </ul>
+                            <div class="lt:hidden sm:block hidden mt-2">
+                                <ul class="list-disc text-primary font-medium pl-4">
+                                    <li>
+                                        <p>{{ instructor:certifications_label }} :
+                                        <ul
+                                            class="text-thunder-100 font-normal 1xl:space-y-2 space-y-1.5 1xl:pt-3.5 sm:pt-2 pt-1.5">
+                                            {{ instructor:certifications }}
+                                            <li>
+                                                <p>- {{ value }}</p>
+                                            </li>
+                                            {{ /instructor:certifications }}
+                                        </ul>
+
+                                    </li>
+                                </ul>
+                                <!-- Social Media Icons -->
+                                <div
+                                    class="flex items-center flex-wrap 1xl:gap-9 xl:gap-7 md:gap-5 gap-3 1xl:mt-6 sm:mt-5 mt-4">
+                                    {{ instructor:socials }}
+                                    <a href="{{ url }}{{ current_url }}" target="_blank"
+                                        class="1xl:size-12 lg:size-11 sm:size-9.5 size-8 lg:p-[10px] sm:p-[9px] p-[7px] btn-secondary rounded-full flex items-center justify-center transition-all decoration-1000">
+                                        <i class="fa-brands fa-{{ platform }} 1xl:w-[26px] 1xl:h-[26px] w-5 h-5"></i>
+
+                                    </a>
+                                    {{ /instructor:socials }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="lt:w-[40%] w-[33%]">
+                            <div
+                                class="w-full 2xl:h-[240px] 1xl:h-[210px] lt:h-[180px] sm:h-[245px] h-[100px] rounded-sm overflow-hidden">
+                                {{ instructor:instructor_image }}<img src="{{ url }}" alt="instructor"
+                                    class="w-full h-full object-cover" />{{ /instructor:instructor_image }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lt:block sm:hidden block">
+                        <ul class="list-disc text-primary font-medium pl-4">
+                            <li>
+                                <p>{{ instructor:certifications_label }} :
+                                <ul class="text-thunder-100 font-normal 1xl:space-y-2 space-y-1.5 1xl:pt-3.5 pt-2">
+                                    {{ instructor:certifications }}
+                                    <li>
+                                        <p>- {{ value }}</p>
+                                    </li>
+                                    {{ /instructor:certifications }}
+                                </ul>
+                            </li>
+                        </ul>
+                        <!-- Social Media Icons -->
+                        <div
+                            class="flex items-center flex-wrap 1xl:gap-9 xl:gap-7 md:gap-5 gap-3 1xl:mt-6 sm:mt-5 mt-4">
+                            {{ instructor:socials }}
+                            <a href="{{ url }}{{ current_url }}" target="_blank"
+                                class="1xl:size-12 lg:size-11 sm:size-9.5 size-8 lg:p-[10px] sm:p-[9px] p-[7px] btn-secondary rounded-full flex items-center justify-center transition-all decoration-1000">
+                                <i class="fa-brands fa-{{ platform }}"></i>
+                            </a>
+                            {{ /instructor:socials }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ====== End Main Content Section ====== -->
+
+
+
+<!-- ====== Start Classes Section ====== -->
+{{ if related_class:classes }}
+<section class="relative 2xl:pb-[100px] 1xl:pb-20 xl:pb-17 lg:pb-14 md:pb-12 sm:pb-11 pb-10 w-full">
+    <div class="container">
+        <div
+            class="flex items-center justify-between sm:gap-5 gap-4 sm:flex-row flex-col 2xl:mb-[50px] 1xl:mb-11 xl:mb-[38px] sm:mb-8 mb-5">
+            <div>
+                <h2 class="text-primary font-normal uppercase">
+                    {{ related_class:sub_title }}
+                </h2>
+            </div>
+            {{ if related_class:button_text }}
+            <div class="max-w-[842px]">
+                <a href=" {{ related_class:button_link }}" class="btn btn-secondary"> {{ related_class:button_text
+                    }}</a>
+            </div>
+            {{ /if }}
+        </div>
+
+        <div class="grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 1xl:gap-6 gap-5">
+            <!-- Card -->
+            {{ related_class:classes limit="3" }}
+            <div class="yoga-card group">
+                <!-- Image -->
+                <div class="yoga-card-image">
+                    {{ main_image }} <img src="{{ url }}" alt="Pilates Class"
+                        class="scale-100 group-hover:scale-105 ease-in-out transition-all duration-500" />{{ /main_image
+                    }}
+                    <div class="yoga-card-badge">
+                        <span class="badge-dot badge-{{ intensity_level:value | replace('_','-') }}"></span>
+                        <span>{{ intensity_level:intensity_label }} : {{ intensity_level:value:label }}</span>
+                    </div>
+                </div>
+
+                <!-- Content -->
+                <div class="yoga-card-content">
+                    <p class="yoga-card-category"> {{ category }}
+                        {{ title }}{{ if !last }} | {{ /if }}
+                        {{ /category }}</p>
+                    <a href="classes/{{ slug }}">
+                        <h3 class="yoga-card-title">{{ title }}</h3>
+                    </a>
+                    <p class="yoga-card-desc">
+                        {{ short_description }}
+                    </p>
+
+                    <div class="yoga-card-footer">
+                        <div class="yoga-card-instructor">
+                            <div class="instructor-img">
+                                {{ team.image }}<img src="{{ url }}" alt="Instructor" />{{ /team.image }}
+                            </div>
+                            <p class="p2">{{ team.title }}</p>
+                        </div>
+                        {{ if button:label }}
+                        <a href="{{ button:url }}{{ slug }}" class="btn-link btn">
+                            {{ button:label }}
+                            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10"
+                                fill="none" class="mt-1 2xl:w-4 sm:w-3.5 w-3 h-full">
+                                <path
+                                    d="M0.701687 8.86162C0.701687 8.86162 6.30093 3.26231 8.63309 0.93009M8.63309 0.93009L8.86101 6.90189M8.63309 0.93009L2.66089 0.702578"
+                                    stroke="currentColor" stroke-width="1.2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </a>
+                        {{ /if }}
+                    </div>
+                </div>
+            </div>
+            {{/related_class:classes }}
+
+        </div>
+    </div>
+</section>
+{{ /if }}
+<!-- ====== End Classes Section ====== -->
+
+<!-- ====== End Comments Section ====== -->
+{{ form:submissions in="class_comments" post_id:contains="{ id }" sort="date:desc" as="class_comments_list" }}
+{{ if total_results > 0 }}
+<section class="relative 2xl:mb-[100px] 1xl:mb-20 xl:mb-17 lg:mb-14 md:mb-12 sm:mb-11 mb-10 w-full">
+    <div class="container">
+        <div class="border-t border-primary/25 2xl:pt-[100px] 1xl:pt-20 xl:pt-17 lg:pt-14 md:pt-12 sm:pt-11 pt-10">
+            <h5 class="uppercase text-primary mb-6">Comments</h5>
+            <div class="sm:space-y-7.5 space-y-6">
+
+                {{ class_comments_list }}
+
+                {{ if parent_id == 'null' }}
+                <div>
+                    <div class="flex items-center sm:gap-3.5 gap-2.5 lg:mb-5 mb-4">
+                        <div class="1xl:size-15 xl:size-14 sm:size-13.5 size-10 rounded-full overflow-hidden shrink-0">
+                            {{ if !image }}
+                                <img src="{{ theme:asset }}assets/image/client-1.webp" alt="client" class="w-full h-full object-cover" />
+                            {{ else }}
+                                {{ image }}<img src="{{ url }}" alt="{{ first_name }}" class="w-full h-full object-cover" />{{ /image }}
+                            {{ /if }}
+                        </div>
+                        <div>
+                            <p class="font-medium">{{ first_name }} {{ last_name }}</p>
+                            <p class="text-thunder-100/50 text-16">{{ datestamp format="F j, Y \a\t g:i A" }}
+                            </p>
+                        </div>
+                    </div>
+                    <div class="1xl:pl-18.5 lg:pl-18 sm:pl-17 pl-0">
+                        <div class="bg-whitesmoke-100 border-l-3 border-primary 1xl:p-8.5 xl:p-7.5 lg:p-6 sm:p-5.5 p-4">
+                            <p>{{ comment | nl2br }}</p>
+                        </div>
+                        <div
+                            class="flex items-center lg:gap-8 sm:gap-6 gap-3 xl:mt-6 lg:mt-4.5 mt-3.5 1xl:pl-6 sm:pl-5 pl-0">
+                            <div class="flex items-center sm:gap-2 gap-1 cursor-pointer reply-btn"
+                                data-parent-id="{{ id }}" data-post-id="{{ id }}">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    class="text-[#575757] lg:size-7 size-6 object-contain">
+                                    <path d="M14 9V5L21 12L14 19V14.9C9 14.9 5.5 16.5 3 20C4 15 7 10 14 9Z"
+                                        fill="currentColor" />
+                                </svg>
+                                <p class="p2 text-thuder-100/80">Reply</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Replies -->
+                    {{ form:submissions in="class_comments" parent_id:contains="{id}" sort="date:asc" }}
+                    {{ if parent_id != 'null' }}
+                    <div class="xl:pl-[100px] lg:pl-20 lt:pl-17 xl:space-y-6.5 space-y-5.5 mt-5">
+                        <div class="flex items-start sm:flex-row flex-col 1xl:gap-6 lg:gap-4.5 gap-3">
+                            <div class="flex items-center sm:gap-3.5 gap-2.5 shrink-0">
+                                <div
+                                    class="1xl:size-15 xl:size-14 sm:size-13.5 size-10 rounded-full overflow-hidden shrink-0">
+                                    {{ if !image }}
+                                        <img src="{{ theme:asset }}assets/image/client-3.webp" alt="client" class="w-full h-full object-cover" />
+                                    {{ else }}
+                                        {{ image }}<img src="{{ url }}" alt="{{ first_name }}" class="w-full h-full object-cover" />{{ /image }}
+                                    {{ /if }}
+                                </div>
+                                <div>
+                                    <p class="font-medium">{{ first_name }} {{ last_name }}</p>
+                                    <p class="text-thunder-100/50 1xl:text-base lt:text-sm text-13">{{ datestamp format="F j, Y \a\t g:i A" }}</p>
+                                </div>
+                            </div>
+                            <div
+                                class="border border-primary/20 1xl:px-9 xl:px-7 lt:px-6 sm:px-4.5 px-3.5 1xl:py-5.5 xl:py-4.5 sm:py-3.5 py-2.5">
+                                <p class="text-thunder-100/74">{{ comment | nl2br }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    {{ /if }}
+                    {{ /form:submissions }}
+                </div>
+                {{ /if }}
+
+                {{ /class_comments_list }}
+
+            </div>
+
+            <div id="inlineReplyTemplate" class="hidden sm:pl-5 pl-0">
+                <div class="reply-form reply-form-animated mt-6 mb-10">
+                    <h5 class="uppercase text-primary lg:mb-6 sm:mb-5 mb-4">Leave a Reply</h5>
+                    {{ form:class_comments novalidate data-ajax="true" class="comments-form" }}
+
+
+                    {{ csrf_field }}
+
+                    <input type="hidden" name="post_id" value="{{ id }}">
+                    <input type="hidden" name="parent_id" value="" class="parent-id-input">
+                    <div class="relative validate-form grid sm:grid-cols-2 grid-cols-1 1xl:gap-7.5 md:gap-6 gap-4.5">
+                        <!-- First Name -->
+                        {{ fields }}
+                        {{ if handle == "first_name" || handle == "last_name" }}
+                        <div class="flex flex-col items-start col-span-1">
+
+                            <label class="p xl:mb-2.5 mb-1.5">{{ display }} {{ if validate }}
+                                {{ if validate contains="required" }}*{{ /if }}
+                                {{ /if }}</label>
+                            <input type="{{ type }}" name="{{ handle }}"
+                                placeholder="{{ placeholder ?? 'Enter Your Name' }}"
+                                class="p placeholder:text-thunder-100/35 text-thunder-100 w-full rounded-full border border-primary/20 md:px-6 px-4 lg:py-3 md:py-2.5 py-2 outline-none focus:border-primary bg-white"
+                                required />
+                            <div class="text-red-500 mt-2 opacity-0 transition-all ease-in-out error-message hidden items-center gap-2"
+                                data-error-for="{{ handle }}">
+                                <span class="field-error text-red-600 error-text p2"
+                                    data-error-for="{{ handle }}"></span>
+                            </div>
+                        </div>
+                        {{ /if }}
+                        {{ if handle == "email" }}
+
+                        <div class="flex flex-col items-start sm:col-span-2 col-span-1">
+                            <label class="p xl:mb-2.5 mb-1.5">{{ display }} {{ if validate }}
+                                {{ if validate contains="required" }}*{{ /if }}
+                                {{ /if }}</label>
+                            <input type="{{ type }}" name="{{ handle }}"
+                                placeholder="{{ placeholder ?? 'Enter Your Email' }}"
+                                class="p placeholder:text-thunder-100/35 text-thunder-100 w-full rounded-full border border-primary/20 md:px-6 px-4 lg:py-3 md:py-2.5 py-2 outline-none focus:border-primary bg-white" />
+                            <div class="text-red-500 mt-2 opacity-0 transition-all ease-in-out error-message hidden items-center gap-2"
+                                data-error-for="{{ handle }}">
+                                <span class="field-error text-red-600 error-text p2"
+                                    data-error-for="{{ handle }}"></span>
+                            </div>
+                        </div>
+                        {{ /if }}
+                        {{ if handle == "comment" }}
+                        <div class="flex flex-col items-start sm:col-span-2 col-span-1">
+                            <label class="p xl:mb-2.5 mb-1.5">{{ display }} {{ if validate }}
+                                {{ if validate contains="required" }}*{{ /if }}
+                                {{ /if }} </label>
+                            <textarea name="{{ handle }}" placeholder="{{ placeholder ?? 'Enter Comments' }}"
+                                id="{{ handle }}"
+                                class="p 1xl:h-[130px] placeholder:text-thunder-100/35 text-thunder-100 w-full rounded-[20px] border border-primary/20 md:px-6 px-4 lg:py-3 py-2 outline-none focus:border-primary bg-white"></textarea>
+                            <div class="text-red-500 mt-2 opacity-0 transition-all ease-in-out error-message hidden items-center gap-2"
+                                data-error-for="{{ handle }}">
+                                <span class="field-error text-red-600 error-text p2"
+                                    data-error-for="{{ handle }}"></span>
+                            </div>
+                        </div>
+                        {{ /if }}
+                        {{ if handle == "image" }}
+                        <div class="flex flex-col items-start sm:col-span-2 col-span-1">
+                            <label class="p xl:mb-2.5 mb-1.5">{{ display }} {{ if validate }}
+                                {{ if validate contains="required" }}*{{ /if }}
+                                {{ /if }}
+                            </label>
+                            <label
+                                class="file-upload relative flex items-center sm:gap-4 gap-2 w-full cursor-pointer p rounded-full border border-primary/20 md:px-6 sm:px-4 px-1.5 lg:py-3 md:py-2.5 sm:py-2 py-1.5 bg-white text-thunder-100">
+                                <div
+                                    class="text-primary bg-primary/10 flex items-center sm:text-base text-sm justify-center sm:gap-2.5 gap-1.5 py-[5px] sm:px-4.5 px-3 rounded-full">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" class="sm:size-6 size-5">
+                                        <path
+                                            d="M14.2849 17.4886H2.06887V2.48331H11.8744V7.45694C11.8745 7.75408 11.9926 8.03903 12.2027 8.24914C12.4128 8.45925 12.6977 8.57734 12.9949 8.57744H18.6049V13.7569C18.7462 13.7446 18.8899 13.7371 19.0346 13.7371C19.2724 13.7371 19.506 13.7547 19.7347 13.7881V8.31531C19.7347 8.08474 19.6432 7.8636 19.4802 7.70053C19.3172 7.53745 19.0961 7.44579 18.8655 7.44569H13.5105C13.3767 7.44569 13.2484 7.39255 13.1539 7.29796C13.0593 7.20337 13.0061 7.07508 13.0061 6.94131V2.22119C13.0061 2.10699 12.9836 1.9939 12.9399 1.8884C12.8962 1.78289 12.8322 1.68702 12.7514 1.60627C12.6707 1.52552 12.5748 1.46146 12.4693 1.41776C12.3638 1.37406 12.2507 1.35156 12.1365 1.35156H1.41712C1.15238 1.35156 0.9375 1.56644 0.9375 1.83119V18.1407C0.9375 18.4054 1.15238 18.6203 1.41712 18.6203H14.1517C14.1519 18.2391 14.1963 17.8593 14.2849 17.4886Z"
+                                            fill="#5C1A2E" />
+                                        <path d="M13.6797 6.77284H19.0354L13.6797 2.22559V6.77284Z" fill="#5C1A2E" />
+                                        <path
+                                            d="M9.91787 9.81231C10.468 9.81231 10.9139 9.36639 10.9139 8.81631C10.9139 8.26624 10.468 7.82031 9.91787 7.82031C9.3678 7.82031 8.92188 8.26624 8.92188 8.81631C8.92188 9.36639 9.3678 9.81231 9.91787 9.81231Z"
+                                            fill="#5C1A2E" />
+                                        <path
+                                            d="M15.8366 14.9349L14.2815 12.0092C14.2626 11.9737 14.2364 11.9426 14.2048 11.9179C14.1731 11.8931 14.1367 11.8753 14.0977 11.8655C14.0587 11.8557 14.0181 11.8542 13.9785 11.8611C13.939 11.8679 13.9012 11.883 13.8678 11.9053L11.8271 13.2733C11.79 13.2982 11.7476 13.314 11.7032 13.3196C11.6589 13.3252 11.6139 13.3204 11.5718 13.3056C11.5296 13.2908 11.4915 13.2664 11.4605 13.2343C11.4294 13.2022 11.4063 13.1633 11.3928 13.1207L10.7415 11.0484C10.7295 11.0105 10.7097 10.9754 10.6834 10.9454C10.6572 10.9155 10.6249 10.8913 10.5888 10.8744C10.5527 10.8576 10.5135 10.8484 10.4737 10.8475C10.4339 10.8466 10.3943 10.854 10.3575 10.8692L8.68908 11.5588C8.62853 11.5838 8.56126 11.5874 8.49839 11.569C8.43552 11.5506 8.38081 11.5113 8.34333 11.4576L7.25021 9.88857C7.22106 9.84684 7.18136 9.81358 7.13516 9.79221C7.08896 9.77084 7.03792 9.7621 6.98724 9.76691C6.93657 9.77171 6.88807 9.78988 6.84671 9.81956C6.80536 9.84923 6.77261 9.88935 6.75183 9.93582L4.00908 16.0843C3.98967 16.1281 3.98149 16.176 3.98528 16.2237C3.98906 16.2714 4.0047 16.3174 4.03077 16.3576C4.05684 16.3977 4.09252 16.4307 4.13457 16.4536C4.17662 16.4765 4.22371 16.4885 4.27158 16.4886H14.6422C14.9319 15.8957 15.3381 15.3673 15.8366 14.9349ZM19.035 14.5929C16.8105 14.5929 15.0075 16.3959 15.0075 18.6204C15.0075 20.8446 16.8105 22.6479 19.035 22.6479C21.2591 22.6479 23.0625 20.8446 23.0625 18.6204C23.0625 16.3959 21.2591 14.5929 19.035 14.5929ZM20.9981 18.3936C20.8777 18.5055 20.7178 18.565 20.5535 18.559C20.3892 18.5531 20.234 18.4821 20.1221 18.3617L19.6548 17.8592V20.9597C19.6548 21.1241 19.5895 21.2818 19.4733 21.398C19.357 21.5143 19.1994 21.5796 19.035 21.5796C18.8706 21.5796 18.7129 21.5143 18.5966 21.398C18.4804 21.2818 18.4151 21.1241 18.4151 20.9597V17.8588L17.9478 18.3613C17.8926 18.4212 17.826 18.4696 17.7519 18.5037C17.6779 18.5377 17.5978 18.5568 17.5164 18.5598C17.4349 18.5628 17.3537 18.5497 17.2773 18.5211C17.2009 18.4926 17.131 18.4493 17.0715 18.3936C16.9511 18.2816 16.8801 18.1264 16.8741 17.9622C16.8681 17.7979 16.9277 17.638 17.0396 17.5176L18.5808 15.8593C18.6388 15.7968 18.7091 15.747 18.7872 15.7129C18.8654 15.6788 18.9497 15.6612 19.035 15.6612C19.1202 15.6612 19.2045 15.6788 19.2827 15.7129C19.3608 15.747 19.4311 15.7968 19.4891 15.8593L21.0303 17.5176C21.1422 17.638 21.2017 17.798 21.1956 17.9622C21.1896 18.1265 21.1185 18.2817 20.9981 18.3936Z"
+                                            fill="#5C1A2E" />
+                                    </svg> Browse File
+                                </div>
+                                <span class="file-name text-thunder-100 sm:text-sm text-xs"> No choosen file
+                                </span>
+                                <input type="file" name="image" accept=".jpg,.jpeg,.png" class="file-input hidden"
+                                    onchange="document.getElementById('fileName').innerText = this.files[0]?.name || 'No choosen file';" />
+                            </label>
+
+                            <div class="text-red-500 mt-2 opacity-0 transition-all ease-in-out error-message hidden items-center gap-2"
+                                data-error-for="{{ handle }}">
+                                <span class="field-error text-red-600 error-text p2"
+                                    data-error-for="{{ handle }}"></span>
+                            </div>
+                        </div>
+                        {{ /if }}
+                        {{ /fields }}
+                        <!-- Email -->
+
+
+                        <!-- Image Upload -->
+
+                    </div>
+                    <button type="submit"
+                        class="w-fit btn btn-secondary 2xl:mt-12.5 1xl:mt-11 xl:mt-9 lg:mt-7 sm:mt-6 mt-5">Submit</button>
+                    <p class="form-success-msg hidden" aria-live="polite"></p>
+
+                    {{ /form:class_comments }}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{{ /if }}
+{{ /form:submissions }}
+<!-- ====== End Comments Section ====== -->
+
+<section class="relative 2xl:mb-[100px] 1xl:mb-20 xl:mb-17 lg:mb-14 md:mb-12 sm:mb-11 mb-10 w-full">
+    <div class="container">
+        <div class="text-center 1xl:mb-[50px] sm:mb-11 mb-8">
+            <h3 class="text-thunder-100 font-primary italic font-medium 1xl:mb-6 sm:mb-4 mb-2.5">Train with us</h3>
+            <h2 class="text-primary font-normal uppercase">Choose a Plan</h2>
+        </div>
+        <div class="grid lg:grid-cols-3 xl:gap-6 gap-5">
+            <div class="border border-primary/30 bg-whitesmoke-100 2xl:p-7.5 p-5 flex flex-col justify-between">
+                <div>
+                    <h3 class="uppercase mb-2.5">Essence Plan</h3>
+                    <p class="mb-4">Four group classes a month and community events. A gentle start for this class.</p>
+                    <h3 class="font-primary italic font-medium mb-4"><span class="h2">$39</span> / month</h3>
+                </div>
+                <a href="/book-class" class="btn btn-secondary">Book this plan</a>
+            </div>
+            <div class="border border-primary/30 bg-whitesmoke-100 2xl:p-7.5 p-5 flex flex-col justify-between">
+                <div>
+                    <h3 class="uppercase mb-2.5">Balance Plan</h3>
+                    <p class="mb-4">Eight classes, priority booking, and the on-demand library for this practice.</p>
+                    <h3 class="font-primary italic font-medium mb-4"><span class="h2">$69</span> / month</h3>
+                </div>
+                <a href="/book-class" class="btn btn-secondary">Book this plan</a>
+            </div>
+            <div class="border border-primary/30 bg-whitesmoke-100 2xl:p-7.5 p-5 flex flex-col justify-between">
+                <div>
+                    <h3 class="uppercase mb-2.5">Elevate Plan</h3>
+                    <p class="mb-4">Unlimited classes plus a private session so this style can go deeper.</p>
+                    <h3 class="font-primary italic font-medium mb-4"><span class="h2">$119</span> / month</h3>
+                </div>
+                <a href="/book-class" class="btn btn-secondary">Book this plan</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ====== End Reply Form Section ====== -->
+<section class="relative 2xl:mb-[100px] 1xl:mb-20 xl:mb-17 lg:mb-14 md:mb-12 sm:mb-11 mb-10 w-full ">
+    <div class="container border-t border-primary/30 2xl:pt-12.5 1xl:pt-11 xl:pt-9 lg:pt-7 sm:pt-6 pt-4">
+        <h5 class="uppercase text-primary lg:mb-6 sm:mb-5 mb-4">Leave a Reply</h5>
+        {{ form:class_comments novalidate data-ajax="true" class="comments-form" }}
+
+        <input type="hidden" name="post_id" value="{{ id }}">
+
+        <div class="relative validate-form grid sm:grid-cols-2 grid-cols-1 1xl:gap-7.5 md:gap-6 gap-4.5">
+            <!-- First Name -->
+            {{ fields }}
+            {{ if handle == "first_name" || handle == "last_name" }}
+            <div class="flex flex-col items-start col-span-1">
+
+                <label class="p xl:mb-2.5 mb-1.5">{{ display }} {{ if validate }}
+                    {{ if validate contains="required" }}*{{ /if }}
+                    {{ /if }}</label>
+                <input type="{{ type }}" name="{{ handle }}" placeholder="{{ placeholder ?? 'Enter Your Name' }}"
+                    class="p placeholder:text-thunder-100/35 text-thunder-100 w-full rounded-full border border-primary/20 md:px-6 px-4 lg:py-3 md:py-2.5 py-2 outline-none focus:border-primary bg-white" />
+                <div class="text-red-500 mt-2 opacity-0 transition-all ease-in-out error-message hidden items-center gap-2"
+                    data-error-for="{{ handle }}">
+                    <span class="field-error text-red-600 error-text p2" data-error-for="{{ handle }}"></span>
+                </div>
+            </div>
+            {{ /if }}
+            {{ if handle == "email" }}
+
+            <div class="flex flex-col items-start sm:col-span-2 col-span-1">
+                <label class="p xl:mb-2.5 mb-1.5">{{ display }} {{ if validate }}
+                    {{ if validate contains="required" }}*{{ /if }}
+                    {{ /if }}</label>
+                <input type="{{ type }}" name="{{ handle }}" placeholder="{{ placeholder ?? 'Enter Your Email' }}"
+                    class="p placeholder:text-thunder-100/35 text-thunder-100 w-full rounded-full border border-primary/20 md:px-6 px-4 lg:py-3 md:py-2.5 py-2 outline-none focus:border-primary bg-white" />
+                <div class="text-red-500 mt-2 opacity-0 transition-all ease-in-out error-message hidden items-center gap-2"
+                    data-error-for="{{ handle }}">
+                    <span class="field-error text-red-600 error-text p2" data-error-for="{{ handle }}"></span>
+                </div>
+            </div>
+            {{ /if }}
+            {{ if handle == "comment" }}
+            <div class="flex flex-col items-start sm:col-span-2 col-span-1">
+                <label class="p xl:mb-2.5 mb-1.5">{{ display }} {{ if validate }}
+                    {{ if validate contains="required" }}*{{ /if }}
+                    {{ /if }} </label>
+                <textarea name="{{ handle }}" placeholder="{{ placeholder ?? 'Enter Comments' }}" id="{{ handle }}"
+                    class="p 1xl:h-[130px] placeholder:text-thunder-100/35 text-thunder-100 w-full rounded-[20px] border border-primary/20 md:px-6 px-4 lg:py-3 py-2 outline-none focus:border-primary bg-white"></textarea>
+                <div class="text-red-500 mt-2 opacity-0 transition-all ease-in-out error-message hidden items-center gap-2"
+                    data-error-for="{{ handle }}">
+                    <span class="field-error text-red-600 error-text p2" data-error-for="{{ handle }}"></span>
+                </div>
+            </div>
+            {{ /if }}
+            {{ if handle == "image" }}
+            <div class="flex flex-col items-start sm:col-span-2 col-span-1">
+                <label class="p xl:mb-2.5 mb-1.5">{{ display }} {{ if validate }}
+                    {{ if validate contains="required" }}*{{ /if }}
+                    {{ /if }}
+                </label>
+                <label
+                    class="file-upload relative flex items-center sm:gap-4 gap-2 w-full cursor-pointer p rounded-full border border-primary/20 md:px-6 sm:px-4 px-1.5 lg:py-3 md:py-2.5 sm:py-2 py-1.5 bg-white text-thunder-100">
+                    <div
+                        class="text-primary bg-primary/10 flex items-center sm:text-base text-sm justify-center sm:gap-2.5 gap-1.5 py-[5px] sm:px-4.5 px-3 rounded-full">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            class="sm:size-6 size-5">
+                            <path
+                                d="M14.2849 17.4886H2.06887V2.48331H11.8744V7.45694C11.8745 7.75408 11.9926 8.03903 12.2027 8.24914C12.4128 8.45925 12.6977 8.57734 12.9949 8.57744H18.6049V13.7569C18.7462 13.7446 18.8899 13.7371 19.0346 13.7371C19.2724 13.7371 19.506 13.7547 19.7347 13.7881V8.31531C19.7347 8.08474 19.6432 7.8636 19.4802 7.70053C19.3172 7.53745 19.0961 7.44579 18.8655 7.44569H13.5105C13.3767 7.44569 13.2484 7.39255 13.1539 7.29796C13.0593 7.20337 13.0061 7.07508 13.0061 6.94131V2.22119C13.0061 2.10699 12.9836 1.9939 12.9399 1.8884C12.8962 1.78289 12.8322 1.68702 12.7514 1.60627C12.6707 1.52552 12.5748 1.46146 12.4693 1.41776C12.3638 1.37406 12.2507 1.35156 12.1365 1.35156H1.41712C1.15238 1.35156 0.9375 1.56644 0.9375 1.83119V18.1407C0.9375 18.4054 1.15238 18.6203 1.41712 18.6203H14.1517C14.1519 18.2391 14.1963 17.8593 14.2849 17.4886Z"
+                                fill="#5C1A2E" />
+                            <path d="M13.6797 6.77284H19.0354L13.6797 2.22559V6.77284Z" fill="#5C1A2E" />
+                            <path
+                                d="M9.91787 9.81231C10.468 9.81231 10.9139 9.36639 10.9139 8.81631C10.9139 8.26624 10.468 7.82031 9.91787 7.82031C9.3678 7.82031 8.92188 8.26624 8.92188 8.81631C8.92188 9.36639 9.3678 9.81231 9.91787 9.81231Z"
+                                fill="#5C1A2E" />
+                            <path
+                                d="M15.8366 14.9349L14.2815 12.0092C14.2626 11.9737 14.2364 11.9426 14.2048 11.9179C14.1731 11.8931 14.1367 11.8753 14.0977 11.8655C14.0587 11.8557 14.0181 11.8542 13.9785 11.8611C13.939 11.8679 13.9012 11.883 13.8678 11.9053L11.8271 13.2733C11.79 13.2982 11.7476 13.314 11.7032 13.3196C11.6589 13.3252 11.6139 13.3204 11.5718 13.3056C11.5296 13.2908 11.4915 13.2664 11.4605 13.2343C11.4294 13.2022 11.4063 13.1633 11.3928 13.1207L10.7415 11.0484C10.7295 11.0105 10.7097 10.9754 10.6834 10.9454C10.6572 10.9155 10.6249 10.8913 10.5888 10.8744C10.5527 10.8576 10.5135 10.8484 10.4737 10.8475C10.4339 10.8466 10.3943 10.854 10.3575 10.8692L8.68908 11.5588C8.62853 11.5838 8.56126 11.5874 8.49839 11.569C8.43552 11.5506 8.38081 11.5113 8.34333 11.4576L7.25021 9.88857C7.22106 9.84684 7.18136 9.81358 7.13516 9.79221C7.08896 9.77084 7.03792 9.7621 6.98724 9.76691C6.93657 9.77171 6.88807 9.78988 6.84671 9.81956C6.80536 9.84923 6.77261 9.88935 6.75183 9.93582L4.00908 16.0843C3.98967 16.1281 3.98149 16.176 3.98528 16.2237C3.98906 16.2714 4.0047 16.3174 4.03077 16.3576C4.05684 16.3977 4.09252 16.4307 4.13457 16.4536C4.17662 16.4765 4.22371 16.4885 4.27158 16.4886H14.6422C14.9319 15.8957 15.3381 15.3673 15.8366 14.9349ZM19.035 14.5929C16.8105 14.5929 15.0075 16.3959 15.0075 18.6204C15.0075 20.8446 16.8105 22.6479 19.035 22.6479C21.2591 22.6479 23.0625 20.8446 23.0625 18.6204C23.0625 16.3959 21.2591 14.5929 19.035 14.5929ZM20.9981 18.3936C20.8777 18.5055 20.7178 18.565 20.5535 18.559C20.3892 18.5531 20.234 18.4821 20.1221 18.3617L19.6548 17.8592V20.9597C19.6548 21.1241 19.5895 21.2818 19.4733 21.398C19.357 21.5143 19.1994 21.5796 19.035 21.5796C18.8706 21.5796 18.7129 21.5143 18.5966 21.398C18.4804 21.2818 18.4151 21.1241 18.4151 20.9597V17.8588L17.9478 18.3613C17.8926 18.4212 17.826 18.4696 17.7519 18.5037C17.6779 18.5377 17.5978 18.5568 17.5164 18.5598C17.4349 18.5628 17.3537 18.5497 17.2773 18.5211C17.2009 18.4926 17.131 18.4493 17.0715 18.3936C16.9511 18.2816 16.8801 18.1264 16.8741 17.9622C16.8681 17.7979 16.9277 17.638 17.0396 17.5176L18.5808 15.8593C18.6388 15.7968 18.7091 15.747 18.7872 15.7129C18.8654 15.6788 18.9497 15.6612 19.035 15.6612C19.1202 15.6612 19.2045 15.6788 19.2827 15.7129C19.3608 15.747 19.4311 15.7968 19.4891 15.8593L21.0303 17.5176C21.1422 17.638 21.2017 17.798 21.1956 17.9622C21.1896 18.1265 21.1185 18.2817 20.9981 18.3936Z"
+                                fill="#5C1A2E" />
+                        </svg> Browse File
+                    </div>
+                    <span class="file-name text-thunder-100 sm:text-sm text-xs"> No choosen file
+                    </span>
+                    <input type="file" name="image" accept=".jpg,.jpeg,.png" class="file-input hidden"
+                        onchange="document.getElementById('fileName').innerText = this.files[0]?.name || 'No choosen file';" />
+                </label>
+
+                <div class="text-red-500 mt-2 opacity-0 transition-all ease-in-out error-message hidden items-center gap-2"
+                    data-error-for="{{ handle }}">
+                    <span class="field-error text-red-600 error-text p2" data-error-for="{{ handle }}"></span>
+                </div>
+            </div>
+            {{ /if }}
+            {{ /fields }}
+            <!-- Email -->
+
+
+            <!-- Image Upload -->
+
+        </div>
+        <p class="form-success-msg hidden" aria-live="polite"></p>
+        <button type="submit"
+            class="w-fit btn btn-secondary 2xl:mt-12.5 1xl:mt-11 xl:mt-9 lg:mt-7 sm:mt-6 mt-5">Submit</button>
+
+        {{ /form:class_comments }}
+    </div>
+</section>
+<!-- ====== End Reply Form Section ====== -->
+
+<style>
+    .reply-form-animated {
+        animation: fadeIn 0.4s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+</style>

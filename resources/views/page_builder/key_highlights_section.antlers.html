@@ -1,0 +1,47 @@
+<section class="relative 2xl:mb-[100px] 1xl:mb-20 xl:mb-17 lg:mb-14 md:mb-12 sm:mb-11 mb-10 w-full 2xl:py-20 1xl:py-17 lg:py-14 md:py-12 sm:py-11 py-10 bg-whitesmoke-100"
+>
+<div class="container">
+    <div class="text-start max-w-full w-full 2xl:mb-[50px] 1xl:mb-11 md:mb-9 mb-7">
+        <h3 class="font-primary italic font-medium 2xl:mb-7 1xl:mb-6 xl:mb-5 sm:mb-3 mb-2.5">
+            {{ section_heading }}
+        </h3>
+        <h2 class="text-primary uppercase 1xl:mb-9 lg:mb-5 mb-3">
+            {{ section_title }}
+        </h2>
+        <p class="text-thunder-100 w-full">
+            {{ description }}
+        </p>
+    </div>
+    <div
+    class="flex justify-between lt:flex-row flex-col-reverse 2xl:gap-17 1xl:gap-13 lg:gap-10 md:gap-8 sm:gap-6 gap-5 md:items-stretch items-start">
+    <!-- Right: Content -->
+    <div class="w-full lt:max-w-[52.5%]">
+        <!-- 1st list -->
+        {{ highlights_list }}
+        <div
+        class="flex items-start flex-col 1xl:py-7.5 xl:py-6.5 md:py-6 sm:py-5 py-4 first:pt-0 border-b border-primary/15">
+        <div
+        class="flex items-center 1xl:gap-5.5 xl:gap-4.5 sm:gap-3 gap-2 1xl:mb-4 md:mb-3 mb-2.5">
+        <div class="shrink-0 1xl:size-13.5 xl:size-11.5 lg:size-10.5 sm:size-10 size-9.5">
+            <img src="{{ theme:asset }}assets/image/highlight-arrow.svg" alt="arrow" class="w-full h-full" />
+        </div>
+        <h5 class="uppercase text-primary">{{ highlight_title }}</h5>
+    </div>
+    <div class="1xl:pl-19.5 md:pl-14 sm:pl-13 pl-11.5">
+        <p class="font-medium xl:mb-2.5 mb-2">{{ subtitle }}</p>
+        <p>{{ description }}</p>
+    </div>
+</div>
+{{ /highlights_list }}
+
+</div>
+
+<!-- Left: Image -->
+<div class="lt:sticky relative lt:top-20 top-0 w-full lt:max-w-[47.5%] rounded-sm overflow-hidden">
+    <div class="overflow-hidden relative before:block before:content-[''] lt:before:pt-[100%] before:pt-[80%] h-full">
+   {{ side_image }} <img decoding="async" src="{{ url }}" alt="Pilates" class="w-full h-full object-cover object-center absolute top-0 left-0" />{{ /side_image }}
+</div>
+</div>
+</div>
+</div>
+</section>

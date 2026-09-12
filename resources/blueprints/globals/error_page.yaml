@@ -1,0 +1,40 @@
+title: 'error Page'
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: main_image
+            field:
+              container: assets
+              max_files: 1
+              type: assets
+              display: 'Main Illustration Image'
+          -
+            handle: heading_text
+            field:
+              type: text
+              display: 'Heading Text'
+          -
+            handle: description
+            field:
+              type: textarea
+              display: Description
+          -
+            handle: action_buttons
+            field:
+              type: grid
+              display: 'Action Buttons'
+              fields:
+                -
+                  handle: button_label
+                  field:
+                    type: text
+                    display: 'Button Label'
+                -
+                  handle: button_url
+                  field:
+                    type: text
+                    display: 'Button URL'

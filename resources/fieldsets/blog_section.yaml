@@ -1,0 +1,35 @@
+title: 'Blog Section'
+fields:
+  -
+    handle: show_type
+    field:
+      options:
+        -
+          key: blog-one
+          value: 'Blog One Page'
+        -
+          key: blog-two
+          value: 'Blog Two Page'
+        -
+          key: blog-three
+          value: 'Blog Three Page'
+      type: select
+      display: 'Show Type'
+  -
+    handle: collections
+    field:
+      mode: select
+      max_items: 1
+      type: collections
+      display: Collections
+  -
+    handle: limit
+    field:
+      type: integer
+      display: Limit
+  -
+    handle: pagination
+    field:
+      default: 'false'
+      type: text
+      display: Pagination

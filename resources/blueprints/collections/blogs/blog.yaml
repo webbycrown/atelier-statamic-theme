@@ -1,0 +1,165 @@
+title: Blog
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              validate:
+                - required
+              display: Title
+          -
+            handle: image
+            field:
+              container: assets
+              max_files: 1
+              type: assets
+              display: Image
+          -
+            handle: short_description
+            field:
+              type: textarea
+              display: 'Short Description'
+          -
+            handle: date
+            field:
+              type: text
+              display: date
+              instructions: 'July 10, 2025'
+          -
+            handle: button
+            field:
+              type: group
+              display: Button
+              fields:
+                -
+                  handle: label
+                  field:
+                    default: 'Read more'
+                    type: text
+                    display: Label
+                -
+                  handle: url
+                  field:
+                    default: /blog/
+                    type: text
+                    display: URL
+          -
+            handle: related_blog
+            field:
+              type: group
+              display: 'Related Blog'
+              fields:
+                -
+                  handle: title
+                  field:
+                    type: text
+                    display: Title
+                    default: 'Recent posts'
+                -
+                  handle: blogs
+                  field:
+                    collections:
+                      - blogs
+                    mode: select
+                    type: entries
+                    display: Blogs
+          -
+            handle: category
+            field:
+              taxonomies:
+                - blog_category
+              mode: select
+              type: terms
+              display: Category
+              width: 50
+          -
+            handle: tag
+            field:
+              taxonomies:
+                - blog_tag
+              mode: select
+              type: terms
+              display: Tag
+              width: 50
+          -
+            handle: content
+            field:
+              container: assets
+              remove_empty_nodes: false
+              type: bard
+              display: Content
+              sets:
+                paragraphs:
+                  display: Paragraphs
+                  sets:
+                    paragraphs:
+                      display: Paragraphs
+                      fields:
+                        -
+                          handle: description
+                          field:
+                            type: textarea
+                            display: Description
+                    list_section:
+                      display: 'List Section'
+                      fields:
+                        -
+                          handle: title
+                          field:
+                            type: text
+                            display: Title
+                        -
+                          handle: description
+                          field:
+                            type: text
+                            display: Description
+                        -
+                          handle: list_section
+                          field:
+                            type: replicator
+                            display: 'List Section'
+                            sets:
+                              new_set_group:
+                                display: 'New Set Group'
+                                sets:
+                                  new_set:
+                                    display: 'New Set'
+                                    fields:
+                                      -
+                                        handle: label
+                                        field:
+                                          type: text
+                                          display: Label
+                                      -
+                                        handle: description
+                                        field:
+                                          type: textarea
+                                          display: Description
+                    quote_section:
+                      display: 'Quote Section'
+                      fields:
+                        -
+                          handle: quote_text
+                          field:
+                            type: textarea
+                            display: 'Quote Text'
+                    new_set:
+                      display: 'New Set'
+                      fields: {  }
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'

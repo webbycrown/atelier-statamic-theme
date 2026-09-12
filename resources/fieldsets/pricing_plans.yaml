@@ -1,0 +1,131 @@
+title: 'Pricing Plans'
+fields:
+  -
+    handle: subscribe_button_text
+    field:
+      type: text
+      display: 'Subscribe Button Text'
+      default: 'Book Monthly'
+  -
+    handle: monthly_plans
+    field:
+      type: replicator
+      display: 'Monthly Plans'
+      sets:
+        main:
+          display: Main
+          sets:
+            plan:
+              display: Plan
+              fields:
+                -
+                  handle: title
+                  field:
+                    type: text
+                    display: 'Plan Title'
+                -
+                  handle: description
+                  field:
+                    type: textarea
+                    display: Description
+                -
+                  handle: price
+                  field:
+                    type: text
+                    display: Price
+                    instructions: 'Example $ 39'
+                -
+                  handle: duration
+                  field:
+                    type: text
+                    display: Duration
+                    default: month
+                -
+                  handle: included_label
+                  field:
+                    default: "What's Included:"
+                    type: text
+                    display: 'Included Label'
+                -
+                  handle: features
+                  field:
+                    type: list
+                    display: Features
+                -
+                  handle: trial_text
+                  field:
+                    type: text
+                    display: 'Trial Text'
+                    default: 'Includes 14-Day Trial'
+                -
+                  handle: button_text
+                  field:
+                    type: text
+                    display: 'Button Text'
+                    default: 'Book Monthly'
+                -
+                  handle: button_link
+                  field:
+                    type: link
+                    display: 'Button Link'
+  -
+    handle: yearly_plans
+    field:
+      type: replicator
+      display: 'Yearly Plans'
+      sets:
+        main:
+          display: Main
+          sets:
+            plan:
+              display: Plan
+              fields:
+                -
+                  handle: title
+                  field:
+                    type: text
+                    display: 'Plan Title'
+                -
+                  handle: description
+                  field:
+                    type: textarea
+                    display: Description
+                -
+                  handle: price
+                  field:
+                    type: text
+                    display: Price
+                -
+                  handle: duration
+                  field:
+                    type: text
+                    display: Duration
+                    default: year
+                -
+                  handle: features
+                  field:
+                    type: list
+                    display: Features
+                -
+                  handle: trial_text
+                  field:
+                    type: text
+                    display: 'Trial Text'
+                    default: 'Includes 14-Day Trial'
+                -
+                  handle: button_text
+                  field:
+                    type: text
+                    display: 'Button Text'
+                    default: 'Book Yearly'
+                -
+                  handle: button_link
+                  field:
+                    type: link
+                    display: 'Button Link'
+                -
+                  handle: included_label
+                  field:
+                    default: "What's Included:"
+                    type: text
+                    display: 'Included Label'

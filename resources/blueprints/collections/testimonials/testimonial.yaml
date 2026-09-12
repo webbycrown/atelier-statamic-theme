@@ -1,0 +1,66 @@
+title: Testimonial
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              validate:
+                - required
+              display: Title
+          -
+            handle: sub_title
+            field:
+              type: text
+              display: 'Sub Title'
+          -
+            handle: content
+            field:
+              type: textarea
+              display: Content
+          -
+            handle: author_name
+            field:
+              type: text
+              display: 'Author Name'
+          -
+            handle: author_image
+            field:
+              container: assets
+              max_files: 1
+              type: assets
+              display: 'Author Image'
+          -
+            handle: author_large_image
+            field:
+              max_files: 1
+              container: assets
+              type: assets
+              display: 'Author Large Image'
+          -
+            handle: author_role
+            field:
+              type: text
+              display: 'Author role'
+          -
+            handle: rating
+            field:
+              type: integer
+              display: Rating
+              max: 5
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'

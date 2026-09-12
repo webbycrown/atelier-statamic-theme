@@ -1,0 +1,238 @@
+{{ if show_type == "classes-one" }}
+<section class="2xl:mb-[100px] 1xl:mb-20 xl:mb-17 lg:mb-14 md:mb-12 sm:mb-11 mb-10 classes-section">
+    <div class="container">
+        <div
+            class="flex items-center sm:flex-row flex-col justify-between w-full sm:gap-4 gap-3 2xl:mb-12.5 1xl:mb-12 xl:mb-11 lg:mb-10 md:mb-9 sm:mb-8 mb-7.5">
+            <div
+                class="rounded-full border border-[#5C1A2E80] flex items-center 1xl:gap-4 md:gap-3.5 sm:gap-2.5 gap-2 1xl:px-7.5 md:px-5 px-4 xl:py-3 md:py-2.5 py-2 sm:max-w-1/2 max-w-full w-full">
+                <img src="{{ theme:asset }}assets/image/search.svg" alt="search"
+                    class="1xl:w-6 md:w-5 sm:w-4.5 w-4 h-auto" />
+                <input type="text" name="serch" placeholder="Search here" id="classes-one-search" data-url="/classes"
+                    class="search-input outline-none w-full text-primary opacity-100 placeholder:text-current placeholder:opacity-100 font-medium p" />
+            </div>
+
+            <div class="xl:max-w-[24.2%] lt:max-w-[30%] sm:max-w-[35%] max-w-full w-full relative pointer-events-auto">
+                <div class="relative dropdown pointer-events-auto">
+                    <!-- Button -->
+                    <button type="button" class="dropdown-btn">
+                        <p class="dropdown-text">All Category</p>
+
+                        <svg class="dropdown-arrow w-5.5 h-5.5 transition-transform duration-300"
+                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m7 10l5 5 5-5" />
+                        </svg>
+                    </button>
+
+                    <!-- Dropdown Menu -->
+                    <div
+                        class="dropdown-menu max-h-0 opacity-0 absolute transition-[max-height,opacity] duration-300 ease-in-out">
+                        <ul class="dropdown-list">
+                            <li class="dropdown-item">
+                                <a href="/classes">
+                                    <p>All Category</p>
+                                </a>
+                            </li>
+                            {{ taxonomy:classes_category }}
+                            <li class="dropdown-item">
+                                <a href="/class/category/{{ slug }}">
+                                    <p>{{ title }}</p>
+                                </a>
+                            </li>
+                            {{ /taxonomy:classes_category }}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{ if collections == "classes" }}
+        {{ collection:classes as="classes" paginate="{pagination}" limit="{limit}" }}
+        {{ /if }}
+        <div class="grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 1xl:gap-6 gap-5 grid-main-div classes_search">
+            <!-- 1st card -->
+            {{ classes }}
+            <div class="yoga-card group grid-item-append flex flex-col h-full" data-aos="fade-up">
+                <!-- Image -->
+                <a href="class/{{ slug }}"
+                    class="yoga-card-image before:relative block w-full h-full overflow-hidden before:content-[''] before:block before:pt-[100%]">
+                    {{ main_image }}<img src="{{ url }}" alt="Pilates Class" class="absolute top-0 left-0 w-full h-full object-cover" />{{ /main_image }}
+                    <div class="yoga-card-badge">
+                        <span class="badge-dot badge-{{ intensity_level:value | replace('_','-') }}"></span>
+                        <span>{{ intensity_level:intensity_label }} : {{ intensity_level:value:label }}</span>
+                    </div>
+
+                </a>
+
+                <!-- Content -->
+                <div class="yoga-card-content flex flex-col flex-1">
+                    <div>
+                        <p class="yoga-card-category">
+                            {{ category }}
+                            {{ title }}{{ if !last }} | {{ /if }}
+                            {{ /category }}
+                        </p>
+                        <a href="class/{{ slug }}">
+                            <h3 class="yoga-card-title group-hover:text-black">{{ title }}</h3>
+                        </a>
+                        <p class="yoga-card-desc">
+                            {{ short_description }}
+                        </p>
+                    </div>
+                    <div class="yoga-card-footer mt-auto">
+                        <div class="yoga-card-instructor">
+                            <div class="instructor-img">
+                                {{ team.image }}<img src="{{ url }}" alt="Instructor" />{{ /team.image }}
+                            </div>
+                            <p class="p2">{{ team.title }}</p>
+                        </div>
+                        {{ if button:label }}
+                        <a href="{{ button:url }}{{ slug }}" class="btn-link btn">
+                            {{ button:label }}
+                            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10"
+                                fill="none" class="mt-1 2xl:w-4 sm:w-3.5 w-3 h-full">
+                                <path
+                                    d="M0.701687 8.86162C0.701687 8.86162 6.30093 3.26231 8.63309 0.93009M8.63309 0.93009L8.86101 6.90189M8.63309 0.93009L2.66089 0.702578"
+                                    stroke="currentColor" stroke-width="1.2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </a>
+                        {{ /if }}
+                    </div>
+                </div>
+            </div>
+            {{ /classes }}
+
+        </div>
+
+        {{ paginate }}
+        <input type="hidden" class="lastPage" value="{{ total_pages }}">
+        {{ if next_page }}
+        <div class="load-more-btn load-more-wrap">
+            <a href="{{ next_page }}"
+                class="2xl:mt-12.5 1xl:mt-12 xl:mt-11 lg:mt-10 md:mt-9 sm:mt-8 mt-7.5 btn reveal-more flex items-center justify-center mx-auto gap-4 ajax-load-more-grid">
+                Reveal More
+                <img src="{{ theme:asset src='assets/image/loading.svg'}}" alt="load-more"
+                    class="1xl:size-7.5 xl:size-6.5 size-5.5 animate-spin mx-auto hidden">
+            </a>
+        </div>
+        {{ /if }}
+        {{ /paginate }}
+        {{ if collections == "classes" }}
+        {{ /collection:classes }}
+        {{ /if }}
+
+    </div>
+</section>
+{{ /if }}
+{{ if show_type == "classes-two" }}
+
+<section class="2xl:mb-[100px] 1xl:mb-20 xl:mb-17 lg:mb-14 md:mb-12 sm:mb-11 mb-10 classes-two-section">
+    <div class="container">
+        <div
+            class="flex items-center sm:flex-row flex-col justify-between w-full sm:gap-4 gap-3 2xl:mb-12.5 1xl:mb-12 xl:mb-11 lg:mb-10 md:mb-9 sm:mb-8 mb-7.5">
+            <div
+                class="rounded-full border border-[#5C1A2E80] flex items-center 1xl:gap-4 md:gap-3.5 sm:gap-2.5 gap-2 1xl:px-7.5 md:px-5 px-4 xl:py-3 md:py-2.5 py-2 sm:max-w-1/2 max-w-full w-full">
+                <img src="{{ theme:asset }}assets/image/search.svg" alt="search"
+                    class="1xl:w-6 md:w-5 sm:w-4.5 w-4 h-auto" />
+                <input type="text" name="serch" placeholder="Search here" id="classes-two-search"
+                    data-url="/classes-two"
+                    class="search-input outline-none w-full text-primary opacity-100 placeholder:text-current placeholder:opacity-100 font-medium p" />
+            </div>
+
+            <div class="xl:max-w-[24.2%] lt:max-w-[30%] sm:max-w-[35%] max-w-full w-full relative pointer-events-auto ">
+                <div class="relative dropdown pointer-events-auto">
+                    <!-- Button -->
+                    <button type="button" class="dropdown-btn">
+                        <p class="dropdown-text">All Category</p>
+
+                        <svg class="dropdown-arrow w-5.5 h-5.5 transition-transform duration-300"
+                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m7 10l5 5 5-5" />
+                        </svg>
+                    </button>
+
+                    <!-- Dropdown Menu -->
+                    <div
+                        class="dropdown-menu max-h-0 opacity-0 absolute transition-[max-height,opacity] duration-300 ease-in-out">
+                        <ul class="dropdown-list">
+                            <li class="dropdown-item">
+                                <a href="/classes-two">
+                                    <p>All Category</p>
+                                </a>
+
+                            </li>
+                            {{ taxonomy:classes_category }}
+                            <li class="dropdown-item">
+                                <a href="/class/category/{{ slug }}">
+                                    <p>{{ title }}</p>
+                                </a>
+                            </li>
+                            {{ /taxonomy:classes_category }}
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{ if collections == "classes" }}
+        {{ collection:classes as="classes" paginate="{pagination}" limit="{limit}" }}
+        {{ /if }}
+        <div class="flex flex-col 1xl:gap-[30px] md:gap-[26px] sm:gap-5.5 gap-4 grid-main-div classes_two_search">
+            <!-- 1st practice -->
+            {{ classes }}
+            <div class="flex md:flex-row flex-col justify-between border-y border-primary/40 bg-whitesmoke-100 group/blog lg:gap-6 lt:gap-4 md:gap-2 gap-1 grid-item-append"
+                data-aos="fade-up">
+                <!-- Left: Content -->
+                <div class="w-full 1xl:p-[30px] lt:p-[26px] sm:p-5 p-4">
+                    <div class="flex flex-col justify-center h-full">
+                        <h3 class="text-primary hover:text-thunder-100 uppercase sm:max-w-[80%] mb-2.5">
+                            <a href="class/{{ slug }}" class="text-current">
+                                {{ title }}
+                            </a>
+                        </h3>
+
+                        <p class="font-medium 1xl:mb-4 mb-2.5">
+                            {{ category }}
+                            {{ title }}{{ if !last }} , {{ /if }}
+                            {{ /category }}
+                        </p>
+                        <p class="1xl:mb-[26px] lt:mb-5.5 mb-4.5">
+                            {{ short_description }}
+                        </p>
+                        {{ if button:label }}
+                        <a href="{{ button:url }}{{ slug }}" class="btn btn-secondary">
+                            {{ button:label }}
+                        </a>
+                        {{ /if }}
+                    </div>
+                </div>
+
+                <!-- Right: Image -->
+                <div
+                    class="overflow-hidden block w-full md:h-auto h-full relative before:content-[''] before:block md:before:pt-[48%] before:pt-[44%] lg:max-w-[32.5%] md:max-w-[38%] max-w-full">
+                    {{ main_image }}<img decoding="async" src="{{ url }}" alt="Blog Images"
+                        class="w-full h-full object-cover absolute top-0 left-0 right-0 bottom-0" />{{ /main_image }}
+                </div>
+            </div>
+
+            {{ /classes }}
+        </div>
+
+        {{ paginate }}
+        <input type="hidden" class="lastPage" value="{{ total_pages }}">
+        {{ if next_page }}
+        <div class="load-more-btn load-more-wrap">
+            <a href="{{ next_page }}"
+                class="2xl:mt-12.5 1xl:mt-12 xl:mt-11 lg:mt-10 md:mt-9 sm:mt-8 mt-7.5 btn reveal-more flex items-center justify-center mx-auto gap-4 ajax-load-more-grid">
+                Reveal More
+                <img src="{{ theme:asset src='assets/image/loading.svg'}}" alt="load-more"
+                    class="1xl:size-7.5 xl:size-6.5 size-5.5 animate-spin mx-auto hidden">
+            </a>
+        </div>
+        {{ /if }}
+        {{ /paginate }}
+        {{ if collections == "classes" }}
+        {{ /collection:classes }}
+        {{ /if }}
+    </div>
+</section>
+{{ /if }}

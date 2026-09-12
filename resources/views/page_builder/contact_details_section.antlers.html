@@ -1,0 +1,87 @@
+    <section class="relative bg-white 2xl:mb-[100px] 1xl:mb-20 xl:mb-17 lg:mb-14 md:mb-12 sm:mb-11 mb-10">
+        <div class="container">
+            <div class="text-start max-w-full w-full 2xl:mb-[50px] 1xl:mb-11 md:mb-9 mb-7">
+                <h3 class="font-primary italic font-medium 2xl:mb-7 1xl:mb-6 xl:mb-5 sm:mb-3 mb-2.5">
+                    {{ contact_intro.eyebrow_title }}
+                </h3>
+                <h2 class="text-primary uppercase 1xl:mb-9 lg:mb-5 mb-3">
+                    {{ contact_intro.main_title }}
+                </h2>
+                <p class="text-thunder-100 w-full">
+                    {{ contact_intro.description }}
+                </p>
+            </div>
+
+            <div class="grid lt:grid-cols-3 grid-cols-1 xl:gap-6 sm:gap-4.5 gap-3">
+                {{ contact_cards }}
+                {{ if label == 'Address' }}
+                <div
+                class="flex items-start 2xl:gap-8 1xl:gap-6 sm:gap-4.5 gap-4 bg-whitesmoke-100 2xl:p-9 1xl:p-7 xl:p-6 sm:p-4 p-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" viewBox="0 0 70 70" fill="none"
+                class="2xl:mt-1 mt-2 2xl:h-[70px] 1xl:h-[60px] xl:h-[50px] sm:h-10 h-8 w-auto shrink-0">
+                <path
+                d="M29.5021 63.6165C31.2696 65.0748 33.1129 66.4077 35 67.7086C36.8912 66.425 38.7255 65.0597 40.4979 63.6165C43.4525 61.1905 46.2331 58.56 48.8192 55.7444C54.7808 49.2256 61.25 39.7756 61.25 29.1677C61.25 25.7205 60.571 22.3071 59.2518 19.1223C57.9327 15.9375 55.9991 13.0437 53.5616 10.6062C51.124 8.16863 48.2302 6.23507 45.0454 4.91589C41.8606 3.5967 38.4472 2.91772 35 2.91772C31.5528 2.91772 28.1394 3.5967 24.9546 4.91589C21.7698 6.23507 18.876 8.16863 16.4384 10.6062C14.0009 13.0437 12.0673 15.9375 10.7482 19.1223C9.42898 22.3071 8.75 25.7205 8.75 29.1677C8.75 39.7756 15.2192 49.2227 21.1808 55.7444C23.7668 58.561 26.5474 61.1895 29.5021 63.6165ZM35 38.6469C32.486 38.6469 30.0749 37.6482 28.2972 35.8705C26.5195 34.0928 25.5208 31.6818 25.5208 29.1677C25.5208 26.6537 26.5195 24.2426 28.2972 22.4649C30.0749 20.6873 32.486 19.6886 35 19.6886C37.514 19.6886 39.9251 20.6873 41.7028 22.4649C43.4805 24.2426 44.4792 26.6537 44.4792 29.1677C44.4792 31.6818 43.4805 34.0928 41.7028 35.8705C39.9251 37.6482 37.514 38.6469 35 38.6469Z"
+                fill="#5C1A2E" />
+            </svg>
+            <div class="flex flex-col items-start 2xl:gap-5.5 1xl:gap-4 xl:gap-3 gap-2">
+                <h3 class="uppercase text-primary">{{ label }}</h3>
+                <p class="font-medium">
+                    <a href="{{ link }}"
+                    class="text-thuder-100 hover:text-primary">{{ value }}</a>
+                </p>
+            </div>
+        </div>
+        {{ /if }}
+
+        {{ if label == 'Phone' }}
+        <div
+        class="flex items-start 2xl:gap-8 1xl:gap-6 sm:gap-4.5 gap-4 bg-whitesmoke-100 2xl:p-9 1xl:p-7 xl:p-6 sm:p-4 p-3">
+        <svg xmlns="http://www.w3.org/2000/svg" width="61" height="70" viewBox="0 0 61 70" fill="none"
+        class="2xl:mt-1 mt-2 1xl:h-[60px] xl:h-11.5 lg:h-10 sm:h-9 h-8 w-auto shrink-0">
+        <g clip-path="url(#clip0_3146_15694)">
+            <path
+            d="M61.2033 48.9313L47.4219 42.8374C46.8331 42.5786 46.1788 42.524 45.5574 42.682C44.9361 42.84 44.3812 43.202 43.9765 43.7134L37.8733 51.4069C28.2948 46.7474 20.5863 38.7942 16.0702 28.9117L23.527 22.6147C24.0237 22.1979 24.3753 21.6255 24.5285 20.984C24.6817 20.3426 24.6281 19.6672 24.376 19.06L18.4697 4.84097C18.1929 4.1864 17.7035 3.65197 17.0858 3.32982C16.4681 3.00767 15.7607 2.91801 15.0858 3.07629L2.28871 6.12322C1.63799 6.27826 1.05742 6.65628 0.641744 7.19559C0.226072 7.73491 -0.0001499 8.40366 7.4521e-08 9.09271C7.4521e-08 41.6568 25.5819 68 57.0947 68C57.7628 68.0004 58.4113 67.7672 58.9342 67.3383C59.4572 66.9094 59.8238 66.3102 59.9741 65.6386L62.9273 52.4353C63.0797 51.7355 62.9909 51.0028 62.6763 50.3633C62.3616 49.7238 61.8408 49.2174 61.2033 48.9313Z"
+            fill="#5C1A2E" />
+        </g>
+    </svg>
+    <div class="flex flex-col items-start 2xl:gap-5.5 1xl:gap-4 xl:gap-3 gap-2">
+        <h3 class="uppercase text-primary">{{ label }}</h3>
+        <p class="font-medium break-all">
+            <a href="{{ link }}" class="text-thuder-100 hover:text-primary">
+            {{ value }}</a>
+        </p>
+    </div>
+</div>
+{{ /if }}
+
+{{ if label == 'Email' }}
+<div
+class="flex items-start 2xl:gap-8 1xl:gap-6 sm:gap-4.5 gap-4 bg-whitesmoke-100 2xl:p-9 1xl:p-7 xl:p-6 sm:p-4 p-3">
+<svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" viewBox="0 0 70 70" fill="none"
+class="2xl:h-[70px] 1xl:h-[60px] xl:h-[50px] sm:h-10 h-8 w-auto shrink-0">
+<path
+d="M58.0938 22.8652L34.7604 37.4485L11.4271 22.8652V17.0318L34.7604 31.6152L58.0938 17.0318M58.0938 11.1985H11.4271C8.18958 11.1985 5.59375 13.7943 5.59375 17.0318V52.0318C5.59375 53.5789 6.20833 55.0626 7.30229 56.1566C8.39626 57.2506 9.87999 57.8652 11.4271 57.8652H58.0938C59.6408 57.8652 61.1246 57.2506 62.2185 56.1566C63.3125 55.0626 63.9271 53.5789 63.9271 52.0318V17.0318C63.9271 15.4847 63.3125 14.001 62.2185 12.907C61.1246 11.8131 59.6408 11.1985 58.0938 11.1985Z"
+fill="#5C1A2E" />
+</svg>
+<div class="flex flex-col items-start 2xl:gap-5.5 1xl:gap-4 xl:gap-3 gap-2">
+    <h3 class="uppercase text-primary">{{label }}</h3>
+    <p class="font-medium break-all">
+        <a href="{{ link }}" class="text-thuder-100 hover:text-primary">
+        {{ value }}</a>
+    </p>
+</div>
+</div>
+</div>
+{{ /if }}
+{{ /contact_cards }}
+
+<div class="1xl:mt-13.5 xl:mt-10 md:mt-8 sm:mt-6 mt-5">
+    <h3 class="font-primary italic font-medium text-primary 2xl:mb-7 1xl:mb-6 xl:mb-5 sm:mb-3 mb-2.5">
+        {{ booking_help.title }}
+    </h3>
+    <p class="p2">
+        {{ booking_help.text }}
+    </p>
+</div>
+</div>
+</section>

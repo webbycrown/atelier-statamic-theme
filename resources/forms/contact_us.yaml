@@ -1,0 +1,9 @@
+title: 'Contact us'
+messages:
+  full_name.required: 'Please enter your full name.'
+  email.required: 'Please enter your email address.'
+  email.unique_form_submission: 'This email has already been used to submit this form.'
+  phone_number.required: 'Please enter your phone number.'
+  comment.required: 'Please provide your comments.'
+  condition.required: 'Please agree to the Studio Terms & Conditions.'
+  information.required: 'Please confirm you are physically fit to participate.'

@@ -1,0 +1,39 @@
+title: 'Membership FAQs'
+fields:
+  -
+    handle: section_title
+    field:
+      type: text
+      display: 'Section Title'
+  -
+    handle: sub_title
+    field:
+      type: text
+      display: 'Sub Title'
+  -
+    handle: description
+    field:
+      type: textarea
+      display: Description
+  -
+    handle: faq_items
+    field:
+      type: replicator
+      display: 'FAQ Items'
+      sets:
+        new_set_group:
+          display: 'New Set Group'
+          sets:
+            faq:
+              display: FAQ
+              fields:
+                -
+                  handle: question
+                  field:
+                    type: text
+                    display: Question
+                -
+                  handle: answer
+                  field:
+                    type: textarea
+                    display: Answer

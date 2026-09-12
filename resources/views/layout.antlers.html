@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{{ partial:header-link }}
+
+<body>
+    <!-- ====== Main-Content ====== -->
+    <main class="h-full">
+        <!-- ====== Header ====== -->
+        <div class="bg_body_box fixed inset-0 w-full h-full backdrop-blur-xl bg-primary/35 z-50"></div>
+
+           <!-- ====== Header ====== -->
+           {{ if is_homepage or segment_1 == 'home-two' or segment_1 == 'home-four' }}
+           {{ partial:header-two }}
+           {{ else }}
+           {{ partial:header }}
+           {{ /if }}
+
+           {{ template_content }}
+
+           {{ partial:commerce-drawers }}
+
+           <!-- ====== Footer ====== -->
+           {{ if is_homepage }}
+           {{ partial:footer-three }}
+           {{ elseif segment_1 == 'home-two' }}
+           {{ partial:footer-two }}
+           {{ elseif segment_1 == 'home-four' }}
+           {{ partial:footer-four }}
+           {{ else }}
+           {{ setting }}
+           {{ partial:{{ footer_select }} }}
+           {{ /setting }}
+           {{ /if }}
+           <!-- ====== End Footer ====== -->
+           {{ partial:footer-link }}
+
+    </main>
+</body>
+</html>

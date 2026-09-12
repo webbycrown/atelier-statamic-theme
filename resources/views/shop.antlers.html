@@ -1,0 +1,30 @@
+<section
+    class="relative 1xl:pt-20 xl:pt-17 lg:pt-14 md:pt-12 sm:pt-11 pt-10 xl:mb-20 lg:mb-16 md:mb-12 sm:mb-11 mb-10 bg-whitesmoke-100">
+    <div class="container relative">
+        <div class="flex flex-col items-center justify-center lt:max-w-[73%] md:max-w-[90%] max-w-full w-full text-center mx-auto space-y-2.5 1xl:pt-20 xl:pt-17 lg:pt-14 md:pt-12 sm:pt-8 pt-3 pb-10 mt-10">
+            <h1 class="uppercase text-primary text-center">Shop</h1>
+            <p class="lg:max-w-[85%] w-full max-w-[640px] mx-auto">Studio pieces, accessories, and lookbook extras.</p>
+        </div>
+    </div>
+</section>
+<section class="relative 2xl:mb-[100px] mb-16">
+    <div class="container">
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:gap-8 gap-5">
+            {{ collection:products }}
+            <article class="border border-primary/20 bg-white">
+                <a href="/product/{{ slug }}" class="block overflow-hidden relative before:content-[''] before:pt-[80%] before:block">
+                    {{ image }}<img src="{{ url }}" alt="{{ title }}" class="absolute inset-0 w-full h-full object-cover">{{ /image }}
+                </a>
+                <div class="p-5">
+                    <h3 class="uppercase text-primary mb-2"><a href="/product/{{ slug }}">{{ title }}</a></h3>
+                    <p class="mb-4">${{ price }}</p>
+                    <div class="yoga-shop-actions">
+                        <button type="button" class="btn btn-secondary yoga-add-cart" data-id="{{ slug }}" data-title="{{ title }}" data-price="{{ price }}" data-image="{{ image }}{{ url }}{{ /image }}">Add to cart</button>
+                        <button type="button" class="btn-link yoga-add-wish" data-id="{{ slug }}" data-title="{{ title }}" data-price="{{ price }}" data-image="{{ image }}{{ url }}{{ /image }}">Wishlist</button>
+                    </div>
+                </div>
+            </article>
+            {{ /collection:products }}
+        </div>
+    </div>
+</section>

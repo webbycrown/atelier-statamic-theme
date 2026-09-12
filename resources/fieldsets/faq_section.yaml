@@ -1,0 +1,14 @@
+title: 'Faq Section'
+fields:
+  -
+    handle: section_title
+    field:
+      type: text
+      display: 'Section Title'
+  -
+    handle: collections
+    field:
+      mode: select
+      max_items: 1
+      type: collections
+      display: Collections

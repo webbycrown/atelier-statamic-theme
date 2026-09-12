@@ -1,0 +1,32 @@
+<section class="relative 1xl:pt-44 xl:pt-40 lg:pt-36 md:pt-32 sm:pt-28 pt-24 2xl:mb-[100px] mb-16">
+    <div class="container max-w-[480px]">
+        <h1 class="uppercase text-primary mb-6">{{ title }}</h1>
+        {{ if segment_1 == 'login' }}
+        <form method="post" action="/customer/login" class="space-y-4 yoga-auth-form">
+            {{ csrf_field }}
+            <input class="type-filed w-full" type="email" name="email" placeholder="Email" required>
+            <input class="type-filed w-full" type="password" name="password" placeholder="Password" required>
+            <button class="btn btn-secondary w-full" type="submit">Login</button>
+            <p><a href="/forgot-password" class="underline">Forgot password?</a> · <a href="/register" class="underline">Register</a></p>
+        </form>
+        {{ elseif segment_1 == 'register' }}
+        <form method="post" action="/customer/register" class="space-y-4 yoga-auth-form">
+            {{ csrf_field }}
+            <input class="type-filed w-full" name="name" placeholder="Full name" required>
+            <input class="type-filed w-full" type="email" name="email" placeholder="Email" required>
+            <input class="type-filed w-full" type="password" name="password" placeholder="Password" required>
+            <button class="btn btn-secondary w-full" type="submit">Create account</button>
+            <p><a href="/login" class="underline">Already have an account?</a></p>
+        </form>
+        {{ else }}
+        <form method="post" action="/customer/forgot" class="space-y-4 yoga-auth-form">
+            {{ csrf_field }}
+            <input class="type-filed w-full" type="email" name="email" placeholder="Email" required>
+            <button class="btn btn-secondary w-full" type="submit">Send reset link</button>
+            <p class="form-success-msg">We will email reset instructions if the account exists.</p>
+            <p><a href="/login" class="underline">Back to login</a></p>
+        </form>
+        {{ /if }}
+        <p class="yoga-auth-message text-primary mt-4"></p>
+    </div>
+</section>

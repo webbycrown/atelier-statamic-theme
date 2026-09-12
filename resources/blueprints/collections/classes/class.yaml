@@ -1,0 +1,298 @@
+title: Class
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              validate:
+                - required
+              display: Title
+          -
+            handle: short_description
+            field:
+              type: text
+              display: 'Short Description'
+          -
+            handle: main_image
+            field:
+              container: assets
+              max_files: 1
+              type: assets
+              display: 'Main Image'
+          -
+            handle: team
+            field:
+              collections:
+                - teams
+              mode: select
+              max_items: 1
+              type: entries
+              display: Team
+          -
+            handle: subtitle
+            field:
+              type: text
+              display: Subtitle
+          -
+            handle: description
+            field:
+              container: assets
+              remove_empty_nodes: false
+              type: bard
+              display: Description
+          -
+            handle: class_flow
+            field:
+              type: group
+              display: 'Class Flow'
+              fields:
+                -
+                  handle: class_flow_title
+                  field:
+                    type: text
+                    display: 'Class Flow Title'
+                -
+                  handle: class_flows
+                  field:
+                    type: replicator
+                    display: 'Class Flows'
+                    sets:
+                      new_set_group:
+                        display: 'New Set Group'
+                        sets:
+                          new_set:
+                            display: 'New Set'
+                            fields:
+                              -
+                                handle: step_title
+                                field:
+                                  type: text
+                                  display: 'Step Title'
+                              -
+                                handle: step_description
+                                field:
+                                  type: textarea
+                                  display: 'Step Description'
+          -
+            handle: video_section
+            field:
+              type: group
+              display: 'Video Section'
+              fields:
+                -
+                  handle: video_banner
+                  field:
+                    container: assets
+                    max_files: 1
+                    type: assets
+                    display: 'Video Banner'
+                -
+                  handle: video_file
+                  field:
+                    container: assets
+                    max_files: 1
+                    type: assets
+                    display: 'Video File'
+                -
+                  handle: video_title
+                  field:
+                    type: text
+                    display: 'Video Title'
+          -
+            handle: class_overview_title
+            field:
+              type: text
+              display: 'Class Overview Title'
+          -
+            handle: class_overview
+            field:
+              type: replicator
+              display: 'Class Overview'
+              sets:
+                new_set_group:
+                  display: 'New Set Group'
+                  sets:
+                    new_set:
+                      display: 'New Set'
+                      fields:
+                        -
+                          handle: label
+                          field:
+                            type: text
+                            display: Label
+                            instructions: 'Days,Time,Pricing, Level,Capacity,Registration,Location'
+                        -
+                          handle: value
+                          field:
+                            type: text
+                            display: Value
+          -
+            handle: intensity_level
+            field:
+              type: group
+              display: 'Intensity Level'
+              fields:
+                -
+                  handle: sub_title
+                  field:
+                    type: text
+                    display: 'Sub Title'
+                -
+                  handle: intensity_label
+                  field:
+                    type: text
+                    display: 'intensity Label'
+                -
+                  handle: value
+                  field:
+                    options:
+                      -
+                        key: gentle
+                        value: Gentle
+                      -
+                        key: very_gentle
+                        value: 'Very Gentle'
+                      -
+                        key: moderate
+                        value: Moderate
+                      -
+                        key: moderate_high
+                        value: 'Moderate to High'
+                      -
+                        key: high
+                        value: High
+                    type: select
+                    display: Value
+          -
+            handle: class_benefits
+            field:
+              type: group
+              display: 'Class Benefits'
+              fields:
+                -
+                  handle: class_benefit_title
+                  field:
+                    type: text
+                    display: 'Class Benefit Title'
+                -
+                  handle: benefits
+                  field:
+                    type: list
+                    display: Benefits
+          -
+            handle: instructor
+            field:
+              type: group
+              display: Instructor
+              fields:
+                -
+                  handle: instructor_title
+                  field:
+                    default: 'Meet the Instructor'
+                    type: text
+                    display: 'Instructor Title'
+                -
+                  handle: instructor_name
+                  field:
+                    type: text
+                    display: 'Instructor Name'
+                -
+                  handle: instructor_bio
+                  field:
+                    type: text
+                    display: 'Instructor Bio'
+                -
+                  handle: instructor_image
+                  field:
+                    container: assets
+                    max_files: 1
+                    type: assets
+                    display: 'Instructor Image'
+                -
+                  handle: certifications_label
+                  field:
+                    default: Certifications
+                    type: text
+                    display: 'Certifications Label'
+                -
+                  handle: certifications
+                  field:
+                    type: list
+                    display: Certifications
+                -
+                  import: social_section
+          -
+            handle: related_class
+            field:
+              type: group
+              display: 'Related Class'
+              fields:
+                -
+                  handle: sub_title
+                  field:
+                    type: text
+                    display: 'Sub Title'
+                    default: 'RELATED CLASS'
+                -
+                  handle: classes
+                  field:
+                    collections:
+                      - classes
+                    mode: select
+                    type: entries
+                    display: Classes
+                -
+                  handle: button_text
+                  field:
+                    default: 'Explore more Class'
+                    type: text
+                    display: 'Button Text'
+                -
+                  handle: button_link
+                  field:
+                    default: /classes
+                    type: text
+                    display: 'Button Link'
+          -
+            handle: button
+            field:
+              type: group
+              display: Button
+              fields:
+                -
+                  handle: label
+                  field:
+                    default: 'view now'
+                    type: text
+                    display: Label
+                -
+                  handle: url
+                  field:
+                    default: /class/
+                    type: text
+                    display: url
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'
+          -
+            handle: category
+            field:
+              taxonomies:
+                - classes_category
+              mode: select
+              type: terms
+              display: Category

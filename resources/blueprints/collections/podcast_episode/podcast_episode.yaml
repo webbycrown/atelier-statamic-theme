@@ -1,0 +1,97 @@
+title: 'Podcast Episode'
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              validate:
+                - required
+              display: Title
+          -
+            handle: description
+            field:
+              type: textarea
+              display: Description
+          -
+            handle: duration
+            field:
+              type: text
+              display: Duration
+              instructions: '17 minutes'
+              width: 50
+          -
+            handle: host_name
+            field:
+              type: text
+              display: 'Host Name'
+              width: 50
+          -
+            handle: image
+            field:
+              container: assets
+              max_files: 1
+              type: assets
+              display: Image
+              width: 50
+          -
+            handle: podcast_video
+            field:
+              container: assets
+              max_files: 1
+              type: assets
+              display: 'Podcast Video'
+              width: 50
+          -
+            handle: episode_number
+            field:
+              type: text
+              display: 'Episode Number'
+              instructions: 'Example - Episode-1'
+              width: 50
+          -
+            handle: order_by
+            field:
+              type: integer
+              display: 'Order by'
+              width: 50
+          -
+            handle: platforms
+            field:
+              type: grid
+              display: Platforms
+              fields:
+                -
+                  handle: platform_name
+                  field:
+                    type: text
+                    display: 'Platform Name'
+                -
+                  handle: platform_icon
+                  field:
+                    container: assets
+                    max_files: 1
+                    type: assets
+                    display: 'Platform Icon'
+                -
+                  handle: platform_link
+                  field:
+                    default: 'javascript:;'
+                    type: text
+                    display: 'Platform Link'
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'

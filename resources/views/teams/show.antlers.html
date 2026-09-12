@@ -1,0 +1,178 @@
+<section
+    class="relative 1xl:pt-20 xl:pt-17 lg:pt-14 md:pt-12 sm:pt-11 pt-10 xl:mb-20 lg:mb-16 md:mb-12 sm:mb-11 mb-10 bg-whitesmoke-100">
+    <div class="container relative">
+        <div class="flex flex-col items-center justify-center lt:max-w-[73%] md:max-w-[90%] max-w-full w-full text-center mx-auto space-y-2.5 1xl:pt-20 xl:pt-17 lg:pt-14 md:pt-12 sm:pt-11 pt-10 pb-15
+        {{ setting }}{{ if header_select == 'header-two' }} pt-0 {{ else }} mt-10 {{ /if }}{{ /setting }}">
+            <h1 class="uppercase text-primary text-center" data-aos="fade-up">{{ title }}</h1>
+            <p class="1xl:max-w-3/4 xl:max-w-[85%] w-full" data-aos="fade-up">
+                {{ instructor_title }}
+            </p>
+        </div>
+
+        <!-- Decorative Flower -->
+        <div
+            class="pointer-events-none absolute top-0 left-auto lt:right-0 -right-16 lg:w-[14.2%] w-[18%] hidden md:block opacity-30">
+            <img decoding="async" src="{{ theme:asset }}assets/image/flower-shape.svg" alt="decor"
+                class="w-full h-full object-contain" />
+        </div>
+    </div>
+</section>
+<!-- ====== End Page Heading ====== -->
+
+<!-- ====== Find Your Flow Section ====== -->
+<section class="relative bg-white 2xl:mb-[100px] 1xl:mb-20 xl:mb-17 lg:mb-14 md:mb-12 sm:mb-11 mb-10">
+    <div class="container">
+        <div class="flex lt:flex-row flex-col-reverse items-stretch 2xl:gap-17.5 1xl:gap-16 xl:gap-12 lg:gap-8 sm:gap-5 gap-3"
+            data-aos="fade-up">
+            <!-- Right: Content -->
+            <div class="lt:w-[57%] w-full my-auto 1xl:py-22 xl:py-8 py-2">
+
+                <h3 class="text-primary uppercase 1xl:mb-7.5 xl:mb-5 mb-4">{{ about_heading }}</h3>
+                <div class="1xl:space-y-5 xl:space-y-4 lg:space-y-3 sm:space-y-2 space-y-1">
+                    {{ about_description }}
+                    <p>
+                        {{ value }}
+                    </p>
+                    {{ /about_description }}
+                </div>
+            </div>
+
+            <!-- Left: Image -->
+            <div class="lt:w-[43%] w-full h-auto">
+                <div
+                    class="overflow-hidden rounded-sm relative before:content-[''] before:block before:pt-[100%] w-full h-full">
+                    {{ image }}<img decoding="async" src="{{ url }}" alt="About Image"
+                        class="absolute top-0 left-0 w-full h-full object-cover" />{{ /image }}
+                </div>
+            </div>
+        </div>
+
+        <div class="1xl:space-y-20 lg:space-y-12 space-y-10 1xl:mt-0 xl:mt-3 lt:mt-8 mt-6">
+            <div data-aos="fade-up">
+                <h3 class="uppercase text-primary 1xl:mb-6 lt:mb-4 mb-3">{{ heading }}</h3>
+                <ul class="list-disc 1xl:space-y-5 sm:space-y-3.5 space-y-2.5 sm:pl-4.5 pl-4">
+                    {{ items }}
+                    <li>
+                        <p class="font-medium">{{ value }}</p>
+                    </li>
+                    {{ /items }}
+                </ul>
+            </div>
+
+            <div data-aos="fade-up">
+                <h3 class="uppercase text-primary 1xl:mb-6 lt:mb-4 mb-3">{{ quote:quote_title }}</h3>
+                <div
+                    class="1xl:p-7.5 lg:p-6 md:p-5 p-4 bg-whitesmoke-100 font-medium border-l-2 border-primary flex items-start 1xl:gap-7.5 lg:gap-6 lt:gap-5 sm:gap-4 gap-2.5">
+                    <div class="shrink-0">
+                        <img src="{{theme:asset}}assets/image/events-detail-true.svg" alt="true"
+                            class="1xl:size-12.5 lg:size-11 sm:size-10 size-7.5 object-contain" />
+                    </div>
+
+                    <div>
+                        <h5 class="text-primary uppercase md:mb-4 mb-2.5">
+                            “{{ quote:text }}”
+                        </h5>
+                        <p>
+                            {{ quote:quote_text }}
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div data-aos="fade-up">
+                <h3 class="uppercase text-primary 1xl:mb-6 lt:mb-4 mb-3">{{ specialties:heading }}</h3>
+                <ul class="list-disc text-primary 1xl:space-y-4 lt:space-y-3 space-y-2.5 pl-4.5">
+                    {{ specialties:list }}
+                    <li>
+                        <p class="text-primary font-medium"> {{ title }}
+                            <span class="text-thunder-100">{{ description }}</span>
+
+                        </p>
+                    </li>
+                    {{ /specialties:list }}
+                </ul>
+            </div>
+
+            {{ if contact:booking_label }}
+            <div data-aos="fade-up">
+                <h3 class="uppercase text-primary 1xl:mb-6 lt:mb-4 mb-3">{{ contact:content_title }}</h3>
+                <div>
+                    <a href="{{ contact:booking_url }}"
+                        class="flex items-center 1xl:gap-4.5 md:gap-3.5 gap-2.5 w-fit group text-primary hover:text-thunder-100">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30"
+                            height="30" viewBox="0 0 30 30" fill="none"
+                            class="2xl:w-7.5 1xl:w-6.5 lt:w-6 w-5.5 h-full text-primary">
+                            <mask id="mask0_3146_20030" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0"
+                                width="30" height="30">
+                                <rect width="30" height="30" fill="url(#pattern0_3146_20030)" />
+                            </mask>
+                            <g mask="url(#mask0_3146_20030)">
+                                <rect width="30" height="30" fill="currentColor" />
+                            </g>
+                            <defs>
+                                <pattern id="pattern0_3146_20030" patternContentUnits="objectBoundingBox" width="1"
+                                    height="1">
+                                    <use xlink:href="#image0_3146_20030" transform="scale(0.0078125)" />
+                                </pattern>
+                                <image id="image0_3146_20030" width="128" height="128" preserveAspectRatio="none"
+                                    xlink:href="data:image/png;base64,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" />
+                            </defs>
+                        </svg>
+                        <div class="flex items-center 1xl:gap-3 gap-2 w-full">
+                            <p class="uppercase font-medium text-primary group-hover:text-thunder-100">
+                                {{ contact:booking_label }}</p>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="31" viewBox="0 0 20 31"
+                                fill="none" class="1xl:w-5.5 w-4.5 h-full">
+                                <g clip-path="url(#clip0_3146_20028)">
+                                    <path
+                                        d="M2.86573 20.6159C2.86573 20.6159 10.8425 12.639 14.165 9.31648M14.165 9.31648L14.4897 17.824M14.165 9.31648L5.65684 8.99236"
+                                        stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_3146_20028">
+                                        <rect y="0.0298199" width="19.9297" height="30.9612" rx="5"
+                                            transform="rotate(-0.0857288 0 0.0298199)" fill="white" />
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            {{ /if }}
+
+            <div data-aos="fade-up">
+                <h3 class="uppercase text-primary 1xl:mb-6 lt:mb-4 mb-3">{{ private_contact:private_contact_title }}
+                </h3>
+                <div class="space-y-3">
+                    {{ if private_contact:email }}
+                    <a href="mailto:{{ private_contact:email }}"
+                        class="p font-medium flex items-center 1xl:gap-4.5 gap-3 w-fit group text-thunder-100 hover:text-primary">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none"
+                            class="text-primary h-full 1xl:w-7.5 w-6">
+                            <path
+                                d="M24.8984 9.79932L14.8984 16.0493L4.89844 9.79932V7.29932L14.8984 13.5493L24.8984 7.29932M24.8984 4.79932H4.89844C3.51094 4.79932 2.39844 5.91182 2.39844 7.29932V22.2993C2.39844 22.9624 2.66183 23.5982 3.13067 24.0671C3.59951 24.5359 4.2354 24.7993 4.89844 24.7993H24.8984C25.5615 24.7993 26.1974 24.5359 26.6662 24.0671C27.135 23.5982 27.3984 22.9624 27.3984 22.2993V7.29932C27.3984 6.63628 27.135 6.00039 26.6662 5.53155C26.1974 5.06271 25.5615 4.79932 24.8984 4.79932Z"
+                                fill="#5C1A2E" />
+                        </svg>
+                        {{ private_contact:email }}
+                    </a>
+                    {{ /if }}
+                    {{ if private_contact:phone_number }}
+                    <a href="tel:{{ private_contact:phone_number }}"
+                        class="p font-medium flex items-center 1xl:gap-4.5 gap-3 w-fit group text-thunder-100 hover:text-primary">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none"
+                            class="text-primary h-full 1xl:w-7.5 w-6">
+                            <path
+                                d="M26.3441 20.2526L21.3127 18.0963C21.0978 18.0047 20.8589 17.9854 20.6321 18.0413C20.4052 18.0972 20.2027 18.2253 20.0549 18.4063L17.8267 21.1286C14.3298 19.4799 11.5157 16.6657 9.8669 13.1688L12.5892 10.9406C12.7706 10.7931 12.8989 10.5905 12.9548 10.3636C13.0108 10.1366 12.9912 9.89762 12.8992 9.68276L10.7429 4.65142C10.6419 4.4198 10.4632 4.2307 10.2377 4.11671C10.0121 4.00272 9.75392 3.97099 9.50752 4.027L4.83556 5.10514C4.598 5.16 4.38604 5.29376 4.23429 5.48459C4.08253 5.67543 3.99995 5.91206 4 6.15588C4 17.6785 13.3394 27 24.8441 27C25.088 27.0002 25.3247 26.9176 25.5157 26.7659C25.7066 26.6141 25.8404 26.4021 25.8953 26.1644L26.9734 21.4925C27.0291 21.2449 26.9967 20.9856 26.8818 20.7593C26.767 20.533 26.5768 20.3538 26.3441 20.2526Z"
+                                fill="#5C1A2E" />
+                        </svg>
+                        {{ private_contact:phone_number }}
+                    </a>
+                    {{ /if }}
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>

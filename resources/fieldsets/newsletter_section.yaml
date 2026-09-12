@@ -1,0 +1,39 @@
+title: 'Newsletter Section'
+fields:
+  -
+    handle: section_title
+    field:
+      type: text
+      display: 'Section Title'
+  -
+    handle: sub_title
+    field:
+      type: text
+      display: 'Sub Title'
+  -
+    handle: description
+    field:
+      type: textarea
+      display: Description
+  -
+    handle: background_image
+    field:
+      container: assets
+      max_files: 1
+      type: assets
+      display: 'Background Image'
+  -
+    handle: subscribe_button_text
+    field:
+      type: text
+      display: 'Subscribe Button Text'
+  -
+    handle: quote_text
+    field:
+      type: text
+      display: 'Quote Text'
+  -
+    handle: quote_author
+    field:
+      type: text
+      display: 'Quote Author'

@@ -1,0 +1,226 @@
+<!-- ====== Start Page Heading ====== -->
+<section
+    class="relative 1xl:pt-20 xl:pt-17 lg:pt-14 md:pt-12 sm:pt-11 pt-10 xl:mb-20 lg:mb-16 md:mb-12 sm:mb-11 mb-10 bg-whitesmoke-100">
+    <div class="container relative">
+        <div
+            class="flex flex-col items-center justify-center lt:max-w-[73%] md:max-w-[90%] max-w-full w-full text-center mx-auto space-y-2.5 1xl:pt-20 xl:pt-17 lg:pt-14 md:pt-12 sm:pt-11 pt-10 pb-15
+            {{ setting }}{{ if header_select == 'header-two' }} pt-0 {{ else }} mt-10 {{ /if }}{{ /setting }}">
+            <h1 class="uppercase text-primary text-center" data-aos="fade-up">{{ setting:event_banner_title }}</h1>
+            <p data-aos="fade-up">
+                {{ setting:event_banner_description }}
+            </p>
+        </div>
+
+        <!-- Decorative Flower -->
+        <div
+            class="pointer-events-none absolute top-0 left-auto lt:right-0 -right-16 lg:w-[14.2%] w-[18%] hidden md:block opacity-30">
+            <img decoding="async" src="{{ theme:asset }}assets/image/flower-shape.svg" alt="decor"
+                class="w-full h-full object-contain" />
+        </div>
+    </div>
+</section>
+<!-- ====== End Page Heading ====== -->
+
+<!-- ====== Start video ====== -->
+
+<section class="relative 2xl:mb-25 1xl:mb-20 xl:mb-17 lg:mb-14 md:mb-12 sm:mb-11 mb-10">
+    <div class="container">
+        <div
+            class="2xl:h-[682px] 1xl:h-[640px] xl:h-[530px] lg:h-[475px] lt:h-[410px] md:h-[370px] sm:h-[310px] h-[230px] relative ">
+            <video id="eventVideo" class="w-full rounded-sm overflow-hidden h-full object-cover" controls
+                preload="metadata" poster="{{ video_poster_image }} {{ url }} {{ /video_poster_image }}" loading="eager"
+                fetchpriority="high" decoding="async">
+                {{ event_video }}
+                <source src="{{ event_video }}" type="video/mp4" loading="eager" fetchpriority="high" decoding="async">
+                {{ /event_video }}
+            </video>
+            <!-- Date Badge -->
+            <div
+                class="absolute 1xl:top-6 1xl:right-6 xl:top-4 xl:right-4 lg:top-3 lg:right-3 sm:top-2 sm:right-2 top-1.5 right-1.5 bg-white shadow-md rounded-full xl:px-5.5 lg:px-5 sm:px-4 px-3 lg:py-2 py-1.5 leading-[15px] flex items-center lg:gap-[9px] gap-1.5">
+                <img src="{{ theme:asset }}assets/image/calendor.svg" class="2xl:size-6 md:size-5.5 sm:size-4.5 size-4">
+                <span class="sm:text-14 text-xs font-medium uppercase">{{ event_date }}</span>
+            </div>
+
+            <div class="video-play flex justify-center absolute top-0 m-auto w-full h-full items-center">
+                <div
+                    class="pointer-events-all relative inline-flex items-center justify-center 2xl:w-25 2xl:h-25 1xl:w-24 1xl:h-24 xl:w-22 xl:h-22 lg:w-20 lg:h-20 md:w-18 md:h-18 sm:w-16 sm:h-16 w-13.5 h-13.5 rounded-full bg-white/50 md:p-[7px] p-1">
+                    <div class="absolute inset-0 animate-ping w-full h-full rounded-full bg-white/50"></div>
+                    <span
+                        class="relative w-full h-full rounded-full bg-white flex items-center justify-center md:p-[5px] p-[3px]">
+                        <span
+                            class="w-full h-full rounded-full bg-white flex items-center justify-center md:border-2 border border-primary transition-all decoration-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                class="2xl:size-9 1xl:size-8 xl:size-7.5 lg:size-6.5 sm:size-5.5 size-5 group-hover/video_popup:text-thunder-100 text-primary transition-all decoration-300">
+                                <path fill="currentColor"
+                                    d="M21.409 9.353a2.998 2.998 0 0 1 0 5.294L8.597 21.614C6.534 22.737 4 21.277 4 18.968V5.033c0-2.31 2.534-3.769 4.597-2.648z"
+                                    stroke-width="0.5" stroke="currentColor" />
+                            </svg>
+                        </span>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="1xl:mt-7.5 lg:mt-6.5 md:mt-5.5 mt-4.5">
+            <div
+                class="flex md:flex-row flex-col md:items-center items-start justify-start 2xl:gap-5 lt:gap-3 gap-2 md:divide-x divide-primary">
+                <div class="flex items-center lg:gap-2 gap-1.5 1xl:pr-5 lt:pr-3 md:pr-2">
+                    <img src="{{ theme:asset }}assets/image/map.svg" class="2xl:size-7.5 lg:size-6.5 lt:size-6 size-5.5">
+                    <p class="font-medium">{{ event_location }}</p>
+                </div>
+                <div class="flex items-center lg:gap-2 gap-1.5 1xl:pr-5 lt:pr-3 md:pr-2">
+                    <img src="{{ theme:asset }}assets/image/podcast time.svg" class="2xl:size-7.5 lg:size-6.5 lt:size-6 size-5.5">
+                    <p class="font-medium">{{ event_time }}</p>
+                </div>
+                <div class="flex items-center lg:gap-2 gap-1.5 1xl:pr-5 lt:pr-3 md:pr-2 last:pr-0">
+                    <img src="{{ theme:asset }}assets/image/person-group.svg" alt="pin"
+                        class="2xl:size-7.5 lt:size-6 size-5.5" />
+                    <p class="font-medium">{{ number_of_participants }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ====== End video ====== -->
+
+<!-- ====== Find Your Flow Section ====== -->
+<section class="relative bg-white 2xl:mb-25 1xl:mb-20 xl:mb-17 lg:mb-14 md:mb-12 sm:mb-11 mb-10">
+    <div class="container">
+        <div class="2xl:mb-12.5 1xl:mb-11 md:mb-8 mb-6" data-aos="fade-up">
+            <h3 class="text-primary font-normal uppercase 1xl:mb-5 mb-3">{{ about_event:about_section_heading }}</h3>
+            <p class="text-black">
+                {{ about_event:about_description }}
+            </p>
+        </div>
+        <div class="flex lt:flex-row flex-col-reverse items-end 2xl:gap-19 1xl:gap-16 xl:gap-12 lg:gap-8 gap-5">
+            <!-- Right: Content -->
+            <div class="lt:w-[56%] w-full">
+                <h3 class="text-primary font-normal uppercase 1xl:mb-[25px] mb-3" data-aos="fade-up">
+                    {{ program_highlights:section_title }}
+                </h3>
+
+                <!-- Bullets -->
+                <ul
+                    class="flex flex-col items-start justify-center 2xl:gap-10 1xl:gap-9 xl:gap-7 md:gap-6 sm:gap-5 gap-4">
+                    {{ program_highlights:highlights }}
+                    <li class="flex items-start md:gap-2.5 gap-2" data-aos="fade-up">
+                        <span class="shrink-0 whitespace-nowrap 1xl:w-7.5 xl:w-7 lg:w-6 w-5 h-full mt-1">
+                            <img decoding="async" src="{{ theme:asset }}assets/image/bullets-point.svg"
+                                alt="Bullets Point" />
+                        </span>
+                        <div class="flex flex-col items-start xl:gap-3 gap-2">
+                            <h5 class="uppercase">{{ title }}</h5>
+                            <p>
+                                {{ description }}
+                            </p>
+                        </div>
+                    </li>
+                    {{ /program_highlights:highlights }}
+                </ul>
+            </div>
+
+            <!-- Left: Image -->
+            <div class="lt:w-[44%] w-full h-full">
+                <div
+                    class="overflow-hidden rounded-sm relative before:content-[''] before:block 2xl:before:pt-[93%] 1xl:before:pt-[105%] xl:before:pt-[112%] lg:before:pt-[116%] lt:before:pt-[125%] sm:before:pt-[65%] before:pt-[100%] w-full h-full">
+                    {{ program_highlights:highlight_side_image }}
+                    <img decoding="async" src="{{ url }}" alt="About Image"
+                        class="absolute top-0 left-0 w-full h-full object-cover" />
+                    {{ /program_highlights:highlight_side_image }}
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+<!-- ====== End Find Your Flow Section ====== -->
+
+
+<!-- ====== Start Feedback Section ====== -->
+<section class="relative bg-white 2xl:mb-25 1xl:mb-20 xl:mb-17 lg:mb-14 md:mb-12 sm:mb-11 mb-10">
+    <div class="container">
+        <h3 class="text-primary font-normal uppercase 1xl:mb-9 lg:mb-7 sm:mb-6 mb-5" data-aos="fade-up">
+            {{ participant_feedback:feedback_label }}</h3>
+
+        <div class="1xl:space-y-7.5 lg:space-y-6.5 sm:space-y-5.5 space-y-4.5">
+            {{ participant_feedback:feedback_entries }}
+            <div class="1xl:p-7 lg:p-6 sm:p-5 p-3.5 bg-whitesmoke-100 border-l-2 border-primary 1xl:space-y-4 space-y-3"
+                data-aos="fade-up">
+                <p class="font-medium">
+                    “{{ quote }}”
+                </p>
+                <p class="text-primary">
+                    — {{ author_name }}, {{ author_designation }}
+                </p>
+            </div>
+            {{ /participant_feedback:feedback_entries }}
+
+        </div>
+    </div>
+</section>
+<!-- ====== End Feedback Section ====== -->
+
+<!-- ====== Start Event Organizing Section ====== -->
+<section class="relative bg-white 2xl:mb-25 1xl:mb-20 xl:mb-17 lg:mb-14 md:mb-12 sm:mb-11 mb-10">
+    <div class="container">
+        <div class="2xl:space-y-12.5 1xl:space-y-11 md:space-y-7 space-y-4">
+            <h2 class="font-normal uppercase" data-aos="fade-up">{{ event_organization:event_title }}</h2>
+            <div class="1xl:space-y-11 xl:space-y-8 lg:space-y-7 sm:space-y-6 space-y-5">
+                {{ event_organization:events }}
+                <div class="1xl:p-10 lg:p-8 md:p-6 sm:p-5 p-4 bg-whitesmoke-100" data-aos="fade-up">
+                    <h3 class="text-primary uppercase 1xl:mb-6 mb-3">{{ sub_title }}</h3>
+                    <h3 class="uppercase 1xl:mb-4.5 mb-3">{{ host_name }}</h3>
+                    <p class="font-medium 1xl:mb-5 mb-3">
+                        {{ host_title }}
+                    </p>
+                    <p class="1xl:max-w-[85%] xl:max-w-[93%] max-w-full w-full">
+                        {{ host_description }}
+                    </p>
+                </div>
+                {{ /event_organization:events }}
+            </div>
+
+
+            <div data-aos="fade-up">
+                <h3 class="uppercase text-primary 1xl:mb-6 lt:mb-4 mb-3">{{ support_team_label }}</h3>
+                <ul class="list-disc text-primary 1xl:space-y-4 lt:space-y-3 space-y-2.5 1xl:mb-6 lt:mb-4 mb-3 pl-4.5">
+                    {{ support_team:support_members }}
+                    <li>
+                        <p class="text-primary"> {{ name }}
+                            <span class="text-thunder-100">{{ role }}</span>
+                        </p>
+                    </li>
+                    {{ /support_team:support_members }}
+                </ul>
+
+            </div>
+            <div data-aos="fade-up">
+                <h3 class="uppercase text-primary 1xl:mb-6 lt:mb-4 mb-3">{{ participant_experience_label }}</h3>
+                <p>
+                    {{ participant_experience }}
+                </p>
+            </div>
+
+            <div data-aos="fade-up">
+                <h3 class="uppercase text-primary 1xl:mb-6 lt:mb-4 mb-3">{{ takeaways_label }}</h3>
+                <ul class="list-disc 1xl:space-y-5 space-y-3.5 sm:pl-4.5 pl-4">
+                    {{ takeaways_list }}
+                    <li>
+                        <p class="font-medium">{{ value }}</p>
+                    </li>
+                    {{ /takeaways_list }}
+                </ul>
+            </div>
+            <div data-aos="fade-up">
+                <div
+                    class="1xl:p-7.5 lg:p-5 md:p-4 p-3.5 bg-whitesmoke-100 font-medium border-l-2 border-primary flex sm:items-center items-start 1xl:gap-7.5 lg:gap-6 lt:gap-5 sm:gap-4 gap-2.5">
+                    <img src="{{ theme:asset }}assets/image/events-detail-true.svg" alt="true"
+                        class="1xl:size-12.5 lg:size-11 sm:size-10 size-7.5 object-contain" />
+                    <p class="xl:max-w-4/5 lt:max-w-[85%] max-w-full w-full">
+                        {{ closing_note }}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

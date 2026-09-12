@@ -1,0 +1,51 @@
+title: 'About Pranavya Yoga'
+fields:
+  -
+    handle: about_image
+    field:
+      container: assets
+      max_files: 1
+      type: assets
+      display: 'About Image'
+  -
+    handle: small_title
+    field:
+      type: text
+      display: 'Small Title'
+  -
+    handle: main_title
+    field:
+      type: text
+      display: 'Main Title'
+  -
+    handle: description
+    field:
+      type: textarea
+      display: Description
+  -
+    handle: bullet_points
+    field:
+      type: replicator
+      display: 'Bullet Points'
+      sets:
+        new_set_group:
+          display: 'New Set Group'
+          sets:
+            bullet:
+              display: Bullet
+              fields:
+                -
+                  handle: text
+                  field:
+                    type: text
+                    display: 'Bullet Text'
+  -
+    handle: button_text
+    field:
+      type: text
+      display: 'Button Text'
+  -
+    handle: button_url
+    field:
+      type: text
+      display: 'Button URL'

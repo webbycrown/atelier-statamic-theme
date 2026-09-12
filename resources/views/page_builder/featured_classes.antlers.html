@@ -1,0 +1,347 @@
+{{ if show_type == "home-one" }}
+<section class="overflow-hidden relative bg-whitesmoke-100 2xl:mb-[100px] 1xl:mb-20 xl:mb-17 lg:mb-14 md:mb-12 sm:mb-11 mb-10 2xl:py-20 1xl:py-17 lg:py-14 md:py-12 sm:py-11 py-10">
+    <div class="container">
+        <!-- Intro -->
+        <div class="flex justify-between items-start">
+            <div class="max-w-[1029px]">
+                <h3 class="text-thunder-100 font-primary italic font-medium 2xl:mb-7.5 1xl:mb-6 md:mb-4 sm:mb-3 mb-2.5">
+                    {{ section_heading }}
+                </h3>
+                <h2 class="text-primary font-normal uppercase 1xl:mb-5 mb-3">
+                    {{ section_title }}
+                </h2>
+                <p>
+                    {{ section_description }}
+                </p>
+            </div>
+            <div class="pointer-events-none opacity-20 hidden md:block">
+                <img src="{{ theme:asset }}assets/image/flower-shape.svg" alt="flower" class="w-full h-full object-contain" />
+            </div>
+        </div>
+
+        <div class="flex lt:flex-row flex-col 1xl:gap-8.5 sm:gap-6 gap-5 sm:mt-8 mt-5">
+            <!-- Left: Feature card -->
+            <div class="2xl:w-[64%] 1xl:w-[63%] lt:w-[62%] w-full flex lg:flex-row sm:flex-row-reverse flex-col 1xl:gap-8.5 sm:gap-6 gap-5">
+                <div class="2xl:max-w-[459px] 1xl:max-w-[430px] max-w-[353px] w-full order-3 lg:order-1">
+                    <div class="pointer-events-none opacity-40 hidden lt:block 1xl:w-43 w-37 lg:mb-15 mb-13">
+                        <img src="{{ theme:asset }}assets/image/flower-shape.svg" alt="flower" class="w-full h-full object-contain" />
+                    </div>
+
+                    <div class="bg-white 1xl:p-6 sm:p-5 p-4 relative overflow-hidden">
+                        <div class="flex justify-between items-start">
+                            <div class="2xl:size-15 md:size-13 sm:size-11 size-10 flex items-center justify-center my-auto">
+                                <img class="slide-icon w-full h-full object-contain" src="{{ theme:asset }}assets/image/hatha-yoga.svg" alt="icon" />
+                            </div>
+                            <div class="font-third text-primary/8 font-medium 2xl:text-70 1xl:text-55 lg:text-48 md:text-44 sm:text-36 text-30 2xl:leading-[92px] 1xl:leading-[80px] md:leading-[70px] leading-[60px] slide-id">
+                                01
+                            </div>
+                        </div>
+
+                        {{ classes limit="1"  }}
+                        <h3 class="font-secondary text-primary slide-title lg:mt-4 mt-2">
+                            {{ title }}
+                        </h3>
+                        <p class="mt-3 text-thunder-100 slide-desc">
+                            {{ short_description }}
+                        </p>
+                        {{ if button:label }}
+                        <div class="md:mt-6 mt-4">
+                            <a href="{{ button:url }}{{ slug }}" class="btn btn-secondary slide-button">{{ button:label }}</a>
+                        </div>
+                        {{ /if }}
+                        {{ /classes }}
+                    </div>
+                </div>
+
+                <!-- Center: Image -->
+                <div class="2xl:max-w-[605px] 1xl:max-w-[465px] max-w-[395px] w-full order-2 lg:order-2">
+                    <div class="rounded overflow-hidden relative before:block before:content-[''] lt:before:pt-[110%] md:before:pt-[88%] sm:before:pt-[100%] before:pt-[105%]">
+                        {{ classes limit="1"  }}
+                        {{ team.image }}<img loading="lazy" decoding="async" class="slide-img w-full h-full absolute top-0 left-0 object-cover" src="{{ url }}" alt="{{ title }}" />{{ /team.image }}
+                        {{ /classes }}
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right: List -->
+            <div class="order-1 lg:order-3 2xl:w-[36%] 1xl:w-[37%] lt:w-[38%] w-full">
+                <div class="h-full">
+                    <div class="lg:space-y-10 space-y-5">
+                        {{ classes limit="4"  }}
+                        <button class="class-tab w-full block group cursor-pointer" data-slide="{{ index }}">
+                            <div class="tab-inner relative overflow-hidden flex items-center justify-between gap-3 1xl:px-5 px-3 group-hover:rounded text-white border-b border-primary/15">
+                                <div class="pointer-events-none absolute top-0 left-0 w-0 h-full group-hover:bg-primary group-hover:w-full transition-all duration-700">
+                                </div>
+                                <div class="relative flex items-center 2xl:gap-5 1xl:gap-4 sm:gap-3 gap-2.5">
+                                    <span class="font-primary text-primary/8 font-medium 2xl:text-70 1xl:text-55 lg:text-48 md:text-40 sm:text-36 text-30 2xl:leading-[92px] 1xl:leading-20 lg:leading-[70px] md:leading-[54px] sm:leading-12 leading-[42px] group-hover:text-white/8">{{ if count < 10 }}0{{ /if }}{{ count }}</span>
+                                    <h3 class="text-left uppercase text-primary group-hover:text-white transition">
+                                        {{ title }}
+                                    </h3>
+                                </div>
+
+                                <a href="/class/{{ slug }}" class="relative text-primary transition-colors duration-300 group-hover:delay-600 group-hover:text-white">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="29" height="29" viewBox="0 0 29 29" fill="none"class="2xl:w-[30px] 2xl:h-[30px] lg:w-6 lg:h-6 md:w-5 md:h-5 sm:w-4.5 sm:h-4.5 w-3.5 h-3.5">
+                                        <path d="M1.24999 27.4326L27.4129 1.26963M27.4129 1.26963L27.4326 25.9987M27.4129 1.26963L2.68385 1.24999" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"stroke-linejoin="round" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </button>
+                        {{ /classes }}
+                    </div>
+                    {{ if button_text }}
+                    <div class="lg:mt-10 mt-5">
+                        <a href="{{ button_url }}" class="btn btn-secondary">{{ button_text }}</a>
+                    </div>
+                    {{ /if }}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function () {
+
+    const slides = [
+        {{ classes }}
+        {
+            id: "{{ if count < 10 }}0{{ /if }}{{ count }}",
+            title: "{{ title | entities }}",
+            desc: "{{ short_description | striptags | entities }}",
+           image: "{{ if main_image }}{{ main_image }}{{ url }}{{ /main_image }}{{ else }}''{{ /if }}",
+            link: "/class/{{ slug }}"
+        }{{ if not last }},{{ /if }}
+        {{ /classes }}
+    ];
+
+    const $slideId = $(".slide-id");
+    const $slideTitle = $(".slide-title");
+    const $slideDesc = $(".slide-desc");
+    const $slideImg = $(".slide-img");
+    const $viewBtn = $(".slide-button");
+    const $classTab = $(".class-tab");
+
+    function updateSlide(index) {
+        const s = slides[index];
+        if (!s) return;
+
+        $slideId.text(s.id);
+        $slideTitle.text(s.title);
+        $slideDesc.text(s.desc);
+        $slideImg.attr("src", s.image);
+
+        if ($viewBtn.length) {
+            $viewBtn.attr("href", s.link);
+        }
+
+        $classTab.removeClass("active");
+        $classTab.eq(index).addClass("active");
+    }
+
+    updateSlide(0);
+
+    $classTab.on("click", function () {
+        const index = parseInt($(this).data("slide"));
+        if (!isNaN(index)) {
+            updateSlide(index);
+        }
+    });
+
+});
+</script>
+{{ /if }}
+
+{{ if show_type == "home-two" }}
+
+<section class="relative 2xl:mb-[100px] 1xl:mb-20 xl:mb-17 lg:mb-14 md:mb-12 sm:mb-11 mb-10 w-full 2xl:py-20 1xl:py-17 lg:py-14 md:py-12 sm:py-11 py-10 bg-whitesmoke-200">
+    <div class="container">
+        <div class="flex flex-col items-center justify-center 1xl:mb-[50px] sm:mb-11 mb-10">
+            <h3 class="font-primary italic font-medium 2xl:mb-7 1xl:mb-6 xl:mb-5 sm:mb-3 mb-2.5 text-center">
+                {{ section_heading }}
+            </h3>
+            <h2 class="text-primary uppercase 1xl:mb-5 mb-3 text-center">
+                {{ section_title }}
+            </h2>
+            <p class="2xl:w-[51%] xl:w-[56%] lg:w-[67%] lt:w-[75%] w-full text-center">
+                {{ section_description }}
+            </p>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 1xl:gap-[30px] xl:gap-6 gap-5">
+            <!-- 1st class -->
+            {{ classes limit="4"  }}
+            <a href="/class/{{ slug }}" class="block overflow-hidden relative shrink-0 before:content-[''] xl:before:pt-[119%] sm:before:pt-[135%] before:pt-[115%] before:block w-full h-full group/class" data-aos="fade-up">
+                {{ team.image }}<img loading="lazy" decoding="async" src="{{ url }}" alt="{{ title }}" class="w-full h-full object-cover absolute top-0 left-0 bottom-0 right-0 group-hover/class:scale-105 scale-100 transition-all ease-in-out duration-350" />{{ /team.image }}
+                <div class="absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-transparent">
+                </div>
+                <div class="absolute bottom-0 left-0 text-white backdrop-blur-xs w-full">
+                    <div class="2xl:p-5 1xl:p-4 p-[14px]">
+                        <div class="flex items-center justify-between w-full gap-3 1xl:mb-[10px] mb-2">
+                            <h3 class="font-normal font-secondary uppercase hover:underline underline-offset-1 decoration-1 text-white!">
+                                {{ title }}
+                            </h3>
+                            <div class="rounded-full border border-white shrink-0 2xl:size-11 lt:size-10 size-9 flex items-center justify-center nav-class-arrow">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="14" viewBox="0 0 11 11" fill="none" class="mt-px ml-px stroke-white! group-hover:stroke-primary!">
+                                    <path d="M0.692504 9.68278C0.692504 9.68278 6.5362 3.54949 8.97019 0.994861M8.97019 0.994861L9.59281 7.58973M8.97019 0.994861L2.35248 0.69208" stroke="currentColor" stroke-width="1.38442" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                        </div>
+                        <p class="text-white!"> {{ short_description }} </p>
+                    </div>
+                </div>
+            </a>
+            {{ /classes }}
+        </div>
+
+        {{ if button_text }}
+        <a href="{{ button_url }}" class="btn btn-secondary mt-[50px] mx-auto">
+        {{ button_text }}</a>
+        {{ /if }}
+    </div>
+</section>
+
+{{ /if }}
+
+{{ if show_type == "home-three" }}
+
+<section class="relative bg-whitesmoke-100 2xl:mb-[100px] 1xl:mb-20 xl:mb-17 lg:mb-14 md:mb-12 sm:mb-11 mb-10 2xl:py-20 1xl:py-17 lg:py-14 md:py-12 sm:py-11 py-9 overflow-hidden">
+    <div class="container relative">
+        <!-- Intro -->
+        <div class="flex sm:flex-row flex-col justify-between items-center w-full sm:gap-8 gap-5 2xl:mb-[50px] 1xl:mb-11 xl:mb-[38px] sm:mb-8 mb-5">
+            <div>
+                <h3 class="text-thunder-100 font-primary italic font-medium 2xl:mb-7.5 1xl:mb-6 md:mb-4 sm:mb-3 mb-2.5">
+                    {{ section_heading }}
+                </h3>
+                <h2 class="text-primary font-normal uppercase 1xl:mb-5 mb-3.5">
+                    {{ section_title }}
+                </h2>
+                <p class="text-thunder-100 lt:max-w-[75%] w-full">
+                    {{ section_description }}
+                </p>
+            </div>
+            <div class="2xl:w-[123px] xl:w-[105px] lt:w-[95px] md:w-[85px] w-[80px] shrink-0 relative flex items-center justify-between right-0 z-1">
+                <div class="slider-custom-arrow swiper-button-prev">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="18" viewBox="0 0 22 18" fill="none" class="swiper-navigation-icon">
+                        <path d="M20.9741 8.80684C20.9741 8.80684 6.87288 8.80675 0.999486 8.80669M0.999486 8.80669L8.23218 16.6134M0.999486 8.80669L8.23321 1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </div>
+                <div class="slider-custom-arrow swiper-button-next">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="18" viewBox="0 0 22 18" fill="none" class="swiper-navigation-icon">
+                        <path d="M20.9741 8.80684C20.9741 8.80684 6.87288 8.80675 0.999486 8.80669M0.999486 8.80669L8.23218 16.6134M0.999486 8.80669L8.23321 1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <div class="swiper home-3_classes overflow-visible!">
+                <div class="swiper-wrapper">
+                    <!-- 1st slide -->
+                    {{ classes }}
+                    <div class="swiper-slide h-auto!">
+                        <div class="flex max-[426px]:flex-col items-stretch justify-between w-full h-full 1xl:gap-10 xl:gap-8 lg:gap-7 gap-5">
+                            <div class="rounded-sm overflow-hidden min-[426px]:w-[44%] w-full">
+                                {{ team.image }}<img src="{{ url }}" alt="{{ title }}" class="w-full h-full object-cover" loading="lazy" decoding="async" />{{ /team.image }}
+                            </div>
+                            <div class="min-[426px]:w-[56%] w-full">
+                                <div class="relative overflow-hidden flex flex-col justify-center h-full">
+                                    <div class="w-fit font-third text-primary/8 font-bold 2xl:text-70 1xl:text-62 xl:text-55 lg:text-52 md:text-44 text-36 2xl:leading-[92px] 1xl:leading-[80px] lg:leading-[60px] md:leading-[55px] sm:leading-[50px] leading-[30px] ml-auto mr-0">
+                                        {{ if count < 10 }}0{{ /if }}{{ count }}
+                                    </div>
+
+                                    <a href="/class/{{ slug }}">
+                                        <h3 class="font-secondary text-primary hover:text-black 1xl:mt-4 lg:mt-[14px] sm:mt-2 mt-0.5 uppercase">
+                                            {{ title }}
+                                        </h3>
+                                    </a>
+                                    <p class="1xl:mt-7 xl:mt-6 lg:mt-5 mt-3 text-thunder-100">
+                                        {{ short_description }}
+                                    </p>
+                                    {{ if button_text }}
+                                    <a href="{{ button_url }}" class="xl:mt-7 lg:mt-5 mt-3 text-primary hover:text-thunder-100 decoration-primary underline decoration-1 underline-offset-2 p2 font-secondary flex items-center gap-1 uppercase">
+                                        {{ button_text }}
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" viewBox="0 0 27 27" fill="none">
+                                            <g clip-path="url(#clip0_3130_6904)">
+                                                <path d="M8.37896 18.7836L19.207 7.95556M19.207 7.95556C19.4636 8.21217 19.62 8.56903 19.616 8.96328L19.5384 16.6458M19.207 7.95556C18.9504 7.69895 18.5935 7.54257 18.1993 7.54655L10.5168 7.62418" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                            </g>
+                                        </svg>
+                                    </a> {{ /if }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {{ /classes }}
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{{ /if }}
+
+{{ if show_type == "home-four" }}
+
+ <section
+            class="relative bg-whitesmoke-100 2xl:mb-[100px] 1xl:mb-20 xl:mb-17 lg:mb-14 md:mb-12 sm:mb-11 mb-10 2xl:py-20 1xl:py-17 lg:py-14 md:py-12 sm:py-11 py-9 overflow-hidden">
+            <div class="container">
+                <div class="text-start max-w-full w-full 2xl:mb-[50px] 1xl:mb-11 md:mb-9 mb-7">
+                    <h3 class="font-primary italic font-medium 2xl:mb-7 1xl:mb-6 xl:mb-5 sm:mb-3 mb-2.5">
+                       {{ section_heading }}
+                    </h3>
+                    <h2 class="text-primary uppercase 1xl:mb-5 mb-3">
+                         {{ section_title }}
+                    </h2>
+                    <p
+                        class="text-thunder-100 2xl:max-w-[45%] xl:max-w-[50%] lg:max-w-[60%] lt:max-w-[65%] md:max-w-[85%] max-w-full w-full">
+                       {{ section_description }}
+                    </p>
+                </div>
+
+                <!-- Featured Post Row -->
+                <div class="flex flex-col 1xl:gap-[30px] md:gap-[26px] sm:gap-5.5 gap-4">
+                    <!-- 1st practice -->
+                     {{ classes limit="3" }}
+                    <div class="flex md:flex-row flex-col justify-between border-y border-primary/40 bg-white group/blog lg:gap-6 lt:gap-4 md:gap-2 gap-1"
+                        data-aos="fade-up">
+                        <!-- Left: Content -->
+                        <div class="w-full 1xl:p-[30px] lt:p-[26px] sm:p-5 p-4">
+                            <div class="flex flex-col justify-center h-full">
+                                <h3 class="text-primary hover:text-thunder-100 uppercase sm:max-w-[80%] mb-2.5">
+                                    <a href="/class/{{ slug }}" class="text-current">
+                                        {{ title }}
+                                    </a>
+                                </h3>
+
+                                {{ if subtitle }}
+                                <p class="font-medium 1xl:mb-[14px] mb-2.5">
+                                    {{ subtitle }}
+                                </p>
+                                {{ /if }}
+                                <p class="1xl:mb-[26px] lt:mb-5.5 mb-4.5">
+                                   {{ short_description }}
+                                </p>
+
+                                {{ if button_text }}
+                                <a href="{{ button_url }}" class="btn btn-secondary">
+                                     {{ button_text }}
+                                </a>{{ /if }}
+                            </div>
+                        </div>
+
+                        <!-- Right: Image -->
+                        <div
+                            class="overflow-hidden block w-full md:h-auto h-full relative before:content-[''] before:block md:before:pt-[48%] before:pt-[44%] lg:max-w-[32.5%] md:max-w-[38%] max-w-full">
+                           {{ team.image }} <img src="{{ url }}" alt="Blog Images"
+                                class="w-full h-full object-cover absolute top-0 left-0 right-0 bottom-0 object-top" loading="lazy"
+                                decoding="async" />{{ /team.image }}
+                        </div>
+                    </div>
+                    {{ /classes }}
+                </div>
+                {{ if button_text }}
+                <a href="{{ button_url }}" class="btn btn-secondary 2xl:mt-[50px] 1xl:mt-11 md:mt-9 mt-7 mx-auto">
+                    {{ button_text }}
+                </a>{{ /if }}
+            </div>
+        </section>
+{{ /if }}

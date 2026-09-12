@@ -1,0 +1,355 @@
+{{ if event_type == 'upcoming-events' }}
+<section class="relative bg-white 2xl:mb-[100px] 1xl:mb-20 xl:mb-17 lg:mb-14 md:mb-12 sm:mb-11 mb-10">
+    <div class="container">
+        <h3 class="text-primary font-normal uppercase 2xl:mb-12.5 1xl:mb-11 xl:mb-9 lg:mb-7 sm:mb-6 mb-4"
+            data-aos="fade-right">
+            {{ section_title }}</h3>
+        {{ if collections == "events" }}
+        {{ collection:events as="events" category:contains="{ event_type }" }}
+        {{ /if }}
+        <div class="grid lt:grid-cols-3 sm:grid-cols-2 grid-cols-1 xl:gap-6 gap-4.5  items-stretch">
+            <!-- 1st Event -->
+            {{ events }}
+            <div class="event-card rounded-sm overflow-hidden bg-whitesmoke-100 group flex flex-col" data-aos="fade-up">
+                <!-- Image Section -->
+                <div class="relative">
+                    <a href="/event/{{ slug }}">
+                        <div
+                            class="w-full 2xl:h-[346px] 1xl:h-[300px] xl:h-[250px] md:h-[220px] h-[180px] overflow-hidden">
+                            {{ featured_image }} <img decoding="async" src="{{ url }}" alt="Pilates Class"
+                                class="w-full h-full object-cover scale-100 group-hover:scale-105 transition-all duration-500 ease-in-out" />{{
+                            /featured_image }}
+                        </div>
+                    </a>
+                    <!-- Date Badge -->
+                    <div
+                        class="absolute 1xl:top-6 1xl:right-6 xl:top-4 xl:right-4 lg:top-3 lg:right-3 top-2 right-2 bg-white shadow-md rounded-full xl:px-5.5 lg:px-5 sm:px-4 px-3 lg:py-2 py-1.5 leading-[15px] flex items-center xl:gap-3 lg:gap-[9px] gap-1.5">
+                        <img src="{{ theme:asset }}assets/image/calendor.svg" class="1xl:size-5 xl:size-4.5 size-4">
+                        <span class="text-14 font-medium uppercase">{{ event_date }}</span>
+                    </div>
+                </div>
+
+                <!-- Content Section --> 
+                <div class="2xl:p-6.5 xl:p-6 md:p-4.5 p-4 flex flex-col flex-grow">
+                    <div>
+                        <!-- Title -->
+                        <a href="/event/{{ slug }}">
+                            <h5 class="text-primary group-hover:text-black 2xl:mb-6.5 1xl:mb-5 lg:mb-4 mb-3 uppercase">
+                                {{ title }}
+                            </h5>
+                        </a>
+
+                        <!-- Description -->
+                        <p class="2xl:mb-7.5 1xl:mb-6.5 lg:mb-5.5 md:mb-4.5 mb-3">
+                            {{ shot_description }}
+                        </p>
+
+                        <!-- Location + Time -->
+                        <div
+                            class="flex flex-col items-start 2xl:gap-6 1xl:gap-5 xl:gap-4 lg:gap-3 gap-2 xl:mb-6 lg:mb-4.5 mb-3.5">
+                            <div class="flex items-center xl:gap-2 gap-1.5">
+                                <img src="{{ theme:asset }}assets/image/map.svg"
+                                    class="2xl:size-7.5 xl:size-6.5 sm:size-5.5 size-5">
+                                <p class="font-medium uppercase">
+                                    {{ event_location }}
+                                </p>
+                            </div>
+
+                            <div class="flex items-center xl:gap-2 gap-1.5">
+                                <img src="{{ theme:asset }}assets/image/podcast time.svg"
+                                    class="2xl:size-7.5 xl:size-6.5 sm:size-5.5 size-5">
+                                <p class="font-medium uppercase">
+                                    {{ event_time }}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Book Now + Money -->
+                    <div class="mt-auto flex items-center justify-between border-t border-primary/15 xl:pt-6 lg:pt-4.5 pt-3.5">
+                        {{ if buttons:label }}
+                        <a href="{{ buttons:url }}"
+                            class="btn-link uppercase bg-transparent decoration-1 p font-medium text-primary hover:text-black">
+                            {{ buttons:label }}
+                            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 10 10"
+                                fill="none" class="mt-1 1xl:w-[15px] 1xl:h-[15px] w-3 h-3">
+                                <path
+                                    d="M0.701687 8.86162C0.701687 8.86162 6.30093 3.26231 8.63309 0.93009M8.63309 0.93009L8.86101 6.90189M8.63309 0.93009L2.66089 0.702578"
+                                    stroke="currentColor" stroke-width="1.40518" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </a>
+                        {{ /if }}
+
+                        <div class="flex items-center gap-1 text-gray-700">
+                            <img src="{{ theme:asset }}assets/image/price.svg" class="xl:size-7.5 sm:size-6.5 size-6">
+                            <p class="font-medium uppercase">{{ event_price }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{ /events }}
+
+        </div>
+
+        {{ if collections == "events" }}
+        {{ /collection:events }}
+        {{ /if }}
+    </div>
+</section>
+
+{{ /if }}
+
+{{ if event_type == 'past-events' }}
+
+<section
+    class="relative 2xl:mb-[100px] 1xl:mb-20 xl:mb-17 lg:mb-14 md:mb-12 sm:mb-11 mb-10 w-full 2xl:py-20 1xl:py-17 lg:py-14 md:py-12 sm:py-11 py-10 bg-whitesmoke-200">
+    <div class="container">
+        <div class="flex flex-col items-center justify-center 1xl:mb-[50px] sm:mb-11 mb-10" data-aos="fade-up">
+            <h3 class="font-primary italic font-medium 2xl:mb-7 1xl:mb-6 xl:mb-5 sm:mb-3 mb-2.5 text-center">
+                {{ section_title }}
+            </h3>
+            <h2 class="text-primary uppercase 1xl:mb-5 mb-3 text-center">
+                {{ section_subtitle }}
+            </h2>
+            <p class="2xl:w-[74%] xl:w-[80%] lt:w-[85%] w-full text-center">
+                {{ section_description }}
+            </p>
+        </div>
+
+        {{ if collections == "events" }}
+
+        {{ collection:events as="events" category:contains="{ event_type }" paginate="{pagination}" limit="{limit}" }}
+
+        {{ /if }}
+        <div
+            class="grid lt:grid-cols-2 grid-cols-1 1xl:gap-x-17.5 xl:gap-x-14 lg:gap-x-11 gap-x-9 1xl:gap-y-7.5 xl:gap-y-6 sm:gap-y-5.5 gap-y-5 grid-main-div">
+            <!-- 1 - EPISODE CARD -->
+            {{ events }}
+            <div class="flex sm:flex-row flex-col xl:gap-5 lt:gap-4 sm:gap-5 gap-4 items-stretch relative xl:py-5 py-4 xl:pr-5 border-y border-primary/15 group grid-item-append h-full"
+                data-aos="fade-up">
+                <div
+                    class="sm:w-[30%] w-full rounded-sm overflow-hidden relative lg:h-auto md:h-[210px] sm:h-[180px] h-[300px]">
+                    <a href="/event/{{ slug }}">
+                        {{ featured_image }} <img src="{{ url }}" alt="video-1" class="w-full h-full object-cover" />{{
+                        /featured_image }}
+                    </a>
+                </div>
+
+                <div class="sm:w-[70%] w-full flex flex-col sm:h-full sm:py-2">
+                    <a href="/event/{{ slug }}">
+                        <h5
+                            class="uppercase 1xl:mb-5 lg:mb-2.5 md:mb-4 sm:mb-3 mb-1.5 text-primary group-hover:text-black xl:max-w-[80%] lg:max-w-[90%] max-w-full w-full">
+                            {{ title }}
+                        </h5>
+                    </a>
+                    <p class="1xl:mb-11 xl:mb-8 md:mb-5.5 mb-4.5">
+                        {{ shot_description }}
+                    </p>
+                    <!-- optional meta -->
+                    <div class="flex items-center gap-4.5 justify-between mt-auto">
+                        <div class="flex items-center 2xl:gap-4.5 1xl:gap-3.5 gap-2">
+                            <img src="{{ theme:asset }}assets/image/calendor.svg" class="2xl:size-6 lt:size-5 size-4.5">
+                            <p class="font-medium">{{ event_date }}</p>
+                        </div>
+                        {{ if buttons:label }}
+                        <a href="{{ buttons:url }}"
+                            class="btn-link uppercase bg-transparent decoration-1 p font-medium text-primary hover:text-black">
+                            {{ buttons:label }}
+                            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 10 10"
+                                fill="none" class="mt-1 1xl:w-[15px] 1xl:h-[15px] w-3 h-3">
+                                <path
+                                    d="M0.701687 8.86162C0.701687 8.86162 6.30093 3.26231 8.63309 0.93009M8.63309 0.93009L8.86101 6.90189M8.63309 0.93009L2.66089 0.702578"
+                                    stroke="currentColor" stroke-width="1.40518" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </a>
+                        {{ /if }}
+
+                    </div>
+                </div>
+            </div>
+            {{ /events }}
+
+        </div>
+        {{ paginate }}
+        <input type="hidden" class="lastPage" value="{{ total_pages }}">
+        {{ if next_page }}
+        <div class="load-more-btn load-more-wrap">
+            <a href="{{ next_page }}"
+                class="2xl:mt-12.5 1xl:mt-12 xl:mt-11 lg:mt-10 md:mt-9 sm:mt-8 mt-7.5 btn reveal-more flex items-center justify-center mx-auto gap-4 ajax-load-more-grid">
+                Reveal More
+                <img src="{{ theme:asset src='assets/image/loading.svg'}}" alt="load-more"
+                    class="1xl:size-7.5 xl:size-6.5 size-5.5 animate-spin mx-auto hidden">
+            </a>
+        </div>
+        {{ /if }}
+        {{ /paginate }}
+        {{ if collections == "events" }}
+        {{ /collection:events }}
+        {{ /if }}
+    </div>
+</section>
+
+{{ /if }}
+
+{{ if event_type == 'all-events' }}
+
+<section class="events-2 relative 2xl:mb-[100px] 1xl:mb-20 xl:mb-17 lg:mb-14 md:mb-12 sm:mb-11 mb-10 bg-white">
+    <div id="schedule" class="schedule-1">
+        <div class="container relative z-10">
+            <div class="overflow-x-auto ">
+                <div class="inline-flex border border-primary overflow-hidden divide-x divide-primary min-w-[440px]">
+                    <button class="schedule-tab rounded-none text-primary font-Work w-auto uppercase"
+                        data-target="#all">
+                        All events
+                    </button>
+                    {{ taxonomy:event_category }}
+                    <button class="schedule-tab rounded-none text-primary font-Work w-auto uppercase"
+                        data-target="#{{ slug }}">
+                        {{ title }}
+                    </button>
+                    {{ /taxonomy:event_category }}
+                </div>
+            </div>
+
+            <!-- Table -->
+            <div class="1xl:mt-17.5 xl:mt-12 lt:mt-9 md:mt-7 mt-5">
+                <!-- All Table -->
+                <div id="all" class="schedule-panel overflow-visible!">
+                    {{ collection:events paginate="{pagination}" limit="{limit}" }}
+                    <div
+                        class="grid lt:grid-cols-2 grid-cols-1 1xl:gap-x-17.5 xl:gap-x-14 lg:gap-x-11 gap-x-9 1xl:gap-y-7.5 xl:gap-y-6 sm:gap-y-5.5 gap-y-5 grid-main-div">
+                        <!-- 1 - EPISODE CARD -->
+                        {{ entries }}
+                        <div class="flex sm:flex-row flex-col xl:gap-5 lt:gap-4 sm:gap-5 gap-4 items-stretch relative xl:py-5 py-4 xl:pr-5 border-y border-primary/15 group grid-item-append h-full"
+                            data-aos="fade-up">
+                            <div
+                                class="sm:w-[30%] w-full rounded-sm overflow-hidden relative h-full">
+                                <a href="/event/{{ slug }}" class="overflow-hidden rounded-sm relative before:content-[''] before:block block lg:before:pt-[112%] before:pt-[100%] w-full h-full">
+                                    {{ featured_image }} <img src="{{ url }}" alt="video-1"
+                                        class="w-full h-full object-cover absolute top-0 left-0" />{{ /featured_image }}
+                                </a>
+                            </div>
+                            <div class="sm:w-[70%] w-full flex flex-col sm:h-full sm:py-2">
+                                <a href="/event/{{ slug }}">
+                                    <h5
+                                        class="uppercase 1xl:mb-5 lg:mb-2.5 md:mb-4 sm:mb-3 mb-1.5 text-primary group-hover:text-black xl:max-w-[80%] lg:max-w-[90%] max-w-full w-full">
+                                        {{ title }}
+                                    </h5>
+                                </a>
+                                <p class="1xl:mb-11 xl:mb-8 md:mb-5.5 mb-4.5">
+                                    {{ shot_description }}
+                                </p>
+                                <!-- optional meta -->
+                                <div
+                                    class="flex items-center gap-4.5 justify-between mt-auto">
+                                    <div class="flex items-center 2xl:gap-4.5 1xl:gap-3.5 gap-2">
+                                        <img src="{{ theme:asset }}assets/image/calendor.svg"
+                                            class="2xl:size-6 lt:size-5 size-4.5">
+                                        <p class="font-medium">{{ event_date }}</p>
+                                    </div>
+                                    {{ if buttons:label }}
+                                    <a href="{{ buttons:url }}"
+                                        class="btn-link uppercase bg-transparent decoration-1 p font-medium text-primary hover:text-black">
+                                        {{ buttons:label }}
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15"
+                                            viewBox="0 0 10 10" fill="none"
+                                            class="mt-1 1xl:w-[15px] 1xl:h-[15px] w-3 h-3">
+                                            <path
+                                                d="M0.701687 8.86162C0.701687 8.86162 6.30093 3.26231 8.63309 0.93009M8.63309 0.93009L8.86101 6.90189M8.63309 0.93009L2.66089 0.702578"
+                                                stroke="currentColor" stroke-width="1.40518" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                        </svg>
+                                    </a>
+                                    {{ /if }}
+                                </div>
+                            </div>
+                        </div>
+                        {{ /entries }}
+
+                    </div>
+
+                    {{ paginate }}
+                    <input type="hidden" class="lastPage" value="{{ total_pages }}">
+                    {{ if next_page }}
+                    <div class="load-more-btn load-more-wrap">
+                        <a href="{{ next_page }}"
+                            class="2xl:mt-12.5 1xl:mt-12 xl:mt-11 lg:mt-10 md:mt-9 sm:mt-8 mt-7.5 btn reveal-more flex items-center justify-center mx-auto gap-4 ajax-load-more-grid">
+                            Reveal More
+                            <img src="{{ theme:asset src='assets/image/loading.svg'}}" alt="load-more"
+                                class="1xl:size-7.5 xl:size-6.5 size-5.5 animate-spin mx-auto hidden">
+                        </a>
+                    </div>
+                    {{ /if }}
+                    {{ /paginate }}
+
+                    {{ /collection:events }}
+
+                </div>
+
+                <!-- Upcoming Table -->
+                {{ taxonomy:event_category }}
+                <div id="{{ slug }}" class="schedule-panel overflow-visible! hidden">
+
+                    <div
+                        class="grid lt:grid-cols-2 grid-cols-1 1xl:gap-x-17.5 xl:gap-x-14 lg:gap-x-11 gap-x-9 1xl:gap-y-7.5 xl:gap-y-6 sm:gap-y-5.5 gap-y-5">
+                        <!-- 15 - EPISODE CARD -->
+                        {{ collection:events as='events' category:contains="{slug}" }}
+                        {{ events }}
+                        <div class="flex sm:flex-row flex-col xl:gap-5 lt:gap-4 sm:gap-5 gap-4 items-stretch relative xl:py-5 py-4 xl:pr-5 border-y border-primary/15 group"
+                            data-aos="fade-up">
+                            <div
+                                class="sm:w-[30%] w-full rounded-sm overflow-hidden relative h-full">
+                                {{ featured_image }}<a href="/event/{{ slug }}" class="overflow-hidden rounded-sm relative before:content-[''] before:block block lg:before:pt-[112%] before:pt-[100%] w-full h-full">
+                                    <img src="{{ url }}" alt="video-1" class="w-full h-full object-cover absolute top-0 left-0" />{{
+                                    /featured_image }}
+                                </a>
+                            </div>
+                            <div class="sm:w-[70%] w-full flex flex-col sm:h-full sm:py-2">
+                                <a href="/event/{{ slug }}">
+                                    <h5
+                                        class="uppercase 1xl:mb-5 lg:mb-2.5 md:mb-4 sm:mb-3 mb-1.5 text-primary group-hover:text-black xl:max-w-[80%] lg:max-w-[90%] max-w-full w-full">
+                                        {{ title }}
+                                    </h5>
+                                </a>
+                                <p class="1xl:mb-11 xl:mb-8 md:mb-5.5 mb-4.5">
+                                    {{ shot_description }}
+                                </p>
+                                <!-- optional meta -->
+                                <div
+                                    class="flex items-center gap-4.5 justify-between mt-auto">
+                                    <div class="flex items-center 1xl:gap-4.5 gap-2">
+                                        <img src="{{ theme:asset }}assets/image/calendor.svg" class="2xl:size-6 lt:size-5 size-4.5">
+                                        <p class="font-medium">{{ event_date }}</p>
+                                    </div>
+                                    {{ if buttons:label }}
+                                    <a href="{{ buttons:url }}"
+                                        class="btn-link uppercase bg-transparent decoration-1 p font-medium text-primary hover:text-black">
+                                        {{ buttons:label }}
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15"
+                                            viewBox="0 0 10 10" fill="none"
+                                            class="mt-1 1xl:w-[15px] 1xl:h-[15px] w-3 h-3">
+                                            <path
+                                                d="M0.701687 8.86162C0.701687 8.86162 6.30093 3.26231 8.63309 0.93009M8.63309 0.93009L8.86101 6.90189M8.63309 0.93009L2.66089 0.702578"
+                                                stroke="currentColor" stroke-width="1.40518" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                        </svg>
+                                    </a>
+                                    {{ /if }}
+                                </div>
+                            </div>
+                        </div>
+                        {{ /events }}
+                        {{ /collection:events }}
+
+                    </div>
+                </div>
+                {{ /taxonomy:event_category }}
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
+{{ /if }}

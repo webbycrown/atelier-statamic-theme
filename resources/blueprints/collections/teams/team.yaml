@@ -1,0 +1,163 @@
+title: Team
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              validate:
+                - required
+              display: Name
+          -
+            handle: instructor_title
+            field:
+              type: text
+              display: 'Instructor Title'
+          -
+            handle: image
+            field:
+              container: assets
+              max_files: 1
+              type: assets
+              display: Image
+          -
+            handle: about_heading
+            field:
+              type: text
+              display: 'About Heading'
+          -
+            handle: about_description
+            field:
+              type: list
+              display: 'About Description'
+          -
+            handle: background
+            field:
+              type: group
+              display: 'Background & Experience'
+              fields:
+                -
+                  handle: heading
+                  field:
+                    type: text
+                    display: 'Section Heading'
+                -
+                  handle: items
+                  field:
+                    type: list
+                    display: Items
+          -
+            handle: quote
+            field:
+              type: group
+              display: 'Quote Section'
+              fields:
+                -
+                  handle: quote_title
+                  field:
+                    default: Specialties
+                    type: text
+                    display: 'Quote Title'
+                -
+                  handle: text
+                  field:
+                    type: textarea
+                    display: 'Quote Text'
+                -
+                  handle: quote_text
+                  field:
+                    type: textarea
+                    display: 'Quote Description'
+          -
+            handle: specialties
+            field:
+              type: group
+              display: Specialties
+              fields:
+                -
+                  handle: heading
+                  field:
+                    type: text
+                    display: 'Section Heading'
+                -
+                  handle: list
+                  field:
+                    type: replicator
+                    display: 'Specialties List'
+                    sets:
+                      new_set_group:
+                        display: 'New Set Group'
+                        sets:
+                          new_set:
+                            display: 'New Set'
+                            fields:
+                              -
+                                handle: title
+                                field:
+                                  type: text
+                                  display: Title
+                              -
+                                handle: description
+                                field:
+                                  type: textarea
+                                  display: Description
+          -
+            handle: contact
+            field:
+              type: group
+              display: contact
+              fields:
+                -
+                  handle: content_title
+                  field:
+                    default: Contact
+                    type: text
+                    display: 'Content Title'
+                -
+                  handle: booking_url
+                  field:
+                    type: text
+                    display: 'Booking URL'
+                -
+                  handle: booking_label
+                  field:
+                    type: text
+                    display: 'Booking Label'
+          -
+            handle: private_contact
+            field:
+              type: group
+              display: 'Private Contact'
+              fields:
+                -
+                  handle: private_contact_title
+                  field:
+                    default: 'Contact for Private Sessions'
+                    type: text
+                    display: 'Private Contact Title'
+                -
+                  handle: email
+                  field:
+                    type: text
+                    display: Email
+                -
+                  handle: phone_number
+                  field:
+                    type: text
+                    display: 'Phone Number'
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'

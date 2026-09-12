@@ -1,0 +1,95 @@
+ <!-- Popular searches -->
+ {{ if blogs or classes }}
+ {{ if blogs }}
+ <section class="site-search__suggestions-section w-full z-9999 relative">
+   <p class="text-thunder-100 font-primary 2xl:mb-5 mb-4 uppercase">
+    Blog
+</p>
+<div class="w-full h-full">
+    <div class="grid md:grid-cols-2 grid-cols-1 2xl:gap-10 lg:gap-8 mdgap-4 gap-2 relative w-full h-full">
+        <!-- 1st Blog -->
+        {{ blogs limit="5" }}
+        <div class="flex sm:flex-row flex-col sm:items-stretch items-start 2xl:gap-7 1xl:gap-6 gap-4 w-full h-full">
+            <div class="rounded-sm block overflow-hidden relative shrink-0 2xl:w-[150px] 1xl:w-[140px] lg:w-[130px] w-[120px] h-auto">
+                {{ image }}<img src="{{ url }}" alt="blog" class="w-full h-full object-cover" />{{ /image }}
+            </div>
+
+            <div>
+                <a href="/blog/{{ slug }}" class="flex flex-col items-start justify-center h-full gap-[6px]">
+                    <h5 class="text-primary uppercase group-hover:text-thunder-100">
+                        {{ title }}
+                    </h5>
+                    <p class="text-thunder-100 line-clamp-2 sm:w-[70%] w-full">
+                        {{ short_description }}
+                    </p>
+                </a>
+            </div>
+        </div>
+        {{ /blogs }}
+
+        
+        
+    </div>
+    {{ if blogs }}
+    <div class="search_view_btn flex justify-end mt-5"><a href="/blogs?s=" class="toggle-view-btn btn btn-primary" data-type="blogs" data-query="{{ query }}">View All</a></div>
+    {{ /if }}
+</div>
+</section>
+{{ /if }}
+
+<!-- Popular searches -->
+{{ if classes }}
+<section
+class="site-search__suggestions-section w-full z-9999 relative">
+<p class="text-thunder-100 font-primary 2xl:mb-5 mb-4 uppercase">
+    CLASS
+</p>
+<div class="w-full h-full">
+    <div
+    class="w-full h-full grid 1xl:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 lg:gap-[65px] lt:gap-9 sm:gap-5 gap-4">
+    <!-- 1st class -->
+    {{ classes limit="5" }}
+    <div class="bg-whitesmoke-100 flex flex-col">
+        <div class="xl:h-[155px] h-[135px] overflow-hidden">
+            {{ main_image }}<img src="{{ url }}" alt="class"
+            class="w-full h-full object-cover" />{{ /main_image }}
+        </div>
+        <div class="2xl:p-4 p-[14px] flex items-start flex-col">
+            <h5 class="uppercase text-primary mb-[10px]">
+                {{ title }}
+            </h5>
+
+      
+            {{ if button:label }}
+            <a href="{{ button:url }}{{ slug }}"
+            class="btn-link uppercase 2xl:text-20 1xl:text-14 text-13 group decoration-1 text-primary font-medium hover:text-black">
+           {{ button:label }}
+            <svg xmlns="http://www.w3.org/2000/svg" width="13"
+            height="13" viewBox="0 0 13 13" fill="none"
+            class="mt-1 2xl:w-[13px] 2xl:h-[13px] w-[11px] h-[11px]">
+            <path
+            d="M0.71517 11.4403L11.0492 1.1062M11.0492 1.1062C11.2941 1.35111 11.4434 1.69168 11.4396 2.06795L11.3655 9.39997M11.0492 1.1062C10.8043 0.861295 10.4637 0.712054 10.0875 0.715856L2.75546 0.789943"
+            stroke="currentColor" stroke-width="1.43157"
+            stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
+    </a>
+    {{ /if }}
+</div>
+</div>
+{{ /classes }}
+
+
+
+
+
+</div>
+{{ if classes }}
+<div class="search_view_btn mt-5 flex justify-end"><a href="/classes?s=" class="toggle-view-btn btn btn-primary" data-type="classes" data-query="{{ query }}">View All</a></div>
+{{ /if }}
+</div>
+</section>
+{{ /if }}
+{{ else }}
+<p>No Data Found.</p>
+{{ /if }}

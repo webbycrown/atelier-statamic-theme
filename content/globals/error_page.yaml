@@ -1,0 +1,10 @@
+title: 'Error Page'
+data:
+  main_image: image/404.webp
+  heading_text: '“Oops... This Page Lost Its Balance ️”'
+  description: 'The page you’re looking for might have been moved, deleted, or never existed. Let’s get you back on track.'
+  action_buttons:
+    -
+      id: mn46pyrv
+      button_label: 'Back To Home'
+      button_url: /

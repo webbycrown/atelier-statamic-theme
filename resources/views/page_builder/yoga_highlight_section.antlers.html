@@ -1,0 +1,139 @@
+{{ if show_type == "home-one" }}
+<section class="relative w-full overflow-hidden bg-fantasy-100 2xl:mb-[100px] 1xl:mb-20 xl:mb-17 lg:mb-14 md:mb-12 sm:mb-11 mb-10">
+    <div class="1xl:h-[600px] xl:h-[550px] lg:h-[445px] md:h-[390px] relative md:flex items-center h-full">
+        <!-- gradient overlay right side for text contrast -->
+        <div class="md:absolute relative inset-0">
+            <div class="absolute md:top-0 top-1/2 inset-0 md:left-auto md:right-0 right-1/2 md:w-[55%] w-full h-full md:bg-linear-to-l bg-linear-to-t from-60%  from-[#f6f3ee] to-[#f6f3ee]/0">
+            </div>
+            {{ background_image }}<img loading="lazy" decoding="async" src="{{ url }}" alt="Pilates by nature"class="lt:w-[68%] md:w-[73%] w-full h-full object-cover object-center" />{{ /background_image }}
+            <div class="absolute top-0 h-full md:w-[33%] w-full pointer-events-auto">
+                <!-- Left play button -->
+                <div class="flex md:justify-end justify-center relative m-auto w-full h-full items-center">
+                    {{ video_url }}
+                    <a href="{{ url }}" class="video-popup group/video_popup pointer-events-all relative inline-flex items-center justify-center 2xl:w-25 2xl:h-25 1xl:w-24 1xl:h-24 xl:w-22 xl:h-22 lg:w-20 lg:h-20 md:w-18 md:h-18 sm:w-16 sm:h-16 w-13.5 h-13.5 rounded-full bg-white/50 md:p-[7px] p-1">
+                        <div class="absolute inset-0 animate-ping w-full h-full rounded-full bg-white/50"></div>
+                        <span class="relative w-full h-full rounded-full bg-white flex items-center justify-center md:p-[5px] p-[3px]">
+                            <span class="w-full h-full rounded-full bg-white flex items-center justify-center group-hover/video_popup:border-thunder-100 md:border-2 border border-primary transition-all decoration-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" class="2xl:size-9 1xl:size-8 xl:size-7.5 lg:size-6.5 sm:size-5.5 size-5 group-hover/video_popup:text-thunder-100 text-primary transition-all decoration-300">
+                                    <path fill="currentColor" d="M21.409 9.353a2.998 2.998 0 0 1 0 5.294L8.597 21.614C6.534 22.737 4 21.277 4 18.968V5.033c0-2.31 2.534-3.769 4.597-2.648z" stroke-width="0.5" stroke="currentColor" />
+                                </svg>
+                            </span>
+                        </span>
+                    </a>
+                    {{ /video_url }}
+                </div>
+            </div>
+        </div>
+        <div class="container relative h-full pointer-events-none">
+
+            <!-- Right text -->
+            <div class="2xl:py-20 1xl:py-16 xl:py-14 lg:py-12 md:py-10 sm:pb-8 pb-6 md:absolute md:top-0 md:right-0 relative max-md:container 2xl:max-w-[49%] 1xl:max-w-[52%] xl:max-w-[47%] lg:max-w-[53%] md:max-w-[48%] w-full h-full flex items-start flex-col justify-center">
+                <div>
+                    <h3 class="text-thunder-100 font-primary italic font-medium 1xl:mb-7.5 lg:mb-6 md:mb-5 sm:mb-4 mb-2.5">
+                        {{ sub_title }}
+                    </h3>
+                    <h2 class="text-primary font-normal uppercase 1xl:mb-5 mb-3">
+                        {{ section_title }}
+                    </h2>
+                    <p class="text-thunder-100 mix-blend-multiply">
+                        {{ description }}
+                    </p>
+                    {{ if button_text }}
+                    <a href="{{ button_url }}" class="btn btn-secondary lg:mt-10 mt-6 pointer-events-auto">
+                    {{ button_text }}</a>
+                    {{ /if }}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{{ /if }}
+
+{{ if show_type == "home-two" }}
+
+<section class="relative 2xl:mb-[100px] 1xl:mb-20 xl:mb-17 lg:mb-14 md:mb-12 sm:mb-11 mb-10 w-full">
+    <div class="w-full 2xl:h-[730px] 1xl:h-[670px] xl:h-[600px] lg:h-[540px] sm:h-[440px] h-[600px]">
+        {{ background_image }}<img loading="lazy" decoding="async" src="{{ url }}" alt="Find Your Flow" class="w-full h-full object-cover max-[640px]:object-[right_-350px_bottom_0px]" />{{ /background_image }}
+        <div class="absolute inset-0 top-0 left-0 w-full h-full bg-linear-to-r from-black/99 via-black/54 to-black/50">
+            <div class="container h-full">
+                <div class="flex flex-col h-full sm:items-start items-center sm:justify-center justify-end sm:pb-0 pb-9 text-white 1xl:max-w-[680px] xl:max-w-[570px] lg:max-w-[510px] sm:max-w-[415px] w-full">
+                    <h3 class="font-primary italic font-medium 2xl:mb-7 1xl:mb-6 xl:mb-5 sm:mb-3 mb-2.5 sm:text-start text-center text-white">
+                        {{ sub_title }}
+                    </h3>
+                    <h2 class="uppercase 1xl:mb-5 mb-3 sm:text-start text-center text-white">
+                        {{ section_title }}
+                    </h2>
+                    <p class="sm:text-start text-center text-white">
+                        {{ description }}
+                    </p>
+                    {{ if button_text }}
+                    <a href="{{ button_url }}" class="btn btn-secondary xl:mt-[45px] lg:mt-10 sm:mt-8 mt-6">{{ button_text }}</a>
+                    {{ /if }}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{{ /if }}
+
+{{ if show_type == "home-three" }}
+
+<section class="relative 2xl:mb-[100px] 1xl:mb-20 xl:mb-17 lg:mb-14 md:mb-12 sm:mb-11 mb-10 w-full h-full">
+    <div class="2xl:h-[700px] 1xl:h-[590px] xl:h-[550px] lg:h-[510px] md:h-[410px] sm:h-[350px] h-[272px]">
+        <div class="md:block hidden relative w-full bg-cover md:bg-center bg-right bg-no-repeat h-full" style="background-image: url('{{ background_image:url }}')"></div>
+        {{ background_image }}<img src="{{ url }}" alt="mobile" class="w-full h-full object-cover md:hidden block" loading="lazy" decoding="async" />{{ /background_image }}
+    </div>
+
+    <div class="md:absolute md:inset-0 relative top-0 left-0 w-full h-full md:p-0 py-7" style="background-image: linear-gradient(to right, rgba(31,78,95,0.88) 0%, rgba(31,78,95,0.55) 38%, rgba(31,78,95,0.12) 68%, transparent 100%);">
+        <div class="container h-full">
+            <div class="flex flex-col h-full items-start sm:justify-center justify-end text-white 1xl:max-w-[688px] xl:max-w-[570px] lg:max-w-[510px] md:max-w-[415px] w-full">
+                <h3 class="font-primary italic font-medium 2xl:mb-7 1xl:mb-6 xl:mb-5 sm:mb-3 mb-2.5 text-start text-white">
+                    {{ sub_title }}
+                </h3>
+                <h2 class="uppercase 1xl:mb-5 mb-3 text-start text-white">
+                    {{ section_title }}
+                </h2>
+                <p class="text-start text-white">
+                    {{ description }}
+                </p>
+                {{ if button_text }}
+                <a href="{{ button_url }}" class="btn btn-secondary xl:mt-[45px] lg:mt-10 sm:mt-8 mt-6"> {{ button_text }}</a>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+{{ /if }}
+
+{{ if show_type == "home-four" }}
+
+ <section class="relative 2xl:mb-[100px] 1xl:mb-20 xl:mb-17 lg:mb-14 md:mb-12 sm:mb-11 mb-10 w-full h-full">
+            <div
+                class="md:absolute md:inset-0 relative top-0 left-0 w-full h-full max-md:shadow-[0_35px_10px_2px_#e4e4e4ab] max-sm:shadow-[0_24px_10px_0px_#e4e4e4ab] md:bg-transparent bg-[#DFDFE0] md:p-0 sm:pt-7 pt-[14px] z-1">
+                <div class="container h-full flex items-center">
+                    <div
+                        class="flex flex-col my-auto items-start sm:justify-center justify-end 1xl:py-10 1xl:px-[30px] xl:py-9 sm:py-6 sm:px-[26px] p-5 text-black 2xl:max-w-[862px] 1xl:max-w-[775px] xl:max-w-[690px] lg:max-w-[610px] lt:max-w-[518px] md:max-w-[490px] w-full bg-[#FFFFFFA1] sm:backdrop-blur-[10px] backdrop-blur-sm rounded-[10px]">
+                        <h3
+                            class="font-primary italic font-medium 2xl:mb-7 1xl:mb-6 xl:mb-5 sm:mb-3 mb-2.5 text-start text-primary">
+                            {{ sub_title }}
+                        </h3>
+                        <h2 class="uppercase 1xl:mb-5 sm:mb-3 mb-2.5 text-start text-primary">
+                            {{ section_title }}
+                        </h2>
+                        <p class="text-start text-thunder-100 xl:max-w-[83%] max-w-full w-full">
+                          {{ description }}
+                        </p>
+                        {{ if button_text }}
+                        <a href="{{ button_url }}" class="btn btn-secondary 1xl:mt-[45px] xl:mt-8 sm:mt-6 mt-4">
+                            {{ button_text }}</a>{{ /if }}
+                    </div>
+                </div>
+            </div>
+            <div class="2xl:h-[680px] 1xl:h-[590px] xl:h-[550px] lg:h-[510px] md:h-[410px] sm:h-[350px] h-[272px]">
+                <div class="relative w-full bg-cover md:bg-center sm:bg-right bg-position-[80%] bg-no-repeat h-full"
+                    style="background-image: url('{{ background_image }}{{ url }}{{ /background_image }}')"></div>
+            </div>
+        </section>
+{{ /if }}

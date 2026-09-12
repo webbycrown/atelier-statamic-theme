@@ -1,0 +1,7 @@
+/node_modules
+/vendor
+.env
+.env.*
+!.env.example
+public/theme-banners.html
+public/assets/images/banners/

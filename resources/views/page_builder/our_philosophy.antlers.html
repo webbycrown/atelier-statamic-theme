@@ -1,0 +1,50 @@
+  <section class="relative 2xl:mb-[100px] 1xl:mb-20 xl:mb-17 lg:mb-14 md:mb-12 sm:mb-11 mb-10 w-full">
+            <!-- Decorative Flower -->
+            <div
+                class="pointer-events-none absolute 2xl:-top-[80px] 1xl:-top-[60px] xl:-top-14 lg:-top-12 -top-10 left-auto right-0 lt:w-[10%] w-[17%] opacity-30 hidden md:block">
+                <img src="{{ theme:asset }}assets/image/flower-shape.svg" alt="decor" class="w-full h-full object-contain" />
+            </div>
+            <div class="container space-y-5">
+                <div class="flex lt:flex-row flex-col lt:gap-[30px] gap-5">
+                    <div class="lg:w-[28%] lt:w-[32%] md:w-[60%] sm:w-[70%] w-full rounded-sm overflow-hidden">
+                        {{ left_image }}<img loading="lazy" decoding="async" src="{{ url }}" alt="about us"
+                            class="w-full h-full object-cover" />{{ /left_image }}
+                    </div>
+                    <div class="lt:w-[72%] w-full 1xl:py-[30px] lt:py-5">
+                        <h3 class="text-thunder-100 font-primary italic font-medium 2xl:mb-7 1xl:mb-6 sm:mb-3 mb-2.5">
+                            {{ small_title }}
+                        </h3>
+                        <h2 class="text-primary font-normal uppercase 1xl:mb-6 mb-4">
+                            {{ title }}
+                        </h2>
+                        <p class="text-thunder-100 1xl:max-w-[96%]">
+                           {{ first_description }}
+                        </p>
+                    </div>
+                </div>
+
+                <div
+                    class="flex lt:flex-row flex-col-reverse items-start 2xl:gap-[70px] xl:gap-[55px] sm:gap-[30px] gap-5">
+                    <div class="lt:w-[68%] w-full 1xl:pt-[30px] lt:pt-5">
+                        <p class="text-thunder-100 1xl:mb-9 xl:mb-7 mb-6">
+                           {{ second_description }}
+                        </p>
+                        {{ if quote_text }}
+                        <div
+                            class="border-l-3 border-primary bg-whitesmoke-100 lg:px-[26px] md:px-5 1xl:py-7 lg:py-6 md:py-5 p-4 1xl:mb-[50px] xl:mb-10 mb-8.5">
+                            <p class="font-medium text-primary">
+                                “{{ quote_text }}”
+                            </p>
+                        </div>
+                        {{ /if }}
+                        {{ if button_text }}
+                        <a href="{{ button_url }}" class="btn btn-secondary-second">{{ button_text }}</a>
+                        {{ /if }}
+                    </div>
+                    <div class="lt:w-[32%] md:w-[60%] sm:w-[70%] w-full rounded-sm overflow-hidden">
+                        {{ right_image }}<img loading="lazy" decoding="async" src="{{ url }}" alt="about us"
+                            class="w-full h-full object-cover" />{{ /right_image }}
+                    </div>
+                </div>
+            </div>
+        </section>

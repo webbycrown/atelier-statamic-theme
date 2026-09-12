@@ -1,0 +1,46 @@
+title: 'Membership Benefits'
+fields:
+  -
+    handle: section_title
+    field:
+      type: text
+      display: 'Section Title'
+  -
+    handle: sub_title
+    field:
+      type: text
+      display: 'Sub Title'
+  -
+    handle: description
+    field:
+      type: textarea
+      display: Description
+  -
+    handle: membership_benefits
+    field:
+      type: replicator
+      display: 'Membership Benefits'
+      sets:
+        new_set_group:
+          display: 'New Set Group'
+          sets:
+            benefit:
+              display: Benefit
+              fields:
+                -
+                  handle: icon
+                  field:
+                    container: assets
+                    max_files: 1
+                    type: assets
+                    display: Icon
+                -
+                  handle: title
+                  field:
+                    type: text
+                    display: Title
+                -
+                  handle: description
+                  field:
+                    type: textarea
+                    display: Description

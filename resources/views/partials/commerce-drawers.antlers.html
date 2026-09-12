@@ -1,0 +1,27 @@
+<aside id="wishlistSidebar" class="fixed top-0 right-0 z-[80] h-full w-full max-w-[420px] bg-white translate-x-full shadow-none transition-transform duration-300 p-6 overflow-y-auto">
+    <div class="flex items-center justify-between mb-6">
+        <h3 class="uppercase text-primary">Wishlist</h3>
+        <button type="button" id="closeWishlist" class="border-0 bg-transparent" aria-label="Close wishlist">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M15 5L5 15" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+                <path d="M5 5L15 15" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+            </svg>
+        </button>
+    </div>
+    <div id="wishlist-drawer-items" class="space-y-4"></div>
+    <a href="/wishlist" class="btn btn-secondary w-full mt-6">View wishlist</a>
+</aside>
+<aside id="cartSidebar" class="fixed top-0 right-0 z-[80] h-full w-full max-w-[420px] bg-white translate-x-full shadow-none transition-transform duration-300 p-6 overflow-y-auto">
+    <div class="flex items-center justify-between mb-6">
+        <h3 class="uppercase text-primary">Cart</h3>
+        <button type="button" id="closeCart" class="border-0 bg-transparent" aria-label="Close cart">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M15 5L5 15" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+                <path d="M5 5L15 15" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+            </svg>
+        </button>
+    </div>
+    <div id="cart-drawer-items" class="space-y-4"></div>
+    <a href="/cart" class="btn btn-secondary w-full mt-6">View cart</a>
+    <a href="/checkout" class="btn btn-secondary w-full mt-3">Checkout</a>
+</aside>

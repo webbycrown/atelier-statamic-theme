@@ -1,0 +1,305 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: full_name
+            field:
+              type: text
+              display: 'Full Name'
+              validate:
+                - required
+          -
+            handle: email
+            field:
+              type: text
+              display: Email
+              width: 50
+              validate:
+                - required
+                - email
+          -
+            handle: phone_number
+            field:
+              type: text
+              display: 'Phone Number'
+              width: 50
+              validate:
+                - required
+          -
+            handle: gender
+            field:
+              options:
+                -
+                  key: male
+                  value: Male
+                -
+                  key: female
+                  value: Female
+              type: select
+              display: Gender
+              validate:
+                - required
+          -
+            handle: date_of_birth
+            field:
+              input_type: date
+              type: text
+              display: 'Date of Birth'
+              validate:
+                - required
+          -
+            handle: street_address
+            field:
+              type: textarea
+              display: 'Street Address'
+              validate:
+                - required
+          -
+            handle: country
+            field:
+              options:
+                -
+                  key: india
+                  value: India
+                -
+                  key: usa
+                  value: USA
+                -
+                  key: canada
+                  value: Canada
+                -
+                  key: germany
+                  value: Germany
+              type: select
+              display: Country
+              validate:
+                - required
+          -
+            handle: state
+            field:
+              options:
+                -
+                  key: gujarat
+                  value: Gujarat
+                -
+                  key: haryana
+                  value: Haryana
+                -
+                  key: punjab
+                  value: Punjab
+                -
+                  key: uttar-pradesh
+                  value: 'Uttar Pradesh'
+              type: select
+              display: State
+              validate:
+                - required
+          -
+            handle: city
+            field:
+              options:
+                -
+                  key: surat
+                  value: Surat
+                -
+                  key: pune
+                  value: Pune
+                -
+                  key: bengaluru
+                  value: Bengaluru
+                -
+                  key: ahmedabad
+                  value: Ahmedabad
+              type: select
+              display: City
+              validate:
+                - required
+          -
+            handle: pin_code
+            field:
+              type: text
+              display: 'Pin Code'
+              validate:
+                - required
+          -
+            handle: condition
+            field:
+              type: text
+              display: Condition
+          -
+            handle: information
+            field:
+              type: text
+              display: Information
+          -
+            handle: class_type
+            field:
+              options:
+                -
+                  key: hatha
+                  value: 'Hatha Yoga'
+                -
+                  key: vinyasa
+                  value: 'Vinyasa Flow'
+                -
+                  key: yin
+                  value: 'Yin Yoga'
+                -
+                  key: power
+                  value: 'Power Yoga'
+              type: select
+              display: 'Select Class Type'
+              validate:
+                - required
+          -
+            handle: trainer
+            field:
+              options:
+                -
+                  key: jessica
+                  value: 'Jessica Moore'
+                -
+                  key: emily
+                  value: 'Emily Turner'
+                -
+                  key: michael
+                  value: 'Michael Lee'
+              type: select
+              display: 'Preferred Trainer'
+              validate:
+                - required
+          -
+            handle: class_date
+            field:
+              input_type: date
+              type: text
+              display: 'Select Date'
+              validate:
+                - required
+          -
+            handle: time_slot
+            field:
+              options:
+                -
+                  key: morning_6
+                  value: '6:00 AM – 7:00 AM'
+                -
+                  key: morning_7
+                  value: '7:00 AM – 8:00 AM'
+                -
+                  key: evening_4
+                  value: '4:00 PM – 5:00 PM'
+              type: select
+              display: 'Time Slot'
+              validate:
+                - required
+          -
+            handle: intensity
+            field:
+              type: text
+              display: 'Class Intensity'
+              validate:
+                - required
+          -
+            handle: experience
+            field:
+              type: text
+              display: 'Experience Level'
+              validate:
+                - required
+          -
+            handle: notes
+            field:
+              type: textarea
+              display: 'Special Requirements or Notes'
+          -
+            handle: payment
+            field:
+              options:
+                -
+                  key: upi
+                  value: UPI
+                -
+                  key: net_banking
+                  value: 'Net Banking'
+                -
+                  key: credit_debit_cards
+                  value: 'Credit/Debit Cards'
+                -
+                  key: bank_transfers
+                  value: 'Bank Transfers'
+                -
+                  key: cash
+                  value: Cash
+              type: select
+              display: 'Preferred Payment Method'
+              validate:
+                - required
+          -
+            handle: coupon
+            field:
+              type: text
+              display: 'Coupon / Promo Code'
+          -
+            handle: plan
+            field:
+              options:
+                -
+                  key: essence_plan
+                  value: 'Essence Plan'
+                -
+                  key: balance_plan
+                  value: 'Balance Plan'
+                -
+                  key: elevate_plan
+                  value: 'Elevate Plan'
+              type: select
+              display: 'Plan Type'
+              validate:
+                - required
+          -
+            handle: price
+            field:
+              type: text
+              display: Price
+          -
+            handle: gateway
+            field:
+              options:
+                -
+                  key: g-pay
+                  value: 'Gooogle Pay'
+                -
+                  key: paytm
+                  value: Paytm
+                -
+                  key: phone-pay
+                  value: 'Phone Pay'
+                -
+                  key: amazon-pay
+                  value: 'Amazon Pay'
+                -
+                  key: razorpay
+                  value: Razorpay
+              type: select
+              display: 'Secure Payment Gateway'
+              validate:
+                - required
+          -
+            handle: agree_terms
+            field:
+              type: checkboxes
+              display: 'I agree to the terms & conditions and studio policy.'
+          -
+            handle: information_check
+            field:
+              type: checkboxes
+              display: 'I confirm my information is accurate'
+          -
+            handle: updates
+            field:
+              type: checkboxes
+              display: 'I’d like to receive yoga tips & class updates (optional)'

@@ -1,0 +1,36 @@
+<section class="relative 2xl:mb-[100px] 1xl:mb-20 xl:mb-17 lg:mb-14 md:mb-12 sm:mb-11 mb-10 w-full">
+            <div class="container">
+                <div
+                    class="text-center 2xl:max-w-[75%] lg:max-w-[80%] lt:max-w-[90% ] max-w-full w-full mx-auto 1xl:mb-10 lt:mb-8 md:mb-7 mb-6.5">
+                    <h3 class="font-primary italic font-medium 2xl:mb-7 1xl:mb-6 xl:mb-5 sm:mb-3 mb-2.5 text-center">
+                        {{ section_title }}
+                    </h3>
+                    <h2 class="text-primary uppercase 1xl:mb-5 mb-3 text-center">
+                        {{ sub_title }}
+                    </h2>
+                    <p>
+                       {{ description }}
+                    </p>
+                </div>
+                <div class="faqs">
+                    <!-- 1- FAQ ITEM -->
+                    {{ faq_items }}
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <div class="flex sm:items-center items-start sm:gap-1.5 gap-1">
+                                <h5 class="uppercase">{{ if index < 10 }}0{{ index + 1 }}{{ else }}{{ index }}{{ /if }}.</h5>
+                                <h5 class="uppercase"> {{ question }} </h5>
+                            </div>
+                            <span class="faq-icon">+</span>
+                        </button>
+
+                        <div class="faq-answer hidden">
+                            <p class="text-black">
+                                {{ answer }}
+                            </p>
+                        </div>
+                    </div>
+                    {{ /faq_items }}
+                </div>
+            </div>
+        </section>

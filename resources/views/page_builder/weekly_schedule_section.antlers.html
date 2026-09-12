@@ -1,0 +1,136 @@
+ <section class="relative 2xl:mb-[100px] 1xl:mb-20 xl:mb-17 lg:mb-14 md:mb-12 sm:mb-11 mb-10 bg-white">
+            <div id="schedule" class="schedule-4 ">
+                <div class="container relative z-10">
+                    <div
+                        class="flex md:flex-row flex-col md:items-center items-start md:justify-between 2xl:gap-10 1xl:gap-9 xl:gap-8 lg:gap-7 md:gap-6 sm:gap-5 gap-4 2xl:mb-[50px] 1xl:mb-11 xl:mb-[38px] sm:mb-8 mb-5">
+                        <div>
+                            <h3 class="text-thunder-100 font-primary italic font-medium 1xl:mb-6 sm:mb-4 mb-2.5">
+                                {{ sub_title }}
+                            </h3>
+                            <h2 class="text-primary font-normal uppercase 1xl:mb-5 sm:mb-3 mb-2.5 ">
+                               {{ section_title }}
+                            </h2>
+                            <p class="text-thunder-100 max-w-[890px]">
+                                {{ description }}
+                            </p>
+                        </div>
+                        {{ if button_text }}
+                        <div class="md:max-w-[842px] md:mr-0 md:ml-auto">
+                            <a href="{{ button_url }}" class="btn btn-secondary">{{ button_text }}</a>
+                        </div>
+                        {{ /if }}
+                    </div>
+
+                    <!-- Tables by Day -->
+                    <div class="xl:mt-[11px] mt-[9px] lt:-mx-3">
+                        <!-- Sunday Table -->
+                        <div class="custom-scroll-2 overflow-auto">
+                            <table class="w-full table">
+                                <thead>
+                                    <tr
+                                        class="1xl:mb-[11px] xl:mb-[9px] mb-1.5 1xl:h-[88px] xl:h-[75px] lg:h-[64px] sm:h-[58px] h-[53px]">
+                                        {{ schedule_rows }}
+                                        <td class="w-1/7 pb-[9px]">
+                                            <p class="text-primary text-center uppercase">
+                                                {{ day }}
+                                            </p>
+                                        </td>
+                                        {{ /schedule_rows }}
+                                    </tr>
+                                </thead>
+                                <tbody class="table-row-group">
+
+                                    <!-- ROW 1 -->
+                                    <tr>
+
+                                        {{ schedule_rows }}
+                                        <td>
+
+                                            {{ if days:0:is_rest }}
+                                            <p class="text-primary text-center">Rest</p>
+                                            {{ else }}
+                                            <div class="p-2 bg-[#5C1A2E0D] text-center">
+                                                <p class="text-primary font-medium">{{ days:0:class_name }}</p>
+                                                <p>{{ days:0:level }}</p>
+                                                <p>{{ days:0:time_slot }}</p>
+                                            </div>
+                                            {{ /if }}
+
+                                        </td>
+                                        {{ /schedule_rows }}
+
+                                    </tr>
+
+
+                                    <!-- ROW 2 -->
+                                    <tr>
+
+                                        {{ schedule_rows }}
+                                        <td>
+
+                                            {{ if days:1:is_rest }}
+                                            <p class="text-primary text-center">Rest</p>
+                                            {{ else }}
+                                            <div class="p-2 bg-[#5C1A2E0D] text-center">
+                                                <p class="text-primary font-medium">{{ days:1:class_name }}</p>
+                                                <p>{{ days:1:level }}</p>
+                                                <p>{{ days:1:time_slot }}</p>
+                                            </div>
+                                            {{ /if }}
+
+                                        </td>
+                                        {{ /schedule_rows }}
+
+                                    </tr>
+
+
+                                    <!-- ROW 3 -->
+                                    <tr>
+
+                                        {{ schedule_rows }}
+                                        <td>
+
+                                            {{ if days:2:is_rest }}
+                                            <p class="text-primary text-center">Rest</p>
+                                            {{ else }}
+                                            <div class="p-2 bg-[#5C1A2E0D] text-center">
+                                                <p class="text-primary font-medium">{{ days:2:class_name }}</p>
+                                                <p>{{ days:2:level }}</p>
+                                                <p>{{ days:2:time_slot }}</p>
+                                            </div>
+                                            {{ /if }}
+
+                                        </td>
+                                        {{ /schedule_rows }}
+
+                                    </tr>
+
+
+                                    <!-- ROW 4 -->
+                                    <tr>
+
+                                        {{ schedule_rows }}
+                                        <td>
+
+                                            {{ if days:3:is_rest }}
+                                            <p class="text-primary text-center">Rest</p>
+                                            {{ else }}
+                                            <div class="p-2 bg-[#5C1A2E0D] text-center">
+                                                <p class="text-primary font-medium">{{ days:3:class_name }}</p>
+                                                <p>{{ days:3:level }}</p>
+                                                <p>{{ days:3:time_slot }}</p>
+                                            </div>
+                                            {{ /if }}
+
+                                        </td>
+                                        {{ /schedule_rows }}
+
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>

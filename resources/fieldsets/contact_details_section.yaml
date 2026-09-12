@@ -1,0 +1,67 @@
+title: 'Contact Details Section'
+fields:
+  -
+    handle: contact_intro
+    field:
+      type: group
+      display: 'Contact Intro'
+      fields:
+        -
+          handle: eyebrow_title
+          field:
+            type: text
+            display: 'Eyebrow Title'
+        -
+          handle: main_title
+          field:
+            type: text
+            display: 'Main Title'
+        -
+          handle: description
+          field:
+            type: textarea
+            display: Description
+  -
+    handle: contact_cards
+    field:
+      type: replicator
+      display: 'Contact Cards'
+      sets:
+        new_set_group:
+          display: 'New Set Group'
+          sets:
+            new_set:
+              display: 'New Set'
+              fields:
+                -
+                  handle: label
+                  field:
+                    type: text
+                    display: Label
+                -
+                  handle: value
+                  field:
+                    type: text
+                    display: Value
+                -
+                  handle: link
+                  field:
+                    type: text
+                    display: Link
+                    instructions: 'tel:, mailto:, or Google Maps URL'
+  -
+    handle: booking_help
+    field:
+      type: group
+      display: 'Booking Help Section'
+      fields:
+        -
+          handle: title
+          field:
+            type: text
+            display: Title
+        -
+          handle: text
+          field:
+            type: textarea
+            display: Text

@@ -1,0 +1,42 @@
+<script>
+(function () {
+  function themeReveal() {
+    if (!document.body || document.body.classList.contains("is-ready")) return;
+    document.body.classList.add("is-ready");
+    document.body.classList.remove("no-scroll", "overflow-hidden");
+    var pre = document.querySelector(".preloader");
+    if (pre) {
+      pre.style.opacity = "0";
+      pre.style.pointerEvents = "none";
+      setTimeout(function () { pre.style.display = "none"; pre.classList.add("hidden"); }, 250);
+    }
+  }
+  if (document.readyState === "complete") themeReveal();
+  else window.addEventListener("load", themeReveal);
+  setTimeout(themeReveal, 1200);
+})();
+</script>
+<script src="{{ theme:asset src='assets/js/jquery.min.js' }}?v={{ now format="YmdHis" }}" ></script>
+    <script src="{{ theme:asset src='assets/js/jquery.magnific-popup.min.js' }}?v={{ now format="YmdHis" }}" ></script>
+    <script src="{{ theme:asset src='assets/js/swiper-bundle.min.js' }}?v={{ now format="YmdHis" }}" ></script>
+    <script src="{{ theme:asset src='assets/js/custom.js' }}?v={{ now format="YmdHis" }}" ></script>
+    <script src="{{ theme:asset src='assets/js/yoga-shop.js' }}?v={{ now format="YmdHis" }}" ></script>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/js/all.min.js"></script>
+
+    
+    <script defer>
+        AOS.init({
+            offset: 60,
+        });
+    </script>
+
+    <script>
+        const blogSearchUrl = "{{ route:blog.search }}";
+        const headerSearch = "{{ route:header.search }}";
+        const currentPage = '{{ segment_1 }}';
+        const classesSearchUrl = "{{ route:classes.search }}";
+        const newsLetterUrl = "{{ route:newsLetter }}";
+        const D_WHITE_LOGO = "{{ setting }}{{ white_logo }}{{ url }} {{ /white_logo }}{{ /setting }}";
+        const D_BLACK_LOGO = "{{ setting }}{{ logo }}{{ url }} {{ /logo }}{{ /setting }}";
+    </script>

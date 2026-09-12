@@ -1,0 +1,69 @@
+title: 'Instagram Section'
+fields:
+  -
+    handle: show_type
+    field:
+      options:
+        -
+          key: home-one
+          value: 'Home One Page'
+        -
+          key: home-two
+          value: 'Home Two Page'
+        -
+          key: home-three
+          value: 'Home Three Page'
+        -
+          key: home-four
+          value: 'Home Four Page'
+      default: home-one
+      type: select
+      display: 'Show Type'
+      validate:
+        - required
+  -
+    handle: section_title
+    field:
+      type: text
+      display: 'Section Title'
+  -
+    handle: sub_title
+    field:
+      type: text
+      display: 'Sub Title'
+  -
+    handle: instagram_posts
+    field:
+      type: grid
+      display: 'Instagram Posts'
+      fields:
+        -
+          handle: image
+          field:
+            container: assets
+            max_files: 1
+            type: assets
+            display: Image
+        -
+          handle: link
+          field:
+            type: text
+            display: Link
+  -
+    handle: instagram_posts_two
+    field:
+      type: grid
+      display: 'Instagram Posts Two'
+      fields:
+        -
+          handle: image
+          field:
+            container: assets
+            max_files: 1
+            type: assets
+            display: Image
+        -
+          handle: link
+          field:
+            type: text
+            display: Link

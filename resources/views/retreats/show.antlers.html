@@ -1,0 +1,147 @@
+<section
+    class="relative 1xl:pt-20 xl:pt-17 lg:pt-14 md:pt-12 sm:pt-11 pt-10 xl:mb-20 lg:mb-16 md:mb-12 sm:mb-11 mb-10 bg-whitesmoke-100">
+    <div class="container relative">
+        <div class="flex flex-col items-center justify-center lt:max-w-[73%] md:max-w-[90%] max-w-full w-full text-center mx-auto space-y-2.5 1xl:pt-20 xl:pt-17 lg:pt-14 md:pt-12 sm:pt-11 pt-10 pb-15
+        {{ setting }}{{ if header_select == 'header-two' }} pt-0 {{ else }} mt-10 {{ /if }}{{ /setting }}">
+            <h1 class="uppercase text-primary text-center" data-aos="fade-up">{{ setting:retreat_banner_title }}</h1>
+            <p data-aos="fade-up">
+                {{ setting:retreat_banner_description }}
+            </p>
+        </div>
+
+        <!-- Decorative Flower -->
+        <div
+            class="pointer-events-none absolute top-0 left-auto lt:right-0 -right-16 lg:w-[14.2%] w-[18%] hidden md:block opacity-30">
+            <img decoding="async" src="{{ theme:asset }}assets/image/flower-shape.svg" alt="decor"
+                class="w-full h-full object-contain" />
+        </div>
+    </div>
+</section>
+<!-- ====== End Page Heading ====== -->
+
+<!-- ====== Start Gift Cards ====== -->
+<section class="relative 2xl:mb-[100px] 1xl:mb-20 xl:mb-17 lg:mb-14 md:mb-12 sm:mb-11 mb-10 w-full">
+    <div class="container">
+        <div class="flex items-start md:flex-row flex-col 1xl:gap-15 xl:gap-12 lg:gap-10 lt:gap-6 gap-4">
+            <div class="lt:w-[64%] md:w-[62%] w-full 2xl:space-y-12.5 1xl:space-y-11 md:space-y-7 space-y-4">
+                <div class="rounded-sm overflow-hidden before:relative block w-full h-full before:content-[''] before:block before:pt-[61%]"
+                    data-aos="fade-up">
+                    {{ featured_image }} <img src="{{ url }}" alt="location"
+                        class="w-full h-full object-cover absolute top-0 left-0" loading="eager" fetchpriority="high"
+                        decoding="async" />{{ /featured_image }}
+                </div>
+                <div data-aos="fade-up">
+                    <h3 class="text-primary uppercase 1xl:mb-6 mb-4">
+                        {{ title }}
+                    </h3>
+                    <div class="1xl:space-y-5 md:space-y-4 space-y-3">
+                        <div class="flex items-center md:gap-4.5 gap-2.5">
+                            <img src="{{ theme:asset }}assets/image/calendor.svg"
+                                class="2xl:size-7.5 lg:size-6.5 lt:size-6 size-5.5">
+                            <p class="font-medium uppercase">{{ date }}</p>
+                        </div>
+                        {{ if price:label }}
+                        <div class="flex items-center md:gap-3 gap-2">
+                            <img src="{{ theme:asset }}assets/image/price.svg"
+                                class="2xl:size-7.5 lg:size-6.5 lt:size-6 size-5.5">
+
+                            <p class="uppercase text-primary">{{ price:label }} <span class="text-thunder-100">{{
+                                    price:amount }}</span>
+                            </p>
+                        </div>
+                        {{ /if }}
+                        {{ if event:label }}
+                        <div class="flex items-center md:gap-3 gap-2">
+                            <img src="{{ theme:asset }}assets/image/person.svg"
+                                class="2xl:size-7.5 lg:size-6.5 lt:size-6 size-5.5">
+                            <p class="uppercase text-primary">{{ event:label }} <span class="text-thunder-100">{{
+                                    event:event_value }}</span>
+                            </p>
+                        </div>
+                        {{ /if }}
+                    </div>
+                </div>
+                <div data-aos="fade-up">
+                    <h3 class="text-primary uppercase 1xl:mb-5 lt:mb-4 mb-3">{{ text_section:heading }}</h3>
+                    <p>
+                        {{ text_section:content }}
+                    </p>
+                </div>
+                <div data-aos="fade-up">
+                    <h3 class="uppercase text-primary 1xl:mb-6 lt:mb-4 mb-3">{{ list_section:heading }}</h3>
+                    <ul class="list-disc 1xl:space-y-5 sm:space-y-3.5 space-y-2.5 sm:pl-4.5 pl-4">
+                        {{ list_section:items }}
+                        <li>
+                            <p class="font-medium">{{ value }}</p>
+                        </li>
+                        {{ /list_section:items }}
+                    </ul>
+                </div>
+                <div data-aos="fade-up">
+                    <h3 class="uppercase text-primary 1xl:mb-6 lt:mb-4 mb-3">{{ offers_section:heading }}</h3>
+                    <p class="1xl:mb-5 lt:mb-4 mb-3">
+                        {{ offers_section:intro_paragraph }}
+                    </p>
+                    <ul class="list-disc 1xl:space-y-5 sm:space-y-3.5 space-y-2.5 sm:pl-4.5 pl-4">
+                        {{ offers_section:items }}
+                        <li>
+                            <p class="font-medium">{{ value }}</p>
+                        </li>
+                        {{ /offers_section:items }}
+                    </ul>
+                </div>
+                <div class="w-full h-[0.5px] bg-primary/20" data-aos="fade-up"></div>
+                <div data-aos="fade-up">
+                    <h3 class="text-primary uppercase 1xl:mb-5 lt:mb-4 mb-3">{{ welcome_section:heading }}</h3>
+                    <p>
+                        {{ welcome_section:content }}
+                    </p>
+                </div>
+            </div>
+
+            <div
+                class="lt:w-[36%] md:w-[38%] w-full bg-whitesmoke-100 rounded-sm overflow-hidden 1xl:p-8.5 xl:p-6.5 lg:p-5.5 lt:p-4.5 p-4 sticky xl:top-25 top-22">
+                <h5 class="uppercase text-primary lt:pb-5 lt:mb-5.5 sm:pb-4 pb-3 mb-4 border-b border-primary/50">
+                    {{ location_section:heading }}</h5>
+                <div
+                    class="1xl:h-[306px] xl:h-[250px] lg:h-[230px] lt:h-[210px] md:h-[170px] h-full w-full rounded-sm overflow-hidden 1xl:mb-8 sm:mb-6 mb-4">
+                    {{ location_section:image }}<img src="{{ url }}" alt="location" class="w-full h-full object-cover"
+                        loading="eager" fetchpriority="high" decoding="async" />{{ /location_section:image }}
+                </div>
+                <div class="1xl:space-y-4 xl:space-y-3 space-y-2 lg:mb-9 mb-7">
+                    {{ if location_section:address:address }}
+                    <a href="https://maps.app.goo.gl/xZRsuULfnj4vCqCo6" target="_blank" rel="noopener noreferrer"
+                        aria-label="Open location in Google Maps" class="flex items-center 1xl:gap-3 xl:gap-2.5 gap-2">
+                        <img src="{{ theme:asset }}assets/image/map.svg"
+                            class="2xl:size-7.5 lg:size-6.5 lt:size-6 size-5.5">
+                        <p class="font-medium uppercase 2xl:text-20 1xl:text-19 lg:text-16 sm:text-14 text-xs">
+                            {{ location_section:address:address }}</p>
+                    </a>
+                    {{ /if }}
+                    {{ if location_section:phone:display }}
+                    <a href="{{ location_section:phone:link }}" class="flex items-center 1xl:gap-3 xl:gap-2.5 gap-2">
+                        <img src="{{ theme:asset }}assets/image/call.svg" class="2xl:size-6 lt:size-5 size-4.5">
+                        <p class="font-medium uppercase 2xl:text-20 1xl:text-19 lg:text-16 sm:text-14 text-xs">
+                            {{ location_section:phone:display }}
+                        </p>
+                    </a>
+                    {{ /if }}
+                </div>
+                {{ if location_section:booking_button }}
+                <a href="{{ location_section:booking_button:url }}" class="btn btn-secondary 1xl:mb-7 mb-5">{{
+                    location_section:booking_button:button_text }}</a>{{ /if }}
+                <!-- Social Media Icons -->
+                {{ social_share }}
+                <div class="flex items-center flex-wrap 1xl:gap-9 xl:gap-7 lt:gap-5 gap-3.5">
+                    {{ socials }}
+                    <a href="{{ url }}{{ current_url }}" target="_blank"
+                        class="1xl:size-12 lt:size-11 size-9.5 lt:p-[10px] sm:p-[9px] p-2 btn-secondary rounded-full flex items-center justify-center transition-all decoration-1000">
+                        <i class="fa-brands fa-{{ platform }} 1xl:w-[26px] 1xl:h-[26px] w-5 h-5"></i>
+                    </a>
+                    {{ /socials }}
+                </div>
+                {{ /social_share }}
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,73 @@
+<section class="relative lg:min-h-screen lt:min-h-[90vh] sm:min-h-[78vh] min-[340px]:min-h-[80vh] min-h-screen flex items-end 2xl:mb-[100px] 1xl:mb-20 xl:mb-17 lg:mb-14 md:mb-12 sm:mb-11 mb-10">
+    <!-- Container -->
+    <div class="lt:container mx-auto z-1 relative w-full">
+        <div class="flex lt:flex-row flex-col lt:items-end items-start justify-between w-full z-1 relative xl:pt-18 pt-6 min-[340px]:gap-10 gap-7 1xl:pb-16 xl:pb-13 min-[340px]:pb-10 pb-7">
+            <!-- Left Content -->
+            <div class="w-full 2xl:max-w-[808px] 1xl:max-w-[750px] xl:max-w-[580px] lg:max-w-[530px] lt:max-w-[500px] max-w-full lt:px-0 md:px-8 sm:px-6 px-4" data-aos="fade-right">
+                <!-- Main Heading -->
+                <h1 class="text-white font-normal uppercase md:mb-5 mb-3.5">
+                    {{ heading }}
+                </h1>
+
+                <!-- Description -->
+                <p class="font-primary font-normal text-white 1xl:max-w-[65%] xl:max-w-[80%] sm:max-w-[85%] max-w-[380px] w-full 2xl:mb-12 1xl:mb-10 xl:mb-8 lg:mb-7 mb-6">
+                    {{ description }}
+                </p>
+
+                <!-- CTA Button -->
+                {{ if button_text }}
+                <a href="{{ button_url }}" class="btn btn-secondary">{{ button_text }}</a>
+                {{ /if }}
+            </div>
+
+            <div class="1xl:max-w-[480px] xl:max-w-[435px] lg:max-w-[415px] lt:max-w-[355px] max-w-full w-full z-1 relative ml-auto mt-auto mb-0">
+                <div class="swiper home-3-hero 2xl:h-[746px] 1xl:h-[692px] xl:h-[656px] lg:h-[594px] lt:h-[558px] h-auto">
+                    <div class="swiper-wrapper">
+                        <!-- 1st slide -->
+                        {{ class_slider }}
+                        <div class="swiper-slide h-auto!">
+                            <div class="class-card rounded-[10px] backdrop-blur-[10px] bg-[#FFFFFF29] h-full flex flex-col items-start text-white">
+                                <a href="{{ class_link }}" class="flex items-center justify-between w-full 1xl:mb-6 xl:mb-5 lg:mb-4 sm:mb-[14px] mb-2">
+                                    <h3 class="card-title font-primary italic text-white">
+                                        {{ class_title }}
+                                    </h3>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" class="title-arrow">
+                                        <path d="M1 22.5794C1 22.5794 15.8091 7.77006 21.9773 1.60172M21.9773 1.60172L22.5801 17.3962M21.9773 1.60172L6.18178 0.999988" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </a>
+                                <div class="flex items-center xl:gap-4 sm:gap-3 gap-[6px] lg:mb-3 sm:mb-[10px] mb-[5px] w-full">
+                                    <div class="img-wrapper">
+                                        {{ instructor_image }}
+                                        <img src="{{ url }}" alt="hero" class="w-full h-full object-cover" loading="lazy" decoding="async" />
+                                        {{ /instructor_image }}
+                                    </div>
+                                    <p class="card-desc text-white">{{ instructor_name }}</p>
+                                </div>
+                                <div class="flex items-center justify-between gap-4 w-full">
+                                    <p class="card-desc font-medium italic text-white">
+                                        {{ class_time }}
+                                    </p>
+                                    <p class="card-desc 1xl:w-[30%] sm:w-[33%] w-[40%] text-center font-medium italic text-white">
+                                        {{ class_date }}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        {{ /class_slider }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- center Image -->
+    <div class="absolute right-0 top-0 w-full h-full flex flex-col">
+        <!-- Image -->
+        {{ background_image }}
+        <img src="{{ url }}" alt="Hero Images" class="absolute inset-0 w-full h-full object-cover" loading="eager" fetchpriority="high" decoding="async" />
+        {{ /background_image }}
+        <!-- Gradient Overlay -->
+        <div class="absolute inset-0 bg-linear-to-br from-black/70 from-30% to-black/0 pointer-events-none">
+        </div>
+    </div>
+</section>

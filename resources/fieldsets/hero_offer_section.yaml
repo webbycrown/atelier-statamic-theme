@@ -1,0 +1,103 @@
+title: 'Hero Offer Section'
+fields:
+  -
+    handle: background_image
+    field:
+      container: assets
+      max_files: 1
+      type: assets
+      display: 'Background Image'
+  -
+    handle: offer_badge_text
+    field:
+      type: text
+      display: 'Offer Badge Text'
+  -
+    handle: heading
+    field:
+      type: text
+      display: Heading
+  -
+    handle: description
+    field:
+      type: textarea
+      display: Description
+  -
+    handle: button_text
+    field:
+      type: text
+      display: 'Button Text'
+  -
+    handle: button_url
+    field:
+      type: text
+      display: 'Button URL'
+  -
+    handle: offer_cards
+    field:
+      type: replicator
+      display: 'Offer Cards'
+      sets:
+        new_set_group:
+          display: 'New Set Group'
+          sets:
+            card:
+              display: card
+              fields:
+                -
+                  handle: card_background_image
+                  field:
+                    container: assets
+                    max_files: 1
+                    type: assets
+                    display: 'Card Background Image'
+                -
+                  handle: discount_text
+                  field:
+                    type: text
+                    display: 'Discount Text'
+                -
+                  handle: card_title
+                  field:
+                    type: text
+                    display: 'Card Title'
+                -
+                  handle: card_description
+                  field:
+                    type: textarea
+                    display: 'Card Description'
+                -
+                  handle: valid_for
+                  field:
+                    type: text
+                    display: 'Valid For'
+                -
+                  handle: expires
+                  field:
+                    type: text
+                    display: Expires
+                -
+                  handle: terms
+                  field:
+                    type: text
+                    display: Terms
+                -
+                  handle: trainer_name
+                  field:
+                    type: text
+                    display: 'Trainer Name'
+                -
+                  handle: button_text
+                  field:
+                    type: text
+                    display: 'Button Text'
+                -
+                  handle: button_url
+                  field:
+                    type: text
+                    display: 'Button URL'
+                -
+                  handle: coupon_code
+                  field:
+                    type: text
+                    display: 'Coupon Code'

@@ -1,0 +1,114 @@
+title: Footer
+data:
+  description: 'Atelier books editorial looks with named directors and a call sheet you can actually use.'
+  quick_links_title: 'Quick Links'
+  quick_links:
+    -
+      id: mn46r1ab
+      label: Looks
+      url: /classes
+    -
+      id: mn46r8ma
+      label: Retreats
+      url: /retreats
+    -
+      id: mn46rekq
+      label: Events
+      url: /events
+    -
+      id: mn46rktu
+      label: Blog
+      url: /blogs
+    -
+      id: mn46rr0i
+      label: Contact
+      url: /contact-us
+  services_title: Services
+  services_list:
+    -
+      id: mn46s4t0
+      label: 'Book a Look'
+      url: /book-class
+    -
+      id: mn46sbky
+      label: 'Join a Retreat'
+      url: /retreats
+    -
+      id: mn46sfpu
+      label: 'Private Sessions'
+      url: /classes
+    -
+      id: mn46sq2a
+      label: 'Corporate Wellness'
+      url: /classes
+    -
+      id: mn46suqa
+      label: 'Schedule Consultation'
+      url: /schedule
+  schedule_label: Schedule
+  studio_hours_title: 'Studio Hours'
+  studio_hours:
+    -
+      id: mn46tauy
+      label: 'Mon - Fri:'
+      time: '7:00 AM – 7:00 PM'
+    -
+      id: mn46tfcy
+      label: 'Sat - Sun:'
+      time: '8:00 AM – 5:00 PM'
+  legal_links:
+    -
+      id: mn46trxt
+      label: 'Privacy Policy'
+      url: /privacy-policy
+    -
+      id: mn46u2j5
+      label: 'Term’s & Condition'
+      url: /terms-condition
+    -
+      id: mn46u8up
+      label: Help
+      url: /contact-us
+  contact_us:
+    contact_us_title: 'Contact Us'
+    address:
+      -
+        id: mn46un96
+        address_line: 'https://maps.google.com/?q=108+Serenity+Street+Bliss+City+NY'
+        address: '108 Serenity Street, Bliss City, NY'
+    phone_number:
+      -
+        id: mn46uv3l
+        number: '+1 (555) 987-6543'
+        number_url: 'tel:+15559876543'
+    email:
+      -
+        id: mn46v3pl
+        email_address: Info@ateliereditorial.com
+        email_link: 'mailto:info@ateliereditorial.com'
+  copyright_text: '© 2026 Atelier. All rights reserved.'
+  socials:
+    -
+      id: mn46vbbl
+      title: Instagram
+      platform: instagram
+      url: 'https://www.instagram.com/'
+    -
+      id: mn46vme9
+      title: Twitter
+      platform: x-twitter
+      url: 'https://x.com/?lang=en'
+    -
+      id: mn46vxu1
+      title: Facebook
+      platform: facebook-f
+      url: 'https://www.facebook.com/'
+    -
+      id: mn46w3mw
+      title: Youtube
+      platform: youtube
+      url: 'https://www.youtube.com/'
+  newsletter_section:
+    title: 'NEWSLETTER SIGNUP'
+    description: 'Subscribe for look updates, wellness tips, and exclusive offers.'
+    button_text: SUBSCRIBE

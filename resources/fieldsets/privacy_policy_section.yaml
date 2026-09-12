@@ -1,0 +1,29 @@
+title: 'Privacy Policy Section'
+fields:
+  -
+    handle: content
+    field:
+      container: assets
+      remove_empty_nodes: false
+      type: bard
+      display: 'Page Content'
+      buttons:
+        - h2
+        - h3
+        - bold
+        - italic
+        - unorderedlist
+        - orderedlist
+        - removeformat
+        - quote
+        - anchor
+        - image
+        - table
+        - h1
+        - h4
+        - h5
+        - h6
+        - alignleft
+        - aligncenter
+        - alignright
+        - alignjustify

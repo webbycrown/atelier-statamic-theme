@@ -1,0 +1,51 @@
+title: 'Events Section'
+fields:
+  -
+    handle: event_type
+    field:
+      options:
+        -
+          key: all-events
+          value: 'All Events'
+        -
+          key: past-events
+          value: 'Past Events'
+        -
+          key: upcoming-events
+          value: 'Upcoming Events'
+      default: all-events
+      type: select
+      display: 'Event Type'
+  -
+    handle: section_title
+    field:
+      type: text
+      display: 'Section Title'
+  -
+    handle: section_subtitle
+    field:
+      type: text
+      display: 'Section Subtitle'
+  -
+    handle: section_description
+    field:
+      type: textarea
+      display: 'Section Description'
+  -
+    handle: collections
+    field:
+      mode: select
+      max_items: 1
+      type: collections
+      display: Collections
+  -
+    handle: limit
+    field:
+      type: integer
+      display: Limit
+  -
+    handle: pagination
+    field:
+      default: 'false'
+      type: text
+      display: Pagination

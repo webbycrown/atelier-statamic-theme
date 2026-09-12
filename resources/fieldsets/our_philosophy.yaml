@@ -1,0 +1,51 @@
+title: 'Our Philosophy'
+fields:
+  -
+    handle: left_image
+    field:
+      container: assets
+      max_files: 1
+      type: assets
+      display: 'Left Image'
+  -
+    handle: right_image
+    field:
+      container: assets
+      max_files: 1
+      type: assets
+      display: 'Right Image'
+  -
+    handle: small_title
+    field:
+      type: text
+      display: 'Small Title'
+  -
+    handle: title
+    field:
+      type: text
+      display: Title
+  -
+    handle: first_description
+    field:
+      type: textarea
+      display: 'First Description'
+  -
+    handle: second_description
+    field:
+      type: textarea
+      display: 'Second Description'
+  -
+    handle: quote_text
+    field:
+      type: text
+      display: 'Quote Text'
+  -
+    handle: button_text
+    field:
+      type: text
+      display: 'Button Text'
+  -
+    handle: button_url
+    field:
+      type: text
+      display: 'Button URL'

@@ -1,0 +1,57 @@
+title: 'Social Section'
+fields:
+  -
+    handle: socials
+    field:
+      type: grid
+      display: Socials
+      fields:
+        -
+          handle: title
+          field:
+            type: text
+            display: Title
+        -
+          handle: platform
+          field:
+            options:
+              -
+                key: facebook-f
+                value: Facebook
+              -
+                key: youtube
+                value: Youtube
+              -
+                key: x-twitter
+                value: Twitter
+              -
+                key: instagram
+                value: Instagram
+              -
+                key: linkedin-in
+                value: linkedIn
+              -
+                key: github
+                value: Github
+              -
+                key: whatsapp
+                value: Whatsapp
+              -
+                key: pinterest-p
+                value: Pinterest
+              -
+                key: telegram-plane
+                value: Telegram
+              -
+                key: medium
+                value: Medium
+              -
+                key: reddit-alien
+                value: 'Reddit Alien'
+            type: select
+            display: Platform
+        -
+          handle: url
+          field:
+            type: text
+            display: Url

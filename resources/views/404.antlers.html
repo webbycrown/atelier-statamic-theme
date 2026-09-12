@@ -1,0 +1,47 @@
+<!-- ====== Start Gift Cards ====== -->
+{{ error_page }}
+<section
+    class="relative 2xl:py-40 xl:py-35 lt:py-28 sm:py-24 py-22 w-full">
+    <div class="container">
+        <div class="relative w-full flex items-center justify-center flex-col">
+            <!-- Decorative Flower -->
+            <div class="pointer-events-none absolute top-0 left-0 right-auto w-[22%] opacity-30 hidden md:block">
+                <img decoding="async" src="{{ theme:asset }}assets/image/flower-shape.svg" alt="decor"
+                    class="w-full h-full object-contain" />
+            </div>
+            <!-- Decorative Flower -->
+            <div
+                class="pointer-events-none absolute top-0 left-auto right-0 lt:w-[10%] w-[17%] opacity-30 hidden md:block">
+                <img decoding="async" src="{{ theme:asset }}assets/image/flower-shape.svg" alt="decor"
+                    class="w-full h-full object-contain" />
+            </div>
+            <!-- Decorative Flower -->
+            <div
+                class="pointer-events-none absolute top-auto bottom-20 left-auto right-0 w-[17%] opacity-30 hidden md:block">
+                <img decoding="async" src="{{ theme:asset }}assets/image/flower-shape.svg" alt="decor"
+                    class="w-full h-full object-contain" />
+            </div>
+            {{ main_image }}
+            <img src="{{ url }}" alt="empty-wishlist"
+                class="1xl:w-212 xl:w-170 lg:w-140 lt:w-125 md:w-110 sm:w-100 w-[80%] h-auto mx-auto 2xl:mb-12.5 1xl:mb-10 xl:mb-8 lg:mb-6 md:mb-5 sm:mb-4 mb-3.5" />
+            {{ /main_image }}
+            <h3 class="italic font-medium font-primary 2xl:mb-6 1xl:mb-5 mb-4 text-center">
+                {{ heading_text }}
+            </h3>
+            <p
+                class="1xl:mb-10 sm:mb-7 mb-6 text-center 1xl:max-w-[45%] xl:max-w-1/2 lt:max-w-[58%] md:max-w-[67%] w-full font-medium">
+                {{ description }}
+            </p>
+            <div class="flex items-center justify-center sm:gap-8 gap-3 flex-wrap">
+                {{ action_buttons }}
+                {{ if button_label }}
+                <a href="{{ button_url }}" class="btn btn-secondary">{{ button_label }}</a>
+                {{ /if }}
+                {{ /action_buttons }}
+
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ====== End Gift Cards ====== -->
+{{ /error_page }}

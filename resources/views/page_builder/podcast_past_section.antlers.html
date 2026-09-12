@@ -1,0 +1,158 @@
+{{ if type == "podcast_past_section" }}
+ <section class="relative 2xl:mb-[100px] 1xl:mb-20 xl:mb-17 lg:mb-14 md:mb-12 sm:mb-11 mb-10 w-full">
+            <div class="container">
+                <div class="text-start max-w-full w-full 2xl:mb-[50px] 1xl:mb-11 md:mb-9 mb-7">
+                    <h3 class="font-primary italic font-medium 2xl:mb-7 1xl:mb-6 xl:mb-5 sm:mb-3 mb-2.5"
+                        data-aos="fade-up">
+                       {{ section_title }}
+                    </h3>
+                    <h2 class="text-primary uppercase 1xl:mb-5 mb-3" data-aos="fade-up">
+                        {{ sub_title }}
+                    </h2>
+                    <p class="text-thunder-100 2xl:max-w-[72%] xl:max-w-[76%] lg:max-w-[80%] lt:max-w-[83%] max-w-full w-full"
+                        data-aos="fade-up">
+                        {{ description }}
+                    </p>
+                </div>
+
+                <!-- FEATURED EPISODE -->
+                <div id="featuredEpisode" class="2xl:mb-12.5 1xl:mb-11 xl:mb-9 lg:mb-7 sm:mb-6 mb-4" data-aos="fade-up">
+                    <div class="flex lt:flex-row flex-col items-center justify-between w-full md:gap-6 gap-4">
+                        <div class="1xl:w-[51.4%] lt:w-1/2 w-full h-full">
+                            <!-- VIDEO -->
+                            <div
+                                class="2xl:h-[505px] 1xl:h-[465px] xl:h-[390px] lg:h-[325px] lt:h-[300px] md:h-[400px] sm:h-[360px] h-[200px]">
+                                {{ collection:podcast_episode sort="order_by" limit="1" }}
+                                <video id="featuredVideo" class="w-full rounded-lg h-full object-cover" controls
+                                    preload="metadata">
+                                    <source src="{{ podcast_video:url }}" type="video/mp4">
+                                </video>
+                                {{ /collection:podcast_episode  }}
+                            </div>
+                        </div>
+                        <div class="1xl:w-[48.6%] lt:w-1/2 w-full">
+                            <!-- CONTENT -->
+                            <div>
+                                <p id="featuredEpisodeNo"
+                                    class="font-medium text-primary 1xl:mb-5 xl:mb-4 sm:mb-3 mb-2.5"></p>
+                                <h5 id="featuredTitle" class="uppercase text-primary 1xl:mb-5 xl:mb-4 sm:mb-3 mb-2">
+                                </h5>
+                                <p id="featuredDesc"></p>
+                                <div
+                                    class="podcast-footer 2xl:mt-11 1xl:mt-10 xl:mt-9 sm:mt-7.5 mt-5 2xl:mb-12.5 1xl:mb-11 xl:mb-9 mb-4.5">
+                                    <div class="podcast-time">
+                                        <div class="time-img">
+                                             <img src="{{ theme:asset }}assets/image/podcast time.svg">
+                                        </div>
+                                        <p id="featuredTime"
+                                            class="uppercase 2xl:text-18 1xl:text-16 xl:text-15 text-14"></p>
+                                    </div>
+
+                                    <div class="podcast-artist">
+                                        <div class="person-name">
+                                            <img src="{{ theme:asset }}assets/image/person.svg">
+                                        </div>
+                                        <p id="featuredName"
+                                            class="uppercase font-medium 2xl:text-18 1xl:text-16 xl:text-15 sm:text-14 text-xs">
+                                        </p>
+                                    </div>
+                                </div>
+                                <div
+                                    class="flex items-center sm:flex-nowrap flex-wrap 1xl:gap-6 xl:gap-5 lg:gap-4 gap-2.5">
+                                    {{ platforms }}
+                                    <div
+                                        class="border border-primary/50 rounded-full bg-whitesmoke-200 flex items-center justify-ceter xl:py-2.5 lg:py-2 lt:py-1.5 md:py-2.5 sm:py-2 py-1.5 1xl:px-9.5 xl:px-8 lg:px-6.5 lt:px-5.5 md:px-7 sm:px-6 px-3.5">
+                                        {{ platform_icon }}<img src="{{ url }}" alt="logo"
+                                            class="w-full 1xl:h-7 md:h-6 sm:h-5 h-4" />{{ /platform_icon }}
+                                    </div>
+                                    {{ /platforms }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- EPISODE LIST -->
+                 {{ if collections == "podcast_episode" }}
+                    
+                    {{ collection:podcast_episode as="podcast_episode" sort="order_by" paginate="{pagination}" limit="{limit}" }}
+
+                    {{ /if }}
+                <div class="grid lt:grid-cols-2 grid-cols-1 1xl:gap-9.5 xl:gap-8 sm:gap-5.5 gap-5 pe-grid-main-div">
+
+                    <!-- 1 - EPISODE CARD -->
+                    {{ podcast_episode }}
+                    <div class="episode-card flex sm:flex-row flex-col xl:gap-5 lt:gap-4 sm:gap-5 gap-4 items-center cursor-pointer relative 1xl:pb-7.5 xl:pb-6 sm:pb-5 pb-4 border-b border-primary/50 pe-grid-item-append"
+                        data-aos="fade-up">
+                        <div
+                            class="1xl:h-[230px] lt:h-[175px] md:h-[155px] sm:h-[142px] h-[200px] sm:w-[31%] w-full rounded-sm overflow-hidden relative">
+
+                            {{ if image:url }}
+                            <img src="{{ image:url }}?v=20260909f" alt="{{ title }}" width="640" height="360" class="w-full h-full object-cover" style="display:block;width:100%;height:100%;object-fit:cover;opacity:1;visibility:visible;" onerror="this.onerror=null;this.src='/assets/image/{{ slug }}.webp?v=20260909f';" />
+                            {{ else }}
+                            <img src="/assets/image/{{ slug }}.webp?v=20260909f" alt="{{ title }}" width="640" height="360" class="w-full h-full object-cover" style="display:block;width:100%;height:100%;object-fit:cover;opacity:1;visibility:visible;" onerror="this.onerror=null;this.src='/assets/image/podcast-video-{{ order_by }}.webp';" />
+                            {{ /if }}
+
+                            <!-- store video src here -->
+                            {{ podcast_video }}
+                            <video class="episode-video-src hidden">
+                                <source src="{{ podcast_video:url }}" type="video/mp4">
+                            </video>
+                            {{ /podcast_video }}
+
+                            <div class="absolute top-0 left-0 h-full w-full pointer-events-auto">
+                                <!-- Left play button -->
+                                <div class="flex justify-center relative m-auto w-full h-full items-center">
+                                    <div
+                                        class="pointer-events-all relative inline-flex items-center justify-center 1xl:size-12.5 size-11.5 rounded-full bg-white/50 p-1">
+                                        <div
+                                            class="absolute inset-0 animate-ping w-full h-full rounded-full bg-white/50">
+                                        </div>
+                                        <span
+                                            class="relative w-full h-full rounded-full bg-white flex items-center justify-center p-[2.5px]">
+                                            <span
+                                                class="w-full h-full rounded-full bg-white flex items-center justify-center border border-primary transition-all decoration-300 p-2">
+                                                <img src="{{ theme:asset }}assets/image/play.svg" alt="play"
+                                                    class="w-full h-full sm:ml-1 ml-0.5" />
+                                            </span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sm:w-[69%] w-full">
+                            <p class="episode-no font-medium 1xl:mb-5 xl:mb-3 lg:mb-2.5 lt:mb-1.5 mb-2.5 text-primary">
+                                {{ episode_number }}</p>
+                            <h5 class="episode-title uppercase 1xl:mb-5 xl:mb-4 lg:mb-2.5 lt:mb-2 mb-2.5 text-primary">
+                                {{ title }}
+                            </h5>
+                            <p class="episode-desc">
+                                {{ description }}
+                            </p>
+                            <!-- optional meta -->
+                            <span class="episode-time hidden">{{ duration }}</span>
+                            <span class="episode-name hidden">{{ host_name }}</span>
+                        </div>
+                    </div>
+                    {{ /podcast_episode }}
+                    
+
+                </div>
+
+                {{ paginate }}
+                <input type="hidden" class="lastPage" value="{{ total_pages }}">
+                {{ if next_page }}
+                <div class="load-more-btn pe-load-more-wrap">
+                    <a href="{{ next_page }}" class="2xl:mt-12.5 1xl:mt-12 xl:mt-11 lg:mt-10 md:mt-9 sm:mt-8 mt-7.5 btn reveal-more flex items-center justify-center mx-auto gap-4 ajax-load-more">
+                       Reveal More
+                       <img src="{{ theme:asset src='assets/image/loading.svg'}}" alt="load-more" class="1xl:size-7.5 xl:size-6.5 size-5.5 animate-spin mx-auto hidden">
+                   </a>
+               </div>
+               {{ /if }}
+               {{ /paginate }}
+               {{ if collections == "podcast_episode" }}
+               {{ /collection:podcast_episode }}
+               {{ /if }}
+            </div>
+        </section>
+{{ /if }}

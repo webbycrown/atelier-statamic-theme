@@ -1,0 +1,59 @@
+title: 'Yoga Blog Section'
+fields:
+  -
+    handle: show_type
+    field:
+      options:
+        -
+          key: home-one
+          value: 'Home One Page'
+        -
+          key: home-two
+          value: 'Home Two Page'
+        -
+          key: home-three
+          value: 'Home Three Page'
+        -
+          key: home-four
+          value: 'Home Four Page'
+      default: home-one
+      type: select
+      display: 'Show Type'
+      validate:
+        - required
+  -
+    handle: sub_title
+    field:
+      type: text
+      display: 'Sub Title'
+  -
+    handle: section_title
+    field:
+      type: text
+      display: 'Section Title'
+  -
+    handle: description
+    field:
+      type: textarea
+      display: Description
+  -
+    handle: button_text
+    field:
+      type: text
+      display: 'Button Text'
+      width: 50
+  -
+    handle: button_url
+    field:
+      default: /blogs
+      type: text
+      display: 'Button URL'
+      width: 50
+  -
+    handle: blogs
+    field:
+      collections:
+        - blogs
+      mode: select
+      type: entries
+      display: Blogs

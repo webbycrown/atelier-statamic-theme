@@ -1,0 +1,54 @@
+title: 'Book Class Section'
+fields:
+  -
+    handle: image
+    field:
+      container: assets
+      max_files: 1
+      type: assets
+      display: 'Background Image'
+  -
+    handle: image_heading
+    field:
+      type: text
+      display: 'Image Heading'
+  -
+    handle: image_description
+    field:
+      type: textarea
+      display: 'Image Description'
+  -
+    handle: form_title
+    field:
+      type: text
+      display: 'Form Title'
+  -
+    handle: submit_button_text
+    field:
+      default: 'Book Membership'
+      type: text
+      display: 'Submit Button Text'
+  -
+    handle: class_selection_title
+    field:
+      default: 'CLASS SELECTION'
+      type: text
+      display: 'Class Selection title'
+  -
+    handle: additional_information_title
+    field:
+      default: 'ADDITIONAL INFORMATION'
+      type: text
+      display: 'Additional Information Title'
+  -
+    handle: payment_section_title
+    field:
+      type: text
+      display: 'Payment Section Title'
+      default: 'PAYMENT SECTION'
+  -
+    handle: consent_terms_title
+    field:
+      type: text
+      display: 'Consent & Terms Title'
+      default: 'Consent & Terms'

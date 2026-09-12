@@ -1,0 +1,21 @@
+socials:
+  -
+    id: fyAECBvcSEZLrjg5NHjZc
+    title: Instagram
+    platform: instagram
+    url: 'https://www.instagram.com/'
+  -
+    id: EJckX57AxV3sy_aIJ8pPp
+    title: Twitter
+    platform: x-twitter
+    url: 'https://twitter.com/intent/tweet?url='
+  -
+    id: GRkPL3UdoUA0mIskzOd-5
+    title: Facebook
+    platform: facebook-f
+    url: 'https://www.facebook.com/sharer/sharer.php?u='
+  -
+    id: NM8EnAJDmiitC1akY2wpx
+    title: Youtube
+    platform: youtube
+    url: 'https://www.youtube.com/watch?v='

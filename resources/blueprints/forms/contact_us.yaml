@@ -1,0 +1,53 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: full_name
+            field:
+              placeholder: 'Enter Your Name'
+              type: text
+              display: 'Full Name'
+              validate:
+                - required
+          -
+            handle: email
+            field:
+              placeholder: 'Enter Your Email'
+              type: text
+              display: Email
+              validate:
+                - required
+                - email
+                - 'unique_form_submission:contact_us,email'
+          -
+            handle: phone_number
+            field:
+              placeholder: 'Enter Your Phone Number'
+              type: text
+              display: 'Phone Number'
+              validate:
+                - required
+                - 'regex:/^\+?[0-9\s\-\(\)]{7,15}$/'
+          -
+            handle: comment
+            field:
+              placeholder: Comment
+              type: text
+              display: Comments
+              validate:
+                - required
+          -
+            handle: condition
+            field:
+              type: checkboxes
+              display: 'I agree to the Studio Terms & Conditions'
+              validate:
+                - required
+          -
+            handle: information
+            field:
+              type: checkboxes
+              display: 'I confirm I am physically fit to participate'

@@ -1,0 +1,92 @@
+title: 'Why Choose Us Section'
+fields:
+  -
+    handle: show_type
+    field:
+      options:
+        -
+          key: home-one
+          value: 'Home One Page'
+        -
+          key: home-two
+          value: 'Home Two Page'
+        -
+          key: home-three
+          value: 'Home Three Page'
+        -
+          key: home-four
+          value: 'Home Four Page'
+      type: select
+      display: 'Show Type'
+      replicator_preview: false
+      validate:
+        - required
+  -
+    handle: main_image
+    field:
+      container: assets
+      max_files: 1
+      type: assets
+      display: 'Main Image'
+  -
+    handle: sub_title
+    field:
+      type: text
+      display: 'Sub Title'
+  -
+    handle: section_title
+    field:
+      type: text
+      display: 'Section Title'
+  -
+    handle: description
+    field:
+      type: textarea
+      display: Description
+  -
+    handle: button_text
+    field:
+      type: text
+      display: 'Button Text'
+  -
+    handle: button_url
+    field:
+      default: /schedule
+      type: text
+      display: 'Button URL'
+  -
+    handle: feature_cards
+    field:
+      type: replicator
+      display: 'Feature Cards'
+      sets:
+        new_set_group:
+          display: 'New Set Group'
+          sets:
+            feature:
+              display: feature
+              fields:
+                -
+                  handle: image
+                  field:
+                    container: assets
+                    max_files: 1
+                    type: assets
+                    display: Image
+                -
+                  handle: icon
+                  field:
+                    container: assets
+                    max_files: 1
+                    type: assets
+                    display: Icon
+                -
+                  handle: title
+                  field:
+                    type: text
+                    display: Title
+                -
+                  handle: description
+                  field:
+                    type: textarea
+                    display: Description

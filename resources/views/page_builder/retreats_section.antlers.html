@@ -1,0 +1,94 @@
+<section class="2xl:mb-[100px] 1xl:mb-20 xl:mb-17 lg:mb-14 md:mb-12 sm:mb-11 mb-10">
+    <div class="container">
+        {{ if collections == "retreats" }}
+
+        {{ collection:retreats as="retreats" paginate="{pagination}" limit="{limit}" }}
+
+        {{ /if }}
+        <div class="lg:gap-7.5 md:gap-6 gap-5 grid lt:grid-cols-1 sm:grid-cols-2 grid-cols-1 grid-main-div">
+            <!-- 1st Retreat -->
+            {{ retreats }}
+
+            <div class="flex flex-col lt:flex-row 2xl:gap-10 xl:gap-8 lg:gap-6 md:gap-5 gap-4 h-full grid-item-append">
+                <div
+                    class="1xl:w-[22.5%] xl:w-[23%] lg:w-[25%] lt:w-[27%] w-full  block overflow-hidden relative shrink-0 before:content-[''] before:pt-[100%] before:block h-auto rounded-sm">
+                    {{ featured_image }}<img src="{{ url }}" alt="Woman meditating on beach"
+                        class="w-full h-full object-cover absolute top-0 left-0 bottom-0 right-0">{{ /featured_image }}
+                </div>
+                <div
+                    class="1xl:w-[77.5%] xl:w-[77%] lg:w-[75%] lt:w-[71%] w-full bg-whitesmoke-100 2xl:p-9.5 1xl:p-9 xl:p-8 lg:p-6 md:p-5 p-4 h-full">
+                    <div
+                        class="flex flex-col flex-wrap md:flex-row justify-between items-start 2xl:mb-10 lg:mb-8 md:mb-6 mb-4 gap-3">
+                        <div class="flex items-center 2xl:gap-4.5 lg:gap-3.5 gap-2.5">
+                            <img src="{{ theme:asset }}assets/image/calendor.svg"
+                                class="2xl:size-7.5 xl:size-6.5 lg:size-6 size-5.5">
+                            <p class="font-medium uppercase">{{ date }}</p>
+                        </div>
+                        {{ if location_section:address }}
+                        <a href="https://maps.app.goo.gl/xZRsuULfnj4vCqCo6" target="_blank" rel="noopener noreferrer"
+                            aria-label="Open location in Google Maps" class="flex items-center gap-2">
+                            <img src="{{ theme:asset }}assets/image/map.svg"
+                                class="2xl:size-7.5 xl:size-6.5 lg:size-6 size-5.5">
+                            <p class="font-medium uppercase text-thunder-100 hover:text-primary">{{
+                                location_section:address:address }}</p>
+                        </a>
+                        {{ /if }}
+                    </div>
+
+                    <a href="/retreat/{{ slug }}">
+                        <h5 class="text-primary hover:text-black uppercase 1xl:mb-5 lg:mb-4 mb-3">
+                            {{ title }}
+                        </h5>
+                    </a>
+                    <p class="2xl:mb-9 1xl:mb-7.5 md:mb-6 mb-4">
+                        {{ short_description }}
+                    </p>
+
+                    <div
+                        class="flex flex-wrap sm:flex-row flex-col sm:items-center items-start 1xl:gap-6 lg:gap-4 gap-2 2xl:mb-12 1xl:mb-10 lg:mb-8 md:mb-6 mb-4 lt:divide-x divide-thunder-100">
+                        {{ if price:label }}
+                        <div class="flex items-center gap-2.5 lg:pr-5 sm:pr-3">
+                            <img src="{{ theme:asset }}assets/image/price.svg" class="2xl:size-7.5 lg:size-6.5 lt:size-6 size-5.5">
+
+                            <p class="uppercase"><span class="text-primary">{{ price:label }}</span> {{ price:amount }}
+                            </p>
+                        </div>
+                        {{ /if }}
+                        {{ if event:label }}
+                        <div class="flex items-center gap-2.5">
+                            <img src="{{ theme:asset }}assets/image/person.svg" class="2xl:size-7.5 lg:size-6.5 lt:size-6 size-5.5">
+                            <p class="uppercase"><span class="text-primary">{{ event:label }}</span> {{
+                                event:event_value }}</p>
+                        </div>
+                        {{ /if }}
+                    </div>
+                    {{ if location_section:booking_button }}
+                    <a href="{{ location_section:booking_button:url }}" class="btn btn-secondary">
+                        {{ location_section:booking_button:button_text }}
+                    </a>
+                    {{ /if }}
+                </div>
+            </div>
+            {{ /retreats }}
+
+        </div>
+        {{ paginate }}
+        <input type="hidden" class="lastPage" value="{{ total_pages }}">
+        {{ if next_page }}
+        <div class="load-more-btn load-more-wrap">
+            <a href="{{ next_page }}"
+                class="2xl:mt-12.5 1xl:mt-12 xl:mt-11 lg:mt-10 md:mt-9 sm:mt-8 mt-7.5 btn reveal-more flex items-center justify-center mx-auto gap-4 ajax-load-more-grid">
+                Reveal More
+                <img src="{{ theme:asset src='assets/image/loading.svg'}}" alt="load-more"
+                    class="1xl:size-7.5 xl:size-6.5 size-5.5 animate-spin mx-auto hidden">
+            </a>
+        </div>
+        {{ /if }}
+        {{ /paginate }}
+        {{ if collections == "retreats" }}
+        {{ /collection:retreats }}
+        {{ /if }}
+    </div>
+
+
+</section>

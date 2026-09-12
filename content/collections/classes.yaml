@@ -1,0 +1,7 @@
+title: Looks
+template: classes/show
+route: '/class/{slug}'
+revisions: false
+date_behavior:
+  past: public
+  future: private

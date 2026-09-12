@@ -1,0 +1,20 @@
+<section class="relative 1xl:pt-44 xl:pt-40 lg:pt-36 md:pt-32 sm:pt-28 pt-24 2xl:mb-[100px] mb-16">
+    <div class="container grid lg:grid-cols-2 gap-10 items-start">
+        <div class="overflow-hidden">
+            {{ image }}<img src="{{ url }}" alt="{{ title }}" class="w-full h-auto object-cover">{{ /image }}
+        </div>
+        <div>
+            <h1 class="uppercase text-primary mb-3">{{ title }}</h1>
+            <p class="h3 font-primary italic text-primary mb-4">${{ price }}</p>
+            <p class="mb-6">{{ description }}</p>
+            <p class="mb-6">In stock: {{ stock }}</p>
+            <div class="flex items-center gap-3 mb-6">
+                <button type="button" id="decrease" class="border border-primary w-10 h-10">-</button>
+                <span id="quantity">1</span>
+                <button type="button" id="increase" class="border border-primary w-10 h-10">+</button>
+            </div>
+            <button type="button" class="btn btn-secondary yoga-add-cart" data-id="{{ slug }}" data-title="{{ title }}" data-price="{{ price }}" data-image="{{ image }}{{ url }}{{ /image }}">Add to cart</button>
+            <a href="/checkout" class="btn btn-secondary yoga-buy-now ml-2" data-id="{{ slug }}" data-title="{{ title }}" data-price="{{ price }}" data-image="{{ image }}{{ url }}{{ /image }}">Buy now</a>
+        </div>
+    </div>
+</section>

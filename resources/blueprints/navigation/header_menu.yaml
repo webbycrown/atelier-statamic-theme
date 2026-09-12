@@ -1,0 +1,103 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: menu_type
+            field:
+              options:
+                -
+                  key: normal
+                  value: 'Normal Menu'
+                -
+                  key: list
+                  value: List
+                -
+                  key: image
+                  value: Image
+              default: normal
+              type: select
+              display: 'Menu Type'
+          -
+            handle: button_text
+            field:
+              type: text
+              display: 'Button Text'
+              width: 50
+              if:
+                menu_type: 'equals list'
+          -
+            handle: button_link
+            field:
+              type: text
+              display: 'Button Link'
+              width: 50
+              if:
+                menu_type: 'equals list'
+          -
+            handle: collections
+            field:
+              mode: select
+              type: collections
+              display: Collections
+              width: 50
+              if:
+                menu_type: 'equals list'
+              max_items: 1
+          -
+            handle: limit
+            field:
+              default: '0'
+              type: integer
+              display: Limit
+              width: 50
+              if:
+                menu_type: 'equals list'
+          -
+            handle: image
+            field:
+              container: assets
+              max_files: 1
+              type: assets
+              display: Image
+              if:
+                menu_type: 'equals image'
+          -
+            handle: event_section
+            field:
+              collapse: true
+              max_sets: 1
+              type: replicator
+              display: 'Event Section'
+              if:
+                title: 'equals Blog'
+              sets:
+                new_set_group:
+                  display: 'New Set Group'
+                  sets:
+                    new_set:
+                      display: 'New Set'
+                      fields:
+                        -
+                          handle: events
+                          field:
+                            collections:
+                              - events
+                            mode: select
+                            max_items: 1
+                            type: entries
+                            display: events
+                        -
+                          handle: button_text
+                          field:
+                            default: 'See More Events'
+                            type: text
+                            display: 'Button Text'
+                        -
+                          handle: button_link
+                          field:
+                            default: /events
+                            type: text
+                            display: 'Button Link'

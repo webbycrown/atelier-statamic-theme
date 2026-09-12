@@ -1,0 +1,37 @@
+title: 'Meet the Instructors'
+fields:
+  -
+    handle: section_title
+    field:
+      type: text
+      display: 'Section Title'
+  -
+    handle: sub_title
+    field:
+      type: text
+      display: 'Sub Title'
+  -
+    handle: description
+    field:
+      type: textarea
+      display: Description
+  -
+    handle: button_text
+    field:
+      type: text
+      display: 'Button Text'
+      width: 50
+  -
+    handle: button_url
+    field:
+      type: text
+      display: 'Button URL'
+      width: 50
+  -
+    handle: instructors
+    field:
+      collections:
+        - teams
+      mode: select
+      type: entries
+      display: Instructors
