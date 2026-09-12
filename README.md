@@ -4,9 +4,6 @@ Atelier is a fashion studio starter kit for editorial houses, lookbook brands, a
 
 The kit ships four home variants, look listings, booking, events, shop pages, blog and podcast layouts, and membership content so a studio can publish looks and take booking inquiries from one site.
 
-**Live demo:** https://atelier-statamic.webbydemo.in/  
-Control Panel: `/cp` — `admin@example.com` / `password`
-
 ## Pages of Atelier
 
 The Atelier starter kit includes a comprehensive set of pages for a fashion studio:
