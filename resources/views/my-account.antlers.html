@@ -2,10 +2,10 @@
     <div class="container">
         <h1 class="uppercase text-primary mb-8">My Account</h1>
         <div id="yoga-account-box" class="border border-primary/20 p-6 max-w-[640px]">
-            <p class="yoga-account-guest">You are not signed in. <a href="/login" class="underline">Login</a> or <a href="/register" class="underline">register</a>.</p>
-            <div class="yoga-account-user hidden">
-                <p class="mb-2">Welcome, <span class="yoga-account-name"></span></p>
-                <p class="mb-4"><span class="yoga-account-email"></span></p>
+            {{ if {session:has key="atelier_customer_email"} }}
+            <div class="yoga-account-user">
+                <p class="mb-2">Welcome, <span class="yoga-account-name">{{ session:atelier_customer_name }}</span></p>
+                <p class="mb-4"><span class="yoga-account-email">{{ session:atelier_customer_email }}</span></p>
                 <div id="ordersList">
                     <h3 class="uppercase text-primary mb-3">Orders</h3>
                     <p>No previous studio shop orders yet.</p>
@@ -15,6 +15,9 @@
                     <button class="btn btn-secondary" type="submit">Log out</button>
                 </form>
             </div>
+            {{ else }}
+            <p class="yoga-account-guest">You are not signed in. <a href="/login" class="underline">Login</a> or <a href="/register" class="underline">register</a>.</p>
+            {{ /if }}
         </div>
     </div>
 </section>
